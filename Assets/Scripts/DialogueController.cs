@@ -9,6 +9,7 @@ public class DialogueController : MonoBehaviour
     public DialogueCharacterHandler d;
     public SetText currentSpeaker;
     public SetText currentText;
+    public GameObject self;
     private int currentLine = 2;
 
     private string[] dialogueText;
@@ -23,6 +24,7 @@ public class DialogueController : MonoBehaviour
     private void runDialogue()
     {
         dialogueText = t.ToString().Split("\n");
+        self.SetActive(true);
 
         //instantiates characters in scene
         string charactersInSceneRaw = dialogueText[0].Split(":")[1];
@@ -62,8 +64,20 @@ public class DialogueController : MonoBehaviour
 
     private void OnMouseDown()
     {
-        sayLine(dialogueText[currentLine]);
-        currentLine += 1;
-
+        if (currentLine >= dialogueText.Length)
+        {
+            endDialogue();
+        } else
+        {
+            sayLine(dialogueText[currentLine]);
+            currentLine += 1;
+        }
     }
+
+    public void endDialogue()
+    {
+        //dummy function for now
+        self.SetActive(false);
+    }
+
 }
