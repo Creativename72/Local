@@ -1,0 +1,27 @@
+inScene: Walter, Tyler
+
+id:start
+Walter: What do you want to do today?
+[fishing]
+I want to go fishing.
+[sailing]
+I want to go sailing.
+
+id:fishing
+Walter: Let's go fishing!
+Walter: What do you want to fish for?
+[trout]
+Lets go fishing for some trout!
+[walleye]
+Lets go fishing for some walleye!
+
+
+id:sailing
+Walter: i HATE sailing get out of my house
+Walter: loser.
+
+id:walleye
+Walter: its walleye-ing time
+
+id:trout
+Walter: its trouting time

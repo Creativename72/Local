@@ -10,6 +10,7 @@ public class DialogueController : MonoBehaviour
     public SetText currentSpeaker;
     public SetText currentText;
     public GameObject self;
+    public DialogueScene currentScene;
     private int currentLine = 2;
 
     private string[] dialogueText;
@@ -18,6 +19,30 @@ public class DialogueController : MonoBehaviour
     void Start()
     {
         runDialogue();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            currentScene.chooseOption(1);
+            OnMouseDown();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            currentScene.chooseOption(2);
+            OnMouseDown();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            currentScene.chooseOption(3);
+            OnMouseDown();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            currentScene.chooseOption(4);
+            OnMouseDown();
+        }
     }
 
     //given a text file of a dialogue scene, runs dialogue
@@ -36,10 +61,13 @@ public class DialogueController : MonoBehaviour
             charactersList[i] = charactersList[i].Trim();
         }
 
+        //instantiates characters in scene n stuff
         foreach (string character in charactersList)
         {
             instantiateCharacter(character);
         }
+
+        currentScene = new DialogueScene(t.ToString());
 
         OnMouseDown();
 
@@ -48,12 +76,20 @@ public class DialogueController : MonoBehaviour
     //given a line of dialogue, sets speaker name, sets textbox, and highlights the proper character
     private void sayLine(string line)
     {
-        string[] splitLine = line.Split(":");
+        string speaker = line.Split(":")[0];
+        string text = line.Split(":")[1].Trim();
+        currentSpeaker.setText(speaker);
+        currentText.setText(text);
+        highlightCharacter(speaker);
+    }
 
-        string characterName = splitLine[0];
-        string newText = splitLine[1];
-        currentSpeaker.setText(characterName);
-        currentText.setText(newText.Trim());
+    private void sayOptions(string options)
+    {
+        string speaker = "";
+        string text = options;
+        currentSpeaker.setText(speaker);
+        currentText.setText(text);
+        highlightCharacter(speaker);
     }
 
     //given a new character not in the scene, instantiates gameobject with their picture and sets location properly
@@ -62,15 +98,28 @@ public class DialogueController : MonoBehaviour
         d.instantiateCharacter(characterName);
     }
 
+    private void highlightCharacter(string characterName)
+    {
+        //highlight character
+    }
+
     private void OnMouseDown()
     {
-        if (currentLine >= dialogueText.Length)
+        string nextLine = currentScene.nextLine();
+        string type = nextLine.Substring(0, 1);
+        nextLine = nextLine.Substring(1);
+        if (type.ToLower() == "e")
         {
             endDialogue();
+        } else if (type == "l")
+        {
+            sayLine(nextLine);
+        } else if (type == "o")
+        {
+            sayOptions(nextLine);
         } else
         {
-            sayLine(dialogueText[currentLine]);
-            currentLine += 1;
+            throw new UnityException("Bad format: " + type + nextLine);
         }
     }
 
