@@ -1,0 +1,38 @@
+inScene: Tyler, Walter
+
+id:start
+Walter: This is a test section of dialogue.
+Tyler: You can click through each line that's being read.
+Tyler: Dont forget to include which characters are in the scene at the top!
+Walter: You can pick from multiple options to have branching dialogue.
+Walter: What choice would you like to pick?
+[choice1]
+I would like to pick option 1.
+[choice2]
+I would like to pick option 2.
+
+
+id:choice1
+Walter:You picked option 1!
+Walter:Alongside branching paths, you can also set a dialogue segment to go to another segment by having a goto statement at the end.
+GOTO:markdown
+
+id:choice2
+Walter:You picked option 2!
+Walter:Alongside branching paths, you can also set a dialogue segment to go to another segment by having a goto statement at the end.
+GOTO:markdown
+
+id:markdown
+Walter:You can also add additional formatting to text using tags like <i>so</i>.
+goto:lastSection
+
+id:lastSection
+Walter: That pretty much sums it up.
+Walter: This system should be able to handle any number of branching paths or dialogue flow or even circular paths for dialogue.
+
+
+
+Walter: The program should ignore any blank lines, so feel free to include extra whitespace if it makes for better formatting.
+Walter: If you want to end a dialogue section you can just make a line saying goto:end. (this is not case sensitive)
+Walter: It should also end the dialogue section if you don't include a goto:end, but i think having it works best for clarity/readability.
+goto:end

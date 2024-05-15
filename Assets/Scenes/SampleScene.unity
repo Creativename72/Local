@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74449afef21fc01438703dd74cb504a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  t: {fileID: 4900000, guid: 5ab43379e461a9444af859f44904d4fa, type: 3}
+  t: {fileID: 4900000, guid: a50eb84cdebefce42ae0dc2aaa5f19d7, type: 3}
   d: {fileID: 1008221663}
   currentSpeaker: {fileID: 1162017201}
   currentText: {fileID: 1760154147}

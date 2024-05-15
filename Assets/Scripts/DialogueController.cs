@@ -26,22 +26,22 @@ public class DialogueController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             currentScene.chooseOption(1);
-            OnMouseDown();
+            //OnMouseDown();
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             currentScene.chooseOption(2);
-            OnMouseDown();
+            //OnMouseDown();
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             currentScene.chooseOption(3);
-            OnMouseDown();
+            //OnMouseDown();
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             currentScene.chooseOption(4);
-            OnMouseDown();
+            //OnMouseDown();
         }
     }
 
@@ -68,6 +68,7 @@ public class DialogueController : MonoBehaviour
         }
 
         currentScene = new DialogueScene(t.ToString());
+        currentScene.parent = this;
 
         OnMouseDown();
 
@@ -77,10 +78,15 @@ public class DialogueController : MonoBehaviour
     private void sayLine(string line)
     {
         string speaker = line.Split(":")[0];
-        string text = line.Split(":")[1].Trim();
+        string text = this.extractText(line);
         currentSpeaker.setText(speaker);
         currentText.setText(text);
         highlightCharacter(speaker);
+    }
+
+    private string extractText(string line)
+    {
+        return line.Substring(line.IndexOf(":") + 1).Trim();
     }
 
     private void sayOptions(string options)
@@ -103,6 +109,11 @@ public class DialogueController : MonoBehaviour
         //highlight character
     }
 
+    public void simulateMouseClick()
+    {
+        OnMouseDown();
+    }
+
     private void OnMouseDown()
     {
         string nextLine = currentScene.nextLine();
@@ -111,13 +122,20 @@ public class DialogueController : MonoBehaviour
         if (type.ToLower() == "e")
         {
             endDialogue();
-        } else if (type == "l")
+        }
+        else if (type == "l")
         {
             sayLine(nextLine);
-        } else if (type == "o")
+        }
+        else if (type == "o")
         {
             sayOptions(nextLine);
-        } else
+        }
+        else if (type == "g")
+        {
+            currentScene.gotoSegment(nextLine.Split(":")[1].Trim());
+        }
+        else
         {
             throw new UnityException("Bad format: " + type + nextLine);
         }

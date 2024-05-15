@@ -23,7 +23,7 @@ public class DialogueSegment
             if (text[i].Contains("["))
             {
                 DialogueLine current = (DialogueLine) lines[lines.Count - 1];
-                string id = text[i].Substring(1, text.Length - 1);
+                string id = text[i].Substring(1, text[i].Length - 3);
                 current.addOption(id, text[i + 1]);
             }
         }
