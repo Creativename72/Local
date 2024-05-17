@@ -11,6 +11,7 @@ public class DialogueController : MonoBehaviour
     public SetText currentText;
     public GameObject self;
     public DialogueScene currentScene;
+    public bool dialogueRunning = false;
     private int currentLine = 2;
 
     private string[] dialogueText;
@@ -18,7 +19,7 @@ public class DialogueController : MonoBehaviour
 
     void Start()
     {
-        runDialogue();
+        //runDialogue();
     }
 
     private void Update()
@@ -26,28 +27,25 @@ public class DialogueController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             currentScene.chooseOption(1);
-            //OnMouseDown();
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             currentScene.chooseOption(2);
-            //OnMouseDown();
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             currentScene.chooseOption(3);
-            //OnMouseDown();
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             currentScene.chooseOption(4);
-            //OnMouseDown();
         }
     }
 
     //given a text file of a dialogue scene, runs dialogue
-    private void runDialogue()
+    public void runDialogue()
     {
+        dialogueRunning = true;
         dialogueText = t.ToString().Split("\n");
         self.SetActive(true);
 
@@ -143,7 +141,7 @@ public class DialogueController : MonoBehaviour
 
     public void endDialogue()
     {
-        //dummy function for now
+        dialogueRunning = false;
         self.SetActive(false);
     }
 

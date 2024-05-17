@@ -1,0 +1,25 @@
+inScene: Annie
+
+id:start
+Annie: Hey there, Scout. Sorry if I seem a little out of it, had one of those marathon calls last night. 
+Annie: Guy on the other end just would not stop yapping. I stayed on for like an hour past my shift end time.
+[Hang Up]
+Couldn’t you just hang up?
+[Rough]
+Sounds rough.
+
+
+id:Hang Up
+Annie: Mmm nah. There’s this policy where we gotta resolve their issues or give our best support for like 30 minutes after the call starts or something.
+Annie: I don’t like to leave incomplete calls anyway, like people’re calling cuz they need help, and I don’t wanna leave anyone stranded, you know?
+goto:lake
+
+
+id:Rough
+Annie: Tell me about it. Fridays are always a drag with those late shifts. Makes me feel like a zombie on weekends.
+goto:lake
+
+id:lake
+Annie: Was all set for goin’ down to the lake today, too. But my energy levels are like, real low. 
+Annie: Plus, it’s like raining, so I dunno how good of a time we’d have by the water anyway.
+Annie: I might take a midday nap. You alright with just staying in for a bit before then?
