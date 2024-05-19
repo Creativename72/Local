@@ -1,25 +1,77 @@
 inScene: Annie
 
 id:start
-Annie: Hey there, Scout. Sorry if I seem a little out of it, had one of those marathon calls last night. 
+Annie: Hey there, Scout. I, like, just woke up.
+Annie: Sorry if I seem a little out of it, had one of those marathon calls last night. 
 Annie: Guy on the other end just would not stop yapping. I stayed on for like an hour past my shift end time.
 [Hang Up]
-Couldn’t you just hang up?
+Couldn't you just hang up?
 [Rough]
 Sounds rough.
 
-
 id:Hang Up
-Annie: Mmm nah. There’s this policy where we gotta resolve their issues or give our best support for like 30 minutes after the call starts or something.
-Annie: I don’t like to leave incomplete calls anyway, like people’re calling cuz they need help, and I don’t wanna leave anyone stranded, you know?
+Annie: Mmm nah. There's this policy where we gotta resolve their issues or give our best support for like 30 minutes after the call starts or something.
+Annie: I don't like to leave incomplete calls anyway, like people're calling cuz they need help, and I don't wanna leave anyone stranded, you know?
 goto:lake
-
 
 id:Rough
 Annie: Tell me about it. Fridays are always a drag with those late shifts. Makes me feel like a zombie on weekends.
 goto:lake
 
 id:lake
-Annie: Was all set for goin’ down to the lake today, too. But my energy levels are like, real low. 
-Annie: Plus, it’s like raining, so I dunno how good of a time we’d have by the water anyway.
+Annie: Was all set for goin' down to the lake today, too. But my energy levels are like, real low. 
+Annie: Plus, it's like raining, so I dunno how good of a time we'd have by the water anyway.
 Annie: I might take a midday nap. You alright with just staying in for a bit before then?
+[fine]
+Fine by me!
+
+id:fine
+Annie: Here, come on in, make yourself at home.
+:[Annie leads Scout into the cabin.]
+:[The interior exudes warmth and charm. The walls are covered in photos of Annie and others, paintings and knick-knacks.]
+:[Annie shows Scout to the seating area.]
+[cozy]
+Your place is so cozy!
+[cozy]
+Love your decorations.
+
+id:cozy
+Annie: Hey, thanks!
+Annie: You know, ever since I lost part of my vision I never really got back into decorating. 
+Annie: Like, the only person who would see it would be my sister when she visits.
+goto:question
+
+id:question
+[vision]
+You lost your vision?
+[residents]
+What about the other valley residents? Do they visit?
+[continue]
+"..."
+
+id:vision
+Annie: Yeah. I had normal vision til' a few years ago.
+Annie: I lost it over time. Was pretty rough. Had to make some major changes to my life and career.
+Annie: [Annie looks up at Scout.] My sis helped a lot, though. She was always there.
+Annie: She drives me up to the city on occasion for weekend trips.
+goto:question
+
+id:residents
+Annie: What, you mean Bernice, Walter and Tyler?
+Annie: I mean, I have Bernice over for tea sometimes, but like, I don't like her climbing all the way up here each time she visits.
+Annie: She's getting pretty old, don't think the trails're for her anymore.
+Annie: Walter and Tyler...
+Annie: We used to hang out alot together. Like, here at my cabin or by the lake. 
+Annie: Well, there was a bit of a situation with us three a whiles ago.
+Annie: Really haven't spoken to them since. I dunno. It kinda soured our relationship.
+goto:question
+
+id:continue
+Annie: Aaanyways, I sometimes forget what I even have up on these walls.
+Annie: Like I gotta press my face right up to the photos and stuff to even make out the details.
+[point]
+I could point stuff out!
+
+id:point
+Annie: [Annie chuckles] Thats so sweet! Yeah, let's do it.
+goto:end

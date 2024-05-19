@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class AnnieSceneController : MonoBehaviour
 {
+    public TextAsset annieDay2;
+    public DialogueController d;
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        d.t = annieDay2;
+        d.runDialogue();
     }
 }

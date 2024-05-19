@@ -42,6 +42,11 @@ public class DialogueScene
         {
             optionsFlag = true;
             currentLine = nLine;
+            if (nLine.text == "")
+            {
+                canChoose = true;
+                return "o" + currentLine.readOptions();
+            }
         } else if (nLine.text.Split(":")[1].Trim().ToLower() == "end")
         {
             return "e";

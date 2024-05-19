@@ -19,10 +19,13 @@ public class DialogueSegment
             {
                 DialogueLine newLine = new DialogueLine(text[i]);
                 lines.Add(newLine);
-            }
-            if (text[i].Contains("["))
+            } else if (text[i].Contains("["))
             {
-                DialogueLine current = (DialogueLine) lines[lines.Count - 1];
+                if (lines.Count == 0)
+                {
+                    lines.Add(new DialogueLine(""));
+                }
+                DialogueLine current = (DialogueLine)lines[lines.Count - 1];
                 string id = text[i].Substring(1, text[i].Length - 3);
                 current.addOption(id, text[i + 1]);
             }
