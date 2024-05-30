@@ -1,0 +1,5 @@
+inScene: Walter
+
+id:start
+Walter:you caught a fish!
+goto:end

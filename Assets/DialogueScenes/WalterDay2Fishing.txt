@@ -1,0 +1,5 @@
+inScene: Walter
+
+id:start
+Walter:fishing time!
+goto:end
