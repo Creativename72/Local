@@ -78,4 +78,9 @@ public class DialogueScene
         canChoose = false;
         parent.simulateMouseClick();
     }
+
+    public string printSelf()
+    {
+        return currentSegment;
+    }
 }

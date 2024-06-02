@@ -45,33 +45,26 @@ public class DialogueController : MonoBehaviour
     //given a text file of a dialogue scene, runs dialogue
     public void runDialogue()
     {
-        Debug.Log("1");
         container.SetActive(true);
         dialogueRunning = true;
         b.enabled = true;
         dialogueText = t.ToString().Split("\n");
-        Debug.Log("2");
         //instantiates characters in scene
         string charactersInSceneRaw = dialogueText[0].Split(":")[1];
         string[] charactersList = charactersInSceneRaw.Split(",");
-        Debug.Log("3");
         //removes whitespace
         for (int i = 0; i < charactersList.Length; i++)
         {
             charactersList[i] = charactersList[i].Trim();
         }
-        Debug.Log("4");
         //instantiates characters in scene n stuff
         foreach (string character in charactersList)
         {
             instantiateCharacter(character);
         }
-        Debug.Log("5");
         currentScene = new DialogueScene(t.ToString());
         currentScene.parent = this;
-        Debug.Log("6");
         OnMouseDown();
-        Debug.Log("7");
     }
 
     //given a line of dialogue, sets speaker name, sets textbox, and highlights the proper character

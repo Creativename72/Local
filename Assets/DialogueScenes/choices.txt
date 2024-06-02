@@ -1,0 +1,16 @@
+inScene: Annie
+
+id:start
+Annie:this is a dialogue choice quick tester
+[option 1]
+This is option 1
+[option 2]
+This is option 2
+
+id:option 1
+you picked 1
+goto:end
+
+id:option 2
+you picked 2
+goto:end

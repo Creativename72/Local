@@ -14,6 +14,9 @@ public class ClickDialogue : MonoBehaviour
         {
             d.t = t;
             d.runDialogue();
+        } else
+        {
+            d.simulateMouseClick();
         }
     }
 }

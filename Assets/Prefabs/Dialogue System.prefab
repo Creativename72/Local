@@ -50,7 +50,9 @@ MonoBehaviour:
   d: {fileID: 1221396764070970485}
   currentSpeaker: {fileID: 1221396764219260955}
   currentText: {fileID: 1221396764816501641}
-  self: {fileID: 1221396764881616509}
+  container: {fileID: 1221396764881616509}
+  dialogueRunning: 0
+  b: {fileID: 1221396763148549830}
 --- !u!65 &1221396763148549830
 BoxCollider:
   m_ObjectHideFlags: 0
