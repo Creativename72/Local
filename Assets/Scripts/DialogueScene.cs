@@ -31,7 +31,8 @@ public class DialogueScene
         if (optionsFlag)
         {
             canChoose = true;
-            return "o" + currentLine.readOptions();
+            currentLine.readOptions(parent);
+            return "o";
         }
         DialogueLine nLine = segmentsDictionary[currentSegment.Trim()].nextLine();
         if (nLine == null)
@@ -45,7 +46,8 @@ public class DialogueScene
             if (nLine.text == "")
             {
                 canChoose = true;
-                return "o" + currentLine.readOptions();
+                currentLine.readOptions(parent);
+                return "o";
             }
         } else if (nLine.text.Split(":")[1].Trim().ToLower() == "end")
         {
@@ -67,6 +69,7 @@ public class DialogueScene
         currentSegment = currentLine.chooseOption(option);
         optionsFlag = false;
         canChoose = false;
+        parent.disableOptions();
         parent.simulateMouseClick();
     }
 

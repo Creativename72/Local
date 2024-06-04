@@ -2,15 +2,15 @@ inScene: Annie
 
 id:start
 Annie:this is a dialogue choice quick tester
-[option 1]
+[option1]
 This is option 1
-[option 2]
+[option2]
 This is option 2
 
-id:option 1
-you picked 1
+id:option1
+annie:you picked 1
 goto:end
 
-id:option 2
-you picked 2
+id:option2
+annie:you picked 2
 goto:end

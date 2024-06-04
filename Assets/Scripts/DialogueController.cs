@@ -13,6 +13,9 @@ public class DialogueController : MonoBehaviour
     public DialogueScene currentScene;
     public bool dialogueRunning = false;
     public BoxCollider b;
+    public GameObject option1;
+    public GameObject option2;
+    public GameObject option3;
 
     private string[] dialogueText;
 
@@ -82,13 +85,10 @@ public class DialogueController : MonoBehaviour
         return line.Substring(line.IndexOf(":") + 1).Trim();
     }
 
-    private void sayOptions(string options)
+    private void sayOptions()
     {
-        string speaker = "";
-        string text = options;
-        currentSpeaker.setText(speaker);
-        currentText.setText(text);
-        highlightCharacter(speaker);
+        currentSpeaker.setText("");
+        currentText.setText("");
     }
 
     //given a new character not in the scene, instantiates gameobject with their picture and sets location properly
@@ -122,7 +122,7 @@ public class DialogueController : MonoBehaviour
         }
         else if (type == "o")
         {
-            sayOptions(nextLine);
+            sayOptions();
         }
         else if (type == "g")
         {
@@ -132,6 +132,33 @@ public class DialogueController : MonoBehaviour
         {
             throw new UnityException("Bad format: " + type + nextLine);
         }
+    }
+
+    public void enableOptions(int amt)
+    {
+        GameObject[] g = { option1, option2, option3 };
+
+        for (int i = 0; i < amt; i++)
+        {
+            g[i].SetActive(true);
+        }
+    }
+
+    public void disableOptions()
+    {
+        GameObject[] g = { option1, option2, option3 };
+
+        for (int i = 0; i < 3; i++)
+        {
+            g[i].SetActive(false);
+        }
+    }
+
+    public void setOption(int index, string text)
+    {
+        GameObject[] g = { option1, option2, option3 };
+
+        g[index].GetComponent<SetText>().setText((index + 1).ToString() + ") " + text);
     }
 
     public void endDialogue()

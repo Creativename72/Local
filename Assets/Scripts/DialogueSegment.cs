@@ -52,7 +52,7 @@ public class DialogueSegment
 public class DialogueLine
 {
     public string text;
-    private ArrayList options;
+    public ArrayList options;
     public bool hasOptions = false;
 
     public DialogueLine(string textraw)
@@ -68,15 +68,14 @@ public class DialogueLine
         options.Add(option);
     }
 
-    public string readOptions()
+    public void readOptions(DialogueController p)
     {
-        string final = "";
-
+        p.enableOptions(options.Count);
         for (int i = 0; i < options.Count; i++)
         {
-            final = final + (i + 1) + ") " + ((string[]) options[i])[0] + "\n";
+            p.setOption(i, ((string[]) options[i])[0]);
         }
-        return final;
+
     }
 
     public string chooseOption(int choice)

@@ -7,17 +7,22 @@ public class HoverHighlight : MonoBehaviour
     public SpriteRenderer toHighlight;
     public Color defaultColor;
     public Color highlightColor;
+    public int optionNumber;
+    public DialogueController parent;
 
 
     private void OnMouseEnter()
     {
-        Debug.Log("a");
         toHighlight.color = highlightColor;
     }
 
     private void OnMouseExit()
     {
-        Debug.Log("b");
         toHighlight.color = defaultColor;
+    }
+
+    private void OnMouseDown()
+    {
+        parent.currentScene.chooseOption(optionNumber);
     }
 }
