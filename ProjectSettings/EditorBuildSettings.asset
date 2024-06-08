@@ -53,4 +53,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/End/Cooking.unity
     guid: cb2da4d01dafab54d97bbb2c3e15f43c
+  - enabled: 1
+    path: Assets/Scenes/End/FinalHangout.unity
+    guid: f9c1119fd27cdd44cb3993fa976b544f
   m_configObjects: {}
