@@ -8,9 +8,20 @@ This is option 1
 This is option 2
 
 id:option1
-annie:you picked 1
-goto:end
+[testing]
+option 1
+[testing2]
+option 2
+
 
 id:option2
 annie:you picked 2
+goto:end
+
+id:testing
+annie:yipeee
+goto:end
+
+id:testing2
+annie:yippers
 goto:end

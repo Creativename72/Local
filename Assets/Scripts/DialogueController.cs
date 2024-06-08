@@ -75,9 +75,30 @@ public class DialogueController : MonoBehaviour
     {
         string speaker = line.Split(":")[0];
         string text = this.extractText(line);
+        text = this.italicize(text);
         currentSpeaker.setText(speaker);
         currentText.setText(text);
         highlightCharacter(speaker);
+    }
+
+    private string italicize(string line)
+    {
+        string ret = "";
+        for (int i = 0; i < line.Length; i++)
+        {
+            string currentChar = line.Substring(i, 1);
+            if (currentChar == "[")
+            {
+                ret += "<i>";
+            } else if (currentChar == "]")
+            {
+                ret += "</i>";
+            } else
+            {
+                ret += currentChar;
+            }
+        }
+        return ret;
     }
 
     private string extractText(string line)
