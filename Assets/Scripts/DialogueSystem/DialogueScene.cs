@@ -23,6 +23,7 @@ public class DialogueScene
             segmentsDictionary.Add(id, new DialogueSegment(text[i]));
         }
 
+        //debug_CheckDictionary();
     }
 
     public string nextLine()
@@ -85,5 +86,13 @@ public class DialogueScene
     public string printSelf()
     {
         return currentSegment;
+    }
+
+    private void debug_CheckDictionary()
+    {
+        foreach(KeyValuePair<string, DialogueSegment> line in segmentsDictionary)
+        {
+            Debug.Log("Key: " + line.Key + "\tValue: " + line.Value);
+        }
     }
 }

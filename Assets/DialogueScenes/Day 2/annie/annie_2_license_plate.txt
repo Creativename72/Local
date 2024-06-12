@@ -1,0 +1,27 @@
+inscene: Annie
+
+id:start
+[what]
+What about that license plate?
+
+id:what
+Annie: Oh that? That’s from my drag racing days, believe it or not.
+[cars]
+You raced cars?
+
+id:cars
+Annie:Oh yeah, hard to picture now, right? Back in the day, I lived for the thrill of the track.
+Annie:That surge of adrenaline as I revved up the engines, feeling the power of the car beneath me…
+Annie:God, what a rush that was.
+Annie:Had to stop when my vision started to deteriorate. That sucked.
+Annie:Buuuut… maybe it was for the better.
+Annie:If I could still drive cars while blind, I’d probably do it. But it’s illegal. Lame.
+Annie:Kidding! But really, I couldn’t have spent my whole life racing cars. Needed to settle for something, I guess.
+[miss]
+Do you miss racing?
+
+id:miss
+Annie: Every now and then, yeah. But that was years and years ago.
+Annie: Life’s about adapting, and now I’m just rollin’ with the punches.
+goto:end
+

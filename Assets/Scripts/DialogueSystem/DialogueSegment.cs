@@ -26,7 +26,8 @@ public class DialogueSegment
                     lines.Add(new DialogueLine(""));
                 }
                 DialogueLine current = (DialogueLine)lines[lines.Count - 1];
-                string id = text[i].Substring(1, text[i].Length - 3);
+                string id = text[i].Substring(text[i].IndexOf("[") + 1, text[i].IndexOf("]") - 1);
+                //Debug.Log(id);
                 current.addOption(id, text[i + 1]);
             }
         }

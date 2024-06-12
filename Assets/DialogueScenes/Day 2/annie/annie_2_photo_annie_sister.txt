@@ -1,0 +1,20 @@
+inscene: Annie
+
+id:start
+[photo]
+There’s a photo of you and someone else in front of a Route 66 sign?
+
+id:photo
+Annie:Oh my goodness, that’s from the road trip Maggie and I took a few years back!
+Annie:Maggie’s my sister, by the way.
+Annie:We wanted to visit all the diners in the state or somethin’, like a diner-hopping road trip? She loves diner food.
+Annie:She printed out a map of the state and planned out a route and everything.
+Annie:We only ended up going to like six places though.
+[trip]
+Trip ended early?
+
+id:trip
+Annie:I dunno, man. Like, you can only have so much pancakes, burgers, and apple pie before the thought of it makes you want to throw up.
+Annie:But it was nice. It was a nice trip. I had fun. Saw a bunch of dumb roadside attractions.
+Annie:And I got to hang with my sis. That was the best part.
+goto:end

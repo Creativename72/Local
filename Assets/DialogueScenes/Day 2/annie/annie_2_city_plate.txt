@@ -1,0 +1,29 @@
+inscene: Annie
+
+id:start
+[plate]
+That decorative plate you have is nice. Is this from the city?
+
+id:plate
+Annie:Mmhm. A little memento from San Viva. Born and raised in that place.
+Annie:The rest of my family still lives there, too. Love that place to death.
+Annie:But life was crazy there. Like it was non-stop, always something happening, somewhere to be. I loved it.
+Annie:Feel like I knew everyone on my block, like there was always someone to hang with.
+Annie:But when my vision started to go, I felt my life rapidly changing course. I think the city became too much for me.
+Annie:I didn’t have the awareness I used to when I was first adjusting. Crossing the street felt like playing a game of chance, and navigating crowds became a real challenge. 
+Annie:It was overwhelming, and I started to feel lost in the place I used to call home.
+Annie:I couldn’t keep up with the hustle anymore, I guess. Funny, I used to make fun of my friends who couldn’t keep up with the city. And now I was in the same place.
+Annie:So like, I just kinda packed my bags and moved to the valley.
+[decision]
+Pretty big decision, right?
+
+id:decision
+Annie:Yeppers. But it was the right one, I’d like to think.
+Annie:But… like… I gotta say…
+Annie:I really miss living around my friends and family like I did in San Viva
+Annie:Most of the time that I’m spending with friends, it's online stuff. It’s not the same as, like grabbing coffee together, or watching a movie in the same room, you know? There’s no replacement for that.
+Annie:It’s funny. My job has me talkin’ to folks over the phone for hours and hours. Then when I log off from work, I hop right back onto my computer to do the same thing with my friends. 
+Annie:It’s exhausting sometimes. Even if I am just sittin’ there in front of a computer. It’s just not the same.
+Annie:I dunno. In person connection stuff has been kinda hard for me lately. 
+Annie:I feel like, even though I moved here years ago, I’m still trying to figure it out.
+goto:end

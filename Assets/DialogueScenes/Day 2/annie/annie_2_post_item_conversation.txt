@@ -1,0 +1,17 @@
+inscene: Annie
+
+id:start
+Annie:That was nice. To, like, remember stuff. 
+Annie:Honestly, I forgot I had half those things still up on my wall.
+Annie:Thanks for that, Scout.
+[thanks]
+Any time.
+
+id:thanks
+Annie:Hey, I’m starting to get sleepy, I think I’m gonna take that nap I was talkin’ about before. 
+Annie:But, like, thanks for keeping me company. It was really kind of you.
+Annie:If you need anything from me, just knock on my door, ‘kay? Love to have you over again soon!
+:[With that, Annie leads Scout out of the cabin.]
+:[With a final smile and wave, she closes the door.]
+:[Scout returns to the path down into the base of the valley, the rain lightly falling all around them.]
+goto:end

@@ -1,0 +1,49 @@
+inscene: Annie
+
+id:start
+[photo]
+This lake photo… Is that you with Walter and Tyler?
+
+id:photo
+Annie:Huh?
+Annie:Oh yeah. I remember that photo. Honestly forgot I still had that up.
+Annie:We used to be friends, I guess.
+Annie:Or like, I mean, we still are… We just haven’t really been talking.
+Annie:We used to be close. Walter was here first, he’s the fire watch. Then I moved here, and we hung out a lot. 
+Annie:I think we were both enjoying the offline sort of connection. We didn’t really talk to anyone in person outside our jobs at that point.
+Annie:Then Tyler crashed here with his trailer. And like, he’s a cool guy. We like the same music and stuff.
+Annie:On the weekends we hung out with each other a lot. It was the only thing to really do here in the valley, for me at least.
+Annie:There was an incident at some point, and we like, stopped talkin’ to each other after it happened. That was a while ago when we all still hung out with each other..
+[falling]
+You had a falling out?
+
+id:falling
+Annie:Yeah. It’s a long story
+Annie:But basically, one day, Tyler was setting up some sort of water pump at his little camp.
+Annie:Walter was there to make sure he didn’t blow himself up. And I was there just to hang.
+Annie:Walter had to go do firewatch stuff, as he does. And he was like, “Ty, don’t even think about starting the pump without me here.”
+Annie:But like, when Walter was out of earshot, Tyler decided he was a big boy or something and flipped the switch.
+Annie:The front of his truck just exploded, it was crazy.
+Annie:Tyler kinda froze, and I freaked out and hopped in the truck and rammed it into the water tower.
+Annie:I, like, totally wrecked his truck and his water thing and his farm, man. Flooded camp, wrecked front of truck, toppled over the tower, I think. Tyler was furious.
+Annie:But then Walter comes running back, and he’s mad at Tyler for being stupid, and then he gets mad at ME, too!
+Annie:He gets mad at ME for trying to help! 
+Annie:Like, yeah, I can’t really see, but...
+Annie:The truck was on fire! What, should I have just let the whole site burn down?! I was basically doing his fire watching job for him.
+Annie:Ack, I dunno. It was such a stupid situation. I was so upset about how those two reacted. It was a split moment decision, geez...
+[react]
+Wow, that’s crazy!
+[react]
+That must have been hard.
+
+id:react
+:[Annie nods and pauses for a moment.]
+[miss]
+Do you miss hanging out with them?
+
+id:miss
+Annie:I mean, yeah. I do.
+Annie:Those were simpler times. I wish things could go back to how they were.
+Annie:...yeah.
+:[Annie just sits there awkwardly for a few moments, collecting her thoughts.]
+goto:end

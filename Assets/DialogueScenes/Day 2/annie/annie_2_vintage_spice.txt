@@ -1,0 +1,20 @@
+inscene: Annie
+
+id:start
+[where]
+Where’d you get that spice sign?
+
+id:where
+Annie:That old thing? That’s a little piece I picked up from the farmers’ market back in the city. 
+Annie:My sister Maggie takes me back to the city every few weeks to catch up with each other. Since I moved, it’s been our thing.
+Annie:She likes goin’ to the farmers’ market they hold at the pier every weekend.
+Annie:She always gets me to buy these exotic spices and fancy cooking doodads and whatever.
+Annie:We spend hours just talkin’ to vendors, samplin’ spices, enjoying the sea breeze, you know?
+[cook]
+Do you cook a lot?
+
+id:cook
+Annie:Yeah, I’ve been pickin’ it back up recently. Kinda hard to figure out what ingredients and spices I’ve got in my hand. Usually I gotta get a good whiff just to make sure what I’m usin’ is correct.
+Annie:But I manage fine on my own. I recently learned how to stop settin’ off the fire alarm each time I turned on the stove, so that’s been huge for me.
+Annie:Sucks I gotta go to the city or order stuff online every time I need new ingredients, though. I guess that’s the price you pay for livin’ in the middle of nowhere.
+goto:end
