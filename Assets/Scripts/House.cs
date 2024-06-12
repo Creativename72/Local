@@ -14,10 +14,18 @@ public class House : MonoBehaviour, IHouse
     // Could update later to have the active and inactive sprites on one spritesheet
     // and switch between them with animation states
     private SpriteRenderer spriteRenderer;
-    public Sprite inactiveSprite;
-    public Sprite activeSprite;
+    public Sprite blankIcon;
+    public Sprite fullIcon;
 
+
+    /*  Originally the outline was made with a material that duplicated + offset the sprites in another color, but
+        I changed it to toggling an outline gameobject because the map icon sprites don't have the space needed for
+        the shader to work properly. Plus they're all circles, so all 
     public Material outlineMat;
+    */
+    public GameObject outlineGameObject;
+
+    public Material highlightMat;
     public Material defaultMat;
 
 
@@ -25,7 +33,7 @@ public class House : MonoBehaviour, IHouse
     void Start()
     {
         isActive = MapController.Instance.HouseStates[(int) thisHouse];
-        nextScene = MapController.Instance.currentDay;
+        nextScene = MapController.Instance.currentStage - 1;
         spriteRenderer = GetComponent<SpriteRenderer>();
         updateSprite();
     }
@@ -43,10 +51,15 @@ public class House : MonoBehaviour, IHouse
     }
 
     private void updateSprite() {
-        if (isActive)
-            spriteRenderer.sprite = activeSprite;
+        if (isActive) {
+            if (MapController.Instance.currentStage < 2) {
+                spriteRenderer.sprite = blankIcon;
+            }
+            else
+                spriteRenderer.sprite = fullIcon;
+        }
         else
-            spriteRenderer.sprite = inactiveSprite;
+            spriteRenderer.sprite = null;
     }
 
     void OnMouseDown()
@@ -57,12 +70,19 @@ public class House : MonoBehaviour, IHouse
     }
 
     void OnMouseEnter() {
-        if (isActive)
-            spriteRenderer.material = outlineMat;
+        if (isActive) {
+            // spriteRenderer.material = outlineMat;
+            outlineGameObject.SetActive(true);
+            spriteRenderer.color = new Color(170f, 170f, 170f, 1f);
+            spriteRenderer.material = highlightMat;
+        }
     }
 
     void OnMouseExit() {
-        if (isActive)
+        if (isActive) {
             spriteRenderer.material = defaultMat;
+            outlineGameObject.SetActive(false);
+            spriteRenderer.color = new Color(255f, 255f, 255f, 1f);
+        }
     }
 }

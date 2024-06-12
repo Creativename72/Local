@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class MapController : MonoBehaviour
 {
-    public int currentDay;
+    public int currentStage;
     public bool[] HouseStates; // HouseStates order: Annie, Scout, Tyler, Walter
     public string currentScene;
     public static MapController Instance { get; private set; }
@@ -21,10 +21,10 @@ public class MapController : MonoBehaviour
             Instance = this;
         }
 
-        currentDay = 0;
+        currentStage = 0;
         currentScene = "map";
         HouseStates = new bool[4] {
-            false, true, false, false
+            false, false, false, false
         };
         UpdateDay();
 
@@ -44,6 +44,7 @@ public class MapController : MonoBehaviour
         @param n Name of the next scene to load
     **/
     IEnumerator LoadNextSceneAsync(string n) {
+        Camera.main.GetComponent<AudioListener>().enabled = false;
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(n, LoadSceneMode.Additive);
 
         while (!asyncLoad.isDone)
@@ -59,16 +60,10 @@ public class MapController : MonoBehaviour
     public void UpdateDay() {
         if (!HouseStates[0] && !HouseStates[1] && 
             !HouseStates[2] && !HouseStates[3]) {
-            currentDay++;
+            currentStage++;
             
             // Setting it up as each day being 
-            switch(currentDay) {
-                case 0:
-                    HouseStates[0] = false;
-                    HouseStates[1] = true;
-                    HouseStates[2] = false;
-                    HouseStates[3] = false;
-                    break;
+            switch(currentStage) {
                 case 1:
                     HouseStates[0] = true;
                     HouseStates[1] = false;
