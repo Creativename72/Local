@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class MapController : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class MapController : MonoBehaviour
     public bool[] HouseStates; // HouseStates order: Annie, Scout, Tyler, Walter
     public string currentScene;
     public static MapController Instance { get; private set; }
+
+    public SceneChangeEvent m_sceneChangeEvent;
     
     void Awake() {
         if (Instance != null && Instance != this) {
@@ -24,6 +27,10 @@ public class MapController : MonoBehaviour
             false, true, false, false
         };
         UpdateDay();
+
+        if (m_sceneChangeEvent == null) {
+            m_sceneChangeEvent = new SceneChangeEvent();
+        }
     }
 
     public void LoadNextScene(string name) {
@@ -46,6 +53,7 @@ public class MapController : MonoBehaviour
 
         SceneManager.UnloadSceneAsync(currentScene);
         currentScene = n;
+        m_sceneChangeEvent.Invoke(n);
     }
 
     public void UpdateDay() {
@@ -101,4 +109,10 @@ public class MapController : MonoBehaviour
         }
     }
 
+}
+
+
+[System.Serializable]
+public class SceneChangeEvent : UnityEvent<string>
+{
 }

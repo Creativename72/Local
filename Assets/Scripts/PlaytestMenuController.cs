@@ -12,7 +12,7 @@ public class PlaytestMenuController : MonoBehaviour
     public Button[] sceneButtons;
     public Button prevButton;
     public Button nextButton;
-    public Canvas menuCanvas;
+    public GameObject menu;
     // public TextMeshPro pageCounter;
 
     [SerializeField] private int page;
@@ -33,11 +33,11 @@ public class PlaytestMenuController : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown("tab")) {
-            if (menuCanvas.gameObject.activeInHierarchy == false) {
-                menuCanvas.gameObject.SetActive(true);
+            if (menu.activeInHierarchy == false) {
+                menu.SetActive(true);
             }
             else {
-                menuCanvas.gameObject.SetActive(false);
+                menu.SetActive(false);
             }
         }
     }
