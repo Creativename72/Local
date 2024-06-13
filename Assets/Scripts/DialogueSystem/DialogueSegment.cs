@@ -9,7 +9,6 @@ public class DialogueSegment
 
     public DialogueSegment(string textraw)
     {
-
         string[] text = textraw.Split("\n");
         lines = new ArrayList();
 
@@ -29,6 +28,10 @@ public class DialogueSegment
                 string id = text[i].Substring(text[i].IndexOf("[") + 1, text[i].IndexOf("]") - 1);
                 //Debug.Log(id);
                 current.addOption(id, text[i + 1]);
+                i++; //makes sure the dialogue option isn't treated as an id if italicized
+            } else if (text[i].ToLower().Contains("changebackground()"))
+            {
+                ((DialogueLine) lines[lines.Count - 1]).sceneChanger = true;
             }
         }
     }
@@ -55,7 +58,7 @@ public class DialogueLine
     public string text;
     public ArrayList options;
     public bool hasOptions = false;
-
+    public bool sceneChanger = false;
     public DialogueLine(string textraw)
     {
         text = textraw;

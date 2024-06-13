@@ -26,21 +26,23 @@ public class DialogueScene
         //debug_CheckDictionary();
     }
 
-    public string nextLine()
+    public string[] nextLine()
     {
         
         if (optionsFlag)
         {
             canChoose = true;
             currentLine.readOptions(parent);
-            return "o";
+            return new[] { "o", "" };
         }
         DialogueLine nLine = segmentsDictionary[currentSegment.Trim()].nextLine();
         if (nLine == null)
         {
-            return "end";
-        }
-        else if (nLine.hasOptions)
+            return new [] {"e",""};
+        } else if (nLine.text.ToLower().Trim() == "pause()")
+        {
+            return new[] { "p", "" };
+        } else if (nLine.hasOptions)
         {
             optionsFlag = true;
             currentLine = nLine;
@@ -48,16 +50,20 @@ public class DialogueScene
             {
                 canChoose = true;
                 currentLine.readOptions(parent);
-                return "o";
+                return new[] {"o", "" };
             }
         } else if (nLine.text.Split(":")[1].Trim().ToLower() == "end")
         {
-            return "e";
+            return new[] {"e", "" };
         } else if (nLine.text.Split(":")[0].Trim().ToLower() == "goto")
         {
-            return "g" + nLine.text;
+            return new[] {"g", nLine.text };
         }
-        return "l" + nLine.text;
+        else if (nLine.sceneChanger)
+        {
+            return new[] { "lc", nLine.text };
+        }
+        return new[] { "l", nLine.text };
     }
 
     public void chooseOption(int option)

@@ -16,6 +16,7 @@ public class DialogueController : MonoBehaviour
     public GameObject option1;
     public GameObject option2;
     public GameObject option3;
+    public BackgroundHandler bgs;
 
     private string[] dialogueText;
 
@@ -130,9 +131,10 @@ public class DialogueController : MonoBehaviour
 
     private void OnMouseDown()
     {
-        string nextLine = currentScene.nextLine();
-        string type = nextLine.Substring(0, 1);
-        nextLine = nextLine.Substring(1);
+        string[] nextLineList = currentScene.nextLine();
+        string nextLine = nextLineList[1];
+        string type = nextLineList[0];
+
         if (type.ToLower() == "e")
         {
             endDialogue();
@@ -140,6 +142,11 @@ public class DialogueController : MonoBehaviour
         else if (type == "l")
         {
             sayLine(nextLine);
+        } 
+        else if (type == "lc")
+        {
+            sayLine(nextLine);
+            bgs.changeBackground();
         }
         else if (type == "o")
         {
@@ -179,7 +186,7 @@ public class DialogueController : MonoBehaviour
     {
         GameObject[] g = { option1, option2, option3 };
 
-        g[index].GetComponent<SetText>().setText((index + 1).ToString() + ") " + text);
+        g[index].GetComponent<SetText>().setText((index + 1).ToString() + ") " + this.italicize(text));
     }
 
     public void endDialogue()

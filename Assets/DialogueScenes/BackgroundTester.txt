@@ -1,0 +1,20 @@
+inScene: Walter
+
+id:start
+[1]
+[bark at walter]
+[2]
+[growl at walter]
+
+
+id:1
+Walter:meow
+changeBackground()
+walter: mrow
+goto:end
+
+id:2
+Walter:grrrr
+changeBackground()
+walter: grrrrOOOWl
+goto:end
