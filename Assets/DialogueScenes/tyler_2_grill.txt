@@ -1,0 +1,42 @@
+inscene: Tyler
+
+id:start
+[nice_grill]
+Nice grill. Do you still use it?
+
+id:nice_grill
+:[Tyler glances at the grill, then back at Scout, shrugging.]
+Tyler:Nah, haven’t used him much. Used to love grillin’ fish, but I ain’t much of a fishman.
+Tyler:Tried grillin’ veggies, but man, it ain’t the same.
+[where_get]
+So where’d you get the fish?
+
+id:where_get
+Tyler:Psh. Walter.
+Tyler:[Tyler's expression hardens a bit.] Look, Walter’s good at what he does ‘n all, but I don’t need his help. I can figure it out on my own.
+[what_eating]
+What are you eating nowadays?
+
+id:what_eating
+Tyler:Simple stuff.  Canned, frozen foods, whatever I can get at the general store a few miles up the road.
+Tyler:And the veggies I’m growin’, if I’m feeling like it.
+Tyler:Whatever. Maybe I should just get rid of this thing.
+[keep]
+Keep it. You might use it in the future.
+[toss]
+Yeah, toss.
+
+id:keep
+Tyler:...yeah. Maybe you’re right.
+Tyler:He’s a good grill. We did have some great times.
+:[Tyler drags the grill to a spot near his gardens.]
+goto:else
+
+id:toss
+Tyler:Mmhm. Ain’t no point in keepin’ him around if I ain’t usin’ him.
+:[Tyler starts to drag the grill to the toss pile, giving it one last look before pushing it aside.]
+goto:else
+
+id:else
+Tyler: Hokay... Anythin’ else?
+goto:end

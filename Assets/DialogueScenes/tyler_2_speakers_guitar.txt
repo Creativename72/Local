@@ -1,0 +1,16 @@
+inscene: Tyler
+
+id:start
+Tyler:Yeah, the guitar.
+Tyler:I just picked it up from the city, too. Speakers must be busted. 
+Tyler:Sucks. 
+Tyler:I thought guitar was gonna be my next big thing, my ticket to rockstar fame. Or somethin’.
+Tyler:I’d go back to the city ‘n play at packed venues, it’d be glorious. 
+Tyler:But man, shreddin’ it on this thing takes a lot more than a dream, I gotta say.
+Tyler:Hurts my fingies, too. I dunno, maybe I don’t got the patience for somethin’ like this.
+:[Tyler is about to throw the guitar into a near by pile of junk, but stops himself with a self-facepalm.]
+Tyler:Was expensive, actually. Maybe I should hold onto it.
+Tyler:I should just put this inside… Don’t want the rain damagin’ it or somethin’.
+:[Tyler takes the guitar and busted speakers back inside before emerging a moment later.]
+Tyler:Alright, what next...
+goto:end

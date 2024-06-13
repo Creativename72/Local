@@ -1,0 +1,50 @@
+inscene: Tyler
+
+id:start
+Tyler:That should be all.
+[better]
+Looks a lot better now.
+
+id:better
+Tyler:Yeah, I guess it does. Thanks for the help.
+Tyler:And ah, I guess you can see how many hobbies I’ve dropped over the years, ha.
+Tyler:I...
+:[Tyler hesitates for a moment. He glances at Scout.]
+Tyler:Lemme show you.
+:[Scout is taken around the back of the trailer and water reservoir to a large, well-tended vegetable garden. The plants are neatly arranged, and it’s clear that Tyler put a lot of work into this place.]
+Tyler:This right here. My garden.
+[impressive]
+Impressive!
+[did_all_this]
+You did all this?
+[cool]
+Oh, cool.
+
+id:impressive
+Tyler:[Tyler’s face lights up.] Thanks man. I gotta try sometimes, I suppose.
+goto:look_garden
+
+id:did_all_this
+Tyler:Yeah. I guess I gotta lotta free time to figure all this stuff out, hmm.
+goto:look_garden
+
+id:cool
+Tyler:Yeah. Pretty cool, I know.
+goto:look_garden
+
+id:look_garden
+Tyler:[Tyler touches the side of the water reservoir.] It’s been getting harder to water my plants since my water tank exploded.
+Tyler:Or... it’s a long story. Was settin’ up my water pump, and Walter was there, and Annie was there...
+Tyler:Then Walter left, and I turned on the pump, and my truck caught fire, and Annie drove my truck into the reservoir.
+Tyler:[His brow furrows.] Then Walter came back and yelled at me, and then he yelled at Annie.
+Tyler:And we haven't talked since. Ugh.
+Tyler:Whatever. My water thing’s busted. That’s the takeaway.
+:[Tyler pauses for a moment. He looks at his garden, then back at Scout.]
+Tyler:Scout... Thanks again for helpin’ me clean up. ‘N listenin’ to me yap ‘bout all this stuff.
+Tyler:It’s a lot nicer doin’ this chore with someone else. So if you wanna come back sometime and clean the inside of my trailer too...
+Tyler:[Tyler chuckles.] Kiddin’. Maybe. Consider it.
+Tyler:I... come back if you need anythin’ from me, ‘kay? It’s been fun just, talkin’, too.
+Tyler:I gotta haul all the stuff we tossed back to the city before the recycling depot closes. 
+Tyler:I’ll see you ‘round soon, yeah?
+:[With that, Tyler drags some things into his truck bed and drives onto the main road, back towards the city.]
+:[After a moment, Scout heads back down the dirt path, disappearing among the trees as they make their way back to their own corner of the valley.]
