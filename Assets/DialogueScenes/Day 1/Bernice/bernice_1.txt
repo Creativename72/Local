@@ -1,0 +1,153 @@
+inScene: Scout, Bernice
+
+
+id:start
+:[The sun rises over Bellespring Valley, casting a warm glow over the lake and the trees.]
+:[A taxi winds down the narrow road, crossing a small stone bridge over a rushing river, before winding down an incline towards a quaint little cottage by the water.]
+:[Scout gazes out the window, taking in the expansive lake at the valley's heart, its surface shimmering in the early light.]
+
+
+pause(3)
+changeBackground()
+
+
+:[The taxi comes to a stop in front of the cottage, Scout’s new home. They step out, stretching after the long journey from the city.]
+:[In the driveway, a moving truck is parked, with workers carefully carrying out the belongings of an elderly turtle.]
+:[She sits on a rocking chair on the cottage’s front porch and waves to Scout. 
+
+
+Bernice: Hey there, you must be Scout. Welcome to Bellespring Valley!
+
+
+[thats_me]
+That’s me! Are you Bernice?
+
+
+id:thats_me
+Bernice: I sure am. This is your new home, I suppose. The cottage has treated me well over the years, and I’m sure it’ll do the same for yourself.
+Bernice: Why don’t you bring your things up here and let me show you around.
+
+
+:[Bernice holds the door open as Scout carries their suitcase inside the cottage. After setting their thing down, the pair take a seat on the patio outside.]
+
+
+Bernice: Now then, how much do you know about the valley? Can I give you a full introduction?
+
+
+[yes_intro]
+Yes please!
+[no_intro]
+No thanks, I’d like to explore it myself. No spoilers!
+
+
+id:yes_intro
+Bernice: Well, you’ve picked a gorgeous place to move to, let me tell you.
+Bernice: The lakes here are beautiful. So are the woods, the creeks, the trails. Really, everything here is picturesque. 
+Bernice: It’s been a while since I’ve been able to take a long walk around the area, but, if you’re up to it, a hike around all the trails does wonders for the soul.
+Bernice: [She laughs a bit to herself.] I was personally more of a swimmer. Back in my youth, I’d swim from the cottage to the other side of the lake, the sun shining on my back…
+Bernice: I hope this place can bring as much youthful wonder to you as it did to me.
+GOTO:after_intro
+
+
+
+
+id:no_intro
+Bernice: Suit yourself!
+GOTO:after_intro
+
+
+id:after_intro
+Bernice: Now, it hasn’t just been me living all by myself up here. A handful of others call this valley their home, too.
+Bernice: Hmm, it might help to have a visual.
+
+
+:[Bernice turns and rummages through her handbag, pulling out a map and a marker.]
+
+
+changeBackground()
+pause(3)
+
+
+Bernice: Here’s Bellespring Valley. It’s a bit of an old map, but it’ll do.
+
+
+
+
+
+
+Bernice: Here’s where we are. You know, the house you’ll be living in is the oldest building in the valley. It’s considered historic.
+
+
+
+
+
+Bernice: Walter lives here. He’s a fire lookout, and a wonderful bear.
+Bernice: He might be a bit stiff when you first meet him, but he means well. He looks out for everyone in the valley.
+Bernice: He takes his job very seriously, but on his downtime, he enjoys hikes and fishing.
+Bernice: And don’t worry if he seems standoffish, that’s just his nature. Big heart and all, but he keeps it reserved.
+
+
+
+
+
+
+Bernice: Annie the mole lives up at the top of yonder hill. She works for a technical company. She told me she moved to the valley for some peace and quiet, but last I checked, she’s working so much she barely has time to relax!
+Bernice: Back when she first moved to the valley, her and I would take walks all along the lake.
+Bernice: I do worry for her a bit. She seems like she needs a bit of a break from work. 
+
+
+
+
+
+
+Bernice: Tyler the badger stays here, at the campsite. He lives in a palace of his own making. You can’t miss it. He’s got a colorful style.
+Bernice: He has his own, let’s say, style of living. Very cool, very hip. Maybe I’m too old to understand.
+Bernice: He might be a little aggressive, but he wouldn’t hurt a fly. I think he just needs a friend.
+
+
+
+
+Bernice: And that should be everyone! 
+Bernice: You know, the valley used to be a lot busier. We’d get more tourists and hikers and campers mingling with our community.
+Bernice: Now, the residents here barely even interact with one another. I can’t recall the last time we all did something together…
+
+
+changeBackground()
+
+
+
+Bernice: Scout! If you could do me a favor..
+Bernice: Check up on my three friends, alright?
+Bernice: They all know I’m leaving the valley, so that won’t be a surprise. And I’ve said my goodbyes already…
+Bernice: But if you can just check up on them, see how they’re all doing on their own, it would mean a lot to me.
+Bernice: But don’t tell them I sent you! Just go out and get to know them. They’ll be happy to see a new face, especially one so friendly as yours.
+
+
+:[The movers begin moving the last pieces of furniture into the truck.]
+
+
+Bernice: It looks like the movers are just about finishing up.
+Bernice: [Bernice looks over one of the remaining moving boxes still left on the pouch.] Oh! I almost forgot!
+Bernice: Scout, I have something for you.
+
+
+[whats_that]
+What’s that?
+
+
+id:whats_that
+Bernice: It’s this old cooking pot. As old as I am, if you can believe it.
+Bernice: It doesn’t seem like you moved in with much. Take it. It’s served me well, and I’m sure it’ll do the same for you.
+Bernice: In exchange, just make sure Walter, Annie, and Tyler are doing alright, alright?
+Bernice: I’ll call you to check in in a few days.
+Bernice: Anyways, I should get going. My daughter is waiting for me in the city. Don’t want to hold her up any longer.
+
+
+:[Bernice gets in the passenger seat of one of the mover trucks. She waves out the window.]
+
+
+Bernice: It's hard to leave after all these years, but I'm excited for you to experience all the valley has to offer. Take care of my friends, and take care of yourself, too!
+
+
+:[After a moment, the truck drives off, up the road, and towards the city.]
+:[Scout is alone on the porch of the cottage. They set the soup pot down on a table inside, then look at the map, deciding who they should check on first.]

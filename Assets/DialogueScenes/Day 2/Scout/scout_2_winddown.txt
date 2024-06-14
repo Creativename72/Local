@@ -1,0 +1,139 @@
+inscene: Bernice, Journal
+
+id:start
+:[After the sun sets over the valley, Scout once again finds themself in front of their journal, pen in hand. The room is quiet as they begin to reflect on the day’s events.]
+
+changeBackground()
+
+Journal:Walter shared more about his past. It seems like he...
+[walter]
+...regrets what happened that day with Tyler and Annie.
+[walter]
+...misses the sense of community that once was in the valley.
+[walter]
+...keeps himself busy with his job so he doesn’t have to think about the incident.
+
+id:walter
+Journal:Annie opened up today. She seems...
+[annie]
+...overwhelmed by her jobs and responsibilities.
+[annie]
+...nostalgic for the times she spent with Walter and Tyler.
+[annie]
+...struggling to find balance in her life.
+
+id:annie
+Journal:Tyler showed me his hobbies. It seems like he’s...
+[tyler]
+...trying to appear cool to others through his appearance and actions.
+[tyler]
+...putting on a cool guy facade which he has a hard time sticking with.
+[tyler]
+...not great at focusing on just one thing.
+
+id:tyler
+:[As Scout writes in their journal, their phone rings. It’s Bernice.]
+
+changeBackground()
+
+[hello]
+Hello?
+
+id:hello
+Bernice:Hey there, Scout! It’s just me, Bernice. Calling to see how you were holding up.
+[doing]
+I’m doing well, still settling in.
+[doing]
+It’s been great so far!
+[doing]
+Holding up just fine!
+
+id:doing
+Bernice:Glad to hear it.
+Bernice:So, how are the others doing? Walter? I know he’s a bit of a tough nut to crack.
+[how_walter]
+Walter’s a bit lonely. He misses the sense of community that used to be here.
+[how_walter]
+He’s still committed to his role as the protector.
+[how_walter]
+He seems stuck in the past. Still hasn’t moved on from what happened.
+
+id:how_walter
+Bernice:I see... And what about Annie? Is she still as busy as she was before?
+[how_annie]
+Yeah. She had to call off our hangout today, she was so tired.
+[how_annie]
+She really needs a break from her work.
+[how_annie]
+She still misses the times she spent with Walter and Tyler.
+
+id:how_annie
+Bernice:And how's Tyler? Has he opened up?
+[how_tyler]
+It’s hard to get through to him, to see what he’s really like.
+[how_tyler]
+He showed me his garden, which is a good first step.
+[how_tyler]
+It seems like he’s still trying to put on the cool guy act.
+
+id:how_tyler
+Bernice:Oh. It doesn’t sound like any of them are doing particularly well...
+Bernice:It seems like they all need to be brought together once again. The community in the valley needs to be reestablished.
+Bernice:You know, I’ve always believed that one way to bring people together is through a shared meal. Nothing like good food to fix broken bonds!
+Bernice:How about you plan a little get-together dinner for those 3? Something everyone can contribute to? You might even be able to use that old cooking pot I gave you.
+[recipe]
+Good idea!
+[dunno]
+I dunno... I don’t have a lot of ingredients to work with here...
+
+id:dunno
+Bernice:Oh, don’t worry about that. I’m sure the other residents can help you out on that front.
+goto:recipe
+
+id:recipe
+Bernice:Let’s figure out a recipe first. What ingredients do you have to work with now?
+[ingredients]
+I have milk and cream.
+[ingredients]
+I only have milk and cream.
+
+id:ingredients
+Bernice:Oh, Scout...
+Bernice:Let me just paw through my recipe book here…
+:[Bernice pauses for a moment as Scout can hear the sound of rustling pages on the line.]
+Bernice:How about a Fish Chowder? Use the cream as the base, and you’ll just need some fish, veggies and spices.
+[approved]
+Sounds good!
+
+id:approved
+:-->At this point, the ingredient list UI would appear at the side of the screen
+Bernice:Alright, write this down. You’ll need fish, any fish will do. For spices; salt, pepper, paprika, and onion powder. And for veggies; potatoes, carrots and onions.
+:-->the ingredient list UI is on screen for the rest of this hangout, but then only appears during the appropriate minigames 
+Bernice:Got all that? I’ll text you the recipe when it’s time.
+[thanks]
+Thanks, Bernice. I won’t let you down.
+
+id:thanks
+Bernice:I know you won’t. Good luck, Scout! I’ll check in with you again soon.
+:[With that, the call ends. Scout sets the phone down and the journal to the side. They climb in bed, ready for tomorrow's mission.]
+
+:-->fade to black
+:-->3 second pause
+pause([3])
+:-->scout interior
+changeBackground()
+
+:[As the sun shines through the bedroom window, Scout slowly awakens. Today was going to be a busy day of gathering ingredients and sending out invites.]
+:[Scout pulls out their map and decides on who they should go and invite first.]
+goto:end
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,129 @@
+﻿inScene: Scout, Annie
+
+
+id:start
+:[A quaint little cabin sits on the right side of the valley’s peaks, overlooking the city in the far distance.]
+:[A long walking trail leads up to it from the bus stop along the side of the road.]
+:[The path is lined with sturdy rope guardrails and small lights, providing support and guidance along the way. It’s well maintained and very smooth.]
+:[Atop the hill, a quaint, cozy cabin nestled amongst the pine trees. From here, Scout has a view of the whole valley, along with the city in the distance.]
+:[As Scout steps onto the porch, they can hear someone speaking inside.]
+
+
+[doorbell]
+[Ring the doorbell.]
+[finish]
+[Wait for the speaking to finish.]
+
+
+id:doorbell
+:[The speaking stops for a moment. Scout hears footsteps quickly approaching the door.]
+:[A mole wearing thick glasses and a wireless headset opens the door. Her expression is hard to read.]
+
+
+Mole: [She points at her headset and lets out a sigh. She speaks to whoever is on the other line.] Let me put you on hold for just a moment, ‘kay?
+Mole: [She turns to Scout.] Hey! Erm, I’m on a call at the moment, gimme a sec.
+
+
+:[She quickly closes the door. Scout can hear her one sided chatter as she makes her way back to her desk.]
+
+
+:[A few minutes later, she seems to wrap up her conversation. She opens the front door once again.]
+
+
+Mole: Sorry ‘bout that! Tough customer call. Anyways…
+goto:start_talking
+
+
+
+
+id:finish
+:[The conversation goes on for a few minutes before wrapping up. When the speaking stops, Scout rings the doorbell.]
+:[There’s a shuffling of feet as whoever is inside the cabin makes their way to the door.]
+:[A mole wearing thick glasses and a wireless headset opens the door. Her expression is hard to read.]
+goto:start_talking
+
+
+id:start_talking
+Mole: Who are you? You the new neighbor? [She adjusts her glasses.]
+
+
+[name]
+Yup, I just moved here. I’m Scout.
+
+
+id:name
+Mole: Scout, Scout… I’ll be sure to remember that!
+Annie: I’m Annie! Nice to meet ‘cha!
+Annie: I assume you moved into Bernice’s old place?
+Annie: She talked to me a few days ago about her moving out. Health issues or something had her moving back to the city, right?
+Annie: I didn’t think someone would move into her old cottage so quickly. 
+Annie: [She chuckles, jokingly saying,] You’re not replacing her, are you? 
+
+
+[nope]
+No, I hope not!
+[mf_bernice_bot]
+Yes. I am Bernice 2.0, new and improved.
+
+
+id:nope
+Annie: [Annie chuckles.] Nah, I’m just joking around.
+Annie: Plus, there’s no replacing that old woman. She might’ve left the valley, but she will always be in our hearts.
+goto:catchup
+
+
+id:mf_bernice_bot
+Annie: You wish! Unless you can rock a turtleneck like her, you ain’t replacing her anytime soon.
+goto:catchup
+
+
+id:catchup
+Annie: Aaanyways, I’m glad you caught me early into my shift today. I usually get pretty grouchy after a full day of calls.
+Annie: [She points to her headset.] I swear, some of these calls just drive me crazy. It's like every tech issue in the world decides to manifest itself all at once, and I'm left trying to play detective to solve them all.
+Annie: Ugh, enough about work. How are you liking the valley?
+
+
+[great_valley]
+It’s great! So peaceful and quiet.
+[pace]
+It’s a great change of pace.
+[3_hours]
+I dunno yet, only been here 3 hours!
+        
+id:great_valley
+Annie: Have you had a chance to go down to the lake? The air is nice and cool ‘round this time of year.
+Annie: Sure beats sittin’ in here all day talkin’ to the technologically challenged.
+goto:ringing
+
+
+id:pace
+Annie: I’ll say. I love the city and all that, but here, like, the air’s so fresh, and I can actually hear myself think.
+Annie: Like, back in the city, it was HONK HONK BEEP BEEP every second of the day, and here it’s like… nothing. You know?
+Annie: It’s kinda dumb, but I moved to the valley to get some peace and quiet, but with my work and everything, it’s like I just can’t get away, haha.
+:[Annie closes her eyes and takes a deep breath in, savoring the peaceful moment outside.]
+goto:ringing
+
+
+id:3_hours
+Annie: [She chuckles.] Dang, three whole hours? 
+Annie: Practically a valley expert here! I’ll have to have you show ME around sometime.
+Annie: [She speaks under her breath.] Love to get out of the house for once…
+goto:ringing
+
+
+
+
+id:ringing
+:[A faint ringing sound can be heard coming from Annie’s headset. Her face drops just a little.]
+
+
+Annie: Welp, speak of the devil! Just when I was enjoying this quiet moment...
+Annie: Hey, tomorrow’s the weekend! If you wanna come back here, I’ll take you down to the lakefront. 
+Annie: It’d be nice to hang with someone outside of work. God knows how long it’s been since I’ve had the chance to do that.
+Annie: Anyways, I really gotta take this call I’ll see you tomorrow cool thanks okay bye!!
+
+
+:[Still speaking to Scout, Annie turns back inside. She clicks the button on the side of her headset and begins speaking to whoever is on the other line, before closing the door to the cabin.]
+
+
+goto:end

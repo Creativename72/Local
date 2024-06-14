@@ -1,0 +1,117 @@
+inScene: Scout
+
+id:start
+:[After the sun has set, Scout finds themself sitting at their desk in their new cottage. The sound of crickets chirping outside and the gentle rustle of leaves in the breeze can be heard from the open window.]
+:[Scout pulls out their journal from their backpack, and, with a pen in hand, begins writing a new entry.]
+
+changeBackground()
+
+Journal: Today, I finally took that big step and moved out on my own. I feel…
+
+
+[choice_1]
+...excited about this new chapter of my life.
+[choice_1]
+...a bit nervous about all the changes.
+[choice_1]
+...hopeful about what’s to come.
+
+
+id:choice_1
+Journal: I met Walter, the fire lookout. He seems like…
+
+
+[choice_2]
+...a very serious guy.
+[choice_2]
+...someone who’s a bit reserved.
+[choice_2]
+...a hard worker.
+
+
+id:choice_2
+Journal: He talked a bit about the other residents of the valley. He seems to…
+
+
+[choice_3]
+...be protective of them.
+[choice_3]
+...value his solitude away from them.
+[choice_3]
+...have some mixed feelings about them.
+
+
+id:choice_3
+Journal: Annie invited me to hang out tomorrow. She seems like…
+
+
+[choice_4]
+...a friendly and welcoming person.
+[choice_4]
+...someone who’s pretty busy.
+[choice_4]
+...she’s overwhelmed with her job.
+
+
+id:choice_4
+Journal: It feels like Annie…
+
+
+[choice_5]
+...could use a new friend.
+[choice_5]
+...could use a break from work.
+[choice_5]
+...misses socializing outside of her job.
+
+
+id:choice_5
+Journal: I also ran into Tyler. He seems like…
+
+
+[choice_6]
+...a free spirit who values his independence.
+[choice_6]
+...someone who lives for a bit of chaos.
+[choice_6]
+...a person who might not fit in well with others.
+
+
+id:choice_6
+Journal: We talked a little about the other residents. He seems to…
+
+
+[choice_7]
+...have some mixed feelings about them
+[choice_7]
+...have had a falling out with them in the past.
+[choice_7]
+...prefer to keep to himself.
+
+
+id:choice_7
+Journal: I hope that…
+
+
+[choice_8]
+...I can make some new friends in the valley.
+[choice_8]
+...I can explore more of what this valley has to offer.
+[choice_8]
+...I can find my place in a close-knit community.
+
+
+id:choice_8
+:[Scout finishes their journal, setting it back in their backpack. They climb into their bed, ready to take on whatever challenges tomorrow might bring.]
+
+
+pause(3)
+changeBackground()
+
+
+:[The sun rises once more over Bellespring Valley, casting a golden glow on the cottage. A new day begins, full of possibilities and new connections to be made.]
+changeBackground()
+:[Scout stretches, makes breakfast, and steps out of the cottage, map in hand, ready to start the day with their new friends.]
+
+
+goto:end

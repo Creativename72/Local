@@ -26,7 +26,7 @@ public class DialogueSegment
                     lines.Add(new DialogueLine(""));
                 }
                 DialogueLine current = (DialogueLine)lines[lines.Count - 1];
-                string id = text[i].Substring(text[i].IndexOf("[") + 1, text[i].IndexOf("]") - 1);
+                string id = text[i].Substring(text[i].IndexOf("[") + 1, text[i].IndexOf("]") - text[i].IndexOf("[") - 1);
                 //Debug.Log(id);
                 current.addOption(id, text[i + 1]);
                 i++; //makes sure the dialogue option isn't treated as an id if italicized

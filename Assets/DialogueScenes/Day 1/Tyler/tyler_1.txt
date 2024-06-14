@@ -1,0 +1,181 @@
+﻿inScene: Scout, Tyler
+
+
+id:start
+:[A dirt path leads up to the trailer, branching off from the main road and winding through the trees.]
+:[A beat-up looking trailer sits nestled among the foliage. The trailer bears the marks of its travels, with faded paint and a slightly crooked door. Junk is scattered all around the site.]
+
+
+[knock]
+Knock on the door.
+
+
+id:knock
+:[Something stirs from within the trailer. The sound of something being knocked over. A curse word.]
+:[Whoever’s on the other side quickly scrambles to the door, opening it just a crack. It’s hard to make out who’s inside.]
+
+
+???: …who’re you supposed ‘ta be?
+
+
+[im_scout]
+I’m Scout.
+
+
+id:im_scout
+???: [He grumbles.] What, like a junior scout or somethin’? You try’na sell me cookies?
+
+
+[my_name]
+No… Scout is my name. I just moved into the valley.
+[cookies]
+Yep! Got twin mint and shortstacks, take your pick.
+
+
+id:cookies
+:[The pair of eyes looks at Scout, and at the space behind them.]
+
+
+???: I don’t see no cookie wagon behind you…
+???: You try’na pull a fast one on me?
+
+
+[kidding]
+Kidding. I just moved into the valley.
+
+
+id:kidding
+???: [The voice chuckles.] Yeah, sounds ‘bout right.
+goto:my_name
+
+
+id:my_name
+:[There’s a brief silence as the eyes look Scout up and down.]
+:[Suddenly, the door closes, as the person fiddles with the chain lock. Soon after, it swings fully open.]
+:[On the other side stands a badger, still in his pajamas. He rubs his eyes and does a great big stretch.]
+
+
+Badger: Well, Scout you picked a heckuva time to show up uninvited. [He yawns.] What do you want?
+
+
+[just_moved_in]
+Just trying to make some friends around the valley.
+
+
+id:just_moved_in
+Badger: Yippee.
+Badger:...
+Tyler: I’m Tyler. Just so ya know.
+
+
+[nice_to_meet]
+Nice to meet you, Tyler.
+
+
+id:nice_to_meet
+Tyler: Yeah, you too.
+
+
+[you_live_like_this]
+You live in a trailer?
+[stuff]
+Sure is a lotta stuff everywhere here.
+
+
+id:you_live_like_this
+Tyler: [Tyler cracks a smile.] You bet I do. It's my ticket to freedom, my mobile fortress.
+Tyler: I mean, it don’t drive no more, but it’s my home sweet home.
+goto:show_round
+
+
+id:stuff
+Tyler: Yeah, and it’s MY stuff, so no scrounging.
+Tyler: [He chuckles.] I’m keepin’ my eye on you.
+goto:show_round
+
+
+id:show_round
+Tyler: Hey, why don’t I show ya ‘round?
+
+
+:[Tyler climbs down the front steps of the trailer, gesturing for Scout to follow him.]
+
+
+Tyler: [He puts his hands on his hips, proudly.] Well, this here’s the front yard. Prime real estate for, uh, anythin’ I’m workin’ on.
+Tyler: Most people got a livin’ room, I got this beautiful piece o’ land here.
+Tyler: …It’s a work in progress.
+
+
+:[He walks up to a dented water reservoir, patting the side.]
+
+
+Tyler: Here’s where I keep my water. For showers ‘n stuff. 
+Tyler: Haven’t really been able ‘ta get the pump workin’. And it's always leakin’... 
+
+
+:[Tyler walks over to the beat up red truck parked a little ways away.]
+
+
+Tyler: Here’s my truck.
+Tyler: I drive her to the city when I need. Yeah.
+Tyler: Any questions?
+
+
+[missing_hood]
+Is the hood supposed to be missing?
+[what_do_you_do]
+What do you do for a living?
+[clean_up]
+Ever thought about cleaning up?
+
+
+id:missing_hood
+Tyler: Yeah, well, I needed the scrap metal to patch up the water reservoir. 
+Tyler: Plus, it adds character, don’t ya think?
+goto:rawr
+
+
+id:what_do_you_do
+Tyler: I meant questions ‘bout my space, man.
+Tyler: But, I’m more of a free spirit, ya know? Moved here to get away from the confines of society.
+Tyler: I’m just out here doing my own thing. ‘S not that complicated. 
+goto:rawr
+
+
+id:clean_up
+Tyler: [He raises an eyebrow.] What‘chu try’na say ‘bout my home, huh?
+Tyler: I know this ain’t exactly a five-star hotel, but it’s how I like it.
+goto:rawr
+
+
+id:rawr
+Tyler: Yeeeep, it’s mostly just me out here. I’m a bit of a lone wolf. Rawr.
+
+
+[others]
+What about the others who live in the valley?
+
+
+id:others
+Tyler: Guh, what.
+Tyler: I mean, yeah, I know ‘em. 
+Tyler: Annie’s like, a bit north of me, up the hill, I dunno…
+Tyler: She’s been busy or somethin’...
+Tyler: And Walter’s in his fancy tower at the other side of the valley.
+Tyler: And hes… ack…
+Tyler: Well, I don’t hang out with those two anymore. And that’s all I have ‘ta say ‘bout that right now.
+
+
+:[Tyler checks his wrist, which doesn’t have a watch on it.]
+
+
+Tyler: Phew, wow, it’s like, what, 2 o’ clock already? I gotta go get me some breakfast.
+Tyler: But hey, this was cool. You should swing by again sometime. Maybe, definitely tomorrow.
+Tyler: I’ll be wearin’ somethin’ more… presentable, alrighty? Cool.
+
+
+:[Tyler hops back up the stairs of his trailer, giving Scout a wink before slamming the door to his trailer.]
+:[After that encounter, Scout walks back along the dirt path onto the main road once again.]
+
+
+goto:end
