@@ -173,6 +173,7 @@ Walter:Just hold the rod like this...
 Walter:...and cast.
 >wait_cast
 Walter:And now, we wait.
+>pause_3
 Walter:Back in the city, I put myself out there a lot. I’d go to community events, try to be more social.
 >pause_3
 Walter:It wasn’t easy, especially with my nature, but I learned that not every cast will get a bite. You can’t always make a new friend or form a connection every time you try.

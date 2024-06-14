@@ -124,8 +124,8 @@ public class WalterDay2Manager : MonoBehaviour
             {
                 bobber.SetActive(false);
                 fish.SetActive(true);
-                dialogueController.ResumeDialogue();
                 state = State.PostFishing;
+                StartCoroutine(Wait(2, () => dialogueController.ResumeDialogue()));
             }
         });
         dialogueController.runDialogue();
@@ -144,6 +144,7 @@ public class WalterDay2Manager : MonoBehaviour
             bobber.SetActive(true);
             // and now we wait
             StartCoroutine(Wait(1f, () => dialogueController.ResumeDialogue()));
+            state = State.FishingStart;
         }
         if (state == State.PostFishing && !dialogueController.dialogueRunning)
         {
