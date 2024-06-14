@@ -1,9 +1,6 @@
 inscene: Tyler
 
-<<<<<<< HEAD
 id:start
-=======
->>>>>>> 75911a3b6c50b6b70ec8a94ce401706c747844fc
 :[The sky is overcast, with a light drizzle of rain falling over the valley.]
 :[Scout moves along the muddy trail leading up to Tyler’s trailer encampment.]
 :[As Scout approaches, Tyler is leaning against the side of his trailer in the rain. His outfit is much bolder than the PJs he wore yesterday.]
@@ -31,20 +28,12 @@ You should sleep in that outfit so you won’t be caught in PJs anymore.
 [rain]
 How long have you been standing in the rain like that?
 
-<<<<<<< HEAD
 id:sleep
-=======
-[sleep]
->>>>>>> 75911a3b6c50b6b70ec8a94ce401706c747844fc
 Tyler:Oh, so when Scouts drop by by surprise just when I roll outta bed, I at least don’t look like I’m late to a slumber party?
 Tyler:[He chuckles.] Good idea.
 goto:play
 
-<<<<<<< HEAD
 id:rain
-=======
-[rain]
->>>>>>> 75911a3b6c50b6b70ec8a94ce401706c747844fc
 Tyler:Ah, I dunno. [He checks his wrist, which doesn’t have a watch on it.]
 Tyler:Like, at least ‘n hour or two. We didn’t decide on a meetin’ time yesterday...
 Tyler:[He shrugs.] It’s whatever. I like the rain. Now I look all mysterious ‘n brooding. Grr.
