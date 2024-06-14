@@ -5,13 +5,19 @@ using UnityEngine;
 
 public class WalterDay2Manager : MonoBehaviour
 {
-    [SerializeField] private TextAsset walterDay2TextIntro;
-    [SerializeField] private TextAsset walterDay2TextFishing;
-    [SerializeField] private TextAsset caughtText;
+    [SerializeField] private TextAsset text;
 
     [SerializeField] private DialogueController dialogueController;
+    [SerializeField] private GameObject trail;
+    [SerializeField] private GameObject towerRain;
+    [SerializeField] private GameObject blank;
+    [SerializeField] private GameObject towerClear;
+    [SerializeField] private GameObject interior;
     [SerializeField] private GameObject fishingGame;
-    [SerializeField] private SpriteRenderer fishingSprite;
+    [SerializeField] private GameObject bobber;
+    [SerializeField] private GameObject fish;
+
+    private int itemsTalkedAbout;
 
     private enum State
     {
@@ -20,84 +26,129 @@ public class WalterDay2Manager : MonoBehaviour
         FishingDialogue,
         WaitingForBobber,
         CatchFish,
-        FishingStop,
+        PostFishing,
     }
 
     private State state;
 
     private void Start()
     {
+        itemsTalkedAbout = 0;
+        trail.SetActive(true);
+        towerRain.SetActive(false);
+        blank.SetActive(false);
+        towerClear.SetActive(false);
+        interior.SetActive(false);
+        bobber.SetActive(false);
+        fish.SetActive(false);
+
         state = State.IntroDialogue;
         fishingGame.SetActive(false);
-        dialogueController.t = walterDay2TextIntro;
-        dialogueController.runDialogue();
-    }
-    private void Update()
-    {
-        if (state == State.IntroDialogue && !dialogueController.dialogueRunning)
+        dialogueController.t = text;
+
+        dialogueController.AddFunction("walk_tower", () =>
         {
-            WaitForCast();
-        }
-        else if (state == State.FishingDialogue && !dialogueController.dialogueRunning)
+            dialogueController.PauseDialogue();
+            StartCoroutine(Wait(3, () => dialogueController.ResumeDialogue()));
+            trail.SetActive(false);
+            towerRain.SetActive(true);
+        });
+        dialogueController.AddFunction("climb_a_bit", () =>
         {
-            state = State.WaitingForBobber;
+            dialogueController.PauseDialogue();
+            towerRain.SetActive(false);
+            blank.SetActive(true);
             StartCoroutine(Wait(3, () =>
             {
-                SubmergeBobber();
+                towerClear.SetActive(true);
+                blank.SetActive(false);
+                dialogueController.ResumeDialogue();
             }));
-        }
-        else if (state == State.FishingStop && !dialogueController.dialogueRunning)
+        });
+        dialogueController.AddFunction("interior", () =>
+        {
+            dialogueController.PauseDialogue();
+            StartCoroutine(Wait(3, () => dialogueController.ResumeDialogue()));
+            towerClear.SetActive(false);
+            interior.SetActive(true);
+        });
+        dialogueController.AddFunction("charcoal", () =>
+        {
+            Debug.Log("Charcoal Selected!");
+        });
+        dialogueController.AddFunction("keyboard", () =>
+        {
+            Debug.Log("Keyboard Selected!");
+        });
+        dialogueController.AddFunction("kitchen", () =>
+        {
+            Debug.Log("Kitchen Selected!");
+        });
+        dialogueController.AddFunction("rods", () =>
+        {
+            Debug.Log("Rods Selected!");
+        });
+        dialogueController.AddFunction("no_fishing", () =>
         {
             Application.Quit();
             // END GAME CHANGE SCENE TO MAP
-        }
-    }
-
-    private void WaitForCast()
-    {
-        state = State.FishingStart;
-        fishingGame.SetActive(true);
-    }
-
-    private void StartFishingDialogue()
-    {
-        state = State.FishingDialogue;
-        fishingSprite.color = Color.red;
-        dialogueController.t = walterDay2TextFishing;
+        });
+        dialogueController.AddFunction("going_fishing", () =>
+        {
+            interior.SetActive(false);
+            fishingGame.SetActive(true);
+            dialogueController.PauseDialogue();
+            StartCoroutine(Wait(3, () => dialogueController.ResumeDialogue()));
+            state = State.FishingStart;
+        });
+        dialogueController.AddFunction("wait_cast", () =>
+        {
+            dialogueController.PauseDialogue();
+            StartCoroutine(Wait(0.5f, () => state = State.WaitingForBobber));
+        });
+        dialogueController.AddFunction("pause_3", () =>
+        {
+            dialogueController.PauseDialogue();
+            StartCoroutine(Wait(3, () => dialogueController.ResumeDialogue()));
+            Debug.Log("Pausing for 3");
+        });
+        dialogueController.AddFunction("bite", () =>
+        {
+            state = State.CatchFish;
+            bobber.transform.position = new Vector3(0, -5);
+            dialogueController.PauseDialogue();
+        });
+        bobber.GetComponent<HighlightableObject>().OnClick(() =>
+        {
+            if (state == State.CatchFish)
+            {
+                bobber.SetActive(false);
+                fish.SetActive(true);
+                dialogueController.ResumeDialogue();
+                state = State.PostFishing;
+            }
+        });
         dialogueController.runDialogue();
     }
-    private void SubmergeBobber()
-    {
-        state = State.CatchFish;
-        fishingSprite.transform.position = new Vector3(0, -2);
-        this.GetComponent<CapsuleCollider2D>().offset = new Vector2(0, -2);
-    }
 
-    private void StopFishing()
-    {
-        state = State.FishingStop;
-        fishingSprite.transform.position = new Vector3(0, 2);
-        dialogueController.t = caughtText;
-        dialogueController.runDialogue();
-    }
-
-    // waits for seconds and then invokes action
     private IEnumerator Wait(float seconds, Action action)
     {
         yield return new WaitForSeconds(seconds);
         action.Invoke();
     }
-
-    private void OnMouseDown()
+    private void Update()
     {
-        if (state == State.FishingStart)
+        // bobber casted!
+        if (state == State.WaitingForBobber && Input.GetButtonDown("Fire1"))
         {
-            // continue dialogue
-            StartFishingDialogue();
+            bobber.SetActive(true);
+            // and now we wait
+            StartCoroutine(Wait(1f, () => dialogueController.ResumeDialogue()));
         }
-        else if (state == State.CatchFish)
+        if (state == State.PostFishing && !dialogueController.dialogueRunning)
         {
-            StopFishing();
+            Application.Quit();
+            // END GAME CHANGE SCENE TO MAP
         }
     }
 }

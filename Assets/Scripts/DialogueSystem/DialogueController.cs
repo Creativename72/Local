@@ -225,17 +225,33 @@ public class DialogueController : MonoBehaviour
         functions[key] = action;
     }
 
+    private IEnumerator Wait(float time, Action after)
+    {
+        yield return new WaitForSeconds(time);
+        after.Invoke();
+    }
     public void PauseDialogue()
     {
         dialogueEnabled = false;
         this.gameObject.SetActive(false);
     }
 
+    int c = 0;
     public void ResumeDialogue()
     {
+        Debug.Log("RESUMING DIALOGUE" + c++);
         dialogueEnabled = true;
         this.gameObject.SetActive(true);
-
         simulateMouseClick();
+    }
+
+    public void RemoveOption(int index)
+    {
+        
+    }
+
+    public void GotoId(string id)
+    {
+
     }
 }
