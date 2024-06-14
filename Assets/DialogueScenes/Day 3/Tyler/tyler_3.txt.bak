@@ -1,0 +1,218 @@
+inscene: Tyler
+
+id:start
+:[Scout approaches the trailer, the sun casting shadows across the yard. The air is warm and filled with the scent of pine. 
+:[As they round the corner, they spot Tyler lying on his back in the grass, watching the clouds drift by, juice box in hand.]
+[hey_tyler]
+Hey, Tyler!
+
+id:hey_tyler
+Tyler: [Tyler flops over onto his side to glance at Scout.] Oh, hey Scout. 
+[what_doing]
+What are you doing?
+
+id:what_doing
+Tyler: Just relaxin’. I was gonna harvest the veggies ‘n stuff from my garden. But here I am, procrastinating on my hobby. 
+Tyler: Can you blame me, though? It’s a nice day out. Just out here, countin’ clouds…
+[mind_join]
+Mind if I join you?
+[cant_lie_all]
+C’mon, get up, Tyler. Can’t lie here all day.
+
+id:mind_join
+Tyler: [Tyler flops back down onto his back.] Knock yourself out, man. Plenty o’ grass to go around.
+:[Scout lies down next to Tyler, eyes to the sky.]
+:[Clouds hang high, flowing gently in the light breeze that blows through the valley. It’s a perfect day for cloud watching.]
+[looks_unspecific]
+That one looks like a bird!
+[looks_unspecific]
+That one looks like a tree!
+[looks_friends]
+That one looks like three friends who drifted apart over time coming together once again for a dinner get-together!
+
+
+id:looks_unspecific
+Tyler: Aha? Which one?
+Tyler: Well, let’s just relax here for a bit.
+:[Tyler and Scout lie in the grass in silence for a few moments.]
+Tyler: [Tyler sits up suddenly.] Alright, I’m all chilled out ‘n loose. Now, what did ya come here for, hmm?
+goto:come_for
+
+id:looks_friends
+:[Tyler suddenly sits up and looks at Scout, a confused expression on his face.]
+Tyler: Wait, what?
+goto:come_for
+
+id:cant_lie_all
+Tyler: Buh, alright. Help me up.
+:[Scout grabs Tyler’s hands and pulls him up off the ground.]
+Tyler: So, did ya have a reason for findin’ me here, today? Or did ya just wanna hang with your favorite badger?
+goto:come_for
+
+id:come_for
+[hosting]
+I’m hosting a get-together dinner with everyone in the valley.
+
+id:hosting
+[invite]
+Wanted to invite you. Walter and Annie, too.
+
+id:invite
+:[Tyler goes quiet, processing the information. He looks away, a mixture of emotions crossing his face.]
+Tyler: Uh, Scout... I dunno...
+Tyler: I’m sure you know what happened. Do you think they’d wanna see me there?
+[not_about]
+Tyler, it isn’t really about you. It’s about everyone...
+[spoken_to_them]
+Yes, Tyler. I’ve spoken to them. They both care about you...
+[cant_be_thinking]
+I know things have been rough, but you can’t keep thinking like this...
+
+id:not_about
+[move_past]
+You all need to move past this. Together.
+
+id:move_past
+:[Tyler sighs deeply, his gaze shifting to the ground.]
+Tyler: I know, Scout. It’s just... hard to face them after everythin’ that happened.
+Tyler: I feel like I hurt both of them. What if they don’t really want me there?
+:[Tyler looks away, hands on his hips.]
+Tyler: Just... I’ll think about it, okay? No promises.
+goto:help_out_dinner
+
+id:spoken_to_them
+[miss_you]
+They miss you, too. I can feel it.
+
+id:miss_you
+:[Tyler looks away, a mix of emotions crossing his face. He hesitates, fidgeting with his hands.]
+Tyler: I dunno, Scout, I dunno. 
+Tyler: It’s been a while. And a lot has happened. I’m not sure they really want to see me.
+Tyler: I, uh... I appreciate what you’re tryin’ to do, Scout. But I think I just need some time to think about it.
+goto:help_out_dinner
+
+id:cant_be_thinking
+[patch_up]
+It’s time to move on. To finally patch things up.
+
+id:patch_up
+:[Tyler sighs, looking away as he processes Scout's words.] 
+Tyler: Yeah, you’re right. It’s just...
+Tyler: Feels like climbin’ a mountain, facin’ ‘em after everything that’s happened.
+Tyler: And I dunno if I’m ready for that yet.
+Tyler: I’ll... I’ll think about it, Scout.
+goto:help_out_dinner
+
+id:help_out_dinner
+Tyler: But, I mean, if there’s anythin’ I can do to help out with the dinner...
+[making_fish_chowder]
+We’re making fish chowder with veggies.
+
+id:making_fish_chowder
+[get_some_fresh_veggies]
+If I could just get some fresh veggies from your garden…
+
+id:get_some_fresh_veggies
+Tyler: [Tyler nods thoughtfully.] Hmm, yeah, I could do that. I think I got some good stuff you can use.
+Tyler: C’mon, I’ll show ya.
+>begin_game
+:[Tyler leads Scout back to the garden behind his trailer. He’s almost smiling, clearly very proud.]
+Tyler: Here we are, my pride and joy. 
+Tyler: Alright, what do ya need for that soup?
+[needed_for_soup]
+Carrots, onions, and potatoes.
+
+id:needed_for_soup
+Tyler: Uhh, yeah, I think I got those.
+Tyler: Potatoes on the left plot with the beans and corn, carrots and onions with the lettuce.
+>begin_harvest
+Tyler: Nice workin’ Scout. This harvests’ lookin’ pretty good.
+[a_lot_work]
+You must put a lot of work into this place, huh.
+[why_together]
+How come plants are planted together instead of separate?
+
+id:a_lot_work
+Tyler: [Tyler smiles.] Yep, I sure do. Like I said, I try hard sometimes.
+Tyler: Back in the city, I learned of a technique, was called the Three Sisters method or somethin’.
+goto:three_sisters
+
+id:why_together
+Tyler: I’ll tell ya. And it ain’t cuz I’m sloppy.
+Tyler: It’sa technique I learned back in the city. Was called the Three Sisters method or somethin’.
+goto:three_sisters
+
+id:three_sisters
+Tyler: Like, each plant benefits each other. Look...
+>focus_left_plot
+Tyler: The beans here? They got nitrogen-fixin’ properties. Makes the soil nice ‘n rich for the corn and potatoes.
+Tyler: And the corn, they grow nice ‘n tall, helpin’ the beans climb. Plus, they’re providin’ shade for the potatoes.
+Tyler: I suppose the potatoes are sittin’ pretty. They get rich soil ‘n plenty of shade, keepin’ ‘em cool. In return, they loosen the soil, lettin’ the other plants spread their roots deeper.
+>focus_right_plot
+Tyler: Same here. Carrots repel pests that bother onions, onions deter aphids and flies, and the lettuce keeps the ground moist and weed-free. It’s like a big friendly garden community.
+[really_cool]
+That’s really cool, Tyler!
+[plant_nerd]
+You’re a bit of a plant nerd, aren’t you.
+[reminds_of]
+Kinda reminds me of you, Walter and Annie.
+
+id:really_cool
+>unfocus_plot
+Tyler: Hey, thanks, Scout. It’s interestin’ stuff, I think.
+Tyler: And its totally paying off, too. Harvests are up, and healthier than ever.
+goto:lets_look
+
+id:plant_nerd
+Tyler: [Tyler chuckles.] Hush. You listened to my ramblings.
+goto:lets_look
+
+Tyler: [Tyler chuckles, shaking his head.] You’re not gonna let this go, huh.
+Tyler: I said I’ll think about it, just gimme some time.
+goto:lets_look
+
+id:lets_look
+Tyler: Come on, let’s take a look at the harvest. I’ll pick some pieces out for you to take.
+:--> EXIT MINIGAME, BACK TO NORMAL BACKGROUND
+:[Tyler picks up the carrots and potatoes, inspecting them closely. He chooses a few for Scout with the least number of blemishes.]
+Tyler: These ones are good... these onions, too.
+Tyler: Yeah, take those. Should be good to go, now.
+[thanks_tyler]
+Thanks, Tyler!
+[produce_vendor]
+You could be a produce vendor, Tyler.
+
+id:thanks_tyler
+Tyler: [Tyler shrugs in a cool way.] No biggie.
+goto:tyler_says_thanks
+
+id:produce_vendor
+Tyler: [Tyler chuckles.] What, like, stand at the side of the road, sellin’ veggies to passerbys? Or drive into the city ‘n set up shop at the farmers market?
+Tyler: Nah.
+Tyler: Well... maybe.
+goto:tyler_says_thanks
+
+id:tyler_says_thanks
+Tyler: Hey, thanks for helpin’ me out with stuff. Again. You’re a good friend.
+Tyler: And about the dinner. I’m… still thinkin’ about it. Don’t count on anything, but...
+Tyler: Yeah, I would like to see Walter and Annie again.
+Tyler: We’ll see.
+Tyler: Well, I’m sure you got other stuff to prep before tonight, won’t keep ya here...
+[thanks_again]
+Thanks again, Tyler.
+[hope_to_see]
+Hope to see you there.
+
+id:thanks_again
+:[Tyler smirks, before heading back up to his trailer, walking up the steps.]
+Tyler: See you later, Scout.
+goto:last_line
+
+id:hope_to_see
+:[Tyler smirks, before heading back up to his trailer, walking up the steps.]
+Tyler: We’ll see, Scout.
+goto:last_line
+
+id:last_line
+:[Scout, with vegetables in hand, walks along the road, back to the center of the valley, Tyler’s trailer behind them.]
+goto:end

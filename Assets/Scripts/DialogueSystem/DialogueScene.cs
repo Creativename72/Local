@@ -28,7 +28,7 @@ public class DialogueScene
 
     public string[] nextLine()
     {
-        
+
         if (optionsFlag)
         {
             canChoose = true;
@@ -38,11 +38,13 @@ public class DialogueScene
         DialogueLine nLine = segmentsDictionary[currentSegment.Trim()].nextLine();
         if (nLine == null)
         {
-            return new [] {"e",""};
-        } else if (nLine.text.ToLower().Trim() == "pause()")
+            return new[] { "e", "" };
+        }
+        else if (nLine.text.ToLower().Trim() == "pause()")
         {
             return new[] { "p", "" };
-        } else if (nLine.hasOptions)
+        }
+        else if (nLine.hasOptions)
         {
             optionsFlag = true;
             currentLine = nLine;
@@ -50,14 +52,19 @@ public class DialogueScene
             {
                 canChoose = true;
                 currentLine.readOptions(parent);
-                return new[] {"o", "" };
+                return new[] { "o", "" };
             }
-        } else if (nLine.text.Split(":")[1].Trim().ToLower() == "end")
+        } else if (nLine.function)
         {
-            return new[] {"e", "" };
-        } else if (nLine.text.Split(":")[0].Trim().ToLower() == "goto")
+            return new[] { "f", nLine.text[1..].Trim() }; 
+        }
+        else if (nLine.text.Split(":")[1].Trim().ToLower() == "end")
         {
-            return new[] {"g", nLine.text };
+            return new[] { "e", "" };
+        }
+        else if (nLine.text.Split(":")[0].Trim().ToLower() == "goto")
+        {
+            return new[] { "g", nLine.text };
         }
         else if (nLine.sceneChanger)
         {
@@ -96,7 +103,7 @@ public class DialogueScene
 
     private void debug_CheckDictionary()
     {
-        foreach(KeyValuePair<string, DialogueSegment> line in segmentsDictionary)
+        foreach (KeyValuePair<string, DialogueSegment> line in segmentsDictionary)
         {
             Debug.Log("Key: " + line.Key + "\tValue: " + line.Value);
         }

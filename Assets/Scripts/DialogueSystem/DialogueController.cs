@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class DialogueController : MonoBehaviour
@@ -19,6 +21,8 @@ public class DialogueController : MonoBehaviour
     public BackgroundHandler bgs;
 
     private string[] dialogueText;
+    private Dictionary<string, Action> functions = new();
+    private bool dialogueEnabled;
 
 
     void Start()
@@ -53,6 +57,7 @@ public class DialogueController : MonoBehaviour
         dialogueRunning = true;
         b.enabled = true;
         dialogueText = t.ToString().Split("\n");
+        dialogueEnabled = true;
         //instantiates characters in scene
         string charactersInSceneRaw = dialogueText[0].Split(":")[1];
         string[] charactersList = charactersInSceneRaw.Split(",");
@@ -91,10 +96,12 @@ public class DialogueController : MonoBehaviour
             if (currentChar == "[")
             {
                 ret += "<i>";
-            } else if (currentChar == "]")
+            }
+            else if (currentChar == "]")
             {
                 ret += "</i>";
-            } else
+            }
+            else
             {
                 ret += currentChar;
             }
@@ -131,6 +138,9 @@ public class DialogueController : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (!dialogueEnabled)
+            return;
+
         string[] nextLineList = currentScene.nextLine();
         string nextLine = nextLineList[1];
         string type = nextLineList[0];
@@ -142,7 +152,7 @@ public class DialogueController : MonoBehaviour
         else if (type == "l")
         {
             sayLine(nextLine);
-        } 
+        }
         else if (type == "lc")
         {
             sayLine(nextLine);
@@ -155,6 +165,20 @@ public class DialogueController : MonoBehaviour
         else if (type == "g")
         {
             currentScene.gotoSegment(nextLine.Split(":")[1].Trim());
+        }
+        else if (type == "f")
+        {
+            string key = nextLine;
+          
+            if (functions.ContainsKey(key))
+            {
+                functions[nextLine].Invoke();
+                simulateMouseClick();
+            }
+            else
+            {
+                throw new UnityException("Function \"" + key + "\" does not exist!");
+            }
         }
         else
         {
@@ -196,4 +220,22 @@ public class DialogueController : MonoBehaviour
         b.enabled = false;
     }
 
+    public void AddFunction(string key, Action action)
+    {
+        functions[key] = action;
+    }
+
+    public void PauseDialogue()
+    {
+        dialogueEnabled = false;
+        this.gameObject.SetActive(false);
+    }
+
+    public void ResumeDialogue()
+    {
+        dialogueEnabled = true;
+        this.gameObject.SetActive(true);
+
+        simulateMouseClick();
+    }
 }

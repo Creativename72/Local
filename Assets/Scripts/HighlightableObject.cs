@@ -8,6 +8,8 @@ public class HighlightableObject : MonoBehaviour
     [SerializeField] private Color defaultColor = Color.gray;
     [SerializeField] private Color highlightColor = Color.white;
     private Action onClick;
+    private bool enableHighlight;
+    private bool enableClick;
 
     public void OnClick(Action a)
     {
@@ -16,7 +18,8 @@ public class HighlightableObject : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        sprite.color = highlightColor;
+        if (enableHighlight)
+            sprite.color = highlightColor;
     }
 
     private void OnMouseExit()
@@ -27,11 +30,26 @@ public class HighlightableObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sprite.color = defaultColor;   
+        sprite.color = defaultColor;
+        enableHighlight = true;
+        enableClick = true;
     }
 
     private void OnMouseDown()
     {
-        onClick.Invoke();
+        if (enableClick)
+            onClick.Invoke();
+    }
+
+    public void EnableHighlight(bool enableHighlight)
+    {
+        this.enableHighlight = enableHighlight;
+        if (!enableHighlight)
+            sprite.color = defaultColor;
+    }
+
+    public void EnableClick(bool enableClick)
+    {
+        this.enableClick = enableClick;
     }
 }

@@ -18,7 +18,8 @@ public class DialogueSegment
             {
                 DialogueLine newLine = new DialogueLine(text[i]);
                 lines.Add(newLine);
-            } else if (text[i].Contains("["))
+            }
+            else if (text[i].Contains("["))
             {
                 if (lines.Count == 0)
                 {
@@ -29,9 +30,18 @@ public class DialogueSegment
                 //Debug.Log(id);
                 current.addOption(id, text[i + 1]);
                 i++; //makes sure the dialogue option isn't treated as an id if italicized
-            } else if (text[i].ToLower().Contains("changebackground()"))
+            }
+            else if (text[i].ToLower().Contains("changebackground()"))
             {
-                ((DialogueLine) lines[lines.Count - 1]).sceneChanger = true;
+                ((DialogueLine)lines[lines.Count - 1]).sceneChanger = true;
+            }
+            else if (text[i].Contains(">"))
+            {
+                DialogueLine functionLine = new(text[i])
+                {
+                    function = true
+                };
+                lines.Add(functionLine);
             }
         }
     }
@@ -43,7 +53,7 @@ public class DialogueSegment
             currentLine = 0;
             return null;
         }
-        DialogueLine d = (DialogueLine) lines[currentLine];
+        DialogueLine d = (DialogueLine)lines[currentLine];
         if (!d.hasOptions)
         {
             currentLine++;
@@ -59,6 +69,7 @@ public class DialogueLine
     public ArrayList options;
     public bool hasOptions = false;
     public bool sceneChanger = false;
+    public bool function = false;
     public DialogueLine(string textraw)
     {
         text = textraw;
@@ -77,7 +88,7 @@ public class DialogueLine
         p.enableOptions(options.Count);
         for (int i = 0; i < options.Count; i++)
         {
-            p.setOption(i, ((string[]) options[i])[0]);
+            p.setOption(i, ((string[])options[i])[0]);
         }
 
     }
