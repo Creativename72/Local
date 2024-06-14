@@ -236,11 +236,13 @@ If I have to…
 
 id:i_would
 Annie: Great, then. It’s settled. We’ll all be back here in a week's time! This time, I’ll prepare a little something nice for us to eat.
+goto:gohome
 
 id:have_to
 Annie: Oh hush. I can host the next one. At least my place has got a table with more than 3 seats.
+goto:gohome
 
-
+id:gohome
 :[As the night grows late, they each decide it’s time to head back to their homes, but not before expressing their gratitude to Scout.]
 
 
