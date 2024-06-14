@@ -119,7 +119,7 @@ Bernice:I know you won’t. Good luck, Scout! I’ll check in with you again soo
 
 :-->fade to black
 :-->3 second pause
-pause([3])
+pause(3)
 :-->scout interior
 changeBackground()
 

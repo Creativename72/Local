@@ -1,0 +1,365 @@
+inScene: Scout, Annie, Walter, Tyler
+
+
+id:start
+:[The sun has set, and the evening light casts a warm glow over the room. Scout stands in the cozy kitchen of the cottage, the ingredients they’ve gathered from Walter, Annie, and Tyler are spread out on the counter in front of them.]
+
+
+[chop]
+[Chop the vegetables.]
+
+id:chop
+:[Scout grabs the potatoes, carrots, and onions from Tyler’s garden and begins peeling and dicing them into small, even pieces.]
+
+[heat]
+[Heat the pot and add some oil.]
+
+
+id:heat
+:[Scout heats up the pot on the stove and adds a splash of oil, waiting for it to shimmer.]
+[simmer]
+[Simmer the vegetables.]
+
+id:simmer
+:[Scout adds the veggies to the pot, then puts on the lid, reduces the heat, and lets it simmer for about 15 minutes, allowing the veggies to become tender.]
+[fish_and_season]
+[Add the fish and season.]
+
+id:fish_and_season
+:[Scout adds vegetable stock and drops the fish chunks into the pot and adds pepper, salt, paprika, and onion powder. They stir the soup well and let it cook until the fish is nice and flaky.]
+[cream]
+[Finish with cream.]
+
+id:cream
+:[Once the fish is perfectly cooked, Scout turns off the heat and stirs in the cream until a nice texture is formed.]
+[taste]
+[Have a taste.]
+
+id:taste
+:[As the flavors meld together in their mouth, Scout savors the creamy, rich taste of the chowder. The sweetness of the carrots, the earthiness of the potatoes, and the delicate flavor of the fish combine perfectly with the spices, creating a comforting and satisfying dish.]
+:[Scout takes a spoonful of the chowder and has a taste. They savor the creamy rich taste of the base, the sweetness of the veggies, the flakiness of the fish, and the complex flavors of the spices.]
+goto:greetings
+
+
+id:greetings
+:[With the chowder simmering gently on the stove, the doorbell rings. Scout wipes their hands on a towel and heads to the door to greet whoever is on the other side.]
+:[Scout opens the door to find Annie standing there, holding a basket of fresh-smelling bread. A warm smile spreads across her face as she sees Scout.]
+
+
+Annie: Oh my gosh, I almost expected Bernice to be on the other side of the door. Gonna be an adjustment seein’ you here every time I visit.
+
+
+[come_in]
+Hi Annie! Come on in.
+
+
+id:come_in
+:[Annie steps in through the door and into the living space.]
+
+
+Annie: Wow, it’s been a while since I’ve last been here. Did you… not move in with any furniture? Seems pretty sparse here, yeah?
+:[She sighs, looking around.] 
+Annie: I used to come down to Bernice’s a lot more often before my job picked up. We’d hike on the trails here, talkin’ about my time as a racer and her long long life.
+Annie: Feels nice to be back. Even if it's under different circumstances.
+
+
+:[Annie takes a deep breath, savoring the aroma wafting from the kitchen.]
+
+
+Annie: Hey, that smells pretty good, Scout! Here, I baked some bread to go along with it. We all can share.
+
+
+:[There’s a sudden knock on the door, interrupting the moment. Scout heads to the door and opens it to find Walter standing there, an almost smile on his face.]
+
+[waltuh]
+Hi, Walter!
+
+
+id:waltuh
+Walter: Hi.
+Walter: Oh, Annie. I see you got here before me.
+
+
+Annie: OH MY GOSH WALTER YOU’RE HERE. It’s been too long!
+
+
+:[Annie rushes forward and pulls Walter into a hug.]
+
+
+Walter: Wuh! Oh, Annie. I missed you too.
+
+
+:[Walter pats Annie on the shoulder and steps back. He takes a sniff of the air.]
+Walter: Mmm, I can smell that trout. Reminds me of my cafeteria days.
+
+
+:[Scout, Annie, and Walter step into the living room. Walter puts his hands on his hips as he looks around.]
+
+
+Walter: Wow, it's spacious in here. Honestly, it’s been a long time since I’ve been in an actual house. 
+
+
+Annie: How often do you visit the city?
+
+
+Walter: I don’t.
+
+
+Annie: Maybe next time my sister and I go to visit, you can tag along? I know you like your silence and your solitude, but it could be fun.
+
+
+:[Walter smiles.] 
+Walter: Yeah, that could be nice. 
+
+
+:[As they settle in, there’s another knock at the door. Scout opens it to find Tyler standing there, hands behind his back.]
+
+
+[tyler_comes]
+Tyler! Come on in.
+
+
+id:tyler_comes
+Tyler: Uh, hey, Scout.
+
+
+Annie: TYLER?? Get in here, man!
+
+
+:[Annie pulls Tyler into a hug, too. Walter places his hand on Tyler’s shoulder.]
+
+
+Walter: How’re you holding up, Ty?
+
+
+Tyler: Walt! Uh, I’ve been good. Just tryna keep myself busy these days, ya know?
+
+
+Annie: Tyler, why’re you so nervous? C’mon, lighten up, it’s your old pals!
+
+
+Tyler: I haven’t seen you guys in a long time I’m just trying to process everything okay?
+
+
+:[Annie chuckles.] 
+Annie: Anyways, who’s hungry? The chowder smells amazing…
+
+
+[eat]
+Let's eat!
+
+
+id:eat
+:[Everyone gathers around the table as Scout serves everyone the chowder. The warm, comforting smell fills the room, and everyone begins to eat.]
+
+
+Walter: Mmm, these spices. It’s incredible. So much nicer than the food I make for myself in the tower. I don’t even own a salt shaker.
+
+
+Annie: And these veggies! They’re so fresh. The ones I buy at the grocer back in the city are never this nice.
+
+
+Tyler: I haven’t had fish this good since Walter and I stopped hangin’ out together. This is really hittin’ the spot.
+
+
+:[As they continue eating, stories are brought up. Mostly of what they’ve done over the past few days with Scout.]
+
+
+Walter: You know, I’ve been thinking a lot about what happened that day. With the water pump and the fire.
+Walter: I wanted to say that… I regret how I handled things. I was so focused on my duty and keeping everyone safe that I forgot to consider how you both felt. I let my anger get the best of me, and for that, I’m sorry.
+
+
+Annie: Walter, it’s okay. We all made mistakes that day. None of us had any bad intentions.
+
+
+Tyler: Yeah. And… I’m… I also apologize. For… being reckless.
+
+
+Annie: Good effort, Tyler. I’m sorry for crashing your truck.
+
+
+Tyler: No biggie.
+Tyler: …I missed you guys.
+
+
+Annie: I missed you too, Tyler. And you, Walter. It’s been too long.
+
+
+Walter: It’s nice. Us being together again.
+
+
+:[There’s a comfortable silence as they all take in the significance of the moment.]
+
+
+Walter: You know, Scout, this dinner was a great idea. It brought back a lot of memories for us, I’d like to think.
+
+[twas_bernice]
+Actually, it was Bernice’s idea.
+
+
+id:twas_bernice
+Annie: Aw, what? That does sound like her. She’s still lookin’ out for us even in her absence, huh.
+
+
+Tyler: She sure as heck didn’t cook this meal, though. That was all Scout.
+
+
+Walter: You did good, Scout. Let’s cheers to that.
+
+
+:[Everyone raises their glass and cheers. After that, they continue eating, talking, and laughing.]
+
+
+Annie: So, when’s the next dinner?
+
+
+Tyler: Next?
+
+
+Annie: What, Tyler, you thought we’d have dinner together just this once, then never see each other again?
+
+
+Walter: We should do this again. Every Sunday?
+
+
+Annie: Having weekend plans would stop me from always takin’ extra shifts at work… So that works for me. Tyler?
+
+
+Tyler: That would rule. And Scout, you can keep hostin’, right? I mean, Walt’s tower can barely fit 2 people, and my place doesn’t exactly have the ambiance of this place.
+
+
+[i_would]
+I would love to.
+
+[have_to]
+If I have to…
+
+id:i_would
+Annie: Great, then. It’s settled. We’ll all be back here in a week's time! This time, I’ll prepare a little something nice for us to eat.
+
+id:have_to
+Annie: Oh hush. I can host the next one. At least my place has got a table with more than 3 seats.
+
+
+:[As the night grows late, they each decide it’s time to head back to their homes, but not before expressing their gratitude to Scout.]
+
+
+Walter: Thank you for this, Scout. It was wonderful. I look forward to next week.
+
+
+Annie: Yeah, thanks Scout! Can’t wait to be hanging out with everyone some more!
+
+
+Tyler: You’re all right in my book, Scout. I… I really missed everyone.
+Tyler: See you soon!
+
+
+Annie: Take care, you guys!
+
+
+Walter: Goodbye.
+
+
+:[With that, they each head back to their homes, leaving Scout alone in the cottage, the warmth of the evening still lingering in the air.]
+:[With everyone gone, Scout cleans up the dining room and sets the soup pot to the side. They head to their desk, pulling out their journal once more.]
+
+
+changeBackground()
+
+
+Journal: Tonight was special. I think we all have taken a big step forward. Walter seems…
+
+
+
+
+
+
+[atPeace]
+[...more at peace with the past.]
+
+[reconnect_ready]
+[...ready to reconnect with everyone.]
+
+[weight_lifted]
+[...like a huge weight was lifted off his shoulders.]
+
+
+id:atPeace
+Journal: …more at peace with the past.
+goto:nextjournal
+
+
+id:reconnect_ready
+Journal: …ready to reconnect with everyone.
+goto:nextjournal
+
+
+id:weight_lifted
+Journal: …like a huge weight was lifted off his shoulders.
+goto:nextjournal
+
+
+id:nextjournal
+Journal: Annie was…
+
+
+[excited]
+[...excited about spending time with friends once more.]
+
+[grateful]
+[...grateful for the break from work.]
+
+[glad]
+[...glad about the future plans she’s made with everyone.]
+
+
+id:excited
+Journal: …excited about spending time with friends once more.
+goto:nextjournal2
+
+
+id:grateful
+Journal: …grateful for the break from work.
+goto:nextjournal2
+
+
+id:glad
+Journal: …glad about the future plans she’s made with everyone.
+goto:nextjournal2
+
+
+id:nextjournal2
+Journal: And Tyler…
+
+
+[opened_up]
+[...opened up more than I expected.]
+
+[seems_happy]
+[...seems really happy to be around friends again.]
+
+[missed_this]
+[...showed everyone how much he missed this.]
+
+
+id:opened_up
+Journal: …opened up more than I expected.
+goto:end
+
+
+id:seems_happy
+Journal: …seems really happy to be around friends again.
+goto:end
+
+
+id:missed_this
+Journal: …showed everyone how much he missed this.
+goto:end
+
+
+id:end
+Journal: I’m looking forward to our next dinner. It feels like the start of something wonderful here in Bellespring Valley.
+
+
+:[Scout closes their journal, a sense of fulfillment washing over them. They feel more at home than ever.]
+```
