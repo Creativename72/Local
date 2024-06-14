@@ -56,37 +56,52 @@ public class TylerDay2Manager : MonoBehaviour
         // set actions to occur for each object
         bike.GetComponent<HighlightableObject>().OnClick(() =>
         {
-            dialogueController.t = tylerDay2TextBike;
-            dialogueController.runDialogue();
-            bike.SetActive(false);
-            pointsInteracted++;
+            if (!dialogueController.dialogueRunning)
+            {
+                dialogueController.t = tylerDay2TextBike;
+                dialogueController.runDialogue();
+                bike.SetActive(false);
+                pointsInteracted++;
+            }
         });
         grill.GetComponent<HighlightableObject>().OnClick(() =>
         {
-            dialogueController.t = tylerDay2TextGrill;
-            dialogueController.runDialogue();
-            grill.SetActive(false);
-            pointsInteracted++;
+            if (!dialogueController.dialogueRunning)
+            {
+                dialogueController.t = tylerDay2TextGrill;
+                dialogueController.runDialogue();
+                grill.SetActive(false);
+                pointsInteracted++;
+            }
         });
         guitar.GetComponent<HighlightableObject>().OnClick(() =>
         {
-            dialogueController.t = tylerDay2TextGuitar;
-            dialogueController.runDialogue();
-            guitar.SetActive(false);
-            pointsInteracted++;
+            if (!dialogueController.dialogueRunning)
+            {
+                dialogueController.t = tylerDay2TextGuitar;
+                dialogueController.runDialogue();
+                guitar.SetActive(false);
+                pointsInteracted++;
+            }
         });
         sculpture.GetComponent<HighlightableObject>().OnClick(() =>
         {
-            dialogueController.t = tylerDay2TextSculpture;
-            dialogueController.runDialogue();
-            sculpture.SetActive(false);
-            pointsInteracted++;
+            if (!dialogueController.dialogueRunning)
+            {
+                dialogueController.t = tylerDay2TextSculpture;
+                dialogueController.runDialogue();
+                sculpture.SetActive(false);
+                pointsInteracted++;
+            }
         });
         graffiti.GetComponent<HighlightableObject>().OnClick(() =>
         {
-            dialogueController.t = tylerDay2TextGraffiti;
-            dialogueController.runDialogue();
-            graffiti.SetActive(false);
+            if (!dialogueController.dialogueRunning)
+            {
+                dialogueController.t = tylerDay2TextGraffiti;
+                dialogueController.runDialogue();
+                graffiti.SetActive(false);
+            }
         });
     }
 
