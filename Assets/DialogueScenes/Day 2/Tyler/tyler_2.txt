@@ -1,0 +1,113 @@
+inscene: Tyler
+
+:[The sky is overcast, with a light drizzle of rain falling over the valley.]
+:[Scout moves along the muddy trail leading up to Tyler’s trailer encampment.]
+:[As Scout approaches, Tyler is leaning against the side of his trailer in the rain. His outfit is much bolder than the PJs he wore yesterday.]
+:[He waits for Scout to approach before speaking.]
+Tyler:Hey.
+Tyler:Whaddya think? [He gestures to his outfit.]
+[dig_it]
+Of your jacket? I dig it.
+[what_in_world]
+What in the world are you wearing.
+
+id:dig_it
+Tyler:[Tyler grins.] Heck yeah.
+Tyler:You caught me yesterday in my PJs. Just thought it’d be fair to show you what I’m normally like.
+goto:question_2
+
+id:what_in_world
+Tyler:[Tyler scoffs.] It’s called style, sweetie. Guess I shouldn’t expect you to get it.
+Tyler:You caught me yesterday in my PJs. Just thought it’d be fair to show you what I’m normally rockin’.
+goto:question_2
+
+id:question_2
+[sleep]
+You should sleep in that outfit so you won’t be caught in PJs anymore.
+[rain]
+How long have you been standing in the rain like that?
+
+[sleep]
+Tyler:Oh, so when Scouts drop by by surprise just when I roll outta bed, I at least don’t look like I’m late to a slumber party?
+Tyler:[He chuckles.] Good idea.
+goto:play
+
+[rain]
+Tyler:Ah, I dunno. [He checks his wrist, which doesn’t have a watch on it.]
+Tyler:Like, at least ‘n hour or two. We didn’t decide on a meetin’ time yesterday...
+Tyler:[He shrugs.] It’s whatever. I like the rain. Now I look all mysterious ‘n brooding. Grr.
+goto:play
+
+id:play
+Tyler:Hey, can I ask ya somethin’?
+Tyler:Do you play?
+[yes]
+Yes.
+[no]
+No.
+[what]
+What are you talking about?
+
+id:yes
+Tyler:Heck yeah.
+Tyler:Wait here. I have somethin’ in my trailer.
+goto:something
+
+id:no
+Tyler:Oof, lame.
+Tyler:Wait here. I have somethin’ in my trailer. It’ll totally change yer mind.
+goto:something
+
+id:what
+Tyler:Play music, what else?
+Tyler:Like in a band. It’s cool stuff.
+Tyler:Wait here. I have somethin’ in my trailer.
+goto:something
+
+id:something
+:[Tyler disappears inside the trailer.]
+:[Moments later, the sounds of rummaging and clatter drift out the door.]
+:[Tyler emerges with an electric guitar slung over his shoulders. He yanks the power cord and a set of speakers come tumbling down the trailer steps into the mud.]
+Tyler:Look what I just picked up!
+Tyler:Cool stuff, yeah? [He searches his pocket for a pick to play with.]
+[very_cool]
+Yes. Very cool.
+[alright]
+It’s alright, I guess. 
+[safe]
+Is it safe to be playing that in the rain?
+
+id:very_cool
+goto:playing_guitar
+	
+id:alright
+Tyler:Buh. At least show some enthusiasm for my new hobby, man.
+goto:playing_guitar
+
+id:safe
+Tyler:What are you, Walter? It’ll be fine.
+goto:playing_guitar
+
+id:playing_guitar
+:[Tyler smirks and strikes a power chord. Instead of a blast of music, a feeble crackle emits from the speakers. Tyler’s expression falters.]
+Tyler:Ah, crap.
+:[He unplugs and re-plugs the cables, trying again with no better results. He kicks the speakers, then sighs, looking dejected.]
+Tyler:Man...
+Tyler:Stuff’s always breakin’ round here. I don’t get it.
+:[Tyler pushes the speaker set aside with his foot, then sets his guitar down on the steps of the trailer.]
+Tyler:Y’know, I got all this junk lyin’ around from hobbies I never stuck with. Guess I thought each one was gonna be my [thing], but... yeah.
+[clean]
+Maybe it’s time to clean things up.
+[alot]
+You sure have a lot of hobbies, then.
+
+id:clean
+Tyler:Hmm... maybe...
+Tyler:You’re helpin’, right? Yeah, you’re helpin’.
+goto:end
+
+id:alot
+Tyler:Yeah, I picked up a lotta stuff over the years.
+Tyler:Dunno what to tell you. I like changin’ things up.
+Tyler:Anyways, yeah, I think I should get around to cleanin’ things up. Mind lending a hand?
+goto:end

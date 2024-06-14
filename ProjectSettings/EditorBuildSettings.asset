@@ -33,7 +33,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Day2/AnnieMG1.unity
     guid: 383c9bf530473d247bf72743980ae04c
   - enabled: 1
-    path: Assets/Scenes/Day2/TylerMG1.unity
+    path: Assets/Scenes/Day2/Tyler Day 2.unity
     guid: a7d38095e369002449366a3094b0136a
   - enabled: 1
     path: Assets/Scenes/Day2/WalterMG1.unity

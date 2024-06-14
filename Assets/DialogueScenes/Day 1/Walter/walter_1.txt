@@ -1,0 +1,194 @@
+﻿inScene: Scout, Walter
+
+
+id:start
+:[The fire watchtower stands in the distance, at the top of the hill. A walking trail meanders through the lush greenery of the valley, appearing long but safe. It’ll be a long walk to the tower following this trail.]
+:[Off the beaten path is a direct route to the tower through the rocks and shrubbery, considerably shorter but a little more treacherous.]
+
+
+[longer_path]
+[Take the longer winding path.]
+[shorter_path]
+[Take the shorter path through the rocks.]
+
+
+
+
+id:longer_path
+:[The path winds gently through the lush landscape, offering breathtaking views of the surrounding mountains and meadows. It takes almost an hour for Scout to reach the base of the watchtower.]
+:[As Scout approaches the tower’s stone base, a brown bear emerges from the entrance, stepping forward to greet them. His expression is hard to read.]
+changeBackground()
+
+Bear: You’re finally here. Took you a while to get here, didn’t it?
+
+
+[take_in_views]
+I like taking in the views.
+[on_foot]
+I’m not used to traveling by foot in this kind of terrain.
+[watching_me]
+
+
+id:take_in_views                
+Bear: [He nods curtly.] I suppose it's nice this time of year.
+:[He remains silent for a moment, his gaze distant. After a while, he clears his throat, looking back at Scout.]
+goto:path_connect
+
+
+
+
+id:on_foot
+Bear: [He crosses his arms, his expression a bit stern.] You must be from the city then?
+Bear: City life does have its conveniences.
+Bear: [He looks slightly more irritated.] But out here, it's quieter. Less... hectic.
+
+
+:[He pauses for a second, then clears his throat, looking back at Scout.]
+goto:path_connect
+
+
+id:watching_me
+:[The bear gives no immediate response, his demeanor unchanged. He crosses his arms.]
+
+
+Bear: As a fire watchman, observation is a part of my job.
+:[Scout stares at the bear, waiting for more of an explanation. After a pause, he  clears his throat and continues.]
+
+
+Bear: I was just keeping an eye out. Making sure you’d get here alright, nothing more.
+Bear: Safety first, you know? 
+goto:path_connect
+
+
+
+
+id:shorter_path        
+:[Taking the direct path through the bramble proves to be a little more difficult than Scout anticipated. They stumble a little over the rough terrain, but ultimately make it to the watchtower unscathed.]
+:[As Scout approaches the tower, a brown bear emerges from the bottom entrance, stepping forward at a brisk pace. His expression is hard to read.]
+changeBackground()
+
+Bear: Halt.
+
+
+:[The bear stops right at where the bramble ends and waits for Scout to step back onto the path. His arms are crossed.]
+
+
+Bear: Reckless choice you made there. You could’ve hurt yourself.
+
+
+[handle_myself]
+I can handle myself.
+[sorry]
+Sorry, it won’t happen again.
+
+
+id:handle_myself
+:[The bear continues to stare at Scout, his expression unwavering.]
+        
+Bear: You should break your bad habits before they break you.
+
+
+:[He sighs, his tone softening slightly but still firm.]
+
+
+Bear: I'm just trying to look out for you and others in the valley. Don’t make my job harder.
+
+
+:[The bear looks over Scout’s figure briefly.]
+        
+id:sorry
+:[The bear lowers his crossed arms. He gives a brief nod.]
+
+
+Bear: Good to hear.
+                
+:[He clears his throat, looking back at Scout.]
+                
+
+
+id:path_connect
+Bear: I saw the moving van drive up to Bernice’s old place. Figured you’d come knocking sooner or later.
+
+
+:[He extends his paw, though his demeanor remains somewhat guarded.]
+
+
+Walter: Walter. I’m the fire watchbear for this area. And you are?
+
+
+[name]
+Scout.
+
+
+id:name
+Walter: [His nod is brisk.] Scout. So, what brings you to the valley?
+
+
+[change_of_pace]
+Needed a change of pace. The city was too hectic.
+[nature]
+The nature here. It’s so peaceful.
+[idk]
+Honestly? I’m not sure.
+
+
+id:change_of_pace
+Walter: [He nods in understanding.] I can relate.
+Walter: The city's a mess. Out here, you can actually hear yourself think.
+goto:reason
+
+
+
+
+id:nature
+:[He looks around briefly, then back at Scout with a slight frown.] 
+Walter: [His tone is begrudgingly appreciative.] Yeah, it is. It’s beautiful. 
+goto:reason
+
+
+id:idk
+Walter: [He gives a slow nod.] That's fine. Wandering's part of the journey, I guess.
+goto:reason
+
+
+id:reason
+Walter: That’s part of the reason why I took this job.
+Walter: The firewatch job, that is.
+Walter: I never belonged in the city. Everyone running back and forth, no time to stop and smell the roses.
+:[Walter’s face lightens up a bit.]
+Walter: I came out here for some peace. Despite some... nuisances, it's been worth it.
+:[After that last line, his face stiffens back up to his stoic expression.]
+
+
+[anyone_else]
+Do you know anyone else in the valley?
+
+
+id:anyone_else
+Walter: Yeah, sure.
+Walter: Aside from Bernice, Annie lives on the other side of the valley.
+Walter: Our interactions have been sparse lately. Work keeps her occupied, I believe.
+Walter: And Tyler.
+Walter: He lives in his trailer at the bottom of the valley. His impulsive nature worries me sometimes.
+Walter: [Walter crosses his arms.] He’s just a handful, honestly. Sometimes I wonder if he ever thinks before he acts.
+Walter: Just… be careful around him. 
+
+
+:[A garbled voice comes out of the walkie-talkie Walter has in his shirt pocket. He picks it up and listens for a few moments.]
+
+
+Walter: I have to head back to the tower. Duty calls.
+
+
+[no_prob]
+No problem.
+
+
+id:no_prob
+Walter: [He nods.] Farewell for now, Scout.
+
+
+:[There's a momentary pause as Walter's gaze lingers on Scout, before he turns and makes his way back to the base of the tower.]
+
+
+goto:end

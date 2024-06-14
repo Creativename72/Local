@@ -1,0 +1,213 @@
+inscene: Walter
+
+id:start
+:[The skies are overcast, and a light rain drizzles down over the valley.]
+:[Scout sets out on the eastern valley trails up towards the watchtower once more.]
+:[On the trails, Scout spots Walter in the distance, his large figure lumbering steadily down the trail towards them.]
+Walter:Oh, Scout. I, uh, was just coming to the lakeside to check up on you.
+[check_up]
+Check up on me?
+
+id:check_up
+Walter:Yes, just… making sure you’re alright. With moving in and everything.
+[thanks_walter]
+Thanks, Walter. I appreciate that.
+
+id:thanks_walter
+:[A brief smile flashes on his face.]
+Walter:[He nods, glancing up at the sly.] Looks like the rain won’t be letting up soon.
+Walter:Since we’re closer to my tower, why don’t we head back there? I don’t want you getting sick from standing out in the rain.
+[start_walking]
+Sounds good.
+[start_walking]
+Yeah, let’s get outta here!
+
+id:start_walking
+:[Walter turns and starts walking back up the trail, with Scout following closely behind. The rain continues to fall, creating a serene atmosphere around them.]
+:[As they walk, Walter occasionally glances over his shoulder to make sure Scout is keeping up.]
+
+pause(3)
+changeBackground()
+
+:[Walter reaches the base of the tower and turns to face Scout, who stands a few steps below him.]
+Walter:Ready to climb? 
+[visitors]
+Are visitors allowed in the tower?
+
+id:visitors
+Walter: Of course. I may conduct my observations and reports from there, but it’s also my home. I can have guests over.
+[climb_every_day]
+Do you climb these steps every day?
+
+id:climb_every_day
+Walter:Every day, multiple times a day.
+Walter:Keeps me in shape, I suppose.
+
+:-->pause, maybe black screen
+
+:[As they climb higher, the rain gradually fades into the background, replaced by the creaking of wood and the occasional gust of wind. Finally, they reach the balcony at the top of the tower, where the entrance to the interior awaits.]
+:[Walter unlocks the wooden door and holds the door open, letting Scout enter first.]
+
+:-->pause, interior shot
+changeBackground()
+
+:[Scout is greeted by a cramped, but cozy interior. Windows are on all sides of the room, adorned with charcoal drawings and photos of nature.]
+:[In one corner of the room sits a simple bed with a neatly folded plaid blanket folded at the foot. In another corner is a small kitchenette with a small selection of cooking tools stored in an open cupboard.]
+:[Next to the entrance sits an electronic keyboard and a fishing rack, displaying all sorts of fishing rods and lures.]
+Walter:Welcome, Scout. Make yourself at home.
+goto:make_yourself
+
+id:make_yourself
+:-->Looping dialogue choices
+:-->if possible, we can also zoom in on each object if they are in the drawing and hide the character sprites
+[sketch_charcoal]
+You sketch with charcoal?
+[nice_keyboard]
+Nice keyboard! Do you play?
+[tight_kitchen]
+That’s a pretty tight kitchen for a bear your size.
+[lotta_rods]
+That's a lotta rods. You like fishing?
+[continue_1]
+"..."
+
+id:sketch_charcoal
+:[Walter nods, his expression softening as he glances at the sketches on the wall.]
+Walter:Yes, and I make my own charcoals, too. 
+Walter:It’s something I picked up when I started this position.
+Walter:I can really focus here when it’s nice and quiet, mostly just sketching the things I see around me.
+Walter:Sometimes I like to climb to the highest points of the valley and sketch the landscapes. Sometimes, I’ll even draw the skyline of the city over the horizon.
+goto:make_yourself
+
+id:nice_keyboard
+Walter:Barely. I dabble here and there. Not very well.
+Walter:I wanted to take lessons while I was living in the city, but it’s too late now, I suppose.
+Walter:Don’t really have anyone to play with, either.
+Walter:Firewatch dispatch probably doesn’t want me playing over their emergency radio line, haha.
+goto:make_yourself
+
+id:tight_kitchen
+Walter:Gets the job done.
+Walter:I get a food dropoff from the fire lookout HQ every month or so, so I’m not exactly working with the freshest ingredients.
+Walter:Really, I just make simple stuff - soups, stews, nothing fancy.
+Walter:At my old job, I made huge batches of stuff like this.
+[where_work]
+Where did you used to work?
+goto:make_yourself
+
+id:where_work
+Walter:I used to work at an elementary school, back in the city. It was a love-hate relationship, really.
+Walter:I came in each day at the crack of dawn, and I had the whole building to myself. I’d spend hours prepping vegetables and setting out dishes in that peace and quiet. 
+Walter:Once it hit 8, and the kids arrived, oh, it was a different story.
+Walter:The noise, the constant activity - it was overwhelming. Drove me practically insane.
+Walter:The main reason I took this job was for peace and quiet. I really, really needed it.
+goto:make_yourself
+
+id:lotta_rods
+Walter:It’s one of my favorite pastimes.
+Walter:The valley has so many lakes and rivers, each with its own variety of fish.
+Walter:There's so much to see here, Scout, it'll really take your breath away.
+goto:make_yourself
+
+id:continue_1
+:[Walter pauses, this gaze drifting around the interior space. He takes a moment to absorb his surroundings, listening to the soft sounds of the rain against the windows. He stares out the window as he speaks.]
+Walter:You know, I don’t often get the opportunity to talk to people in person. Or at all, really, in a casual way.
+Walter:My job, my position - it’s isolating. I spend most of my days alone up here, with only the occasional radio check-in for company.
+Walter:It's not that I mind the solitude. It’s just that sometimes… I miss the act of conversation, the kind you have with a friend over a cup of tea or a walk in the park. It weighs on me.
+:[Walter lets out a sigh, turning to look at Scout now.]
+Walter:Annie and Tyler... we used to be good friends, you know. I’d hang out with them almost every day when I was off duty.
+Walter:Now, it's been months since I’ve talked to them… [Walter looks out into the distance.]
+Walter:Tyler was setting up a water pump at the edge of the river. I was supervising. Annie was keeping us company.
+Walter:I had received a dispatch on my walkie talkie and had to head back to my tower to check on something. I told Tyler to wait for me to return before starting the pump, and I told Annie to keep an eye on him. Metaphorically. 
+Walter:Of course, he didn’t listen. I heard the explosion from across the valley. From the trail I could see a pillar of smoke rising over the opposite side of the lake. I came back just in time to see Annie crashing Tyler’s burning truck into his water silo. 
+Walter:I was furious. Furious that Tyler was being a reckless idiot. Furious that Annie was driving the truck when she clearly is unfit to do so. I tore into them.
+Walter:Why didn’t they listen! Ack, it’s just... I still can’t believe...
+Walter:Especially since my role is to keep this valley, and its inhabitants, safe. I just...
+[keep_safe]
+Wow, that’s crazy.
+[keep_safe]
+Walter, it’s not your fault.
+[keep_safe]
+You did your job to the best of your ability.
+
+id:keep_safe
+:[Walter takes a deep breath.]
+Walter:After I checked the area for any lasting flames, and the two for any injuries, I just left the site and walked back to my tower. And I haven’t spoken to them since.
+:[Walter stares out the window at the still rainy sky for a second.]
+Walter:Sometimes I feel like I’m going through a routine, the same stuff every day, just so I don’t have to think about what happened on that day.
+:[Walter sighs, turning to Scout.]
+Walter:Thanks for listening. Again.
+Walter:Can’t exactly unload all this on the dispatcher over the radio. 
+:[He continues staring at the rain-soaked landscape, over the entirety of the valley. After a moment, he turns to Scout.]
+Walter:Let’s set this aside for now.
+Walter:[He takes a deep breath.] You know, it's not a bad day for fishing. 
+Walter:Rain brings fish to the surface, so more bites. If you wanted to, we could give it a try.
+Walter:The base of the tower is a nice spot to be. Blocks most of the rain. It’s up to you.
+[lets_fish]
+Yeah, let’s fish!
+[never_fished]
+I’ve never fished before, but I can try!
+[not_today]
+Maybe not today, with this weather.
+
+id:lets_fish
+[Walter gives a nod, before turning to the row of fishing rods, picking out two. He also grabs a tackle box and a set of lures.]
+Walter: Come. Follow me down the steps.
+goto:going_fishing
+
+id:never_fished
+Walter:It’s not too complicated. I’ll teach you the basics. Just be patient, and we’ll see if we can catch anything today.
+:[Walter turns to the row of fishing rods, picking out two. He also grabs a tackle box and a set of lures.]
+Walter:Come. Follow me down the steps.
+goto:going_fishing
+
+
+id:not_today
+Walter:[He nods in understanding.] That’s alright. Maybe another day, when the sun comes out.
+:[Walter pauses for a second, looking out the window once more.]
+Walter:Well, I won’t keep you here long. I’m sure you still have a lot planned for today.
+Walter:If you ever change your mind, you know where to find me.
+:[Walter walks Scout to the door, opening it for them.]
+:[Scout steps out into the rain, making their way back down the winding stairs and into the valley.]
+goto:end
+
+id:going_fishing
+
+:-->PAUSE and scene into outside
+changeBackground()
+
+:[With the fishing gear in hand, Walter leads Scout back down the winding stairs of the tower. Occasionally, he glances back at Scout to make sure they don’t slip and fall in the rain.]
+:[As they reach the base, Walter leads Scout to a sheltered spot right under the tower where the rain isn't too bad.]
+Walter:This spot should do just fine. 
+Walter:Here. Take this rod, it looks like your size.
+:-->FISHING MINIGAME START
+Walter:Just hold the rod like this...
+Walter:...and cast.
+:-->Wait for player to cast
+:Walter:And now, we wait.
+:-->Pause for 3 seconds, no dialogue
+Walter:Back in the city, I put myself out there a lot. I’d go to community events, try to be more social.
+:-->Pause for 3 seconds, no dialogue
+Walter:It wasn’t easy, especially with my nature, but I learned that not every cast will get a bite. You can’t always make a new friend or form a connection every time you try.
+:-->Pause for 3 seconds, no dialogue
+Walter:But you’ll never know unless you cast your line. The important thing is to keep trying, to keep putting yourself out there. 
+:-->pause for 3
+Walter:That’s what I always tell myself. Though, maybe I’ve been neglecting that for a while now.
+Walter:Haven’t really talked to anyone new in so long…
+:-->Pause for 3 seconds, no dialogue
+:-->Bite happens, bobber goes under water, player needs to click
+:-->fish up some sort of fish, probably a different type of fish than the one required tomorrow, prolly bass
+:-->Once fish is fished up, go back to normal dialogue screen with outside background
+:-->OR we show a screen with the fish on it, along with the name of the fish (sort of like pretending its a real fishing minigame from another game
+Walter:Not bad at all. 
+:[Walter places the fish in a small bucket nearby, giving Scout an approving nod.]
+:Walter:You did well. Moments like these make the waiting worth it, don’t you think?
+:[A crackle comes from Walter's walkie talkie. He sighs, reaching for it as he listens to the garbled message.]
+Walter:[He sighs, turning to Scout.] Duty calls, I’m afraid. Gotta keep an eye on that storm.
+:[He stands up, picking up the bucket with the fish inside.]
+Walter:I’ll take this with me. Maybe I’ll cook it up later.
+Walter:Thanks for spending time with me today. It’s been... nice. We should do this again sometime.
+:[With the fish in hand and a nod farewell, Walter heads back up the steps of the tower.]
+:[He gives Scout a wave from above, before disappearing back into the tower.]
+:[Scout walks the trail alone back into the plain of the valley.]
+goto:end

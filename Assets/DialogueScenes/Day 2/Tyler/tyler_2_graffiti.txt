@@ -1,0 +1,15 @@
+inscene: Tyler
+
+id:start
+[graffiti]
+Did you graffiti your own trailer?
+
+id:graffiti
+Tyler:Mmhm. Thought a splash o’ color could liven up the place. Really ties it together.
+Tyler:Back in the city, I always thought those graffiti artists were the coolest guys around. Taggin’ the sides of buildings and train cars and stuff.
+Tyler:Yeah, turns out, they get permission from the city to paint that stuff. I didn’t know ‘bout that, so I got in big trouble when I tagged the side of some apartment block.
+Tyler:I thought I was some kinda rebel or somethin’. Ya know, stick it to the man, all that jazz.
+Tyler:A $500 fine stopped that line of thinkin’ fast.
+Tyler:I still like doin’ it. I still think it’s cool.
+Tyler:Wish I could do it where more people would see.
+goto:end

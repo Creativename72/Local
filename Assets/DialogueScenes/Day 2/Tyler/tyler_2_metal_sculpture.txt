@@ -1,0 +1,65 @@
+inscene: Tyler
+
+id:start
+[what]
+What are these?
+
+id:what
+Tyler:Oh, these? It’s like... art. 
+Tyler:Thought I’d get all artsy-fartsy for a change or somethin’, ya know?
+Tyler:Walter’s always sketchin’ cool stuff and everyone seems to love him. I wanted to give somethin’ like that a shot.
+Tyler:I have all this junk lyin’ around, might as well make somethin’ cool outta them.
+Tyler:Showed these off to Annie, she didn’t see my vision. At all.
+Tyler:Well, what do you think?
+[amazing]
+It’s amazing!
+[what_is_this]
+What is this even supposed to be?
+[creative]
+It’s good that you have a creative outlet, Tyler.
+[toss]
+Toss it. It’s junk.
+
+id:amazing
+Tyler:[He laughs, shaking his head.] You’re just sayin’ that. But hey, I appreciate it.
+goto:keep_or_toss
+
+id:what_is_this
+Tyler:[He tilts his head to the side.] It’s uhhhhh...
+Tyler:I think it’s a self-portrait or somethin’... maybe?
+Tyler:Maybe... I’m not good at this.
+goto:keep_or_toss
+
+id:creative
+Tyler: What, is that your way of avoidin’ givin’ me a compliment?
+Tyler: But yeah, I suppose you’re right. Was nice to focus on this thing for a while.
+goto:keep_or_toss
+
+id:toss
+Tyler:What... c’mon...
+Tyler:I get it’s no masterpiece, but, at least humor me a little, man...
+Tyler:[He pouts.] Well, alright. Into the trash pile it is.
+:[Tyler slowly drags the sculptures to the “toss” pile.]
+goto:progress
+
+id:keep_or_toss
+Tyler:So. Keep or toss?
+[hold_onto]
+You should hold onto it.
+[get_rid]
+Get rid of it.
+
+id:hold_onto
+Tyler:Yeah, I should. Lemme just... move this... over there...
+:[Tyler slowly drags the sculpture through the mud to a space behind the trailer. When he comes back, he’s out of breath.]
+goto:progress
+
+id:get_rid
+Tyler:Prolly the right call. It’s a bit of an eyesore, ain’t it.
+Tyler:Welp. Bye bye, lil’ guy.
+:[Tyler slowly drags the sculptures to the “toss” pile.]
+goto:progress
+
+id:progress
+Tyler: Makin’ good progress. What else?
+goto:end
