@@ -143,12 +143,20 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 582680374161826847, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
+      propertyPath: sceneNames.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 582680374161826847, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: sceneNames.Array.data[1]
       value: AnnieIntro
       objectReference: {fileID: 0}
     - target: {fileID: 582680374161826847, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
+      propertyPath: sceneNames.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 582680374161826847, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: sceneNames.Array.data[3]
-      value: AnnieMG1
+      value: Annie Day 2
       objectReference: {fileID: 0}
     - target: {fileID: 582680374161826847, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: sceneNames.Array.data[4]
@@ -156,7 +164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 582680374161826847, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: sceneNames.Array.data[5]
-      value: AnnieMG2
+      value: Annie Day 3
       objectReference: {fileID: 0}
     - target: {fileID: 582680374161826847, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: sceneNames.Array.data[6]
@@ -184,15 +192,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6825578522642521114, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6825578522642521114, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.28
+      value: 5.87
       objectReference: {fileID: 0}
     - target: {fileID: 6825578522642521114, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.85
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6825578522642521114, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: m_LocalPosition.z
@@ -364,8 +372,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000030518, y: 0.000015259}
-  m_SizeDelta: {x: 897, y: 427}
+  m_AnchoredPosition: {x: 0.0049747, y: 0.000030518}
+  m_SizeDelta: {x: 689.99, y: 388.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &245058437
 MonoBehaviour:
@@ -438,7 +446,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 582680374161826847, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: sceneNames.Array.data[3]
-      value: TylerMG1
+      value: Tyler Day 2
       objectReference: {fileID: 0}
     - target: {fileID: 582680374161826847, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: sceneNames.Array.data[4]
@@ -446,7 +454,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 582680374161826847, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: sceneNames.Array.data[5]
-      value: TylerMG2
+      value: Tyler Day 3
       objectReference: {fileID: 0}
     - target: {fileID: 582680374161826847, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: sceneNames.Array.data[6]
@@ -478,11 +486,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6825578522642521114, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.91
+      value: 3.29
       objectReference: {fileID: 0}
     - target: {fileID: 6825578522642521114, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.6
+      value: -3.01
       objectReference: {fileID: 0}
     - target: {fileID: 6825578522642521114, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: m_LocalPosition.z
@@ -555,7 +563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 582680374161826847, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: sceneNames.Array.data[3]
-      value: WalterMG1
+      value: Walter Day 2
       objectReference: {fileID: 0}
     - target: {fileID: 582680374161826847, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: sceneNames.Array.data[4]
@@ -563,7 +571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 582680374161826847, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: sceneNames.Array.data[5]
-      value: WalterMG2
+      value: Walter Day 3
       objectReference: {fileID: 0}
     - target: {fileID: 582680374161826847, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: sceneNames.Array.data[6]
@@ -595,11 +603,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6825578522642521114, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.72
+      value: -6.43
       objectReference: {fileID: 0}
     - target: {fileID: 6825578522642521114, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.27
+      value: 3.01
       objectReference: {fileID: 0}
     - target: {fileID: 6825578522642521114, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: m_LocalPosition.z
@@ -770,15 +778,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6825578522642521114, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6825578522642521114, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.75
+      value: -2.19
       objectReference: {fileID: 0}
     - target: {fileID: 6825578522642521114, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.37
+      value: -2.66
       objectReference: {fileID: 0}
     - target: {fileID: 6825578522642521114, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: m_LocalPosition.z

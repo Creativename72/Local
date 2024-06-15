@@ -8,6 +8,7 @@ public class MapController : MonoBehaviour
 {
     public int currentStage;
     public bool[] HouseStates; // HouseStates order: Annie, Scout, Tyler, Walter
+    public House[] houses;
     public string currentScene;
     public GameObject canvas;
     public static MapController Instance { get; private set; }
@@ -24,7 +25,7 @@ public class MapController : MonoBehaviour
         }
 
         currentStage = 0;
-        currentScene = "BerniceIntro";
+        currentScene = "-";
         HouseStates = new bool[4] {
             false, false, false, false
         };
@@ -36,8 +37,6 @@ public class MapController : MonoBehaviour
     }
 
     public void LoadNextScene(string name) {
-        Debug.Log("doing the thing");
-        currentScene = name;
         StartCoroutine(LoadNextSceneAsync(name));
     }
 
@@ -48,7 +47,6 @@ public class MapController : MonoBehaviour
         @param n Name of the next scene to load
     **/
     IEnumerator LoadNextSceneAsync(string n) {
-        Debug.Log(n);
         Camera.main.GetComponent<AudioListener>().enabled = false;
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(n, LoadSceneMode.Additive);
 
@@ -56,14 +54,8 @@ public class MapController : MonoBehaviour
         {
             yield return null;
         }
-        if (!firstUnload)
-        {
+        if (currentScene != "-")
             SceneManager.UnloadSceneAsync(currentScene);
-        }
-        else
-        {
-            firstUnload = false;
-        }
         canvas.SetActive(false);
         
         currentScene = n;
@@ -74,7 +66,7 @@ public class MapController : MonoBehaviour
         if (!HouseStates[0] && !HouseStates[1] && 
             !HouseStates[2] && !HouseStates[3]) {
             currentStage++;
-            
+            Debug.Log("current stage:" + currentStage);
             // Setting it up as each day being 
             switch(currentStage) {
                 case 1:

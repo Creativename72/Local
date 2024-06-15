@@ -587,6 +587,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5126795050743773564, guid: 28f9f542476982b42bc0ef83a3cfe4bf, type: 3}
+      propertyPath: s
+      value: 
+      objectReference: {fileID: 5431569351160223428}
+    - target: {fileID: 5126795050743773564, guid: 28f9f542476982b42bc0ef83a3cfe4bf, type: 3}
       propertyPath: bgs
       value: 
       objectReference: {fileID: 233635588}
@@ -655,6 +659,10 @@ PrefabInstance:
       propertyPath: t
       value: 
       objectReference: {fileID: 4900000, guid: d6328fff3f47bd04fab9f5c649064040, type: 3}
+    - target: {fileID: 5431569351630525568, guid: 15d02f21d3c3ccf46a9620e3e4fbaa19, type: 3}
+      propertyPath: endOnDialogueEnd
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5431569351630525569, guid: 15d02f21d3c3ccf46a9620e3e4fbaa19, type: 3}
       propertyPath: m_Name
       value: BaseSceneManager
@@ -705,3 +713,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15d02f21d3c3ccf46a9620e3e4fbaa19, type: 3}
+--- !u!114 &5431569351160223428 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5431569351630525568, guid: 15d02f21d3c3ccf46a9620e3e4fbaa19, type: 3}
+  m_PrefabInstance: {fileID: 5431569351160223427}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 596012d10deefe749ac67748c6153ff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

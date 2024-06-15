@@ -32,14 +32,14 @@ public class House : MonoBehaviour, IHouse
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(string.Join(",", MapController.Instance.HouseStates));
         isActive = MapController.Instance.HouseStates[(int) thisHouse];
-        nextScene = MapController.Instance.currentStage - 1;
+        nextScene = MapController.Instance.currentStage;
         spriteRenderer = GetComponent<SpriteRenderer>();
         updateSprite();
     }
 
     public void Click() {
-        Debug.Log((int) thisHouse);
         MapController.Instance.HouseStates[(int) thisHouse] = false;
         MapController.Instance.LoadNextScene(sceneNames[nextScene]);
         MapController.Instance.UpdateDay();
