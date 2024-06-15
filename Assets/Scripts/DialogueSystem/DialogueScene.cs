@@ -28,7 +28,7 @@ public class DialogueScene
 
     public string[] nextLine()
     {
-
+        
         if (optionsFlag)
         {
             canChoose = true;
@@ -40,7 +40,13 @@ public class DialogueScene
         {
             return new[] { "e", "" };
         }
-        else if (nLine.text.ToLower().Trim() == "pause()")
+
+        if (nLine.sceneChanger)
+        {
+            parent.bgs.changeBackground();
+        }
+        
+        if (nLine.text.ToLower().Trim() == "pause()")
         {
             return new[] { "p", "" };
         }
@@ -65,10 +71,6 @@ public class DialogueScene
         else if (nLine.text.Split(":")[0].Trim().ToLower() == "goto")
         {
             return new[] { "g", nLine.text };
-        }
-        else if (nLine.sceneChanger)
-        {
-            return new[] { "lc", nLine.text };
         }
         return new[] { "l", nLine.text };
     }

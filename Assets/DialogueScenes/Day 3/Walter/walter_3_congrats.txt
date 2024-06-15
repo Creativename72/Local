@@ -1,0 +1,43 @@
+﻿inScene: Walter
+
+
+id:start
+Walter: Great job, Scout!
+
+
+:[Walter holds up the line with his hand.]
+
+
+Walter: Yep, that’s one big trout. Nice work. I’m sure it’ll make a fine addition to the chowder.
+Walter: Hmm…
+Walter: Listen, Scout, you should head back down on your own. I’m sure you still got lots of ingredients to prepare.
+Walter: I think I’ll stay here a while. It’s a perfect day for fishing…
+
+
+
+
+Scout: Alright. Thanks for spending the afternoon with me, Walter.
+
+
+
+
+Scout: And for helping me get the fish.
+
+
+
+
+Walter: I’ll see you tonight, then.
+
+
+
+
+changeBackground()
+
+
+
+
+:[Walter gives one last smile before turning back towards the water.]
+:[Scout packs up their gear and the fish they just caught and starts down the trail. Behind them, the sun casts a warm glow over the whole of the valley.]
+
+
+goto:end

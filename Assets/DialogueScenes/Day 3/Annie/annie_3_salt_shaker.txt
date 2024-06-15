@@ -1,0 +1,8 @@
+﻿inScene: Annie
+
+
+id:start
+Annie: Yeah, my sister made me get this salt from the farmers market. Was super expensive, too. They said it’s harvested straight from the ocean.
+Annie: I dunno if that makes it better, or if its, like, worth the extra money… hmm.
+Annie: Maybe… I should stop listening to my sister when she tells me to buy things.
+goto:end

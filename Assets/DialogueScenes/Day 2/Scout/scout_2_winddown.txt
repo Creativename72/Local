@@ -3,9 +3,8 @@ inscene: Bernice, Journal
 id:start
 :[After the sun sets over the valley, Scout once again finds themself in front of their journal, pen in hand. The room is quiet as they begin to reflect on the day’s events.]
 
-changeBackground()
-
 Journal:Walter shared more about his past. It seems like he...
+changeBackground()
 [walter]
 ...regrets what happened that day with Tyler and Annie.
 [walter]
@@ -33,7 +32,6 @@ Journal:Tyler showed me his hobbies. It seems like he’s...
 
 id:tyler
 :[As Scout writes in their journal, their phone rings. It’s Bernice.]
-
 changeBackground()
 
 [hello]
@@ -118,6 +116,7 @@ Bernice:I know you won’t. Good luck, Scout! I’ll check in with you again soo
 :[With that, the call ends. Scout sets the phone down and the journal to the side. They climb in bed, ready for tomorrow's mission.]
 
 :-->fade to black
+changeBackground()
 :-->3 second pause
 pause(3)
 :-->scout interior

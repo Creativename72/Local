@@ -1,0 +1,184 @@
+inScene: Scout, Walter
+
+
+id:start
+:[The weather is clear, and the morning sun casts a warm glow over the valley as Scout hikes up to the tower, taking in the fresh, crisp air.]
+:[They reach the tower and ascend the steps up to the balcony. Through the glass windows, Scout spots Walter sketching at his desk.]
+
+
+[choice1]
+[Ring the doorbell.]
+[choice2]
+[Yell for his attention.]
+[choice3]
+[Run to the other side of the balcony and wave at him through the window.]
+
+
+id:choice1
+:[Scout reaches up to the side of the door to ring the bell before realizing there is no doorbell at all.]
+:[Instead, they knock on the side of the wooden door, getting Walter’s attention.]
+:[Walter hears and turns his head, getting up from his seat and walking over to the door, opening it.]
+
+Walter: Scout, glad to see you. Come on in.
+goto:inside
+
+
+id:choice2
+:[Scout yells through the windows at Walter, who immediately turns around with an alarmed expression.]
+:[He gets up from the desk and goes to open the door, scratching the side of his head.]
+
+Walter: Gosh, Scout, you startled me. You know better’n to go yellin’ ‘nless there’s an emergency.
+Walter: Come on in.
+goto:inside
+
+
+id:choice3
+:[Scout makes their way around the balcony to the window in front of Walter and waits patiently until they catch his attention.]
+:[Walter looks up from his desk with an amused expression, the kind of look Scout now recognizes as Walter’s “trying not to smile” face.]
+
+Walter: Scout? Forget where the front door is? 
+Walter: Come on in.
+goto:inside
+
+
+id:inside
+:[Scout enters Walter’s living space. The air here is much warmer than the air outside, and Scout takes a moment to collect their bearings.]
+changeBackground()
+
+Walter: What brings you back here so soon?
+
+
+[organizing]
+I’m organizing a get-together dinner with everyone in the valley.
+
+id:organizing
+[gonna_cook]
+I was gonna cook a big meal and wanted to invite you.
+
+id:gonna_cook
+goto: after_invite
+
+
+id:after_invite
+:[Walter pauses, his expression tightening slightly.] 
+
+Walter: And by everyone, you mean Annie and Tyler, too?
+Walter: Look, Scout, I appreciate what you’re trying to do, but… things have been a bit rough between us lately. I’m not sure a dinner is going to fix that.
+
+
+:[What do you want to say?]
+[a_start]
+It won’t solve everything, but it’ll be a start…
+[you_care]
+You all mean a lot to each other, even if things are rough…
+[move_forward]
+I know it’s hard, but you can’t keep holding onto the past…
+
+
+id:a_start
+[a_start2]
+Getting everyone together would be a good first step.
+
+id:a_start2
+:[Walter sighs and looks out the window for a moment before turning back to Scout.] 
+Walter: I suppose you’re right. It won’t solve everything, but it’s a start.
+:[He looks away for a moment.] 
+Walter: It’s been such a long time since we all sat down with each other and talked.
+Walter: Maybe getting everyone together is what we need to break the ice.
+goto:continue
+
+
+id:you_care
+[you_care2]
+I’ve been around the valley. I know how much each of you care.
+
+id:you_care2
+:[Walter’s expression softens as he listens.] 
+Walter: You’ve been paying attention, haven’t you? Running all over the valley, talking to everyone here. 
+:[He chuckles.]
+Walter: I guess we all still care. It’s just hard to remember that sometimes. It’s been so long…
+Walter: Alright, you’ve convinced me. Maybe this dinner is what we need to start mending our relationship.
+goto:continue
+
+
+id:move_forward
+[move_forward2]
+We need to move forward and face the situation head on.
+
+id:move_forward2
+:[Walter looks down, his jaw tightening slightly.] 
+Walter: Easier said than done, Scout. But…
+:[He sighs, running a hand through his fur.] 
+Walter: You’ve got a point. Holding onto the past isn’t doing us any favors.
+Walter: Alright. Let’s do this.
+goto:continue
+
+
+id:continue
+Walter: Okay, let’s figure this out. You said this was a dinner? What are we bringing to the table?
+
+
+[chowder]
+Some sorta Fish Chowder.
+
+id:chowder
+:[Walter’s expression softens a bit.] 
+Walter: Fish Chowder, hmm? Always did have a soft spot for that dish.
+Walter: That was one of the more popular dishes I used to prep back at the cafeteria I worked at.
+:[Walter appears lost in thought.] 
+Walter: All those quiet mornings alone in that kitchen, chopping vegetables, deboning fish…
+:[He snaps out of it.] 
+Walter: Ah, well, what fish were you thinking of including?
+
+
+[planning_on_you]
+Not sure. I was planning on asking you.
+
+
+id:planning_on_you
+:[Walter smiles.] 
+Walter: Well, I have always had a fondness for trout. The sweet undertone, with a hint of nuttiness…
+Walter: There’s plenty of trout to catch in the lakes just up the trail from here. They’re easy to spot with their gold scales and red stripes. 
+
+
+[sounds_good]
+Sounds good! Let’s head out.
+
+[see_red]
+I can’t see red!
+
+
+id:sounds_good
+goto:trail
+
+
+id:see_red
+:[Walter chuckles.] 
+Walter: No need to worry. I still got a good set of eyes. Plus, they’re pretty distinctive even without the stripes.
+Walter: Shall we head off?
+goto:trail
+
+
+id:trail
+:[Walter grabs his fishing gear, and the two of them set off on the trail towards the lake.]
+
+pause(3)
+changeBackground()
+
+:[Walter and Scout move their way up the trail to the mountain-top lake. As the hike goes on, Walter begins to speak.]
+
+
+Walter: This trail used to be a lot busier.
+Walter: Families, hikers, campers… It's been quieter these past few years.
+pause(3)
+Walter: Sometimes I miss it. People out in nature, enjoying the scenery, and each other’s company.
+pause(3)
+Walter: Always thought places like this were one of the best places for people to connect with each other…
+pause(3)
+Walter: You’re doing a good thing, Scout. Bringing everyone together, reminding us what we’ve got here. I think we all lost sight of that.
+Walter: So, thank you.
+pause(3)
+Walter: Ah, uh, the lake should be just up here…
+Walter: Here, take this rod, and let’s see what we can fish up.
+changeBackground()
+goto:end

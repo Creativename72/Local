@@ -14,7 +14,7 @@ Sounds rough.
 
 id:Hang Up
 Annie:Mmm nah. Company policy. We gotta stay on call for like half an hour after shifts end.
-Annie:I don’t like to leave incomplete calls anyway, like people’re calling cuz they need help, and I don’t wanna leave anyone stranded, you know?
+Annie:I don’t like to leave incomplete calls anyway, like people’re calling cause they need help, and I don’t wanna leave anyone stranded, you know?
 goto:lake
 
 id:Rough
@@ -32,6 +32,7 @@ id:fine
 Annie: Here, come on in, make yourself at home.
 :[Annie leads Scout into the cabin.]
 :[The interior exudes warmth and charm. The walls are covered in photos of Annie and others, paintings and knick-knacks.]
+changeBackground()
 :[Annie shows Scout to the seating area.]
 [cozy]
 Your place is so cozy!
@@ -77,4 +78,5 @@ I could point stuff out!
 
 id:point
 Annie: [Annie chuckles] Thats so sweet! Yeah, let's do it.
+changeBackground()
 goto:end

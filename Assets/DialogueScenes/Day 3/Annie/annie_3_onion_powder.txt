@@ -1,0 +1,11 @@
+﻿inScene: Annie
+
+
+id:start
+Annie: Give that one here. Let me smell…
+:[She opens the jar and gives it a whiff.] 
+Annie: Mmm…
+Annie: Really nice onion powder. You can really smell the… onioniness. 
+:[She shrugs.] 
+Annie: I dunno.
+goto:end

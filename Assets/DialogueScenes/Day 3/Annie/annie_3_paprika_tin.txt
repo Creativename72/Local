@@ -1,0 +1,8 @@
+﻿inScene: Annie
+
+
+id:start
+Annie: What is this? Paprika? Have I ever used this?
+Annie: Honestly, I think I just bought this for the tin. It’s sooo pretty.
+Annie: Well, the sooner we use all of it, the sooner I can put little knick knacks in it.
+goto:end

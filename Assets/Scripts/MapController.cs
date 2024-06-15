@@ -9,9 +9,11 @@ public class MapController : MonoBehaviour
     public int currentStage;
     public bool[] HouseStates; // HouseStates order: Annie, Scout, Tyler, Walter
     public string currentScene;
+    public GameObject canvas;
     public static MapController Instance { get; private set; }
 
     public SceneChangeEvent m_sceneChangeEvent;
+    private bool firstUnload = true;
     
     void Awake() {
         if (Instance != null && Instance != this) {
@@ -22,7 +24,7 @@ public class MapController : MonoBehaviour
         }
 
         currentStage = 0;
-        currentScene = "map";
+        currentScene = "BerniceIntro";
         HouseStates = new bool[4] {
             false, false, false, false
         };
@@ -34,6 +36,8 @@ public class MapController : MonoBehaviour
     }
 
     public void LoadNextScene(string name) {
+        Debug.Log("doing the thing");
+        currentScene = name;
         StartCoroutine(LoadNextSceneAsync(name));
     }
 
@@ -44,6 +48,7 @@ public class MapController : MonoBehaviour
         @param n Name of the next scene to load
     **/
     IEnumerator LoadNextSceneAsync(string n) {
+        Debug.Log(n);
         Camera.main.GetComponent<AudioListener>().enabled = false;
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(n, LoadSceneMode.Additive);
 
@@ -51,8 +56,16 @@ public class MapController : MonoBehaviour
         {
             yield return null;
         }
-
-        SceneManager.UnloadSceneAsync(currentScene);
+        if (!firstUnload)
+        {
+            SceneManager.UnloadSceneAsync(currentScene);
+        }
+        else
+        {
+            firstUnload = false;
+        }
+        canvas.SetActive(false);
+        
         currentScene = n;
         m_sceneChangeEvent.Invoke(n);
     }

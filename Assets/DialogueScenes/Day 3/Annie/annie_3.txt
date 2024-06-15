@@ -1,0 +1,125 @@
+inScene: Annie, Scout
+
+
+id:start
+:[Scout makes their way up the familiar trail to Annie’s cabin. The air is cool and crisp, with the faint scent of pine lingering in the breeze.]
+:[They step onto the porch and ring the doorbell. A moment later, Annie opens the door, her face lighting up with a smile.]
+
+
+Annie: Hey there, Scout! Back so soon, hmm? Come on in.
+
+
+changeBackground()
+
+
+Annie: Was just doing a bit of tidying up. It’s crazy how much dust can sneak in when you’re not paying close attention.
+Annie: Usually my sis visits and we clean up together before headin’ out to the city, but she’s been busy with college stuff.
+Annie: Anyways! What’s up with you? Anything new happening?
+
+
+[planning]
+I was planning a little get-together dinner with everyone in the valley.
+
+id:planning
+[you_interested]
+Wanted to see if you were interested!
+
+
+id:you_interested
+:[Annie pauses and thinks.]
+
+
+Annie: Hmm…
+Annie: Honestly, Scout? That sounds like a great idea. It’ll be so nice to see everyone again! It’s so-
+
+
+:[She stops for a moment.]
+
+
+Annie: Oh, shoot! Scout, I just picked up a work shift for tonight. 
+Annie: I didn’t have any plans in the morning, so I thought getting a few more hours of work in would be fine. Sorry, Scout.
+
+
+[deserve_a_break]
+Annie, you deserve a break. Your job is important, but…
+[they_miss_you]
+Tyler and Walter both miss you. They deserve your time…
+[connections_wouldnt_hurt]
+You talk to people online every day. Some in person connections wouldn’t hurt…
+
+
+id:deserve_a_break
+[reconnect]
+So are your friends. Let’s make some time to reconnect.
+
+id:reconnect
+:[Annie sighs, a small smile forming on her face.]
+Annie:Yeah, I guess you’re right, Scout. I have been working more lately. 
+Annie: After Walter, Tyler and I drifted apart, I guess I started picking up more shifts to fill the time.
+Annie: Guess I forgot what it feels like to just hang out with friends.
+Annie: Sure, I think I can make it to the dinner.
+goto:invite_accepted
+
+
+id:they_miss_you
+[time_off_too]
+And you deserve some time off, too.
+
+id:time_off_to
+:[Annie looks at Scout thoughtfully, then nods.]
+Annie: Yeah, you’re right. I’ve been so caught up in work that I stopped trying to find time for my friends and myself.
+Annie: And I miss them, too. Thanks for the nudge, Scout. I would love to join you all for dinner.
+goto:invite_accepted
+
+
+id:connections_wouldnt_hurt
+[your_chance]
+You said you missed hanging out in person. Well, now's your chance.
+
+id:your_chance
+:[Annie chuckles.]
+Annie: Now’s my chance, huh? Well, I guess what you’re saying isn’t not true. Guess it’s just the situation I found myself in.
+Annie: I do miss face-to-face stuff. Maybe it’s time I prioritize my social life a bit more.
+:[She thinks for a moment.] 
+Annie: The dinner sounds wonderful, Scout.
+goto:invite_accepted
+
+
+
+
+id:invite_accepted
+Annie: Now, just need to find someone to cover my shift tonight…
+Annie: I pick up a LOT of other people’s shifts, so someone definitely owes me a favor.
+
+
+:[She whips out her phone and sends off a few messages.]
+
+
+Annie: And… done. I’m free for the night!
+Annie: So, what’s gonna be the main dish for the dinner? Anything I can help with? 
+
+[fresh_chowder]
+I’m making fish chowder for everyone.
+
+id:fresh_chowder
+Annie: Oh, yum. I think. I’ve never had it.
+Annie: Any ingredients you need?
+
+
+[spices]
+I have a list of spices.
+
+
+id:spices
+Annie: Perfect. My sister and I are always buying spices from the farmers market in the city that I never end up using. Seems a perfect time to offload some of it onto you!
+Annie: Let’s go to the kitchen~!
+:[Annie skips over to the kitchen while Scout follows close behind. She opens the pantry door and directs Scout to look inside.]
+
+
+changeBackground()
+
+
+Annie: It’ll probably be easier if you just looked for things in there yourself. Can barely read the labels myself. Just poke around and see if you can get any of the things you need.
+
+
+goto:end

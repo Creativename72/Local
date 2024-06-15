@@ -1,0 +1,40 @@
+inScene: Annie
+
+
+id:start
+Annie: That’s everything on your list, right?
+
+[should_be]
+Should be!
+
+id:should_be
+Annie: Awesome! Enjoy that stuff!
+Annie: Super excited for tonight! Can’t wait to try your cooking!
+
+
+[me_too]
+Me too!
+[lower_expectations]
+Lower your expectations, please!
+
+
+id:me_too
+goto:byebye
+
+
+id:lower_expectations
+:[Annie chuckles.] 
+Annie: I’m sure it’ll be fine.
+goto:byebye
+
+
+
+
+id:byebye
+Annie: See you tonight, alright Scout? And thanks for organizing this.
+Annie: And for hanging out with me the past few days. I really think I’m starting to balance my work life stuff after I met you.
+Annie: Alright, bye bye! Cya!
+
+
+:[Annie waves Scout out the door. Scout, ingredients in hand, trails back down the mountain and towards the heart of the valley once more.]
+goto:end

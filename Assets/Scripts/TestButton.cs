@@ -10,6 +10,7 @@ public class TestButton : MonoBehaviour
     }
     
     public void Click() {
+
         MapController.Instance.LoadNextScene("Map");
         Debug.Log("done");
     }

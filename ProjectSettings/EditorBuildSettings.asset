@@ -36,19 +36,19 @@ EditorBuildSettings:
     path: Assets/Scenes/Day2/Tyler Day 2.unity
     guid: a7d38095e369002449366a3094b0136a
   - enabled: 1
-    path: Assets/Scenes/Day2/WalterMG1.unity
+    path: Assets/Scenes/Day2/Walter Day 2.unity
     guid: b97f2925706215e4ca566b3729b8b535
   - enabled: 1
     path: Assets/Scenes/Day2/ScoutCall.unity
     guid: 1b13bad01cf480346949f365bb2ac32c
   - enabled: 1
-    path: Assets/Scenes/Day3/AnnieMG2.unity
+    path: Assets/Scenes/Day3/Annie Day 3.unity
     guid: a6c5271e67794d141a80c6d20800eefc
   - enabled: 1
     path: Assets/Scenes/Day3/TylerMG2.unity
     guid: 5625e71479b420c408aec4127bfd0134
   - enabled: 1
-    path: Assets/Scenes/Day3/WalterMG2.unity
+    path: Assets/Scenes/Day3/Walter Day 3.unity
     guid: 59c82fa52e6923541908e15aadb5cc3c
   - enabled: 1
     path: Assets/Scenes/End/Cooking.unity

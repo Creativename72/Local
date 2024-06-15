@@ -18,7 +18,9 @@ public class DialogueController : MonoBehaviour
     public GameObject option1;
     public GameObject option2;
     public GameObject option3;
+    public GameObject speakerContainer;
     public BackgroundHandler bgs;
+    public BaseSceneManager s;
 
     private string[] dialogueText;
     private Dictionary<string, Action> functions = new();
@@ -83,6 +85,7 @@ public class DialogueController : MonoBehaviour
         string text = this.extractText(line);
         text = this.italicize(text);
         currentSpeaker.setText(speaker);
+        speakerContainer.SetActive(speaker.Trim() != "");
         currentText.setText(text);
         highlightCharacter(speaker);
     }
@@ -117,6 +120,7 @@ public class DialogueController : MonoBehaviour
     private void sayOptions()
     {
         currentSpeaker.setText("");
+        speakerContainer.SetActive(false);
         currentText.setText("");
     }
 
@@ -145,6 +149,9 @@ public class DialogueController : MonoBehaviour
         string nextLine = nextLineList[1];
         string type = nextLineList[0];
 
+        //Debug.Log(nextLine);
+        //Debug.Log(type);
+
         if (type.ToLower() == "e")
         {
             endDialogue();
@@ -152,11 +159,6 @@ public class DialogueController : MonoBehaviour
         else if (type == "l")
         {
             sayLine(nextLine);
-        }
-        else if (type == "lc")
-        {
-            sayLine(nextLine);
-            bgs.changeBackground();
         }
         else if (type == "o")
         {
@@ -218,6 +220,10 @@ public class DialogueController : MonoBehaviour
         dialogueRunning = false;
         container.SetActive(false);
         b.enabled = false;
+        if (s != null && s.endOnDialogueEnd)
+        {
+            s.endScene();
+        }
     }
 
     public void AddFunction(string key, Action action)

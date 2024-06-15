@@ -294,7 +294,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.08, y: 2.29}
+  m_AnchoredPosition: {x: 20.42, y: 5.04}
   m_SizeDelta: {x: 7, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1226779705
@@ -414,7 +414,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226779705}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.03, y: -0.95, z: 0}
+  m_LocalPosition: {x: 20.53, y: 1.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -439,6 +439,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 278055965, guid: 28f9f542476982b42bc0ef83a3cfe4bf, type: 3}
+      propertyPath: m_fontSize
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 278055965, guid: 28f9f542476982b42bc0ef83a3cfe4bf, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 916681885, guid: 28f9f542476982b42bc0ef83a3cfe4bf, type: 3}
+      propertyPath: m_fontSize
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 916681885, guid: 28f9f542476982b42bc0ef83a3cfe4bf, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872714485, guid: 28f9f542476982b42bc0ef83a3cfe4bf, type: 3}
+      propertyPath: m_fontSize
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872714485, guid: 28f9f542476982b42bc0ef83a3cfe4bf, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5126795050743773564, guid: 28f9f542476982b42bc0ef83a3cfe4bf, type: 3}
       propertyPath: bgs
       value: 
@@ -684,7 +708,7 @@ PrefabInstance:
     - target: {fileID: 4918251080121622601, guid: 6103932380c0c1b4fa3e502ea94c5a31, type: 3}
       propertyPath: bgs.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 3a01ae5831444bc4d9cb4ff47ce7d2d5, type: 3}
+      objectReference: {fileID: 21300000, guid: 394efd0287e235b4fa895472d188c355, type: 3}
     - target: {fileID: 4918251080121622601, guid: 6103932380c0c1b4fa3e502ea94c5a31, type: 3}
       propertyPath: bgs.Array.data[1]
       value: 
@@ -716,7 +740,7 @@ PrefabInstance:
     - target: {fileID: 4918251080121622603, guid: 6103932380c0c1b4fa3e502ea94c5a31, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3a01ae5831444bc4d9cb4ff47ce7d2d5, type: 3}
+      objectReference: {fileID: 21300000, guid: 394efd0287e235b4fa895472d188c355, type: 3}
     - target: {fileID: 4918251080121622603, guid: 6103932380c0c1b4fa3e502ea94c5a31, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1

@@ -24,5 +24,6 @@ public class HoverHighlight : MonoBehaviour
     private void OnMouseDown()
     {
         parent.currentScene.chooseOption(optionNumber);
+        OnMouseExit();
     }
 }

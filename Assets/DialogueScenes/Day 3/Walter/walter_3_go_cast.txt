@@ -1,0 +1,7 @@
+﻿inScene: Walter
+
+
+id:start
+Walter: Water’s nice and calm today, that’s good.
+Walter: Go ahead and cast your line.
+goto:end
