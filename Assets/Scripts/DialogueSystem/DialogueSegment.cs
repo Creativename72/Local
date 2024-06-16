@@ -14,6 +14,7 @@ public class DialogueSegment
 
         for (int i = 0; i < text.Length; i++)
         {
+            string line = text[i];
             if (text[i].Contains(":"))
             {
                 DialogueLine newLine = new DialogueLine(text[i]);
@@ -34,6 +35,13 @@ public class DialogueSegment
             else if (text[i].ToLower().Contains("changebackground()"))
             {
                 ((DialogueLine)lines[lines.Count - 1]).sceneChanger = true;
+            }
+            else if (text[i].ToLower().Contains("pause("))
+            {
+                lines.Add(new DialogueLine(line)
+                {
+                    pause = true
+                });
             }
             else if (text[i].Contains(">"))
             {
@@ -70,6 +78,7 @@ public class DialogueLine
     public bool hasOptions = false;
     public bool sceneChanger = false;
     public bool function = false;
+    public bool pause = false;
     public DialogueLine(string textraw)
     {
         text = textraw;

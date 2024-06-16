@@ -26,15 +26,26 @@ public class DialogueController : MonoBehaviour
     private Dictionary<string, Action> functions = new();
     private bool dialogueEnabled;
 
+    private float pauseEnd;
 
     void Start()
     {
+        dialogueEnabled = false;
+        pauseEnd = -1;
         //runDialogue();
     }
 
     private void Update()
     {
-        
+        if (pauseEnd > Time.time)
+        {
+            dialogueEnabled = false;
+        } else if (pauseEnd > 0)
+        {
+            dialogueEnabled = true;
+            pauseEnd = -1;
+        }
+       container.SetActive(dialogueEnabled);
     }
 
     //given a text file of a dialogue scene, runs dialogue
@@ -153,6 +164,18 @@ public class DialogueController : MonoBehaviour
         {
             currentScene.gotoSegment(nextLine.Split(":")[1].Trim());
         }
+        // NOTE, do not use pau
+        //
+        //
+        // se() in text files and PauseDialogue() concurrently unless you want unintended behavior.
+        else if (type == "p" )
+        {
+            bool b = float.TryParse(nextLine, out float f);
+            if (!b)
+                throw new UnityException("Bad format: pause() does not contain valid number!");
+            pauseEnd = f + Time.time;
+            simulateMouseClick();
+        }
         else if (type == "f")
         {
             string key = nextLine;
@@ -224,7 +247,6 @@ public class DialogueController : MonoBehaviour
     public void PauseDialogue()
     {
         dialogueEnabled = false;
-        this.gameObject.SetActive(false);
     }
 
     int c = 0;
@@ -232,7 +254,6 @@ public class DialogueController : MonoBehaviour
     {
         Debug.Log("RESUMING DIALOGUE" + c++);
         dialogueEnabled = true;
-        this.gameObject.SetActive(true);
         simulateMouseClick();
     }
 

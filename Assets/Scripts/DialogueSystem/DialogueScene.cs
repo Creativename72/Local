@@ -46,9 +46,11 @@ public class DialogueScene
             parent.bgs.changeBackground();
         }
         
-        if (nLine.text.ToLower().Trim() == "pause()")
+        if (nLine.pause)
         {
-            return new[] { "p", "" };
+            string t = nLine.text[6..];
+            t = t[0..(t.Length - 2)];
+            return new[] { "p", t };
         }
         else if (nLine.hasOptions)
         {
