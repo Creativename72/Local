@@ -34,22 +34,7 @@ public class DialogueController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            currentScene.chooseOption(1);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            currentScene.chooseOption(2);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            currentScene.chooseOption(3);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            currentScene.chooseOption(4);
-        }
+        
     }
 
     //given a text file of a dialogue scene, runs dialogue
@@ -212,7 +197,7 @@ public class DialogueController : MonoBehaviour
     {
         GameObject[] g = { option1, option2, option3 };
 
-        g[index].GetComponent<SetText>().setText((index + 1).ToString() + ") " + this.italicize(text));
+        g[index].GetComponent<SetText>().setText(this.italicize(text));
     }
 
     public void endDialogue()
