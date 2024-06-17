@@ -12,7 +12,7 @@ public class AnnieMinigameChecker : MonoBehaviour
     public ClickDialogue[] items;
 
     bool thisDialoguePlayed = false;  //tracks if the post minigame dialogue has been shown
-
+    public BaseSceneManager b;
     void Update()
     {
         if (!allItemsChecked)
@@ -22,14 +22,14 @@ public class AnnieMinigameChecker : MonoBehaviour
                 if (!item.CheckViewed()) return;
             }
             allItemsChecked = true;
-        }else if (!thisDialoguePlayed)
+        } else if (!thisDialoguePlayed)
         {
             if(!d.dialogueRunning)
             {
                 d.t = anniePostMinigameText;
                 d.runDialogue();
                 thisDialoguePlayed = true;
-
+                b.endOnDialogueEnd = true;
             }
         }
     }

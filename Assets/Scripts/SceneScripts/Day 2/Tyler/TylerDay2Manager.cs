@@ -28,9 +28,11 @@ public class TylerDay2Manager : MonoBehaviour
     private int pointsInteracted;
     private State currentState;
     private bool continueClicked;
+    private bool continueClickedRun = false;
 
     public void ContinueClicked()
     {
+        dialogueController.end = true;
         continueClicked = true;
         dialogueController.t = tylerDay2TextPostItem;
         dialogueController.runDialogue();
@@ -123,15 +125,19 @@ public class TylerDay2Manager : MonoBehaviour
         }
         else if (continueClicked)
         {
+            Debug.Log("something please");
+            dialogueController.end = true;
             currentState = State.PostDialogue;
             dialogueController.t = tylerDay2TextPostItem;
             dialogueController.runDialogue();
             continueButton.SetActive(false);
+            continueClickedRun = true;
+            
         }
         else if (currentState == State.PostDialogue && !dialogueController.dialogueRunning)
         {
-            Application.Quit();
-            // END GAME CHANGE SCENE TO MAP
+            //MapController.Instance.LoadNextScene("Map");
+            //not working rn, have workaround
         }
     }
 }

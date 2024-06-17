@@ -21,10 +21,12 @@ public class DialogueController : MonoBehaviour
     public GameObject speakerContainer;
     public BackgroundHandler bgs;
     public BaseSceneManager s;
+    public bool end;
 
     private string[] dialogueText;
     private Dictionary<string, Action> functions = new();
     private bool dialogueEnabled;
+    
 
     private float pauseEnd;
 
@@ -37,15 +39,19 @@ public class DialogueController : MonoBehaviour
 
     private void Update()
     {
-        if (pauseEnd > Time.time)
+        if (dialogueRunning)
         {
-            dialogueEnabled = false;
-        } else if (pauseEnd > 0)
-        {
-            dialogueEnabled = true;
-            pauseEnd = -1;
+            if (pauseEnd > Time.time)
+            {
+                dialogueEnabled = false;
+            }
+            else if (pauseEnd > 0)
+            {
+                dialogueEnabled = true;
+                pauseEnd = -1;
+            }
+            container.SetActive(dialogueEnabled);
         }
-       container.SetActive(dialogueEnabled);
     }
 
     //given a text file of a dialogue scene, runs dialogue
@@ -57,18 +63,7 @@ public class DialogueController : MonoBehaviour
         dialogueText = t.ToString().Split("\n");
         dialogueEnabled = true;
         //instantiates characters in scene
-        string charactersInSceneRaw = dialogueText[0].Split(":")[1];
-        string[] charactersList = charactersInSceneRaw.Split(",");
-        //removes whitespace
-        for (int i = 0; i < charactersList.Length; i++)
-        {
-            charactersList[i] = charactersList[i].Trim();
-        }
-        //instantiates characters in scene n stuff
-        foreach (string character in charactersList)
-        {
-            instantiateCharacter(character);
-        }
+        setCharacters(dialogueText[0]);
         currentScene = new DialogueScene(t.ToString());
         currentScene.parent = this;
         OnMouseDown();
@@ -120,6 +115,23 @@ public class DialogueController : MonoBehaviour
         currentText.setText("");
     }
 
+    private void setCharacters(string rawText)
+    {
+        string charactersInSceneRaw = rawText.Split(":")[1];
+        string[] charactersList = charactersInSceneRaw.Split(",");
+        //removes whitespace
+        for (int i = 0; i < charactersList.Length; i++)
+        {
+            charactersList[i] = charactersList[i].Trim();
+        }
+        d.clear();
+        //instantiates characters in scene n stuff
+        foreach (string character in charactersList)
+        {
+            instantiateCharacter(character);
+        }
+    }
+
     //given a new character not in the scene, instantiates gameobject with their picture and sets location properly
     private void instantiateCharacter(string characterName)
     {
@@ -168,7 +180,7 @@ public class DialogueController : MonoBehaviour
         //
         //
         // se() in text files and PauseDialogue() concurrently unless you want unintended behavior.
-        else if (type == "p" )
+        else if (type == "p")
         {
             bool b = float.TryParse(nextLine, out float f);
             if (!b)
@@ -179,7 +191,7 @@ public class DialogueController : MonoBehaviour
         else if (type == "f")
         {
             string key = nextLine;
-          
+
             if (functions.ContainsKey(key))
             {
                 functions[nextLine].Invoke();
@@ -189,6 +201,10 @@ public class DialogueController : MonoBehaviour
             {
                 throw new UnityException("Function \"" + key + "\" does not exist!");
             }
+        }
+        else if (type == "sc")
+        {
+            setCharacters(nextLine);
         }
         else
         {
@@ -220,7 +236,7 @@ public class DialogueController : MonoBehaviour
     {
         GameObject[] g = { option1, option2, option3 };
 
-        g[index].GetComponent<SetText>().setText(this.italicize(text));
+        g[index].GetComponent<SetText>().setText((index + 1).ToString() + ") "+ this.italicize(text));
     }
 
     public void endDialogue()
@@ -228,9 +244,13 @@ public class DialogueController : MonoBehaviour
         dialogueRunning = false;
         container.SetActive(false);
         b.enabled = false;
+        Debug.Log(end);
         if (s != null && s.endOnDialogueEnd)
         {
             s.endScene();
+        } else if (end)
+        {
+            MapController.Instance.LoadNextScene("Map");
         }
     }
 

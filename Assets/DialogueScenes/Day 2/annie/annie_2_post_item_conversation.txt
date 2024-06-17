@@ -1,4 +1,4 @@
-inscene: Annie
+inscene: scout, annie2
 
 id:start
 Annie:That was nice. To, like, remember stuff. 
@@ -12,6 +12,11 @@ Annie:Hey, I’m starting to get sleepy, I think I’m gonna take that nap I was
 Annie:But, like, thanks for keeping me company. It was really kind of you.
 Annie:If you need anything from me, just knock on my door, ‘kay? Love to have you over again soon!
 :[With that, Annie leads Scout out of the cabin.]
+changeBackground()
 :[With a final smile and wave, she closes the door.]
+changeBackground()
+inScene:scout
 :[Scout returns to the path down into the base of the valley, the rain lightly falling all around them.]
+pause(5)
+:[click to continue]
 goto:end

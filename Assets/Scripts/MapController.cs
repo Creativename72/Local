@@ -14,7 +14,6 @@ public class MapController : MonoBehaviour
     public static MapController Instance { get; private set; }
 
     public SceneChangeEvent m_sceneChangeEvent;
-    private bool firstUnload = true;
     
     void Awake() {
         if (Instance != null && Instance != this) {

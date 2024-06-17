@@ -1,4 +1,4 @@
-﻿inScene: Scout, Annie
+﻿inScene: scout
 
 
 id:start
@@ -17,6 +17,7 @@ id:start
 
 id:doorbell
 :[The speaking stops for a moment. Scout hears footsteps quickly approaching the door.]
+inScene:scout,annie1
 :[A mole wearing thick glasses and a wireless headset opens the door. Her expression is hard to read.]
 
 
@@ -39,6 +40,7 @@ goto:start_talking
 id:finish
 :[The conversation goes on for a few minutes before wrapping up. When the speaking stops, Scout rings the doorbell.]
 :[There’s a shuffling of feet as whoever is inside the cabin makes their way to the door.]
+inScene:scout,annie1
 :[A mole wearing thick glasses and a wireless headset opens the door. Her expression is hard to read.]
 goto:start_talking
 

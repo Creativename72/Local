@@ -45,8 +45,11 @@ public class DialogueScene
         {
             parent.bgs.changeBackground();
         }
-        
-        if (nLine.pause)
+        if (nLine.spriteChanger)
+        {
+            return new[] { "sc", nLine.text };
+        }
+        else if (nLine.pause)
         {
             string t = nLine.text[6..];
             t = t[0..(t.Length - 2)];

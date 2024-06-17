@@ -1,9 +1,10 @@
-inscene: Tyler
+inscene: scout
 
 id:start
 :[The sky is overcast, with a light drizzle of rain falling over the valley.]
 :[Scout moves along the muddy trail leading up to Tyler’s trailer encampment.]
 :[As Scout approaches, Tyler is leaning against the side of his trailer in the rain. His outfit is much bolder than the PJs he wore yesterday.]
+inScene:scout, tyler2
 :[He waits for Scout to approach before speaking.]
 Tyler:Hey.
 Tyler:Whaddya think? [He gestures to his outfit.]
@@ -24,7 +25,7 @@ goto:question_2
 
 id:question_2
 [sleep]
-You should sleep in that outfit so you won’t be caught in PJs anymore.
+You should sleep in thatso you won’t be caught in PJs.
 [rain]
 How long have you been standing in the rain like that?
 

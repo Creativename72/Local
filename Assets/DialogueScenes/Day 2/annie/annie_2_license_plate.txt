@@ -1,4 +1,4 @@
-inscene: Annie
+inscene: -, annie2
 
 id:start
 [what]

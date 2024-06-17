@@ -112,6 +112,8 @@ changeBackground()
 :[The sun rises once more over Bellespring Valley, casting a golden glow on the cottage. A new day begins, full of possibilities and new connections to be made.]
 changeBackground()
 :[Scout stretches, makes breakfast, and steps out of the cottage, map in hand, ready to start the day with their new friends.]
-
+changeBackground()
+pause(5)
+:[click to continue]
 
 goto:end

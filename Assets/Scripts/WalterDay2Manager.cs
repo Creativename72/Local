@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using UnityEditor.SearchService;
 using UnityEngine;
 
 public class WalterDay2Manager : MonoBehaviour
@@ -17,7 +16,8 @@ public class WalterDay2Manager : MonoBehaviour
     [SerializeField] private GameObject bobber;
     [SerializeField] private GameObject fish;
 
-    private int itemsTalkedAbout;
+    //private int itemsTalkedAbout;
+    //^commented out bc unused so a warning doesn't pop up
 
     private enum State
     {
@@ -33,7 +33,7 @@ public class WalterDay2Manager : MonoBehaviour
 
     private void Start()
     {
-        itemsTalkedAbout = 0;
+        //itemsTalkedAbout = 0;
         trail.SetActive(true);
         towerRain.SetActive(false);
         blank.SetActive(false);

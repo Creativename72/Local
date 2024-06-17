@@ -1,4 +1,4 @@
-inScene: Scout, Bernice
+inScene: -,-
 
 
 id:start
@@ -12,8 +12,10 @@ changeBackground()
 
 
 :[The taxi comes to a stop in front of the cottage, Scout’s new home. They step out, stretching after the long journey from the city.]
+inScene:-,Scout
 :[In the driveway, a moving truck is parked, with workers carefully carrying out the belongings of an elderly turtle.]
 :[She sits on a rocking chair on the cottage’s front porch and waves to Scout. 
+inScene:Bernice,Scout
 
 
 Bernice: Hey there, you must be Scout. Welcome to Bellespring Valley!

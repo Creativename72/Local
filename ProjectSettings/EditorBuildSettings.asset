@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -29,9 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Day1/Walterintro.unity
     guid: 441ee0e5960688740891901c743fd924
-  - enabled: 1
-    path: Assets/Scenes/Day2/AnnieMG1.unity
-    guid: 383c9bf530473d247bf72743980ae04c
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Day2/Tyler Day 2.unity
     guid: a7d38095e369002449366a3094b0136a
@@ -44,9 +44,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Day3/Annie Day 3.unity
     guid: a6c5271e67794d141a80c6d20800eefc
-  - enabled: 1
-    path: Assets/Scenes/Day3/TylerMG2.unity
-    guid: 5625e71479b420c408aec4127bfd0134
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Day3/Walter Day 3.unity
     guid: 59c82fa52e6923541908e15aadb5cc3c
@@ -56,4 +56,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/End/FinalHangout.unity
     guid: f9c1119fd27cdd44cb3993fa976b544f
+  - enabled: 1
+    path: Assets/Scenes/Day2/Annie Day 2.unity
+    guid: 93a6224d442b83140abbc97c205063e1
   m_configObjects: {}

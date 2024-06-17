@@ -13,20 +13,37 @@ public class DialogueCharacterHandler : MonoBehaviour
 
     public int openPosition = 1;
 
+    private GameObject[] characters = new GameObject[2];
+
     public void instantiateCharacter(string name)
     {
         GameObject newCharacter = Instantiate(c, parent);
         newCharacter.name = name;
 
-        newCharacter.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(name);
+        newCharacter.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(name.ToLower());
 
         if (openPosition == 1)
         {
-            newCharacter.transform.position = position1.position;
+            newCharacter.transform.position = position1.position - new Vector3(0, 6.5f, 0);
             openPosition += 1;
+            characters[0] = newCharacter;
         } else
         {
-            newCharacter.transform.position = position2.position;
+            newCharacter.transform.position = position2.position - new Vector3(0, 6.5f, 0);
+            characters[1] = newCharacter;
+        }
+    }
+
+    public void clear()
+    {
+        openPosition = 1;
+        for (int i = 0; i < characters.Length; i++)
+        {
+            if (characters[i])
+            {
+                Destroy(characters[i]);
+                characters[0] = null;
+            }
         }
     }
 }

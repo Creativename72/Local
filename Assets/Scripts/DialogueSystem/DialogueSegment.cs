@@ -15,7 +15,14 @@ public class DialogueSegment
         for (int i = 0; i < text.Length; i++)
         {
             string line = text[i];
-            if (text[i].Contains(":"))
+            if (text[i].ToLower().Contains("inscene:"))
+            {
+                lines.Add(new DialogueLine(line)
+                {
+                    spriteChanger = true
+                });
+            }
+            else if (text[i].Contains(":"))
             {
                 DialogueLine newLine = new DialogueLine(text[i]);
                 lines.Add(newLine);
@@ -79,6 +86,7 @@ public class DialogueLine
     public bool sceneChanger = false;
     public bool function = false;
     public bool pause = false;
+    public bool spriteChanger = false;
     public DialogueLine(string textraw)
     {
         text = textraw;

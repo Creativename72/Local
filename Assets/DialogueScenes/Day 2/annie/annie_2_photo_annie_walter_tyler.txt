@@ -1,4 +1,4 @@
-inscene: Annie
+inscene: -, annie2
 
 id:start
 [photo]
@@ -18,7 +18,7 @@ Annie:There was an incident at some point, and we like, stopped talkin’ to eac
 You had a falling out?
 
 id:falling
-Annie:Yeah. It’s a long story
+Annie:Yeah. It’s a long story.
 Annie:But basically, one day, Tyler was setting up some sort of water pump at his little camp.
 Annie:Walter was there to make sure he didn’t blow himself up. And I was there just to hang.
 Annie:Walter had to go do firewatch stuff, as he does. And he was like, “Ty, don’t even think about starting the pump without me here.”

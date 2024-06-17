@@ -11,8 +11,8 @@ Tyler:Walter’s always sketchin’ cool stuff and everyone seems to love him. I
 Tyler:I have all this junk lyin’ around, might as well make somethin’ cool outta them.
 Tyler:Showed these off to Annie, she didn’t see my vision. At all.
 Tyler:Well, what do you think?
-[amazing]
-It’s amazing!
+//amazing
+//It’s amazing!
 [what_is_this]
 What is this even supposed to be?
 [creative]

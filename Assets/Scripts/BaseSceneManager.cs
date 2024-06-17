@@ -8,7 +8,7 @@ public class BaseSceneManager : MonoBehaviour
     public DialogueController d;
     public TextAsset t;
     public bool endOnDialogueEnd;
-    public bool incrementDay;
+    public bool nextScene = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +16,17 @@ public class BaseSceneManager : MonoBehaviour
         d.runDialogue();
     }
 
+    private void Update()
+    {
+        if (nextScene)
+        {
+            nextScene = false;
+            endScene();
+        }
+    }
+
     public void endScene()
     {
-        if (false)
-        {
-            MapController.Instance.currentStage++;
-        }
         MapController.Instance.LoadNextScene("Map");
     }
 }

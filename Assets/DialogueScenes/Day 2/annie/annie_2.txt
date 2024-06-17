@@ -1,9 +1,10 @@
-inScene: Annie
+inScene: scout
 
 id:start
 :[Scout makes their way up the trail to Annie’s cabin once more, the smell of fresh rain and pine filling their nostrils.]
 :[As they near the top of the hill, they just about catch the bedroom light turn on through the window.]
 :[Scout rings the doorbell. After a few moments, Annie answers, rubbing her eyes and stifling a yawn.]
+inScene: scout, annie2
 Annie:Hey there, Scout. I, like, just woke up.
 Annie:Sorry if I seem a little out of it, had one of those marathon calls last night. 
 Annie:Guy on the other end just would not stop yapping. I stayed on for like an hour past my shift end time.

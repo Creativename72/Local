@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toHighlight: {fileID: 24426567}
   defaultColor: {r: 1, g: 1, b: 1, a: 0}
-  highlightColor: {r: 0, g: 0.84952116, b: 1, a: 1}
+  highlightColor: {r: 0, g: 0.6666667, b: 1, a: 0.4392157}
   optionNumber: 2
   parent: {fileID: 5126795050743773564}
 --- !u!1 &97476251
@@ -265,7 +265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toHighlight: {fileID: 97476254}
   defaultColor: {r: 1, g: 1, b: 1, a: 0}
-  highlightColor: {r: 0, g: 0.84952116, b: 1, a: 1}
+  highlightColor: {r: 0, g: 0.6666667, b: 1, a: 0.4392157}
   optionNumber: 1
   parent: {fileID: 5126795050743773564}
 --- !u!1 &278055962
@@ -403,7 +403,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -586,7 +586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toHighlight: {fileID: 633525177}
   defaultColor: {r: 1, g: 1, b: 1, a: 0}
-  highlightColor: {r: 0, g: 0.84952116, b: 1, a: 1}
+  highlightColor: {r: 0, g: 0.6666667, b: 1, a: 0.4392157}
   optionNumber: 3
   parent: {fileID: 5126795050743773564}
 --- !u!1 &916681882
@@ -724,7 +724,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -911,7 +911,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -1043,6 +1043,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1221396763148549825, guid: 6697f00a356420145bb3e25d2991b507, type: 3}
+      propertyPath: t
+      value: 
+      objectReference: {fileID: 4900000, guid: d0df3c16432e6c3489df7800e1c0f4fd, type: 3}
+    - target: {fileID: 1221396763148549825, guid: 6697f00a356420145bb3e25d2991b507, type: 3}
+      propertyPath: end
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1221396763148549825, guid: 6697f00a356420145bb3e25d2991b507, type: 3}
       propertyPath: option1
       value: 
       objectReference: {fileID: 278055962}
@@ -1055,12 +1063,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1872714482}
     - target: {fileID: 1221396763148549825, guid: 6697f00a356420145bb3e25d2991b507, type: 3}
+      propertyPath: dialogueRunning
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1221396763148549825, guid: 6697f00a356420145bb3e25d2991b507, type: 3}
       propertyPath: speakerContainer
       value: 
       objectReference: {fileID: 2096419305162921707}
     - target: {fileID: 1221396763148549827, guid: 6697f00a356420145bb3e25d2991b507, type: 3}
       propertyPath: m_Name
       value: Dialogue System Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1221396764070970485, guid: 6697f00a356420145bb3e25d2991b507, type: 3}
+      propertyPath: openPosition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1221396764219260952, guid: 6697f00a356420145bb3e25d2991b507, type: 3}
+      propertyPath: m_text
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1221396764219260952, guid: 6697f00a356420145bb3e25d2991b507, type: 3}
       propertyPath: m_fontSize
@@ -1132,7 +1152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1221396764816501643, guid: 6697f00a356420145bb3e25d2991b507, type: 3}
       propertyPath: m_text
-      value: test dialogue
+      value: <i>The skies are overcast, and a light rain drizzles down over the valley.</i>
       objectReference: {fileID: 0}
     - target: {fileID: 1221396764816501643, guid: 6697f00a356420145bb3e25d2991b507, type: 3}
       propertyPath: m_fontColor.b
@@ -1156,7 +1176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1221396764881616509, guid: 6697f00a356420145bb3e25d2991b507, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1221396765100925418, guid: 6697f00a356420145bb3e25d2991b507, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1165,6 +1185,10 @@ PrefabInstance:
     - target: {fileID: 5387069646670532950, guid: 6697f00a356420145bb3e25d2991b507, type: 3}
       propertyPath: m_Name
       value: Speaker
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387069646670532950, guid: 6697f00a356420145bb3e25d2991b507, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6697f00a356420145bb3e25d2991b507, type: 3}

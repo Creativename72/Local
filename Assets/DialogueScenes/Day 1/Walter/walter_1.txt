@@ -1,4 +1,4 @@
-﻿inScene: Scout, Walter
+﻿inScene: scout
 
 
 id:start
@@ -17,6 +17,7 @@ id:start
 id:longer_path
 :[The path winds gently through the lush landscape, offering breathtaking views of the surrounding mountains and meadows. It takes almost an hour for Scout to reach the base of the watchtower.]
 :[As Scout approaches the tower’s stone base, a brown bear emerges from the entrance, stepping forward to greet them. His expression is hard to read.]
+inScene: scout, walter
 changeBackground()
 
 Bear: You’re finally here. Took you a while to get here, didn’t it?
@@ -65,6 +66,7 @@ goto:path_connect
 id:shorter_path        
 :[Taking the direct path through the bramble proves to be a little more difficult than Scout anticipated. They stumble a little over the rough terrain, but ultimately make it to the watchtower unscathed.]
 :[As Scout approaches the tower, a brown bear emerges from the bottom entrance, stepping forward at a brisk pace. His expression is hard to read.]
+inScene: scout, walter
 changeBackground()
 
 Bear: Halt.
@@ -99,11 +101,10 @@ Bear: I'm just trying to look out for you and others in the valley. Don’t make
 id:sorry
 :[The bear lowers his crossed arms. He gives a brief nod.]
 
-
 Bear: Good to hear.
-                
+   
 :[He clears his throat, looking back at Scout.]
-                
+goto:path_connect
 
 
 id:path_connect
@@ -189,6 +190,9 @@ Walter: [He nods.] Farewell for now, Scout.
 
 
 :[There's a momentary pause as Walter's gaze lingers on Scout, before he turns and makes his way back to the base of the tower.]
+inScene:scout
 
+pause(3)
+:[click to continue]
 
 goto:end
