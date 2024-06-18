@@ -442,6 +442,10 @@ PrefabInstance:
       propertyPath: t
       value: 
       objectReference: {fileID: 4900000, guid: 1568aa625da223345bbb3ad7e3f03681, type: 3}
+    - target: {fileID: 5431569351630525568, guid: 15d02f21d3c3ccf46a9620e3e4fbaa19, type: 3}
+      propertyPath: sceneMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: ecd0d72df3281ed44b697a72bef0c50c, type: 3}
     - target: {fileID: 5431569351630525569, guid: 15d02f21d3c3ccf46a9620e3e4fbaa19, type: 3}
       propertyPath: m_Name
       value: BaseSceneManager

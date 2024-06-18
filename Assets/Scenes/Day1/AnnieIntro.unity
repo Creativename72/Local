@@ -660,6 +660,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4900000, guid: d6328fff3f47bd04fab9f5c649064040, type: 3}
     - target: {fileID: 5431569351630525568, guid: 15d02f21d3c3ccf46a9620e3e4fbaa19, type: 3}
+      propertyPath: sceneMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 684b42399fd50504c86289a052c10b5f, type: 3}
+    - target: {fileID: 5431569351630525568, guid: 15d02f21d3c3ccf46a9620e3e4fbaa19, type: 3}
       propertyPath: endOnDialogueEnd
       value: 1
       objectReference: {fileID: 0}

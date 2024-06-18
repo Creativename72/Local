@@ -1382,6 +1382,7 @@ MonoBehaviour:
   dialogueController: {fileID: 522247502}
   background: {fileID: 1883825748}
   game: {fileID: 1497612319}
+  sceneMusic: {fileID: 8300000, guid: 5809aa7d3b4ff464989197e75c8af52a, type: 3}
 --- !u!1 &940677165
 GameObject:
   m_ObjectHideFlags: 0

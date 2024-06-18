@@ -150,6 +150,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4900000, guid: 940df62ab25843340b4c20e16164296e, type: 3}
     - target: {fileID: 5431569351630525568, guid: 15d02f21d3c3ccf46a9620e3e4fbaa19, type: 3}
+      propertyPath: sceneMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 1e18789d21432a34c937a57fa42e8fa9, type: 3}
+    - target: {fileID: 5431569351630525568, guid: 15d02f21d3c3ccf46a9620e3e4fbaa19, type: 3}
       propertyPath: incrementDay
       value: 0
       objectReference: {fileID: 0}

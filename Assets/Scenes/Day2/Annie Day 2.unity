@@ -714,6 +714,7 @@ MonoBehaviour:
   t: {fileID: 4900000, guid: 3028b0943be512140a66004cd0aa246a, type: 3}
   endOnDialogueEnd: 0
   nextScene: 0
+  sceneMusic: {fileID: 8300000, guid: 3aca6120c7f43e448848142a62ffcc8f, type: 3}
 --- !u!1001 &1857404206
 PrefabInstance:
   m_ObjectHideFlags: 0

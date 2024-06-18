@@ -30,6 +30,8 @@ public class TylerDay2Manager : MonoBehaviour
     private bool continueClicked;
     private bool continueClickedRun = false;
 
+    public AudioClip sceneMusic; //music for this scene
+
     public void ContinueClicked()
     {
         dialogueController.end = true;
@@ -47,6 +49,8 @@ public class TylerDay2Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlaySceneMusic(); //plays scene music
+
         pointsOfInterest.SetActive(false);
         continueButton.SetActive(false);
         pointsInteracted = 0;
@@ -138,6 +142,24 @@ public class TylerDay2Manager : MonoBehaviour
         {
             //MapController.Instance.LoadNextScene("Map");
             //not working rn, have workaround
+        }
+    }
+
+    //Only for scene music
+    //Finds MusicPlayer singleton and plays music associated with this scene
+    private void PlaySceneMusic()
+    {
+        if (sceneMusic != null)
+        {
+            GameObject musicObj = GameObject.Find("MusicPlayer");
+            if (musicObj != null)
+            {
+                MusicPlayer musicPlayer = musicObj.GetComponent<MusicPlayer>();
+                if (musicPlayer != null)
+                {
+                    musicPlayer.PlayMusic(sceneMusic);
+                }
+            }
         }
     }
 }

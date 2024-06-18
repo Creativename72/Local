@@ -15,6 +15,8 @@ public class TylerDay3Manager : MonoBehaviour
     private int harvestCount;
     private int winCount;
 
+    public AudioClip sceneMusic; //music for this scene
+
     private enum State
     {
         IntroDialogue,
@@ -26,6 +28,8 @@ public class TylerDay3Manager : MonoBehaviour
         // set up the world
         background.SetActive(true);
         game.SetActive(false);
+
+        PlaySceneMusic();//play scene music
 
         int childCount = game.transform.childCount;
         // go through each child and if their name is one of the selectable ones add a function to increase score on click
@@ -124,6 +128,24 @@ public class TylerDay3Manager : MonoBehaviour
         {
             Application.Quit();
             // END GAME CHANGE SCENE TO MAP
+        }
+    }
+
+    //Only for scene music
+    //Finds MusicPlayer singleton and plays music associated with this scene
+    private void PlaySceneMusic()
+    {
+        if (sceneMusic != null)
+        {
+            GameObject musicObj = GameObject.Find("MusicPlayer");
+            if (musicObj != null)
+            {
+                MusicPlayer musicPlayer = musicObj.GetComponent<MusicPlayer>();
+                if (musicPlayer != null)
+                {
+                    musicPlayer.PlayMusic(sceneMusic);
+                }
+            }
         }
     }
 }

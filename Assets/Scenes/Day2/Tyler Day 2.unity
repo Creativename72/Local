@@ -751,6 +751,7 @@ MonoBehaviour:
   tylerDay2TextGuitar: {fileID: 4900000, guid: 24416cc406674c64788fccd39ae15edb, type: 3}
   tylerDay2TextPostItem: {fileID: 4900000, guid: ef8a8676614ed904796f60eb59beb58d, type: 3}
   dialogueController: {fileID: 948798752}
+  sceneMusic: {fileID: 8300000, guid: 5809aa7d3b4ff464989197e75c8af52a, type: 3}
 --- !u!1 &993527003
 GameObject:
   m_ObjectHideFlags: 0
