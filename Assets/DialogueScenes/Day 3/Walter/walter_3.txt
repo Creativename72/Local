@@ -42,8 +42,9 @@ goto:inside
 
 
 id:inside
-:[Scout enters Walter’s living space. The air here is much warmer than the air outside, and Scout takes a moment to collect their bearings.]
+pause(3)
 changeBackground()
+:[Scout enters Walter’s living space. The air here is much warmer than the air outside, and Scout takes a moment to collect their bearings.]
 
 Walter: What brings you back here so soon?
 
@@ -167,9 +168,8 @@ changeBackground()
 
 :[Walter and Scout move their way up the trail to the mountain-top lake. As the hike goes on, Walter begins to speak.]
 
-
 Walter: This trail used to be a lot busier.
-Walter: Families, hikers, campers… It's been quieter these past few years.
+Walter: Families, hikers, campers... It's been quieter these past few years.
 pause(3)
 Walter: Sometimes I miss it. People out in nature, enjoying the scenery, and each other’s company.
 pause(3)
@@ -178,7 +178,48 @@ pause(3)
 Walter: You’re doing a good thing, Scout. Bringing everyone together, reminding us what we’ve got here. I think we all lost sight of that.
 Walter: So, thank you.
 pause(3)
-Walter: Ah, uh, the lake should be just up here…
+Walter: Ah, uh, the lake should be just up here...
 Walter: Here, take this rod, and let’s see what we can fish up.
+pause(3)
 changeBackground()
+Walter: Water’s nice and calm today, that’s good.
+Walter: Go ahead and cast your line.
+>wait_click
+pause(3)
+changeBackground()
+pause(3)
+changeBackground()
+Walter: And now, we wait.
+pause(3)
+Walter: You know, fishing is a lot like making friends. You need patience, a bit of luck, a willingness to keep trying, even when things don’t seem to be biting.
+pause(3)
+Walter: Sometimes, you spend hours out here without a single nibble, and just when you’re about to give up, something tugs on your line.
+pause(3)
+Walter: You need to keep checking your bait and casting your line. You have to let the fish come to you just like letting someone open up to you when they're ready. It takes time.
+pause(3)
+Walter: Your dinner idea was nice. Create a space where everyone feels comfortable. It’s kinda like finding the right spot to fish.
+Walter: Like here. Calm waters, good shade, nice temperature. 
+Walter: We can just sit and wait for the fish to join us on their own time.
+pause(3)
+Walter: Hmm, nothing yet?
+Walter: Let’s keep at it. Persistence pays off.
+pause(3)
+>wait_click
+changeBackground()
+Walter: Great job, Scout!
+changeBackground()
+:[Walter holds up the line with his hand.]
+Walter: Yep, that’s one big trout. Nice work. I’m sure it’ll make a fine addition to the chowder.
+Walter: Hmm...
+Walter: Listen, Scout, you should head back down on your own. I’m sure you still got lots of ingredients to prepare.
+Walter: I think I’ll stay here a while. It’s a perfect day for fishing...
+[thanks_spending]
+:[Alright. Thanks for spending the afternoon with me, Walter.]
+
+id:thanks_spending
+[and_for_helping]
+And for helping me get the fish.
+
+id:and_for_helping
+Walter: I’ll see you tonight, then.
 goto:end

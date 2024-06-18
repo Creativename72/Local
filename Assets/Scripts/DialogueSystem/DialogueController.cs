@@ -32,12 +32,16 @@ public class DialogueController : MonoBehaviour
 
     void Start()
     {
-        dialogueEnabled = false;
         pauseEnd = -1;
         //runDialogue();
     }
 
     private void Update()
+    {
+        UpdateDialogueOpen();
+    }
+
+    private void UpdateDialogueOpen()
     {
         if (dialogueRunning)
         {
@@ -49,6 +53,7 @@ public class DialogueController : MonoBehaviour
             {
                 dialogueEnabled = true;
                 pauseEnd = -1;
+                simulateMouseClick();
             }
             container.SetActive(dialogueEnabled);
         }
@@ -150,6 +155,9 @@ public class DialogueController : MonoBehaviour
 
     private void OnMouseDown()
     {
+        UpdateDialogueOpen();
+
+        Debug.Log("MD = " + dialogueEnabled);
         if (!dialogueEnabled)
             return;
 
@@ -176,12 +184,10 @@ public class DialogueController : MonoBehaviour
         {
             currentScene.gotoSegment(nextLine.Split(":")[1].Trim());
         }
-        // NOTE, do not use pau
-        //
-        //
-        // se() in text files and PauseDialogue() concurrently unless you want unintended behavior.
+        // NOTE, do not use pause() in text files and PauseDialogue() concurrently unless you want unintended behavior.
         else if (type == "p")
         {
+            Debug.Log("PAUSING");
             bool b = float.TryParse(nextLine, out float f);
             if (!b)
                 throw new UnityException("Bad format: pause() does not contain valid number!");
@@ -266,24 +272,15 @@ public class DialogueController : MonoBehaviour
     }
     public void PauseDialogue()
     {
+        // Debug.Log("PAUSING DIALOGUE!");
         dialogueEnabled = false;
+        pauseEnd = float.MaxValue;
     }
-
-    int c = 0;
     public void ResumeDialogue()
     {
-        Debug.Log("RESUMING DIALOGUE" + c++);
+        // Debug.Log("RESUMING DIALOGUE!");
         dialogueEnabled = true;
+        pauseEnd = -1;
         simulateMouseClick();
-    }
-
-    public void RemoveOption(int index)
-    {
-        
-    }
-
-    public void GotoId(string id)
-    {
-
     }
 }

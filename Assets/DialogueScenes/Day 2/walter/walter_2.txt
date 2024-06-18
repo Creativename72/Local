@@ -26,8 +26,9 @@ Yeah, let’s get outta here!
 id:start_walking
 :[Walter turns and starts walking back up the trail, with Scout following closely behind. The rain continues to fall, creating a serene atmosphere around them.]
 :[As they walk, Walter occasionally glances over his shoulder to make sure Scout is keeping up.]
-:[Walter reaches the base of the tower and turns to face Scout, who stands a few steps below him.]
+pause(3)
 changeBackground()
+:[Walter reaches the base of the tower and turns to face Scout, who stands a few steps below him.]
 Walter:Ready to climb? 
 [visitors]
 Are visitors allowed in the tower?
@@ -43,7 +44,8 @@ Walter:Keeps me in shape, I suppose.
 //climb_a_bit
 :[As they climb higher, the rain gradually fades into the background, replaced by the creaking of wood and the occasional gust of wind. Finally, they reach the balcony at the top of the tower, where the entrance to the interior awaits.]
 :[Walter unlocks the wooden door and holds the door open, letting Scout enter first.]
-ChangeBackground()
+pause(3)
+changeBackground()
 //interior
 :[Scout is greeted by a cramped, but cozy interior. Windows are on all sides of the room, adorned with charcoal drawings and photos of nature.]
 :[In one corner of the room sits a simple bed with a neatly folded plaid blanket folded at the foot. In another corner is a small kitchenette with a small selection of cooking tools stored in an open cupboard.]
@@ -167,14 +169,21 @@ goto:end
 
 id:going_fishing
 //going_fishing
+pause(3)
+changeBackground()
 :[With the fishing gear in hand, Walter leads Scout back down the winding stairs of the tower. Occasionally, he glances back at Scout to make sure they don’t slip and fall in the rain.]
 :[As they reach the base, Walter leads Scout to a sheltered spot right under the tower where the rain isn't too bad.]
+pause(3)
 changeBackground()
 Walter:This spot should do just fine. 
 Walter:Here. Take this rod, it looks like your size.
 Walter:Just hold the rod like this...
 Walter:...and cast.
-//wait_cast
+>wait_click
+pause(3)
+changeBackground()
+pause(3)
+changeBackground()
 Walter:And now, we wait.
 pause(3)
 Walter:Back in the city, I put myself out there a lot. I’d go to community events, try to be more social.
@@ -186,8 +195,10 @@ pause(3)
 Walter:That’s what I always tell myself. Though, maybe I’ve been neglecting that for a while now.
 Walter:Haven’t really talked to anyone new in so long...
 pause(3)
-//bite
+>wait_click
+changeBackground()
 Walter:Not bad at all. 
+changeBackground()
 :[Walter places the fish in a small bucket nearby, giving Scout an approving nod.]
 Walter:You did well. Moments like these make the waiting worth it, don’t you think?
 :[A crackle comes from Walter's walkie talkie. He sighs, reaching for it as he listens to the garbled message.]
