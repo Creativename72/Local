@@ -65,7 +65,7 @@ id:they_miss_you
 [time_off_too]
 And you deserve some time off, too.
 
-id:time_off_to
+id:time_off_too
 :[Annie looks at Scout thoughtfully, then nods.]
 Annie: Yeah, you’re right. I’ve been so caught up in work that I stopped trying to find time for my friends and myself.
 Annie: And I miss them, too. Thanks for the nudge, Scout. I would love to join you all for dinner.
