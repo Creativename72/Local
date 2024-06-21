@@ -45,6 +45,10 @@ public class DialogueScene
         {
             parent.bgs.changeBackground();
         }
+        if (nLine.camChanger)
+        {
+            parent.cmac.changeCamera();
+        }
         if (nLine.spriteChanger)
         {
             return new[] { "sc", nLine.text };

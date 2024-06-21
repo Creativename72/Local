@@ -43,6 +43,10 @@ public class DialogueSegment
             {
                 ((DialogueLine)lines[lines.Count - 1]).sceneChanger = true;
             }
+            else if (text[i].ToLower().Contains("changecamera()"))
+            {
+                ((DialogueLine)lines[lines.Count - 1]).camChanger = true;
+            }
             else if (text[i].ToLower().Contains("pause("))
             {
                 lines.Add(new DialogueLine(line)
@@ -87,6 +91,7 @@ public class DialogueLine
     public bool function = false;
     public bool pause = false;
     public bool spriteChanger = false;
+    public bool camChanger = false;
     public DialogueLine(string textraw)
     {
         text = textraw;

@@ -20,15 +20,16 @@ public class DialogueController : MonoBehaviour
     public GameObject option3;
     public GameObject speakerContainer;
     public BackgroundHandler bgs;
+    public CameraChanger cmac;
     public BaseSceneManager s;
     public bool end;
 
-    private string[] dialogueText;
-    private Dictionary<string, Action> functions = new();
-    private bool dialogueEnabled;
+    protected string[] dialogueText;
+    protected Dictionary<string, Action> functions = new();
+    protected bool dialogueEnabled;
     
 
-    private float pauseEnd;
+    protected float pauseEnd;
 
     void Start()
     {
@@ -41,7 +42,7 @@ public class DialogueController : MonoBehaviour
         UpdateDialogueOpen();
     }
 
-    private void UpdateDialogueOpen()
+    protected void UpdateDialogueOpen()
     {
         if (dialogueRunning)
         {
@@ -71,11 +72,11 @@ public class DialogueController : MonoBehaviour
         setCharacters(dialogueText[0]);
         currentScene = new DialogueScene(t.ToString());
         currentScene.parent = this;
-        OnMouseDown();
+        simulateMouseClick();
     }
 
     //given a line of dialogue, sets speaker name, sets textbox, and highlights the proper character
-    private void sayLine(string line)
+    protected void sayLine(string line)
     {
         string speaker = line.Split(":")[0];
         string text = this.extractText(line);
@@ -86,7 +87,7 @@ public class DialogueController : MonoBehaviour
         highlightCharacter(speaker);
     }
 
-    private string italicize(string line)
+    protected string italicize(string line)
     {
         string ret = "";
         for (int i = 0; i < line.Length; i++)
@@ -108,19 +109,19 @@ public class DialogueController : MonoBehaviour
         return ret;
     }
 
-    private string extractText(string line)
+    protected string extractText(string line)
     {
         return line.Substring(line.IndexOf(":") + 1).Trim();
     }
 
-    private void sayOptions()
+    protected void sayOptions()
     {
         currentSpeaker.setText("");
         speakerContainer.SetActive(false);
         currentText.setText("");
     }
 
-    private void setCharacters(string rawText)
+    protected void setCharacters(string rawText)
     {
         string charactersInSceneRaw = rawText.Split(":")[1];
         string[] charactersList = charactersInSceneRaw.Split(",");
@@ -138,12 +139,12 @@ public class DialogueController : MonoBehaviour
     }
 
     //given a new character not in the scene, instantiates gameobject with their picture and sets location properly
-    private void instantiateCharacter(string characterName)
+    protected void instantiateCharacter(string characterName)
     {
         d.instantiateCharacter(characterName);
     }
 
-    private void highlightCharacter(string characterName)
+    protected void highlightCharacter(string characterName)
     {
         //highlight character
     }

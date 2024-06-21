@@ -13,7 +13,7 @@ public class DialogueCharacterHandler : MonoBehaviour
 
     public int openPosition = 1;
 
-    private GameObject[] characters = new GameObject[2];
+    protected GameObject[] characters = new GameObject[2];
 
     public void instantiateCharacter(string name)
     {
