@@ -4,12 +4,12 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class HighlightableObject : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer sprite;
+    [SerializeField] public SpriteRenderer sprite;
     [SerializeField] private Color defaultColor = Color.gray;
     [SerializeField] private Color highlightColor = Color.white;
     private Action onClick;
-    private bool enableHighlight;
-    private bool enableClick;
+    public bool enableHighlight;
+    public bool enableClick;
 
     public void OnClick(Action a)
     {

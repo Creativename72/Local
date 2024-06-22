@@ -222,10 +222,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13877153, y: 0.28032255}
+  m_Offset: {x: 0.13877153, y: 2.68}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.6078948, y: 0.73391813}
+    pivot: {x: 0.600329, y: 0.6096491}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
@@ -233,7 +233,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.7257843, y: 6.8857203}
+  m_Size: {x: 7.33, y: 6.8857203}
   m_EdgeRadius: 0
 --- !u!114 &46053863
 MonoBehaviour:
@@ -250,6 +250,8 @@ MonoBehaviour:
   sprite: {fileID: 46053861}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!1 &65486281
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,6 +301,8 @@ MonoBehaviour:
   sprite: {fileID: 65486285}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &65486284
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -312,10 +316,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13877153, y: 0.28032255}
+  m_Offset: {x: 0.13877153, y: 2.68}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.6078948, y: 0.73391813}
+    pivot: {x: 0.600329, y: 0.6096491}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
@@ -323,7 +327,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.7257843, y: 6.8857203}
+  m_Size: {x: 7.33, y: 6.8857203}
   m_EdgeRadius: 0
 --- !u!212 &65486285
 SpriteRenderer:
@@ -426,6 +430,8 @@ MonoBehaviour:
   sprite: {fileID: 117388467}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &117388466
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -439,10 +445,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13109398, y: 0.15079653}
+  m_Offset: {x: 0.13109398, y: 3.76}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.675, y: 0.46959063}
+    pivot: {x: 0.68585527, y: 0.31140348}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
@@ -553,6 +559,8 @@ MonoBehaviour:
   sprite: {fileID: 258488608}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &258488607
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -566,10 +574,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.17582703, y: 0.6823597}
+  m_Offset: {x: 0.17582703, y: 4.63}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.23157893, y: 0.4111111}
+    pivot: {x: 0.2319079, y: 0.22953212}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
@@ -680,6 +688,8 @@ MonoBehaviour:
   sprite: {fileID: 368362648}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &368362647
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -693,10 +703,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13109398, y: 0.15079653}
+  m_Offset: {x: 0.13109398, y: 3.76}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.675, y: 0.46959063}
+    pivot: {x: 0.68585527, y: 0.31140348}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
@@ -857,10 +867,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13955832, y: 0.045416355}
+  m_Offset: {x: 0.13955832, y: 5.41}
   m_SpriteTilingProperty:
-    border: {x: 0.45000002, y: 8.23, z: 29.53, w: 0.69}
-    pivot: {x: 0.11812378, y: 0.6746343}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.11924343, y: 0.41666663}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
@@ -868,7 +878,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.9628, y: 12.670896}
+  m_Size: {x: 8.9628, y: 11.62}
   m_EdgeRadius: 0
 --- !u!114 &401157200
 MonoBehaviour:
@@ -885,6 +895,8 @@ MonoBehaviour:
   sprite: {fileID: 401157198}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!1 &417718908
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,6 +946,8 @@ MonoBehaviour:
   sprite: {fileID: 417718912}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &417718911
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -947,10 +961,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.79498816, y: 0.41795087}
+  m_Offset: {x: 0.79498816, y: 4.72}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.7763158, y: 0.65906435}
+    pivot: {x: 0.7697369, y: 0.47222218}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
@@ -1019,6 +1033,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5126795050743773564, guid: 28f9f542476982b42bc0ef83a3cfe4bf, type: 3}
+      propertyPath: end
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5126795050743773565, guid: 28f9f542476982b42bc0ef83a3cfe4bf, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1066,6 +1084,10 @@ PrefabInstance:
     - target: {fileID: 5126795050743773566, guid: 28f9f542476982b42bc0ef83a3cfe4bf, type: 3}
       propertyPath: m_Name
       value: Dialogue System Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126795050743773566, guid: 28f9f542476982b42bc0ef83a3cfe4bf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28f9f542476982b42bc0ef83a3cfe4bf, type: 3}
@@ -1181,6 +1203,8 @@ MonoBehaviour:
   sprite: {fileID: 729743112}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &729743114
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1194,10 +1218,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.17582703, y: 0.6823597}
+  m_Offset: {x: 0.17582703, y: 4.63}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.23157893, y: 0.4111111}
+    pivot: {x: 0.2319079, y: 0.22953212}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
@@ -1256,6 +1280,8 @@ MonoBehaviour:
   sprite: {fileID: 796948567}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &796948566
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1269,10 +1295,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.17582703, y: 0.6823597}
+  m_Offset: {x: 0.17582703, y: 4.63}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.23157893, y: 0.4111111}
+    pivot: {x: 0.2319079, y: 0.22953212}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
@@ -1432,6 +1458,8 @@ MonoBehaviour:
   sprite: {fileID: 940677169}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &940677168
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1445,10 +1473,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.052986264, y: 1.0890627}
+  m_Offset: {x: 0.052986264, y: 8.03}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.37763157, y: 0.55614036}
+    pivot: {x: 0.38733557, y: 0.23099412}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
@@ -1559,6 +1587,8 @@ MonoBehaviour:
   sprite: {fileID: 942267539}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &942267538
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1572,10 +1602,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13955832, y: 0.045416355}
+  m_Offset: {x: 0.13955832, y: 5.41}
   m_SpriteTilingProperty:
-    border: {x: 0.45000002, y: 8.23, z: 29.53, w: 0.69}
-    pivot: {x: 0.11812378, y: 0.6746343}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.11924343, y: 0.41666663}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
@@ -1583,7 +1613,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.9628, y: 12.670896}
+  m_Size: {x: 8.9628, y: 11.62}
   m_EdgeRadius: 0
 --- !u!212 &942267539
 SpriteRenderer:
@@ -1686,6 +1716,8 @@ MonoBehaviour:
   sprite: {fileID: 976586257}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &976586256
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1699,10 +1731,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13877153, y: 0.28032255}
+  m_Offset: {x: 0.13877153, y: 2.68}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.6078948, y: 0.73391813}
+    pivot: {x: 0.600329, y: 0.6096491}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
@@ -1710,7 +1742,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.7257843, y: 6.8857203}
+  m_Size: {x: 7.33, y: 6.8857203}
   m_EdgeRadius: 0
 --- !u!212 &976586257
 SpriteRenderer:
@@ -1863,10 +1895,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.79498816, y: 0.41795087}
+  m_Offset: {x: 0.79498816, y: 4.72}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.7763158, y: 0.65906435}
+    pivot: {x: 0.7697369, y: 0.47222218}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
@@ -1891,6 +1923,8 @@ MonoBehaviour:
   sprite: {fileID: 980803054}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!1001 &1032995684
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2030,6 +2064,8 @@ MonoBehaviour:
   sprite: {fileID: 1049558003}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &1049558002
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2043,10 +2079,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13877153, y: 0.28032255}
+  m_Offset: {x: 0.13877153, y: 2.68}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.6078948, y: 0.73391813}
+    pivot: {x: 0.600329, y: 0.6096491}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
@@ -2054,7 +2090,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.7257843, y: 6.8857203}
+  m_Size: {x: 7.33, y: 6.8857203}
   m_EdgeRadius: 0
 --- !u!212 &1049558003
 SpriteRenderer:
@@ -2157,6 +2193,8 @@ MonoBehaviour:
   sprite: {fileID: 1083245351}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &1083245350
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2170,10 +2208,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13109398, y: 0.15079653}
+  m_Offset: {x: 0.13109398, y: 3.76}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.675, y: 0.46959063}
+    pivot: {x: 0.68585527, y: 0.31140348}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
@@ -2284,6 +2322,8 @@ MonoBehaviour:
   sprite: {fileID: 1122695062}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &1122695061
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2297,10 +2337,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13955832, y: 0.045416355}
+  m_Offset: {x: 0.13955832, y: 5.41}
   m_SpriteTilingProperty:
-    border: {x: 0.45000002, y: 8.23, z: 29.53, w: 0.69}
-    pivot: {x: 0.11812378, y: 0.6746343}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.11924343, y: 0.41666663}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
@@ -2308,7 +2348,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.9628, y: 12.670896}
+  m_Size: {x: 8.9628, y: 11.62}
   m_EdgeRadius: 0
 --- !u!212 &1122695062
 SpriteRenderer:
@@ -2411,6 +2451,8 @@ MonoBehaviour:
   sprite: {fileID: 1279114409}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &1279114408
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2424,10 +2466,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.17582703, y: 0.6823597}
+  m_Offset: {x: 0.17582703, y: 4.63}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.23157893, y: 0.4111111}
+    pivot: {x: 0.2319079, y: 0.22953212}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
@@ -2538,6 +2580,8 @@ MonoBehaviour:
   sprite: {fileID: 1284438116}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &1284438115
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2551,10 +2595,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13877153, y: 0.28032255}
+  m_Offset: {x: 0.13877153, y: 2.68}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.6078948, y: 0.73391813}
+    pivot: {x: 0.600329, y: 0.6096491}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
@@ -2562,7 +2606,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.7257843, y: 6.8857203}
+  m_Size: {x: 7.33, y: 6.8857203}
   m_EdgeRadius: 0
 --- !u!212 &1284438116
 SpriteRenderer:
@@ -2665,6 +2709,8 @@ MonoBehaviour:
   sprite: {fileID: 1290638519}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &1290638518
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2678,10 +2724,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13877153, y: 0.28032255}
+  m_Offset: {x: 0.13877153, y: 2.68}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.6078948, y: 0.73391813}
+    pivot: {x: 0.600329, y: 0.6096491}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
@@ -2689,7 +2735,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.7257843, y: 6.8857203}
+  m_Size: {x: 7.33, y: 6.8857203}
   m_EdgeRadius: 0
 --- !u!212 &1290638519
 SpriteRenderer:
@@ -2792,6 +2838,8 @@ MonoBehaviour:
   sprite: {fileID: 1479891194}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &1479891193
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2805,10 +2853,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.79498816, y: 0.41795087}
+  m_Offset: {x: 0.79498816, y: 4.72}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.7763158, y: 0.65906435}
+    pivot: {x: 0.7697369, y: 0.47222218}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
@@ -2971,7 +3019,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 85b5a6ee76bdbd443bfd035374b3c196, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aacfc6ef399498c49b9e4708c5474f80, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3081,10 +3129,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13109398, y: 0.15079653}
+  m_Offset: {x: 0.13109398, y: 3.76}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.675, y: 0.46959063}
+    pivot: {x: 0.68585527, y: 0.31140348}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
@@ -3109,6 +3157,8 @@ MonoBehaviour:
   sprite: {fileID: 1515563959}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!1 &1559766235
 GameObject:
   m_ObjectHideFlags: 0
@@ -3210,6 +3260,8 @@ MonoBehaviour:
   sprite: {fileID: 1559766237}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &1559766239
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3223,10 +3275,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.052986264, y: 1.0890627}
+  m_Offset: {x: 0.052986264, y: 8.03}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.37763157, y: 0.55614036}
+    pivot: {x: 0.38733557, y: 0.23099412}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
@@ -3285,6 +3337,8 @@ MonoBehaviour:
   sprite: {fileID: 1732306823}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &1732306822
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3298,10 +3352,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13955832, y: 0.045416355}
+  m_Offset: {x: 0.13955832, y: 5.41}
   m_SpriteTilingProperty:
-    border: {x: 0.45000002, y: 8.23, z: 29.53, w: 0.69}
-    pivot: {x: 0.11812378, y: 0.6746343}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.11924343, y: 0.41666663}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
@@ -3309,7 +3363,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.9628, y: 12.670896}
+  m_Size: {x: 8.9628, y: 11.62}
   m_EdgeRadius: 0
 --- !u!212 &1732306823
 SpriteRenderer:
@@ -3412,6 +3466,8 @@ MonoBehaviour:
   sprite: {fileID: 1837579109}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &1837579108
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3425,10 +3481,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13109398, y: 0.15079653}
+  m_Offset: {x: 0.13109398, y: 3.76}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.675, y: 0.46959063}
+    pivot: {x: 0.68585527, y: 0.31140348}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
@@ -3623,6 +3679,8 @@ MonoBehaviour:
   sprite: {fileID: 1896435015}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &1896435014
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3636,10 +3694,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13955832, y: 0.045416355}
+  m_Offset: {x: 0.13955832, y: 5.41}
   m_SpriteTilingProperty:
-    border: {x: 0.45000002, y: 8.23, z: 29.53, w: 0.69}
-    pivot: {x: 0.11812378, y: 0.6746343}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.11924343, y: 0.41666663}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
@@ -3647,7 +3705,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.9628, y: 12.670896}
+  m_Size: {x: 8.9628, y: 11.62}
   m_EdgeRadius: 0
 --- !u!212 &1896435015
 SpriteRenderer:
@@ -3750,6 +3808,8 @@ MonoBehaviour:
   sprite: {fileID: 1952182599}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &1952182598
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3763,10 +3823,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.79498816, y: 0.41795087}
+  m_Offset: {x: 0.79498816, y: 4.72}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.7763158, y: 0.65906435}
+    pivot: {x: 0.7697369, y: 0.47222218}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
@@ -3877,6 +3937,8 @@ MonoBehaviour:
   sprite: {fileID: 2003141432}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &2003141431
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3890,10 +3952,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.17582703, y: 0.6823597}
+  m_Offset: {x: 0.17582703, y: 4.63}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.23157893, y: 0.4111111}
+    pivot: {x: 0.2319079, y: 0.22953212}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
@@ -4004,6 +4066,8 @@ MonoBehaviour:
   sprite: {fileID: 2019132279}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &2019132278
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4017,10 +4081,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.052986264, y: 1.0890627}
+  m_Offset: {x: 0.052986264, y: 8.03}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.37763157, y: 0.55614036}
+    pivot: {x: 0.38733557, y: 0.23099412}
     oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5

@@ -747,7 +747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 582680374161826847, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: sceneNames.Array.data[6]
-      value: Cooking
+      value: FinalHangout
       objectReference: {fileID: 0}
     - target: {fileID: 1995238928703854620, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x

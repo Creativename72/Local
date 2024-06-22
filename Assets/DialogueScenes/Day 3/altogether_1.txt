@@ -1,4 +1,4 @@
-inScene: Scout, Annie, Walter, Tyler
+inScene: Scout
 
 
 id:start

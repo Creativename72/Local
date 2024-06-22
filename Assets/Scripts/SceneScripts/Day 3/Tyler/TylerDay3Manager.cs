@@ -50,6 +50,7 @@ public class TylerDay3Manager : MonoBehaviour
                     harvestCount++;
                     highlight.EnableClick(false);
                     highlight.EnableHighlight(false);
+                    highlight.sprite.enabled = false;
                 });
             }
             else
