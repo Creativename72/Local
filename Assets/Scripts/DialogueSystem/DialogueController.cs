@@ -27,7 +27,12 @@ public class DialogueController : MonoBehaviour
     protected string[] dialogueText;
     protected Dictionary<string, Action> functions = new();
     protected bool dialogueEnabled;
-    
+
+    [SerializeField] bool scrollingText = true; //inspector option for turning scrolling text on/off
+    //current dialogue coroutine (should only be one running)
+    private IEnumerator currDialogue;
+    private String currLine;
+    public int textScrollDelay = 1; //determines text scroll speed, default is 1 letter every 1 frames
 
     protected float pauseEnd;
 
@@ -83,7 +88,18 @@ public class DialogueController : MonoBehaviour
         text = this.italicize(text);
         currentSpeaker.setText(speaker);
         speakerContainer.SetActive(speaker.Trim() != "");
-        currentText.setText(text);
+
+        if (scrollingText)
+        {
+            if (currDialogue != null) { StopCoroutine(currDialogue); } //stop current dialogue coroutine
+            currDialogue = TypeSentence(line); //set curr dialogue to a new coroutine with new sentence
+            StartCoroutine(currDialogue); //start a new dialogue coroutine with a new sentence
+        }
+        else
+        {
+            currentText.setText(text); //this line sets the new text
+        }
+
         highlightCharacter(speaker);
     }
 
@@ -156,6 +172,19 @@ public class DialogueController : MonoBehaviour
 
     private void OnMouseDown()
     {
+        /*
+         * Checks if there is currently a line of dialogue being scrolled through
+         * If so, stop scrolling and complete the full dialogue
+         * This check happens before any other functions that trigger off mouseClick to avoid messing up dialogue later.
+         */
+        if (currDialogue != null)
+        {
+            StopCoroutine(currDialogue);
+            currentText.setText(currLine);
+            currDialogue = null;
+            return;
+        }
+
         UpdateDialogueOpen();
 
         Debug.Log("MD = " + dialogueEnabled);
@@ -271,6 +300,27 @@ public class DialogueController : MonoBehaviour
         yield return new WaitForSeconds(time);
         after.Invoke();
     }
+
+    //Coroutine for scrolling dialogue (adds one letter at a time)
+    private IEnumerator TypeSentence(string sentence)
+    {
+        currLine = sentence;
+        String text = "";
+        foreach (char letter in sentence.ToCharArray())
+        {
+            text += letter;
+            currentText.setText(text);
+            if (textScrollDelay > 0)
+            {
+                yield return textScrollDelay;
+            }else
+            {
+                yield return null;
+            }
+        }
+        currDialogue = null;
+    }
+
     public void PauseDialogue()
     {
         // Debug.Log("PAUSING DIALOGUE!");
