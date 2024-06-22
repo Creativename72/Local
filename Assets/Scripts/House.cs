@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class House : MonoBehaviour, IHouse
@@ -28,10 +29,19 @@ public class House : MonoBehaviour, IHouse
     public Material highlightMat;
     public Material defaultMat;
 
+    [SerializeField] RectTransform UILocation; //RectTransform of the MapIconPlaceholder object to correctly place map icons
+
 
     // Start is called before the first frame update
     void Start()
     {
+        //Place this icon at the location of UILocation
+        if (UILocation != null)
+        {
+            this.gameObject.transform.localPosition = (UILocation.GetComponent<RectTransform>().position);
+            Debug.Log(this.gameObject.transform.localPosition);
+        }
+
         Debug.Log(string.Join(",", MapController.Instance.HouseStates));
         isActive = MapController.Instance.HouseStates[(int) thisHouse];
         nextScene = MapController.Instance.currentStage;
