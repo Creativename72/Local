@@ -32,7 +32,10 @@ public class DialogueController : MonoBehaviour
     //current dialogue coroutine (should only be one running)
     private IEnumerator currDialogue;
     private String currLine;
-    public int textScrollDelay = 1; //determines text scroll speed, default is 1 letter every 1 frames
+    public float textScrollDelay = 0.1f; //determines text scroll speed, default is 1 letter every 1 frames 
+    public float textScrollDelayQuantity = 0.1f;
+    public bool textCurrentlyScrolling = false;
+
 
     protected float pauseEnd;
 
@@ -44,6 +47,7 @@ public class DialogueController : MonoBehaviour
 
     private void Update()
     {
+        textScrollDelay -= Time.deltaTime;
         UpdateDialogueOpen();
     }
 
@@ -92,6 +96,7 @@ public class DialogueController : MonoBehaviour
         if (scrollingText)
         {
             if (currDialogue != null) { StopCoroutine(currDialogue); } //stop current dialogue coroutine
+            this.textCurrentlyScrolling = true;
             currDialogue = TypeSentence(line); //set curr dialogue to a new coroutine with new sentence
             StartCoroutine(currDialogue); //start a new dialogue coroutine with a new sentence
         }
@@ -187,9 +192,12 @@ public class DialogueController : MonoBehaviour
 
         UpdateDialogueOpen();
 
-        Debug.Log("MD = " + dialogueEnabled);
+        //Debug.Log("MD = " + dialogueEnabled);
         if (!dialogueEnabled)
             return;
+
+        if (this.textCurrentlyScrolling)
+            this.textCurrentlyScrolling = false;
 
         string[] nextLineList = currentScene.nextLine();
         string nextLine = nextLineList[1];
@@ -304,21 +312,34 @@ public class DialogueController : MonoBehaviour
     //Coroutine for scrolling dialogue (adds one letter at a time)
     private IEnumerator TypeSentence(string sentence)
     {
-        currLine = sentence;
+        currLine = italicize(sentence.Split(":")[1]);
+        string[] toIterate = sentenceHelper(currLine);
         String text = "";
-        foreach (char letter in sentence.ToCharArray())
+        foreach (char letter in currLine.ToCharArray()) //replace with toIterate
         {
             text += letter;
             currentText.setText(text);
-            if (textScrollDelay > 0)
+            if (!this.textCurrentlyScrolling)
+            {
+                currentText.setText(currLine);
+                break;
+            }
+            while (textScrollDelay > 0)
             {
                 yield return textScrollDelay;
-            }else
-            {
-                yield return null;
             }
         }
         currDialogue = null;
+        this.textCurrentlyScrolling = false;
+    }
+
+    private string[] sentenceHelper(string sentence)
+    {
+        // should return string list with each character as its own element with the exception of lines that include the markdown tokesn <i> or <\i> which should be appended to the previous character.
+        // if you replace the .ToCharArray() call in the typesentence that should make this work
+        string[] ret = new string[sentence.Length];
+
+        return ret;
     }
 
     public void PauseDialogue()
