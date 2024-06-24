@@ -32,7 +32,6 @@ Journal:Tyler showed me his hobbies. It seems like he’s...
 id:tyler
 :[As Scout writes in their journal, their phone rings. It’s Bernice.]
 changeBackground()
-
 [hello]
 Hello?
 
