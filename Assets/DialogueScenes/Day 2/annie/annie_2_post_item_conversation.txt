@@ -17,6 +17,5 @@ changeBackground()
 changeBackground()
 inScene:scout
 :[Scout returns to the path down into the base of the valley, the rain lightly falling all around them.]
-pause(5)
-:[click to continue]
+
 goto:end

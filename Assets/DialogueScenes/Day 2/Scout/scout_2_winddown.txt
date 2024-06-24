@@ -111,7 +111,7 @@ Thanks, Bernice. I won’t let you down.
 id:thanks
 Bernice:I know you won’t. Good luck, Scout! I’ll check in with you again soon.
 :[With that, the call ends. Scout sets the phone down and the journal to the side. They climb in bed, ready for tomorrow's mission.]
-inScene:scout
+
 
 changeBackground()
 pause(3)
@@ -120,7 +120,5 @@ changeBackground()
 :[As the sun shines through the bedroom window, Scout slowly awakens. Today was going to be a busy day of gathering ingredients and sending out invites.]
 :[Scout pulls out their map and decides on who they should go and invite first.]
 
-pause(2)
-:[click to continue]
 goto:end
 

@@ -192,7 +192,5 @@ Walter: [He nods.] Farewell for now, Scout.
 :[There's a momentary pause as Walter's gaze lingers on Scout, before he turns and makes his way back to the base of the tower.]
 inScene:scout
 
-pause(3)
-:[click to continue]
 
 goto:end

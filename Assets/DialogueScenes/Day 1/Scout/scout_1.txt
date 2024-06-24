@@ -105,7 +105,7 @@ id:choice_8
 :[Scout finishes their journal, setting it back in their backpack. They climb into their bed, ready to take on whatever challenges tomorrow might bring.]
 
 
-pause(3)
+pause(2)
 changeBackground()
 
 
@@ -113,7 +113,6 @@ changeBackground()
 changeBackground()
 :[Scout stretches, makes breakfast, and steps out of the cottage, map in hand, ready to start the day with their new friends.]
 changeBackground()
-pause(5)
-:[click to continue]
+
 
 goto:end

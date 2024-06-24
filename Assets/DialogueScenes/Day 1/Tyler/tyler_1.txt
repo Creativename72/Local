@@ -178,7 +178,6 @@ Tyler: I’ll be wearin’ somethin’ more… presentable, alrighty? Cool.
 :[Tyler hops back up the stairs of his trailer, giving Scout a wink before slamming the door to his trailer.]
 inScene:scout
 :[After that encounter, Scout walks back along the dirt path onto the main road once again.]
-pause(5)
-:[click to continue]
+
 
 goto:end
