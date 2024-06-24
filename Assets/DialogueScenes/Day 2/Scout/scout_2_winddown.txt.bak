@@ -103,9 +103,7 @@ Bernice:How about a Fish Chowder? Use the cream as the base, and you’ll just n
 Sounds good!
 
 id:approved
-:-->At this point, the ingredient list UI would appear at the side of the screen
 Bernice:Alright, write this down. You’ll need fish, any fish will do. For spices; salt, pepper, paprika, and onion powder. And for veggies; potatoes, carrots and onions.
-:-->the ingredient list UI is on screen for the rest of this hangout, but then only appears during the appropriate minigames 
 Bernice:Got all that? I’ll text you the recipe when it’s time.
 [thanks]
 Thanks, Bernice. I won’t let you down.
