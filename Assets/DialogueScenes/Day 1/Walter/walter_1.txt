@@ -28,7 +28,7 @@ I like taking in the views.
 [on_foot]
 I’m not used to traveling by foot in this kind of terrain.
 [watching_me]
-
+Were you watching me?
 
 id:take_in_views                
 Bear: [He nods curtly.] I suppose it's nice this time of year.
