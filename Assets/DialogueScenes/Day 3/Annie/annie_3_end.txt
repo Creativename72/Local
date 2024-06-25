@@ -1,8 +1,9 @@
-inScene: Annie
+inScene: Scout, Annie2
 
 
 id:start
 Annie: That’s everything on your list, right?
+changeBackground()
 
 [should_be]
 Should be!
@@ -34,6 +35,8 @@ id:byebye
 Annie: See you tonight, alright Scout? And thanks for organizing this.
 Annie: And for hanging out with me the past few days. I really think I’m starting to balance my work life stuff after I met you.
 Annie: Alright, bye bye! Cya!
+changeBackground()
+inScene:Scout
 
 
 :[Annie waves Scout out the door. Scout, ingredients in hand, trails back down the mountain and towards the heart of the valley once more.]

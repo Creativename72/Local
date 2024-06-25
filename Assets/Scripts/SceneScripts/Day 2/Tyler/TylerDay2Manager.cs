@@ -28,7 +28,7 @@ public class TylerDay2Manager : MonoBehaviour
     private int pointsInteracted;
     private State currentState;
     private bool continueClicked;
-    private bool continueClickedRun = false;
+    //private bool continueClickedRun = false;
 
     public AudioClip sceneMusic; //music for this scene
 
@@ -135,7 +135,7 @@ public class TylerDay2Manager : MonoBehaviour
             dialogueController.t = tylerDay2TextPostItem;
             dialogueController.runDialogue();
             continueButton.SetActive(false);
-            continueClickedRun = true;
+            //continueClickedRun = true;
             
         }
         else if (currentState == State.PostDialogue && !dialogueController.dialogueRunning)

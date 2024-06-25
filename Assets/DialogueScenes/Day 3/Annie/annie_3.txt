@@ -41,16 +41,16 @@ Annie: I didn’t have any plans in the morning, so I thought getting a few more
 
 
 [deserve_a_break]
-Annie, you deserve a break. Your job is important, but…
+Annie, you deserve a break. Your job is important...
 [they_miss_you]
-Tyler and Walter both miss you. They deserve your time…
+Tyler and Walter miss you. They deserve your time…
 [connections_wouldnt_hurt]
-You talk to people online every day. Some in person connections wouldn’t hurt…
+You can't only interact with people online.
 
 
 id:deserve_a_break
 [reconnect]
-So are your friends. Let’s make some time to reconnect.
+But so are your friends.
 
 id:reconnect
 :[Annie sighs, a small smile forming on her face.]
