@@ -32,8 +32,9 @@ public class DialogueController : MonoBehaviour
     //current dialogue coroutine (should only be one running)
     private IEnumerator currDialogue;
     private String currLine;
-    public float textScrollDelay = 0.1f; //determines text scroll speed, default is 1 letter every 1 frames 
-    public float textScrollDelayQuantity = 0.1f;
+    //determines text scroll speed, default is 1 letter every 1 frames 
+    private float textScrollDelayQuantity;
+    private float textScrollDelay;
     public bool textCurrentlyScrolling = false;
 
 
@@ -41,13 +42,21 @@ public class DialogueController : MonoBehaviour
 
     void Start()
     {
+        textScrollDelayQuantity = 0.015f;
+        textScrollDelay = textScrollDelayQuantity;
         pauseEnd = -1;
         //runDialogue();
     }
 
     private void Update()
     {
-        textScrollDelay -= Time.deltaTime;
+        if (textCurrentlyScrolling)
+        {
+            textScrollDelay -= Time.deltaTime;
+        } else
+        {
+            textScrollDelay = textScrollDelayQuantity;
+        }
         UpdateDialogueOpen();
     }
 
@@ -102,7 +111,7 @@ public class DialogueController : MonoBehaviour
         }
         else
         {
-            currentText.setText(text); //this line sets the new text
+            currentText.setText(this.italicize(text)); //this line sets the new text
         }
 
         highlightCharacter(speaker);
@@ -185,7 +194,7 @@ public class DialogueController : MonoBehaviour
         if (currDialogue != null)
         {
             StopCoroutine(currDialogue);
-            currentText.setText(currLine);
+            currentText.setText(this.italicize(currLine));
             currDialogue = null;
             return;
         }
@@ -197,7 +206,10 @@ public class DialogueController : MonoBehaviour
             return;
 
         if (this.textCurrentlyScrolling)
+        {
             this.textCurrentlyScrolling = false;
+            this.textScrollDelay = this.textScrollDelayQuantity;
+        }
 
         string[] nextLineList = currentScene.nextLine();
         string nextLine = nextLineList[1];
@@ -312,32 +324,71 @@ public class DialogueController : MonoBehaviour
     //Coroutine for scrolling dialogue (adds one letter at a time)
     private IEnumerator TypeSentence(string sentence)
     {
-        currLine = italicize(sentence.Split(":")[1]);
-        string[] toIterate = sentenceHelper(currLine);
-        String text = "";
-        foreach (char letter in currLine.ToCharArray()) //replace with toIterate
+        currLine = sentence.Split(":")[1];
+        string[] toIterate = sentenceHelper(currLine).ToArray();
+        string text = "";
+        int index = 0;
+        char[] tempArray = currLine.ToCharArray();
+        while (index < toIterate.Length)
         {
-            text += letter;
-            currentText.setText(text);
+            string letter = toIterate[index];
             if (!this.textCurrentlyScrolling)
             {
-                currentText.setText(currLine);
+                currentText.setText(this.italicize(currLine));
                 break;
-            }
-            while (textScrollDelay > 0)
+            } else if (textScrollDelay < 0)
+            {
+                text += letter;
+                index += 1;
+                currentText.setText(text);
+                textScrollDelay += textScrollDelayQuantity;
+                yield return textScrollDelay;
+            } else
             {
                 yield return textScrollDelay;
             }
         }
         currDialogue = null;
         this.textCurrentlyScrolling = false;
+        textScrollDelay = textScrollDelayQuantity;
     }
 
-    private string[] sentenceHelper(string sentence)
+    private List<String> sentenceHelper(string sentence)
     {
         // should return string list with each character as its own element with the exception of lines that include the markdown tokesn <i> or <\i> which should be appended to the previous character.
         // if you replace the .ToCharArray() call in the typesentence that should make this work
-        string[] ret = new string[sentence.Length];
+        List<String> ret = new List<string>();
+        
+        for (int i = 0; i < sentence.Length; i++)
+        {
+            string currentChar = sentence.Substring(i, 1);
+            if (currentChar == "[")
+            {
+                if (ret.Count == 0)
+                {
+                    ret.Add("<i>");
+                }
+                else
+                {
+                    ret[ret.Count - 1] = ret[ret.Count - 1] + "<i>";
+                }
+            }
+            else if (currentChar == "]")
+            {
+                if (ret.Count == 0)
+                {
+                    ret.Add("</i>");
+                }
+                else
+                {
+                    ret[ret.Count - 1] = ret[ret.Count - 1] + "</i>";
+                }
+            }
+            else
+            {
+                ret.Add(currentChar);
+            }
+        }
 
         return ret;
     }

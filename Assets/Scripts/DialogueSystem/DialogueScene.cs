@@ -47,7 +47,7 @@ public class DialogueScene
         }
         if (nLine.camChanger)
         {
-            parent.cmac.changeCamera();
+            //parent.cmac.changeCamera();
         }
         if (nLine.spriteChanger)
         {
