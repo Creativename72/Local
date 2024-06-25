@@ -30,7 +30,7 @@ public class TylerDay2Manager : MonoBehaviour
     private bool continueClicked;
     //private bool continueClickedRun = false;
 
-    public AudioClip sceneMusic; //music for this scene
+    // public AudioClip sceneMusic; //music for this scene
 
     public void ContinueClicked()
     {
@@ -49,7 +49,7 @@ public class TylerDay2Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlaySceneMusic(); //plays scene music
+        // PlaySceneMusic(); //plays scene music
 
         pointsOfInterest.SetActive(false);
         continueButton.SetActive(false);
@@ -145,6 +145,8 @@ public class TylerDay2Manager : MonoBehaviour
         }
     }
 
+
+    /*
     //Only for scene music
     //Finds MusicPlayer singleton and plays music associated with this scene
     private void PlaySceneMusic()
@@ -162,4 +164,5 @@ public class TylerDay2Manager : MonoBehaviour
             }
         }
     }
+    */
 }

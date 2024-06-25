@@ -257,6 +257,8 @@ MonoBehaviour:
   sprite: {fileID: 49674945}
   defaultColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &49674944
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -436,6 +438,8 @@ MonoBehaviour:
   sprite: {fileID: 313707893}
   defaultColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &313707895
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -511,6 +515,8 @@ MonoBehaviour:
   sprite: {fileID: 560913023}
   defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &560913022
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -589,6 +595,79 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &906541612
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5431569351630525568, guid: 15d02f21d3c3ccf46a9620e3e4fbaa19, type: 3}
+      propertyPath: d
+      value: 
+      objectReference: {fileID: 948798752}
+    - target: {fileID: 5431569351630525568, guid: 15d02f21d3c3ccf46a9620e3e4fbaa19, type: 3}
+      propertyPath: t
+      value: 
+      objectReference: {fileID: 4900000, guid: 0ef905acea8a5b040b9026a8db113690, type: 3}
+    - target: {fileID: 5431569351630525568, guid: 15d02f21d3c3ccf46a9620e3e4fbaa19, type: 3}
+      propertyPath: sceneMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 82085b09b4e88a942b6b0c859299d105, type: 3}
+    - target: {fileID: 5431569351630525568, guid: 15d02f21d3c3ccf46a9620e3e4fbaa19, type: 3}
+      propertyPath: endOnDialogueEnd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5431569351630525569, guid: 15d02f21d3c3ccf46a9620e3e4fbaa19, type: 3}
+      propertyPath: m_Name
+      value: BaseSceneManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5431569351630525575, guid: 15d02f21d3c3ccf46a9620e3e4fbaa19, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5431569351630525575, guid: 15d02f21d3c3ccf46a9620e3e4fbaa19, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.1321898
+      objectReference: {fileID: 0}
+    - target: {fileID: 5431569351630525575, guid: 15d02f21d3c3ccf46a9620e3e4fbaa19, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.0078903
+      objectReference: {fileID: 0}
+    - target: {fileID: 5431569351630525575, guid: 15d02f21d3c3ccf46a9620e3e4fbaa19, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 22.141468
+      objectReference: {fileID: 0}
+    - target: {fileID: 5431569351630525575, guid: 15d02f21d3c3ccf46a9620e3e4fbaa19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5431569351630525575, guid: 15d02f21d3c3ccf46a9620e3e4fbaa19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5431569351630525575, guid: 15d02f21d3c3ccf46a9620e3e4fbaa19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5431569351630525575, guid: 15d02f21d3c3ccf46a9620e3e4fbaa19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5431569351630525575, guid: 15d02f21d3c3ccf46a9620e3e4fbaa19, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5431569351630525575, guid: 15d02f21d3c3ccf46a9620e3e4fbaa19, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5431569351630525575, guid: 15d02f21d3c3ccf46a9620e3e4fbaa19, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 15d02f21d3c3ccf46a9620e3e4fbaa19, type: 3}
 --- !u!1 &919156917
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,7 +843,6 @@ MonoBehaviour:
   tylerDay2TextGuitar: {fileID: 4900000, guid: 24416cc406674c64788fccd39ae15edb, type: 3}
   tylerDay2TextPostItem: {fileID: 4900000, guid: ef8a8676614ed904796f60eb59beb58d, type: 3}
   dialogueController: {fileID: 948798752}
-  sceneMusic: {fileID: 8300000, guid: 5809aa7d3b4ff464989197e75c8af52a, type: 3}
 --- !u!1 &993527003
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,6 +1027,8 @@ MonoBehaviour:
   sprite: {fileID: 1011579861}
   defaultColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &1011579860
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1128,6 +1208,8 @@ MonoBehaviour:
   sprite: {fileID: 1171808350}
   defaultColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHighlight: 0
+  enableClick: 0
 --- !u!61 &1171808352
 BoxCollider2D:
   m_ObjectHideFlags: 0
