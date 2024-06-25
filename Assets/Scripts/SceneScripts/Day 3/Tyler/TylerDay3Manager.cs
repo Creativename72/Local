@@ -127,7 +127,7 @@ public class TylerDay3Manager : MonoBehaviour
         }
         if (currentState == State.PostDialogue && !dialogueController.dialogueRunning)
         {
-            Application.Quit();
+            MapController.Instance.LoadNextScene("Map");
             // END GAME CHANGE SCENE TO MAP
         }
     }
