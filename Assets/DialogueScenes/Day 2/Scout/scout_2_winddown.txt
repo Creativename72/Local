@@ -114,7 +114,7 @@ Bernice:I know you won’t. Good luck, Scout! I’ll check in with you again soo
 
 
 changeBackground()
-pause(3)
+pause(2)
 changeBackground()
 
 :[As the sun shines through the bedroom window, Scout slowly awakens. Today was going to be a busy day of gathering ingredients and sending out invites.]
