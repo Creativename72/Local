@@ -7,7 +7,7 @@ id:start
 :[Scout gazes out the window, taking in the expansive lake at the valley's heart, its surface shimmering in the early light.]
 
 
-pause(3)
+pause(1)
 changeBackground()
 
 
@@ -65,9 +65,9 @@ Bernice: Hmm, it might help to have a visual.
 
 :[Bernice turns and rummages through her handbag, pulling out a map and a marker.]
 
-
+inScene: -,-
 changeBackground()
-pause(3)
+pause(1)
 
 
 Bernice: Here’s Bellespring Valley. It’s a bit of an old map, but it’ll do.
@@ -120,7 +120,7 @@ Bernice: Now, the residents here barely even interact with one another. I can’
 
 changeBackground()
 
-
+inScene:Bernice,Scout
 Bernice: Scout! If you could do me a favor..
 Bernice: Check up on my three friends, alright?
 Bernice: They all know I’m leaving the valley, so that won’t be a surprise. And I’ve said my goodbyes already…
