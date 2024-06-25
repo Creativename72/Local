@@ -6,9 +6,10 @@ public class ClickDialogue : MonoBehaviour
 {
     public DialogueController d;
     public TextAsset t;
+    public SpriteRenderer s;
     
     bool dialogueViewed = false; //tracks if this item's dialogue was viewed/clicked on
-
+    public bool hideOnClick = false;
 
     private void OnMouseDown()
     {
@@ -17,6 +18,10 @@ public class ClickDialogue : MonoBehaviour
             d.t = t;
             d.runDialogue();
             dialogueViewed = true;
+            if (hideOnClick)
+            {
+                s.enabled = false;
+            }
             
         } else
         {

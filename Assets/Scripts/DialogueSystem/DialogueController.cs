@@ -300,7 +300,6 @@ public class DialogueController : MonoBehaviour
         dialogueRunning = false;
         container.SetActive(false);
         b.enabled = false;
-        Debug.Log(end);
         if (s != null && s.endOnDialogueEnd)
         {
             s.endScene();

@@ -33,4 +33,12 @@ public class AnnieMinigameChecker : MonoBehaviour
             }
         }
     }
+
+    public void enableSprites()
+    {
+        foreach (var item in items)
+        {
+            item.s.enabled = true;
+        }
+    }
 }

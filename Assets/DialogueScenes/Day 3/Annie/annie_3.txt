@@ -1,10 +1,10 @@
-inScene: Annie, Scout
+inScene: Scout
 
 
 id:start
 :[Scout makes their way up the familiar trail to Annie’s cabin. The air is cool and crisp, with the faint scent of pine lingering in the breeze.]
 :[They step onto the porch and ring the doorbell. A moment later, Annie opens the door, her face lighting up with a smile.]
-
+inScene:Scout, Annie2
 
 Annie: Hey there, Scout! Back so soon, hmm? Come on in.
 
