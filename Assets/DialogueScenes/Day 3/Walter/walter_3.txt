@@ -1,4 +1,4 @@
-inScene: Scout, Walter
+inScene: Scout
 
 
 id:start
@@ -17,6 +17,7 @@ id:start
 id:choice1
 :[Scout reaches up to the side of the door to ring the bell before realizing there is no doorbell at all.]
 :[Instead, they knock on the side of the wooden door, getting Walter’s attention.]
+inScene: Walter,Scout
 :[Walter hears and turns his head, getting up from his seat and walking over to the door, opening it.]
 
 Walter: Scout, glad to see you. Come on in.
@@ -24,6 +25,7 @@ goto:inside
 
 
 id:choice2
+inScene: Walter,Scout
 :[Scout yells through the windows at Walter, who immediately turns around with an alarmed expression.]
 :[He gets up from the desk and goes to open the door, scratching the side of his head.]
 
@@ -34,6 +36,7 @@ goto:inside
 
 id:choice3
 :[Scout makes their way around the balcony to the window in front of Walter and waits patiently until they catch his attention.]
+inScene: Walter,Scout
 :[Walter looks up from his desk with an amused expression, the kind of look Scout now recognizes as Walter’s “trying not to smile” face.]
 
 Walter: Scout? Forget where the front door is? 
@@ -42,7 +45,7 @@ goto:inside
 
 
 id:inside
-pause(3)
+pause(1)
 changeBackground()
 :[Scout enters Walter’s living space. The air here is much warmer than the air outside, and Scout takes a moment to collect their bearings.]
 
@@ -163,24 +166,26 @@ goto:trail
 id:trail
 :[Walter grabs his fishing gear, and the two of them set off on the trail towards the lake.]
 
-pause(3)
+pause(1)
 changeBackground()
 
 :[Walter and Scout move their way up the trail to the mountain-top lake. As the hike goes on, Walter begins to speak.]
 
 Walter: This trail used to be a lot busier.
 Walter: Families, hikers, campers... It's been quieter these past few years.
-pause(3)
+pause(2)
 Walter: Sometimes I miss it. People out in nature, enjoying the scenery, and each other’s company.
-pause(3)
+pause(2)
 Walter: Always thought places like this were one of the best places for people to connect with each other…
-pause(3)
+pause(2)
 Walter: You’re doing a good thing, Scout. Bringing everyone together, reminding us what we’ve got here. I think we all lost sight of that.
 Walter: So, thank you.
-pause(3)
+pause(2)
 Walter: Ah, uh, the lake should be just up here...
 Walter: Here, take this rod, and let’s see what we can fish up.
-pause(3)
+pause(1)
+
+inscene: 
 changeBackground()
 Walter: Water’s nice and calm today, that’s good.
 Walter: Go ahead and cast your line.
@@ -208,6 +213,9 @@ pause(3)
 changeBackground()
 Walter: Great job, Scout!
 changeBackground()
+
+inscene: Walter, Scout
+
 :[Walter holds up the line with his hand.]
 Walter: Yep, that’s one big trout. Nice work. I’m sure it’ll make a fine addition to the chowder.
 Walter: Hmm...

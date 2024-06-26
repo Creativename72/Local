@@ -1,4 +1,4 @@
-inScene: Scout
+inScene: 
 
 id:start
 :[After the sun has set, Scout finds themself sitting at their desk in their new cottage. The sound of crickets chirping outside and the gentle rustle of leaves in the breeze can be heard from the open window.]
