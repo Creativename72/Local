@@ -12,6 +12,7 @@ public class DialogueController : MonoBehaviour
     public SetText currentSpeaker;
     public SetText currentText;
     public GameObject container;
+    public GameObject subcontainer;
     public DialogueScene currentScene;
     public bool dialogueRunning = false;
     public BoxCollider b;
@@ -23,6 +24,7 @@ public class DialogueController : MonoBehaviour
     public CameraChanger cmac;
     public BaseSceneManager s;
     public bool end;
+    public AudioSource a;
 
     protected string[] dialogueText;
     protected Dictionary<string, Action> functions = new();
@@ -74,7 +76,7 @@ public class DialogueController : MonoBehaviour
                 pauseEnd = -1;
                 simulateMouseClick();
             }
-            container.SetActive(dialogueEnabled);
+            subcontainer.SetActive(dialogueEnabled);
         }
     }
 
@@ -112,6 +114,7 @@ public class DialogueController : MonoBehaviour
         else
         {
             currentText.setText(this.italicize(text)); //this line sets the new text
+            a.Stop();
         }
 
         highlightCharacter(speaker);
@@ -195,6 +198,7 @@ public class DialogueController : MonoBehaviour
         {
             StopCoroutine(currDialogue);
             currentText.setText(this.italicize(currLine));
+            a.Stop();
             currDialogue = null;
             return;
         }
@@ -260,7 +264,8 @@ public class DialogueController : MonoBehaviour
         }
         else if (type == "sc")
         {
-            setCharacters(nextLine);
+            setCharacters(nextLineList[2]);
+            sayLine(nextLine);
         }
         else
         {
@@ -328,18 +333,20 @@ public class DialogueController : MonoBehaviour
         string text = "";
         int index = 0;
         char[] tempArray = currLine.ToCharArray();
+        a.Play();
         while (index < toIterate.Length)
         {
             string letter = toIterate[index];
             if (!this.textCurrentlyScrolling)
             {
                 currentText.setText(this.italicize(currLine));
+                a.Stop();
                 break;
             } else if (textScrollDelay < 0)
             {
                 text += letter;
                 index += 1;
-                currentText.setText(text);
+                currentText.setText(text);               
                 textScrollDelay += textScrollDelayQuantity;
                 yield return textScrollDelay;
             } else
@@ -347,6 +354,7 @@ public class DialogueController : MonoBehaviour
                 yield return textScrollDelay;
             }
         }
+        a.Stop();
         currDialogue = null;
         this.textCurrentlyScrolling = false;
         textScrollDelay = textScrollDelayQuantity;

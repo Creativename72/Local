@@ -51,7 +51,7 @@ public class DialogueScene
         }
         if (nLine.spriteChanger)
         {
-            return new[] { "sc", nLine.text };
+            return new[] { "sc", nLine.text, nLine.spriteChanges };
         }
         else if (nLine.pause)
         {
