@@ -97,6 +97,7 @@ Bear: I'm just trying to look out for you and others in the valley. Don’t make
 
 
 :[The bear looks over Scout’s figure briefly.]
+goto:path_connect
         
 id:sorry
 :[The bear lowers his crossed arms. He gives a brief nod.]

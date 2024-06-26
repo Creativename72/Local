@@ -12,5 +12,6 @@ Tyler:Hurts my fingies, too. I dunno, maybe I don’t got the patience for somet
 Tyler:Was expensive, actually. Maybe I should hold onto it.
 Tyler:I should just put this inside… Don’t want the rain damagin’ it or somethin’.
 :[Tyler takes the guitar and busted speakers back inside before emerging a moment later.]
+changeBackground()
 Tyler:Alright, what next...
 goto:end

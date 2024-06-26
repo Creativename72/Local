@@ -112,5 +112,4 @@ id:alot
 Tyler:Yeah, I picked up a lotta stuff over the years.
 Tyler:Dunno what to tell you. I like changin’ things up.
 Tyler:Anyways, yeah, I think I should get around to cleanin’ things up. Mind lending a hand?
-changeBackground()
 goto:end
