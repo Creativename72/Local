@@ -10,6 +10,7 @@ public class MapController : MonoBehaviour
     public bool[] HouseStates; // HouseStates order: Annie, Scout, Tyler, Walter
     public House[] houses;
     public string currentScene;
+    public SpriteRenderer s;
     public GameObject canvas;
     public static MapController Instance { get; private set; }
 
@@ -55,6 +56,7 @@ public class MapController : MonoBehaviour
         }
         if (currentScene != "-")
             SceneManager.UnloadSceneAsync(currentScene);
+        s.enabled = false;
         canvas.SetActive(false);
         
         currentScene = n;
