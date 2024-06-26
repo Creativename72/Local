@@ -20,6 +20,7 @@ public class ClickDialogue : MonoBehaviour
             dialogueViewed = true;
             if (hideOnClick)
             {
+                this.gameObject.SetActive(false);
                 s.enabled = false;
             }
             

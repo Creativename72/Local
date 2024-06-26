@@ -11,11 +11,23 @@ public class BaseSceneManager : MonoBehaviour
     public bool nextScene = false;
 
     public AudioClip sceneMusic; //music for this scene
+
+    //script for fading out the scene to black, then next scene
+    //LEAVE NULL IF NOT PLANNING TO FADE/WANT TO USE OTHER SCENE TRANSITIONS
+    [SerializeField] FadeScript fadeToScene;
+
     // Start is called before the first frame update
     void Start()
     {
-        d.t = t;
-        d.runDialogue();
+        if(d != null)
+        {
+            d.t = t;
+            d.runDialogue();
+        }
+    }
+
+    void Awake()
+    {
         PlaySceneMusic();
     }
 
@@ -30,6 +42,11 @@ public class BaseSceneManager : MonoBehaviour
 
     public void endScene()
     {
+        if(fadeToScene != null)
+        {
+            fadeToScene.FadeToNextScene();
+            return;
+        }
         MapController.Instance.LoadNextScene("Map");
     }
 
@@ -41,10 +58,12 @@ public class BaseSceneManager : MonoBehaviour
             GameObject musicObj = GameObject.Find("MusicPlayer");
             if(musicObj != null)
             {
+                //Debug.Log("Attempting to get MusicPlayer script");
                 MusicPlayer musicPlayer = musicObj.GetComponent<MusicPlayer>();
                 if(musicPlayer != null)
                 {
                     musicPlayer.PlayMusic(sceneMusic);
+                    //Debug.Log("Attempting to play music");
                 }
             }
         }

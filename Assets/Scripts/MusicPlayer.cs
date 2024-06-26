@@ -22,16 +22,26 @@ public class MusicPlayer : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        musicPlayer = GetComponent<AudioSource>();    
+        musicPlayer = GetComponent<AudioSource>();
+        Debug.Log(musicPlayer.clip);
     }
 
     public void PlayMusic(AudioClip clip)
     {
-        if (musicPlayer != null && !musicPlayer.isPlaying) 
+        if(musicPlayer == null)
+        {
+            return;
+        }
+
+        if(musicPlayer.clip == null)
         {
             musicPlayer.clip = clip;
             musicPlayer.Play();
-        }else if(musicPlayer.clip != clip)
+        }else if (!musicPlayer.isPlaying) 
+        {
+            musicPlayer.clip = clip;
+            musicPlayer.Play();
+        }else if(clip != null && musicPlayer.clip != clip)
         {
             StartCoroutine(ChangeMusic(clip, 1.0f, 0f, 1.0f));
             //StopMusic(clip);
