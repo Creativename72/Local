@@ -1,7 +1,8 @@
-inscene: Tyler
+inscene: Scout
 
 id:start
 :[Scout approaches the trailer, the sun casting shadows across the yard. The air is warm and filled with the scent of pine. 
+inScene: Scout,tyler2
 :[As they round the corner, they spot Tyler lying on his back in the grass, watching the clouds drift by, juice box in hand.]
 [hey_tyler]
 Hey, Tyler!
@@ -116,6 +117,7 @@ If I could just get some fresh veggies from your garden…
 id:get_some_fresh_veggies
 Tyler: [Tyler nods thoughtfully.] Hmm, yeah, I could do that. I think I got some good stuff you can use.
 Tyler: C’mon, I’ll show ya.
+inscene: 
 >begin_game
 :[Tyler leads Scout back to the garden behind his trailer. He’s almost smiling, clearly very proud.]
 Tyler: Here we are, my pride and joy. 
@@ -168,6 +170,7 @@ id:plant_nerd
 Tyler: [Tyler chuckles.] Hush. You listened to my ramblings.
 goto:lets_look
 
+id:reminds_of
 Tyler: [Tyler chuckles, shaking his head.] You’re not gonna let this go, huh.
 Tyler: I said I’ll think about it, just gimme some time.
 goto:lets_look
@@ -175,6 +178,7 @@ goto:lets_look
 id:lets_look
 Tyler: Come on, let’s take a look at the harvest. I’ll pick some pieces out for you to take.
 >exit_garden
+inscene: Scout, tyler2
 :[Tyler picks up the carrots and potatoes, inspecting them closely. He chooses a few for Scout with the least number of blemishes.]
 Tyler: These ones are good... these onions, too.
 Tyler: Yeah, take those. Should be good to go, now.
@@ -212,6 +216,7 @@ goto:last_line
 id:hope_to_see
 :[Tyler smirks, before heading back up to his trailer, walking up the steps.]
 Tyler: We’ll see, Scout.
+inscene: scout
 goto:last_line
 
 id:last_line
