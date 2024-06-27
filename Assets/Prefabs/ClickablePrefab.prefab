@@ -100,6 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   d: {fileID: 0}
   t: {fileID: 0}
+  s: {fileID: 0}
+  hideOnClick: 0
 --- !u!65 &6634245238080851699
 BoxCollider:
   m_ObjectHideFlags: 0

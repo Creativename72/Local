@@ -13,8 +13,20 @@ public class AnnieMinigameChecker : MonoBehaviour
 
     bool thisDialoguePlayed = false;  //tracks if the post minigame dialogue has been shown
     public BaseSceneManager b;
+
+    [SerializeField] BackgroundHandler bgHandler; //background handler for the scene
+
     void Update()
     {
+        if (bgHandler != null && bgHandler.currentBg == 2)
+        {
+            enableSprites();
+        }
+        else
+        {
+            disableSprites();
+        }
+
         if (!allItemsChecked)
         {
             foreach(ClickDialogue item in items)
@@ -39,6 +51,14 @@ public class AnnieMinigameChecker : MonoBehaviour
         foreach (var item in items)
         {
             item.s.enabled = true;
+        }
+    }
+
+    void disableSprites()
+    {
+        foreach(var item in items)
+        {
+            item.s.enabled = false;
         }
     }
 }

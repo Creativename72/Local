@@ -1,12 +1,12 @@
 using System;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider2D))]
+//[RequireComponent(typeof(Collider2D))]
 public class HighlightableObject : MonoBehaviour
 {
     [SerializeField] public SpriteRenderer sprite;
-    [SerializeField] private Color defaultColor = Color.gray;
-    [SerializeField] private Color highlightColor = Color.white;
+    [SerializeField] private Color defaultColor = Color.white;
+    [SerializeField] private Color highlightColor = Color.gray;
     private Action onClick;
     public bool enableHighlight;
     public bool enableClick;
@@ -18,6 +18,7 @@ public class HighlightableObject : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        Debug.Log("Mouse enter");
         if (enableHighlight)
             sprite.color = highlightColor;
     }

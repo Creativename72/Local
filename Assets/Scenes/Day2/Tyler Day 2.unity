@@ -255,8 +255,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 49674945}
-  defaultColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
-  highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
   enableHighlight: 0
   enableClick: 0
 --- !u!61 &49674944
@@ -436,8 +436,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 313707893}
-  defaultColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
-  highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
   enableHighlight: 0
   enableClick: 0
 --- !u!61 &313707895
@@ -513,8 +513,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 560913023}
-  defaultColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
   enableHighlight: 0
   enableClick: 0
 --- !u!61 &560913022
@@ -1025,8 +1025,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 1011579861}
-  defaultColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
-  highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
   enableHighlight: 0
   enableClick: 0
 --- !u!61 &1011579860
@@ -1206,8 +1206,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 1171808350}
-  defaultColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
-  highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
   enableHighlight: 0
   enableClick: 0
 --- !u!61 &1171808352
