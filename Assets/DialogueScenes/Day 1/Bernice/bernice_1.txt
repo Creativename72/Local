@@ -80,11 +80,11 @@ Bernice: Here’s Bellespring Valley. It’s a bit of an old map, but it’ll do
 Bernice: Here’s where we are. You know, the house you’ll be living in is the oldest building in the valley. It’s considered historic.
 
 
-changeCamera()
+changeBackground()
 
 Bernice: Walter lives here. He’s a fire lookout, and a wonderful bear.
 
-changeCamera()
+changeBackground()
 
 Bernice: He might be a bit stiff when you first meet him, but he means well. He looks out for everyone in the valley.
 Bernice: He takes his job very seriously, but on his downtime, he enjoys hikes and fishing.
@@ -94,7 +94,7 @@ Bernice: And don’t worry if he seems standoffish, that’s just his nature. Bi
 
 Bernice: Annie the mole lives up at the top of yonder hill. She works for a technical company. She told me she moved to the valley for some peace and quiet, but last I checked, she’s working so much she barely has time to relax!
 
-changeCamera()
+changeBackground()
 
 Bernice: Back when she first moved to the valley, her and I would take walks all along the lake.
 Bernice: I do worry for her a bit. She seems like she needs a bit of a break from work. 
@@ -102,7 +102,7 @@ Bernice: I do worry for her a bit. She seems like she needs a bit of a break fro
 
 Bernice: Tyler the badger stays here, at the campsite. He lives in a palace of his own making. You can’t miss it. He’s got a colorful style.
 
-changeCamera()
+changeBackground()
 
 Bernice: He has his own, let’s say, style of living. Very cool, very hip. Maybe I’m too old to understand.
 Bernice: He might be a little aggressive, but he wouldn’t hurt a fly. I think he just needs a friend.
@@ -111,7 +111,7 @@ Bernice: He might be a little aggressive, but he wouldn’t hurt a fly. I think 
 
 Bernice: And that should be everyone! 
 
-changeCamera()
+changeBackground()
 
 Bernice: You know, the valley used to be a lot busier. We’d get more tourists and hikers and campers mingling with our community.
 Bernice: Now, the residents here barely even interact with one another. I can’t recall the last time we all did something together…
