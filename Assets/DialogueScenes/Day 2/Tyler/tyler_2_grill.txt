@@ -30,11 +30,13 @@ id:keep
 Tyler:...yeah. Maybe you’re right.
 Tyler:He’s a good grill. We did have some great times.
 :[Tyler drags the grill to a spot near his gardens.]
+changeBackground()
 goto:else
 
 id:toss
 Tyler:Mmhm. Ain’t no point in keepin’ him around if I ain’t usin’ him.
 :[Tyler starts to drag the grill to the toss pile, giving it one last look before pushing it aside.]
+changeBackground()
 goto:else
 
 id:else
