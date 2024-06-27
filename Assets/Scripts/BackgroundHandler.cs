@@ -30,7 +30,7 @@ public class BackgroundHandler : MonoBehaviour
         currentBg++;
         if (currentBg >= bgs.Length)
         {
-            currentBg -= bgs.Length;
+            currentBg = bgs.Length - 1;
         }
         s.sprite = bgs[currentBg];
     }
