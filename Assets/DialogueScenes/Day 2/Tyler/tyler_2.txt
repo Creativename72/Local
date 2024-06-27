@@ -25,7 +25,7 @@ goto:question_2
 
 id:question_2
 [sleep]
-You should sleep in thatso you won’t be caught in PJs.
+You should sleep in that so you won’t be caught in PJs.
 [rain]
 How long have you been standing in the rain like that?
 
