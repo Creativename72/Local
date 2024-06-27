@@ -17,9 +17,19 @@ public class DialogueSegment
             string line = text[i];
             if (text[i].ToLower().Contains("inscene:"))
             {
-                DialogueLine lastLine = (DialogueLine) lines[lines.Count - 1];
-                lastLine.spriteChanger = true;
-                lastLine.spriteChanges = text[i];
+                if (lines.Count > 0)
+                {
+                    DialogueLine lastLine = (DialogueLine) lines[lines.Count - 1];
+                    lastLine.spriteChanger = true;
+                    lastLine.spriteChanges = text[i];
+                } else
+                {
+                    DialogueLine newLine = new DialogueLine("");
+                    newLine.spriteChanger = true;
+                    newLine.spriteChanges = text[i];
+                    newLine.skipRead = true;
+                    lines.Add(newLine);
+                }
             }
             else if (text[i].Contains(":"))
             {
@@ -34,7 +44,6 @@ public class DialogueSegment
                 }
                 DialogueLine current = (DialogueLine)lines[lines.Count - 1];
                 string id = text[i].Substring(text[i].IndexOf("[") + 1, text[i].IndexOf("]") - text[i].IndexOf("[") - 1);
-                //Debug.Log(id);
                 current.addOption(id, text[i + 1]);
                 i++; //makes sure the dialogue option isn't treated as an id if italicized
             }
@@ -91,6 +100,7 @@ public class DialogueLine
     public bool pause = false;
     public bool spriteChanger = false;
     public string spriteChanges = "";
+    public bool skipRead = false;
     public bool camChanger = false;
     public DialogueLine(string textraw)
     {

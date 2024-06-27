@@ -266,6 +266,10 @@ public class DialogueController : MonoBehaviour
         {
             setCharacters(nextLineList[2]);
             sayLine(nextLine);
+        } else if (type == "scs")
+        {
+            setCharacters(nextLineList[1]);
+            OnMouseDown();
         }
         else
         {
