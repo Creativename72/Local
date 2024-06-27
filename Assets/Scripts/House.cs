@@ -42,7 +42,7 @@ public class House : MonoBehaviour, IHouse
             Debug.Log(this.gameObject.transform.localPosition);
         }
 
-        Debug.Log(string.Join(",", MapController.Instance.HouseStates));
+        //Debug.Log(string.Join(",", MapController.Instance.HouseStates));
         isActive = MapController.Instance.HouseStates[(int) thisHouse];
         nextScene = MapController.Instance.currentStage;
         spriteRenderer = GetComponent<SpriteRenderer>();
