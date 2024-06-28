@@ -136,7 +136,7 @@ Honestly? I’m not sure.
 
 id:change_of_pace
 Walter: [He nods in understanding.] I can relate.
-Walter: The city's a mess. Out here, you can actually hear yourself think.
+Walter: City life's a mess. Out here, you can actually hear yourself think.
 goto:reason
 
 
