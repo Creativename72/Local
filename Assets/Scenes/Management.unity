@@ -365,9 +365,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7270793260945653194, guid: 4528510c59f07c8459abfbaae950ccee, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7b49ebe9b7c888c41baa9b6119cd4d82, type: 2}
     - target: {fileID: 7270793260945653195, guid: 4528510c59f07c8459abfbaae950ccee, type: 3}
       propertyPath: fadeBlack
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270793260945653195, guid: 4528510c59f07c8459abfbaae950ccee, type: 3}
+      propertyPath: fadeOnStart
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7270793260945653195, guid: 4528510c59f07c8459abfbaae950ccee, type: 3}
       propertyPath: inManagement
@@ -591,6 +599,7 @@ MonoBehaviour:
       m_Calls: []
   fader: {fileID: 1619467021}
   initialScene: BerniceIntro
+  LoadSceneOnStart: 1
 --- !u!1 &297126879
 GameObject:
   m_ObjectHideFlags: 0

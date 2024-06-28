@@ -21,6 +21,9 @@ public class MapController : MonoBehaviour
 
     [SerializeField] string initialScene;
 
+    // This should be on by default, turn it off if you want to start on a specific scene for testing purposes
+    [SerializeField] bool LoadSceneOnStart;
+
     
     void Awake() {
         if (Instance != null && Instance != this) {
@@ -40,8 +43,10 @@ public class MapController : MonoBehaviour
             m_sceneChangeEvent = new SceneChangeEvent();
         }
 
-        LoadNextScene(initialScene);
-        initialSkip = false;
+        if (LoadSceneOnStart) {
+            LoadNextScene(initialScene);
+            initialSkip = false;
+        }
     }
 
     public void LoadNextScene(string name) {
