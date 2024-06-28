@@ -134,7 +134,7 @@ public class BerniceDialogueController : DialogueController, IPointerClickHandle
         dialogueEnabled = true;
         //instantiates characters in scene
         setCharacters(dialogueText[0]);
-        currentScene = new DialogueScene(t.ToString());
+        //currentScene = new DialogueScene(t.ToString());
         currentScene.parent = this;
         simulateMouseClick();
     }

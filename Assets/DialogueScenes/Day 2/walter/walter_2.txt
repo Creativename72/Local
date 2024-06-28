@@ -183,7 +183,7 @@ Walter:Here. Take this rod, it looks like your size.
 Walter:Just hold the rod like this...
 Walter:...and cast.
 >wait_click
-pause(3)
+pause(1)
 changeBackground()
 pause(3)
 changeBackground()
@@ -197,11 +197,11 @@ Walter:But you’ll never know unless you cast your line. The important thing is
 pause(3)
 Walter:That’s what I always tell myself. Though, maybe I’ve been neglecting that for a while now.
 Walter:Haven’t really talked to anyone new in so long...
-pause(3)
+changeBackground()
 >wait_click
 changeBackground()
+>wait_click
 Walter:Not bad at all. 
-changeBackground()
 :[Walter places the fish in a small bucket nearby, giving Scout an approving nod.]
 Walter:You did well. Moments like these make the waiting worth it, don’t you think?
 :[A crackle comes from Walter's walkie talkie. He sighs, reaching for it as he listens to the garbled message.]

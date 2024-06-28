@@ -6,9 +6,11 @@ public class DialogueSegment
 {
     private ArrayList lines;
     public int currentLine = 0;
+    public DialogueController p;
 
-    public DialogueSegment(string textraw)
+    public DialogueSegment(string textraw, DialogueController parent)
     {
+        this.p = parent;
         string[] text = textraw.Split("\n");
         lines = new ArrayList();
 
@@ -49,7 +51,20 @@ public class DialogueSegment
             }
             else if (text[i].ToLower().Contains("changebackground()"))
             {
-                ((DialogueLine)lines[lines.Count - 1]).sceneChanger = true;
+                Debug.Log("choosing change bg type");
+                Debug.Log(((DialogueLine)lines[lines.Count - 1]).text);
+                if (((DialogueLine)lines[lines.Count - 1]).text.ToLower().Contains(">wait_click"))
+                {
+                    Debug.Log("wait click changebg");
+                    DialogueLine newLine = new DialogueLine("");
+                    newLine.sceneChanger = true;
+                    newLine.skipRead = true;
+                    lines.Add(newLine);
+                }
+                {
+                    Debug.Log("line bound changebg");
+                    ((DialogueLine) lines[lines.Count - 1]).sceneChanger = true;
+                }
             }
             else if (text[i].ToLower().Contains("changecamera()"))
             {
@@ -59,8 +74,8 @@ public class DialogueSegment
             {
                 lines.Add(new DialogueLine(line)
                 {
-                    pause = true
-                });
+                    pause = true,
+                }) ;
             }
             else if (text[i].Contains(">"))
             {

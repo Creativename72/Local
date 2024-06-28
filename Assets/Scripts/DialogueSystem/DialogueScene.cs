@@ -11,8 +11,9 @@ public class DialogueScene
     private bool canChoose = false;
     public DialogueController parent;
 
-    public DialogueScene(string textraw)
+    public DialogueScene(string textraw, DialogueController parent)
     {
+        this.parent = parent;
         segmentsDictionary = new Dictionary<string, DialogueSegment>();
         string[] text = textraw.Split("id:");
         currentSegment = text[1].Split("\n")[0].Trim();
@@ -20,9 +21,8 @@ public class DialogueScene
         for (int i = 1; i < text.Length; i++)
         {
             string id = text[i].Split("\n")[0].Trim();
-            segmentsDictionary.Add(id, new DialogueSegment(text[i]));
+            segmentsDictionary.Add(id, new DialogueSegment(text[i], parent));
         }
-
         //debug_CheckDictionary();
     }
 
@@ -44,6 +44,11 @@ public class DialogueScene
         if (nLine.sceneChanger)
         {
             parent.bgs.changeBackground();
+            if (nLine.skipRead)
+            {
+                Debug.Log("change background skipread");
+                return this.nextLine();
+            }
         }
         if (nLine.camChanger)
         {

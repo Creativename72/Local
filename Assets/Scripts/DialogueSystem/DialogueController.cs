@@ -38,6 +38,7 @@ public class DialogueController : MonoBehaviour
     private float textScrollDelayQuantity;
     private float textScrollDelay;
     public bool textCurrentlyScrolling = false;
+    public bool changeBackgroundOnResume = false;
 
 
     protected float pauseEnd;
@@ -90,8 +91,7 @@ public class DialogueController : MonoBehaviour
         dialogueEnabled = true;
         //instantiates characters in scene
         setCharacters(dialogueText[0]);
-        currentScene = new DialogueScene(t.ToString());
-        currentScene.parent = this;
+        currentScene = new DialogueScene(t.ToString(), this);
         simulateMouseClick();
     }
 
@@ -219,8 +219,8 @@ public class DialogueController : MonoBehaviour
         string nextLine = nextLineList[1];
         string type = nextLineList[0];
 
-        //Debug.Log(nextLine);
-        //Debug.Log(type);
+        Debug.Log(nextLine);
+        Debug.Log(type);
 
         if (type.ToLower() == "e")
         {
@@ -332,6 +332,7 @@ public class DialogueController : MonoBehaviour
     //Coroutine for scrolling dialogue (adds one letter at a time)
     private IEnumerator TypeSentence(string sentence)
     {
+        //Debug.Log(sentence);
         currLine = sentence.Split(":")[1];
         string[] toIterate = sentenceHelper(currLine).ToArray();
         string text = "";
@@ -407,13 +408,20 @@ public class DialogueController : MonoBehaviour
     public void PauseDialogue()
     {
         // Debug.Log("PAUSING DIALOGUE!");
+        currentText.setText("");
         dialogueEnabled = false;
+        
         pauseEnd = float.MaxValue;
     }
     public void ResumeDialogue()
     {
         // Debug.Log("RESUMING DIALOGUE!");
         dialogueEnabled = true;
+        if (changeBackgroundOnResume)
+        {
+            bgs.changeBackground();
+            changeBackgroundOnResume = false;
+        }
         pauseEnd = -1;
         simulateMouseClick();
     }

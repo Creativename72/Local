@@ -183,16 +183,14 @@ Walter: So, thank you.
 pause(2)
 Walter: Ah, uh, the lake should be just up here...
 Walter: Here, take this rod, and let’s see what we can fish up.
-pause(1)
-
 inscene: 
 changeBackground()
 Walter: Water’s nice and calm today, that’s good.
 Walter: Go ahead and cast your line.
 >wait_click
-pause(3)
+pause(1)
 changeBackground()
-pause(3)
+pause(1)
 changeBackground()
 Walter: And now, we wait.
 pause(3)
@@ -208,12 +206,12 @@ Walter: We can just sit and wait for the fish to join us on their own time.
 pause(3)
 Walter: Hmm, nothing yet?
 Walter: Let’s keep at it. Persistence pays off.
-pause(3)
+changeBackground()
+>wait_click
+changeBackground()
 >wait_click
 changeBackground()
 Walter: Great job, Scout!
-changeBackground()
-
 inscene: Walter, Scout
 
 :[Walter holds up the line with his hand.]
