@@ -176,8 +176,9 @@ Tyler: I said I’ll think about it, just gimme some time.
 goto:lets_look
 
 id:lets_look
-Tyler: Come on, let’s take a look at the harvest. I’ll pick some pieces out for you to take.
 >exit_garden
+Tyler: Come on, let’s take a look at the harvest. I’ll pick some pieces out for you to take.
+
 inscene: Scout, tyler2
 :[Tyler picks up the carrots and potatoes, inspecting them closely. He chooses a few for Scout with the least number of blemishes.]
 Tyler: These ones are good... these onions, too.
