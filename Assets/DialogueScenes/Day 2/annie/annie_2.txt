@@ -66,7 +66,7 @@ Annie: What, you mean Bernice, Walter and Tyler?
 Annie: I mean, I have Bernice over for tea sometimes, but like, I don't like her climbing all the way up here each time she visits.
 Annie: She's getting pretty old, don't think the trails're for her anymore.
 Annie: Walter and Tyler...
-Annie: We used to hang out alot together. Like, here at my cabin or by the lake. 
+Annie: We used to hang out a lot together. Like, here at my cabin or by the lake. 
 Annie: Well, there was a bit of a situation with us three a whiles ago.
 Annie: Really haven't spoken to them since. I dunno. It kinda soured our relationship.
 goto:question
