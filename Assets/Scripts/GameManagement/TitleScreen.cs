@@ -5,13 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class TitleScreen : MonoBehaviour
 {
+
+    public FadeScript fader;
+
+
     //used to change scenes, mainly for moving to first scene in game
-    public void ChangeScene(string sceneName)
+    public void ChangeScene()
     {
-        if (sceneName != null)
-        {
-            SceneManager.LoadScene(sceneName);
-        }
+        fader.FadeToNextScene();
+            // SceneManager.LoadScene(sceneName);
     }
 
     //Quits the game

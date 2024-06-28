@@ -10,11 +10,15 @@ public class MapController : MonoBehaviour
     public bool[] HouseStates; // HouseStates order: Annie, Scout, Tyler, Walter
     public House[] houses;
     public string currentScene;
-    public SpriteRenderer s;
-    public GameObject canvas;
+    [SerializeField] SpriteRenderer s;
+    [SerializeField] GameObject canvas;
     public static MapController Instance { get; private set; }
 
     public SceneChangeEvent m_sceneChangeEvent;
+    [SerializeField] FadeScript fader;
+
+    private bool initialSkip = true;
+
     
     void Awake() {
         if (Instance != null && Instance != this) {
@@ -25,7 +29,6 @@ public class MapController : MonoBehaviour
         }
 
         currentStage = 0;
-        currentScene = "-";
         HouseStates = new bool[4] {
             false, false, false, false
         };
@@ -34,6 +37,9 @@ public class MapController : MonoBehaviour
         if (m_sceneChangeEvent == null) {
             m_sceneChangeEvent = new SceneChangeEvent();
         }
+
+        LoadNextScene("BerniceIntro");
+        initialSkip = false;
     }
 
     public void LoadNextScene(string name) {
@@ -47,6 +53,11 @@ public class MapController : MonoBehaviour
         @param n Name of the next scene to load
     **/
     IEnumerator LoadNextSceneAsync(string n) {
+        fader.ToggleFade();
+
+        if (!initialSkip) yield return new WaitForSeconds(1.5f);
+
+
         Camera.main.GetComponent<AudioListener>().enabled = false;
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(n, LoadSceneMode.Additive);
 
@@ -57,10 +68,13 @@ public class MapController : MonoBehaviour
         if (currentScene != "-")
             SceneManager.UnloadSceneAsync(currentScene);
         s.enabled = false;
-        canvas.SetActive(false);
+        // canvas.SetActive(false);
         
         currentScene = n;
+        Debug.Log("Scene Loaded: " +currentScene);
         m_sceneChangeEvent.Invoke(n);
+
+        fader.ToggleFade();
     }
 
     public void UpdateDay() {
@@ -68,7 +82,7 @@ public class MapController : MonoBehaviour
             !HouseStates[2] && !HouseStates[3]) {
             currentStage++;
             Debug.Log("current stage:" + currentStage);
-            // Setting it up as each day being 
+
             switch(currentStage) {
                 case 1:
                     HouseStates[0] = true;
@@ -109,6 +123,7 @@ public class MapController : MonoBehaviour
         }
         }
     }
+
 
 }
 

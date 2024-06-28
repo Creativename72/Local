@@ -9,6 +9,8 @@ public class BackgroundHandler : MonoBehaviour
     public Sprite[] bgs;
     public int currentBg;
     public bool b;
+    
+    [SerializeField] BackgroundFaderHelper bgFader;
 
     private void Start()
     {
@@ -27,11 +29,21 @@ public class BackgroundHandler : MonoBehaviour
 
     public void changeBackground()
     {
+        StartCoroutine(backgroundChange());
+    }
+
+    private IEnumerator backgroundChange() {
+        bgFader.Fade();
+
+        yield return new WaitForSeconds(0.75f);
+
         currentBg++;
         if (currentBg >= bgs.Length)
         {
             currentBg = bgs.Length - 1;
         }
         s.sprite = bgs[currentBg];
+
+        bgFader.Fade();
     }
 }

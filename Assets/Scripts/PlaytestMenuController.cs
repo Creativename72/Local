@@ -22,7 +22,6 @@ public class PlaytestMenuController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MapController.Instance.LoadNextScene("BerniceIntro");
         page = 0;
         lastNameIndex = 0;
         namesLength = sceneNames.Length;

@@ -10,16 +10,19 @@ public class FadeScript : MonoBehaviour
     //animator of the black fade background
     [SerializeField] Animator fadeAnim;
 
-    //scene should start as black
-    private bool fadeBlack = true;
+    [SerializeField] bool fadeBlack;
 
     //Inspector settings for fading to a scene
     [SerializeField] string nextScene;
 
+    //Certain scenes fade out on start
+    [SerializeField] bool fadeOnStart;
+
     // start the scene by fading from black to the scene
     void Start()
     {
-        ToggleFade();
+        if (!fadeOnStart)
+            ToggleFade();
     }
 
     //toggles the fade state of the animator
@@ -45,5 +48,5 @@ public class FadeScript : MonoBehaviour
     private void CallNextScene()
     {
         SceneManager.LoadScene(nextScene);
-    }
+    } 
 }
