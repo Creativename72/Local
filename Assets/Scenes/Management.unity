@@ -367,7 +367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7270793260945653195, guid: 4528510c59f07c8459abfbaae950ccee, type: 3}
       propertyPath: fadeBlack
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7270793260945653195, guid: 4528510c59f07c8459abfbaae950ccee, type: 3}
       propertyPath: inManagement
@@ -590,6 +590,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   fader: {fileID: 1619467021}
+  initialScene: BerniceIntro
 --- !u!1 &297126879
 GameObject:
   m_ObjectHideFlags: 0

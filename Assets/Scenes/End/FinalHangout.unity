@@ -498,6 +498,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1629911525}
     m_Modifications:
     - target: {fileID: 7270793260945653188, guid: 4528510c59f07c8459abfbaae950ccee, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270793260945653188, guid: 4528510c59f07c8459abfbaae950ccee, type: 3}
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
@@ -590,8 +594,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7270793260945653195, guid: 4528510c59f07c8459abfbaae950ccee, type: 3}
+      propertyPath: fadeBlack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270793260945653195, guid: 4528510c59f07c8459abfbaae950ccee, type: 3}
       propertyPath: nextScene
       value: EndScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270793260945653195, guid: 4528510c59f07c8459abfbaae950ccee, type: 3}
+      propertyPath: fadeOnStart
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4528510c59f07c8459abfbaae950ccee, type: 3}

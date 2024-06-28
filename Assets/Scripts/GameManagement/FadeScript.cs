@@ -21,8 +21,9 @@ public class FadeScript : MonoBehaviour
     // start the scene by fading from black to the scene
     void Start()
     {
-        if (!fadeOnStart)
+        if (fadeOnStart) {
             ToggleFade();
+        }
     }
 
     //toggles the fade state of the animator

@@ -19,6 +19,8 @@ public class MapController : MonoBehaviour
 
     private bool initialSkip = true;
 
+    [SerializeField] string initialScene;
+
     
     void Awake() {
         if (Instance != null && Instance != this) {
@@ -38,7 +40,7 @@ public class MapController : MonoBehaviour
             m_sceneChangeEvent = new SceneChangeEvent();
         }
 
-        LoadNextScene("BerniceIntro");
+        LoadNextScene(initialScene);
         initialSkip = false;
     }
 
