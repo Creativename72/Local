@@ -44,7 +44,7 @@ goto:greetings
 id:greetings
 :[With the chowder simmering gently on the stove, the doorbell rings. Scout wipes their hands on a towel and heads to the door to greet whoever is on the other side.]
 :[Scout opens the door to find Annie standing there, holding a basket of fresh-smelling bread. A warm smile spreads across her face as she sees Scout.]
-
+inScene:scout,annie2
 
 Annie: Oh my gosh, I almost expected Bernice to be on the other side of the door. Gonna be an adjustment seein’ you here every time I visit.
 
@@ -70,7 +70,8 @@ Annie: Hey, that smells pretty good, Scout! Here, I baked some bread to go along
 
 
 :[There’s a sudden knock on the door, interrupting the moment. Scout heads to the door and opens it to find Walter standing there, an almost smile on his face.]
-
+inScene:scout, waltnie
+Walter:"..."
 [waltuh]
 Hi, Walter!
 
@@ -113,7 +114,8 @@ Walter: Yeah, that could be nice.
 
 
 :[As they settle in, there’s another knock at the door. Scout opens it to find Tyler standing there, hands behind his back.]
-
+inScene:scout, tywaltnie
+Tyler: "..."
 
 [tyler_comes]
 Tyler! Come on in.
@@ -263,15 +265,15 @@ Walter: Goodbye.
 
 
 :[With that, they each head back to their homes, leaving Scout alone in the cottage, the warmth of the evening still lingering in the air.]
+inScene:scout
 :[With everyone gone, Scout cleans up the dining room and sets the soup pot to the side. They head to their desk, pulling out their journal once more.]
-
 
 changeBackground()
 
 
 Journal: Tonight was special. I think we all have taken a big step forward. Walter seems…
-
-
+inScene:
+Scout:"..."
 
 
 
