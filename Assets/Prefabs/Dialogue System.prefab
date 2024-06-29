@@ -51,6 +51,7 @@ MonoBehaviour:
   currentSpeaker: {fileID: 1221396764219260955}
   currentText: {fileID: 1221396764816501641}
   container: {fileID: 1221396764881616509}
+  subcontainer: {fileID: 0}
   dialogueRunning: 0
   b: {fileID: 1221396763148549830}
   option1: {fileID: 0}
@@ -61,8 +62,10 @@ MonoBehaviour:
   cmac: {fileID: 0}
   s: {fileID: 0}
   end: 0
+  a: {fileID: 0}
   scrollingText: 1
   textCurrentlyScrolling: 0
+  changeBackgroundOnResume: 0
 --- !u!65 &1221396763148549830
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -237,7 +240,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -341138875
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &1221396764219260952
 MonoBehaviour:
@@ -447,7 +450,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -341138875
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 6f03378d7bdc3ea4bb6d5cde4684342a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -538,7 +541,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -341138875
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &1221396764816501643
 MonoBehaviour:
