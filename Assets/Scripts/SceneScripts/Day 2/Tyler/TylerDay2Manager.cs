@@ -25,9 +25,8 @@ public class TylerDay2Manager : MonoBehaviour
 
     [SerializeField] private DialogueController dialogueController;
 
-    private int pointsInteracted;
+    public int pointsInteracted;
     private State currentState;
-    private bool continueClicked;
     //private bool continueClickedRun = false;
 
     // public AudioClip sceneMusic; //music for this scene
@@ -35,9 +34,9 @@ public class TylerDay2Manager : MonoBehaviour
     public void ContinueClicked()
     {
         dialogueController.end = true;
-        continueClicked = true;
         dialogueController.t = tylerDay2TextPostItem;
         dialogueController.runDialogue();
+        currentState = State.PostDialogue;
     }
     private enum State
     {
@@ -54,7 +53,6 @@ public class TylerDay2Manager : MonoBehaviour
         pointsOfInterest.SetActive(false);
         continueButton.SetActive(false);
         pointsInteracted = 0;
-        continueClicked = false;
         currentState = State.IntroDialogue;
         dialogueController.t = tylerDay2Text;
         dialogueController.runDialogue();
@@ -107,6 +105,7 @@ public class TylerDay2Manager : MonoBehaviour
                 dialogueController.t = tylerDay2TextGraffiti;
                 dialogueController.runDialogue();
                 graffiti.SetActive(false);
+                pointsInteracted++;
             }
         });
     }
@@ -119,29 +118,9 @@ public class TylerDay2Manager : MonoBehaviour
             currentState = State.Minigame;
             pointsOfInterest.SetActive(true);
         }
-        else if (currentState == State.Minigame && !dialogueController.dialogueRunning && pointsInteracted >= 4)
+        else if (currentState == State.Minigame && !dialogueController.dialogueRunning && pointsInteracted >= 5)
         {
-            continueButton.SetActive(true);
-        }
-        else if (currentState == State.Minigame && dialogueController.dialogueRunning)
-        {
-            continueButton.SetActive(false);
-        }
-        else if (continueClicked)
-        {
-            Debug.Log("something please");
-            dialogueController.end = true;
-            currentState = State.PostDialogue;
-            dialogueController.t = tylerDay2TextPostItem;
-            dialogueController.runDialogue();
-            continueButton.SetActive(false);
-            //continueClickedRun = true;
-            
-        }
-        else if (currentState == State.PostDialogue && !dialogueController.dialogueRunning)
-        {
-            //MapController.Instance.LoadNextScene("Map");
-            //not working rn, have workaround
+            ContinueClicked();
         }
     }
 

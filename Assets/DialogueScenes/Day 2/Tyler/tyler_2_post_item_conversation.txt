@@ -1,7 +1,6 @@
-inscene: Tyler
+inscene: scout, tyler2
 
 id:start
-inscene: Tyler, Scout
 Tyler:That should be all.
 [better]
 Looks a lot better now.
