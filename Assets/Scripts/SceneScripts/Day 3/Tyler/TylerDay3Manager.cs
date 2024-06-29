@@ -125,11 +125,6 @@ public class TylerDay3Manager : MonoBehaviour
             currentState = State.PostDialogue;
             StartCoroutine(Wait(2, () => dialogueController.ResumeDialogue()));
         }
-        if (currentState == State.PostDialogue && !dialogueController.dialogueRunning)
-        {
-            MapController.Instance.LoadNextScene("Map");
-            // END GAME CHANGE SCENE TO MAP
-        }
     }
 
 
