@@ -920,7 +920,7 @@ MonoBehaviour:
   t: {fileID: 4900000, guid: 3028b0943be512140a66004cd0aa246a, type: 3}
   endOnDialogueEnd: 0
   nextScene: 0
-  musicFadeMixer: {fileID: 0}
+  musicFadeMixer: {fileID: 24100000, guid: a32a2af2c60a2a34d9dceb04dd431e4a, type: 2}
   sceneMusic: {fileID: 8300000, guid: 3aca6120c7f43e448848142a62ffcc8f, type: 3}
   fadeToScene: {fileID: 0}
 --- !u!114 &1564253835 stripped
