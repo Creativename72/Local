@@ -38,7 +38,7 @@ public class HighlightableObject : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (enableClick)
+        if (enableClick && onClick != null)
             onClick.Invoke();
     }
 
