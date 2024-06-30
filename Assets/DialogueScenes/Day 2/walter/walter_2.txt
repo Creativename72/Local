@@ -197,12 +197,15 @@ Walter:But you’ll never know unless you cast your line. The important thing is
 pause(3)
 Walter:That’s what I always tell myself. Though, maybe I’ve been neglecting that for a while now.
 Walter:Haven’t really talked to anyone new in so long...
+pause(3)
 changeBackgroundUnbound(nofade)
 >wait_click
 changeBackground(nofade)
 >wait_click
 Walter:Not bad at all. 
 :[Walter places the fish in a small bucket nearby, giving Scout an approving nod.]
+changeBackground()
+inScene: scout, walter
 Walter:You did well. Moments like these make the waiting worth it, don’t you think?
 :[A crackle comes from Walter's walkie talkie. He sighs, reaching for it as he listens to the garbled message.]
 Walter:[He sighs, turning to Scout.] Duty calls, I’m afraid. Gotta keep an eye on that storm.

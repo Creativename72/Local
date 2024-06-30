@@ -206,6 +206,7 @@ Walter: We can just sit and wait for the fish to join us on their own time.
 pause(3)
 Walter: Hmm, nothing yet?
 Walter: Let’s keep at it. Persistence pays off.
+pause(3)
 changeBackgroundUnbound(nofade)
 >wait_click
 changeBackground(nofade)
