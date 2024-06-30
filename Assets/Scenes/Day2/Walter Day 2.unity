@@ -464,7 +464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4918251080121622601, guid: 6103932380c0c1b4fa3e502ea94c5a31, type: 3}
       propertyPath: bgs.Array.size
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4918251080121622601, guid: 6103932380c0c1b4fa3e502ea94c5a31, type: 3}
       propertyPath: bgs.Array.data[0]
@@ -505,7 +505,7 @@ PrefabInstance:
     - target: {fileID: 4918251080121622601, guid: 6103932380c0c1b4fa3e502ea94c5a31, type: 3}
       propertyPath: bgs.Array.data[9]
       value: 
-      objectReference: {fileID: 21300000, guid: a20b1f9c5db6702439a99aaa1a9a5972, type: 3}
+      objectReference: {fileID: 21300000, guid: 696a8dafd907e984890a24ab21c160ee, type: 3}
     - target: {fileID: 4918251080121622602, guid: 6103932380c0c1b4fa3e502ea94c5a31, type: 3}
       propertyPath: m_Name
       value: Background Manager
