@@ -1079,6 +1079,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3391495123138086541}
     - target: {fileID: 1221396763148549825, guid: 6697f00a356420145bb3e25d2991b507, type: 3}
+      propertyPath: sfxParent
+      value: 
+      objectReference: {fileID: 9116725092094968432}
+    - target: {fileID: 1221396763148549825, guid: 6697f00a356420145bb3e25d2991b507, type: 3}
+      propertyPath: sfxPrefab
+      value: 
+      objectReference: {fileID: 4517959796069403344, guid: c065fc2e9a36cc64c906b182bb637299, type: 3}
+    - target: {fileID: 1221396763148549825, guid: 6697f00a356420145bb3e25d2991b507, type: 3}
       propertyPath: subcontainer
       value: 
       objectReference: {fileID: 5126795052189989312}
@@ -1463,5 +1471,10 @@ GameObject:
 --- !u!4 &5126795052545287767 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1221396765100925418, guid: 6697f00a356420145bb3e25d2991b507, type: 3}
+  m_PrefabInstance: {fileID: 6329049569813841853}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &9116725092094968432 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2976967478831334861, guid: 6697f00a356420145bb3e25d2991b507, type: 3}
   m_PrefabInstance: {fileID: 6329049569813841853}
   m_PrefabAsset: {fileID: 0}

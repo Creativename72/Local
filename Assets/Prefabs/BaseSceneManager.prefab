@@ -46,3 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   d: {fileID: 0}
   t: {fileID: 0}
+  endOnDialogueEnd: 0
+  nextScene: 0
+  musicFadeMixer: {fileID: 24100000, guid: a32a2af2c60a2a34d9dceb04dd431e4a, type: 2}
+  sceneMusic: {fileID: 0}
+  fadeToScene: {fileID: 0}

@@ -3,26 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
+using UnityEngine.Audio;
 
 public class MapController : MonoBehaviour
 {
     public int currentStage;
     public bool[] HouseStates; // HouseStates order: Annie, Scout, Tyler, Walter
-    public House[] houses;
     public string currentScene;
     [SerializeField] SpriteRenderer s;
     [SerializeField] GameObject canvas;
+    [SerializeField] AudioMixer audioFader;
+    [SerializeField] float audioFadeDuration;
+    [SerializeField] FadeScript screenFader;
     public static MapController Instance { get; private set; }
 
+
+// This should be on by default, turn it off if you want to start on a specific scene for testing purposes
+    [SerializeField] bool LoadSceneOnStart;
+    [SerializeField] string initialScene;
     public SceneChangeEvent m_sceneChangeEvent;
-    [SerializeField] FadeScript fader;
 
     private bool initialSkip = true;
-
-    [SerializeField] string initialScene;
-
-    // This should be on by default, turn it off if you want to start on a specific scene for testing purposes
-    [SerializeField] bool LoadSceneOnStart;
 
     
     void Awake() {
@@ -60,7 +61,11 @@ public class MapController : MonoBehaviour
         @param n Name of the next scene to load
     **/
     IEnumerator LoadNextSceneAsync(string n) {
-        fader.ToggleFade();
+        // Debug.Log("MapController: Fading out Music, SFX and Ambience");
+        screenFader.ToggleFade();
+        StartCoroutine(FadeMixerGroup.StartFade(audioFader, "MusicVolume", audioFadeDuration, 0f)); // Fade out sfx, music, ambience
+        // StartCoroutine(FadeMixerGroup.StartFade(audioFader, "SFXVolume", audioFadeDuration, 0f));
+        StartCoroutine(FadeMixerGroup.StartFade(audioFader, "AmbienceVolume", audioFadeDuration, 0f));
 
         if (!initialSkip) yield return new WaitForSeconds(1.5f);
 
@@ -74,14 +79,18 @@ public class MapController : MonoBehaviour
         }
         if (currentScene != "-")
             SceneManager.UnloadSceneAsync(currentScene);
-        s.enabled = false;
-        // canvas.SetActive(false);
         
+        s.enabled = false;
         currentScene = n;
         Debug.Log("Scene Loaded: " +currentScene);
         m_sceneChangeEvent.Invoke(n);
 
-        fader.ToggleFade();
+        // Debug.Log("MapController: Fading in Music, SFX and Ambience");
+        // Start coroutines to fade in sfx and ambience but NOT music
+        // Music fade in will be handled by the BaseSceneManagers for character scenes
+        // StartCoroutine(FadeMixerGroup.StartFade(audioFader, "SFXVolume", audioFadeDuration, 1f));
+        StartCoroutine(FadeMixerGroup.StartFade(audioFader, "AmbienceVolume", audioFadeDuration, 1f));
+        screenFader.ToggleFade();
     }
 
     public void UpdateDay() {

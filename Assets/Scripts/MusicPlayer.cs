@@ -32,20 +32,9 @@ public class MusicPlayer : MonoBehaviour
         {
             return;
         }
-
-        if(musicPlayer.clip == null)
-        {
-            musicPlayer.clip = clip;
-            musicPlayer.Play();
-        }else if (!musicPlayer.isPlaying) 
-        {
-            musicPlayer.clip = clip;
-            musicPlayer.Play();
-        }else if(clip != null && musicPlayer.clip != clip)
-        {
-            StartCoroutine(ChangeMusic(clip, 1.0f, 0f, 1.0f));
-            //StopMusic(clip);
-        }
+        
+        musicPlayer.clip = clip;
+        musicPlayer.Play();
     }
 
     public void StopMusic(AudioClip newClip)
@@ -56,6 +45,7 @@ public class MusicPlayer : MonoBehaviour
     //Coroutine to fade music
     IEnumerator ChangeMusic(AudioClip newClip, float duration, float targetVolume, float resetVolume)
     {
+
         float currentTime = 0;
         float start = musicPlayer.volume;
         while (currentTime < duration)

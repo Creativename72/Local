@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DialogueController : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class DialogueController : MonoBehaviour
     public BaseSceneManager s;
     public bool end;
     public AudioSource a;
+    public AmbienceInScene ambience;
 
     protected string[] dialogueText;
     protected Dictionary<string, Action> functions = new();
@@ -42,6 +44,8 @@ public class DialogueController : MonoBehaviour
 
 
     protected float pauseEnd;
+
+    public DialogueSFXEvent m_dialogueSFXEvent;
 
     void Start()
     {
@@ -257,6 +261,36 @@ public class DialogueController : MonoBehaviour
             pauseEnd = f + Time.time;
             simulateMouseClick();
         }
+        if (nextLine.ambienceChanger) {
+            string t = nextLine.text[16..];
+
+            if (t.Length >= 2)
+                t = t[0..(t.Length - 2)];
+            else 
+                t = "";
+
+            if (string.IsNullOrEmpty(t)) {
+                ambience.ChangeAmbience();
+            }
+            else {
+                ambience.ChangeAmbience(t);
+            }
+        }
+        if (nextLine.tempAmbiencePlayer) {
+            string t = nextLine.text[17..];
+            t = t[0..(t.Length - 2)];
+
+            ambience.PlayTempAmbience(t);
+        }
+        if (nextLine.tempAmbienceStopper) {
+            ambience.StopTempAmbience();
+        }
+        if (nextLine.sfxPlayer) {
+            string t = nextLine.text[8..];
+            t = t[0..(t.Length - 2)];
+            Debug.Log(t);
+            m_dialogueSFXEvent.Invoke(t);
+        }
         if (nextLine.function)
         {
             string key = nextLine.text.Substring(1, nextLine.text.Length - 1).Trim();
@@ -429,4 +463,10 @@ public class DialogueController : MonoBehaviour
         pauseEnd = -1;
         simulateMouseClick();
     }
+}
+
+
+[System.Serializable]
+public class DialogueSFXEvent : UnityEvent<string>
+{
 }

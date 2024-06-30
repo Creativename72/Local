@@ -2,6 +2,7 @@ inScene: -,-
 
 
 id:start
+playtempambience(a_insideVehicle)
 :[The sun rises over Bellespring Valley, casting a warm glow over the lake and the trees.]
 :[A taxi winds down the narrow road, crossing a small stone bridge over a rushing river, before winding down an incline towards a quaint little cottage by the water.]
 :[Scout gazes out the window, taking in the expansive lake at the valley's heart, its surface shimmering in the early light.]
@@ -10,11 +11,11 @@ id:start
 changeBackgroundUnbound()
 pause(1.5)
 
-
+stoptempambience()
 :[The taxi comes to a stop in front of the cottage, Scout’s new home. They step out, stretching after the long journey from the city.]
 inScene:-,Scout
 :[In the driveway, a moving truck is parked, with workers carefully carrying out the belongings of an elderly turtle.]
-:[She sits on a rocking chair on the cottage’s front porch and waves to Scout. 
+:[She sits on a rocking chair on the cottage’s front porch and waves to Scout.]
 inScene:Bernice,Scout
 
 

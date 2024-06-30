@@ -36,6 +36,7 @@ Annie: See you tonight, alright Scout? And thanks for organizing this.
 Annie: And for hanging out with me the past few days. I really think I’m starting to balance my work life stuff after I met you.
 Annie: Alright, bye bye! Cya!
 changeBackground()
+changeAmbience(a_outdoors)
 inScene:Scout
 
 

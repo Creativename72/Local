@@ -8,7 +8,7 @@ inScene:Scout, Annie2
 
 Annie: Hey there, Scout! Back so soon, hmm? Come on in.
 
-
+changeAmbience()
 changeBackground()
 
 

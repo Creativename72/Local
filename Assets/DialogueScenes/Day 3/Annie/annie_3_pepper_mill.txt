@@ -2,6 +2,7 @@
 
 
 id:start
+playsfx(s_woodenpickup)
 Annie: That’s the pepper mill, yep. The fancy one, too.
 Annie: This one’s from my mom. Was from when she was a kid, probably. So old fashioned. Adds a bit of flair when I’m sprinklin’ it on my microwave noodles, huh.
 goto:end

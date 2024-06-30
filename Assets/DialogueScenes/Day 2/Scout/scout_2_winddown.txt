@@ -12,6 +12,7 @@ changeBackground()
 ...keeps himself busy with his job so he doesn’t have to think about the incident.
 
 id:walter
+playsfx(s_writing)
 Journal:Annie opened up today. She seems...
 [annie]
 ...overwhelmed by her jobs and responsibilities.
@@ -21,6 +22,7 @@ Journal:Annie opened up today. She seems...
 ...struggling to find balance in her life.
 
 id:annie
+playsfx(s_writing)
 Journal:Tyler showed me his hobbies. It seems like he’s...
 [tyler]
 ...trying to appear cool to others through his appearance and actions.
@@ -30,6 +32,7 @@ Journal:Tyler showed me his hobbies. It seems like he’s...
 ...not great at focusing on just one thing.
 
 id:tyler
+playsfx(s_writing)
 :[As Scout writes in their journal, their phone rings. It’s Bernice.]
 changeBackground()
 :[Scout steps up from their journal to pick up the phone]
@@ -116,7 +119,7 @@ Bernice:I know you won’t. Good luck, Scout! I’ll check in with you again soo
 changeBackground()
 pause(2)
 changeBackground()
-
+changeAmbience()
 :[As the sun shines through the bedroom window, Scout slowly awakens. Today is going to be a busy day of gathering ingredients and sending out invites.]
 :[Scout pulls out their map and decides on who they should go and invite first.]
 

@@ -11,6 +11,7 @@ Tyler:Hurts my fingies, too. I dunno, maybe I don’t got the patience for somet
 :[Tyler is about to throw the guitar into a near by pile of junk, but stops himself with a self-facepalm.]
 Tyler:Was expensive, actually. Maybe I should hold onto it.
 Tyler:I should just put this inside… Don’t want the rain damagin’ it or somethin’.
+playsfx(s_itempickup)
 :[Tyler takes the guitar and busted speakers back inside before emerging a moment later.]
 changeBackground()
 Tyler:Alright, what next...

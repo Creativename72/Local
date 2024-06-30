@@ -25,12 +25,14 @@ Toss it. It’s junk.
 id:keep
 Tyler:I guess. 
 Tyler:I’ll just shove it somewhere dry for now.
+playsfx(s_itempickup)
 :[Tyler tucks the bike around the back of his trailer under a tarp.]
 changeBackground()
 goto:end
 
 id:toss
 Tyler:Yeah, I think I’m all ridden out. It’s just takin’ up space now.
+playsfx(s_itempickup)
 :[Tyler moves the bike to the “toss” pile.]
 changeBackground()
 Tyler:Ok, moving on...

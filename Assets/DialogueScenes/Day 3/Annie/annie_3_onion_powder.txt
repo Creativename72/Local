@@ -2,6 +2,7 @@
 
 
 id:start
+playsfx(s_woodenpickup)
 Annie: Give that one here. Let me smell…
 :[She opens the jar and gives it a whiff.] 
 Annie: Mmm…

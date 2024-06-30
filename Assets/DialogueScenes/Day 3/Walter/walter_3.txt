@@ -47,6 +47,7 @@ goto:inside
 id:inside
 pause(1)
 changeBackground()
+changeAmbience(a_indoors)
 :[Scout enters Walter’s living space. The air here is much warmer than the air outside, and Scout takes a moment to collect their bearings.]
 
 Walter: What brings you back here so soon?
@@ -168,6 +169,7 @@ id:trail
 
 pause(1)
 changeBackground()
+changeAmbience(a_outdoors)
 
 :[Walter and Scout move their way up the trail to the mountain-top lake. As the hike goes on, Walter begins to speak.]
 
@@ -189,6 +191,7 @@ Walter: Water’s nice and calm today, that’s good.
 Walter: Go ahead and cast your line.
 >wait_click
 changeBackground(nofade)
+playsfx(s_bobbersplash)
 pause(1)
 changeBackground(nofade)
 pause(1)
@@ -210,6 +213,7 @@ pause(3)
 changeBackgroundUnbound(nofade)
 >wait_click
 changeBackground(nofade)
+playsfx(s_bigsplash)
 >wait_click
 changeBackground(nofade)
 Walter: Great job, Scout!

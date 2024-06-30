@@ -11,6 +11,8 @@ public class TylerDay3Manager : MonoBehaviour
     [SerializeField] private GameObject background;
     [SerializeField] private GameObject game;
 
+    public PlayDialogueSFX sfxPlayer;
+
     private State currentState;
     private int harvestCount;
     private int winCount;
@@ -51,6 +53,7 @@ public class TylerDay3Manager : MonoBehaviour
                     highlight.EnableClick(false);
                     highlight.EnableHighlight(false);
                     highlight.sprite.enabled = false;
+                    sfxPlayer.PlaySFX("s_harvest");
                 });
             }
             else

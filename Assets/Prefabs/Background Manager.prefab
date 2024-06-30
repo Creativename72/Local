@@ -223,3 +223,5 @@ MonoBehaviour:
   currentBg: 0
   b: 0
   bgFader: {fileID: 767332926147805701}
+  audioFader: {fileID: 24100000, guid: a32a2af2c60a2a34d9dceb04dd431e4a, type: 2}
+  audioFadeDuration: 0.75

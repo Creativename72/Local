@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.Audio;
 
 public class House : MonoBehaviour, IHouse
 {
@@ -30,6 +30,7 @@ public class House : MonoBehaviour, IHouse
     public Material defaultMat;
 
     [SerializeField] RectTransform UILocation; //RectTransform of the MapIconPlaceholder object to correctly place map icons
+    [SerializeField] AudioSource audioPlayer;
 
 
     // Start is called before the first frame update
@@ -46,10 +47,12 @@ public class House : MonoBehaviour, IHouse
         isActive = MapController.Instance.HouseStates[(int) thisHouse];
         nextScene = MapController.Instance.currentStage;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioPlayer = GetComponent<AudioSource>();
         updateSprite();
     }
 
     public void Click() {
+        audioPlayer.Play(0);
         MapController.Instance.HouseStates[(int) thisHouse] = false;
         MapController.Instance.LoadNextScene(sceneNames[nextScene]);
         MapController.Instance.UpdateDay();

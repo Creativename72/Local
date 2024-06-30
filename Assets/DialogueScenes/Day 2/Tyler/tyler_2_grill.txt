@@ -40,5 +40,6 @@ changeBackground()
 goto:else
 
 id:else
+playsfx(s_itempickup)
 Tyler: Hokay... Anythin’ else?
 goto:end

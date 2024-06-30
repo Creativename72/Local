@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class BaseSceneManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class BaseSceneManager : MonoBehaviour
     public TextAsset t;
     public bool endOnDialogueEnd;
     public bool nextScene = false;
+
+    [SerializeField] AudioMixer musicFadeMixer;
 
     public AudioClip sceneMusic; //music for this scene
 
@@ -60,8 +63,11 @@ public class BaseSceneManager : MonoBehaviour
             {
                 //Debug.Log("Attempting to get MusicPlayer script");
                 MusicPlayer musicPlayer = musicObj.GetComponent<MusicPlayer>();
+                
                 if(musicPlayer != null)
                 {
+                    Debug.Log("BaseSceneManager: Fading in Music");
+                    StartCoroutine(FadeMixerGroup.StartFade(musicFadeMixer, "MusicVolume", 1.5f, 1f));
                     musicPlayer.PlayMusic(sceneMusic);
                     //Debug.Log("Attempting to play music");
                 }

@@ -46,6 +46,8 @@ Walter:Keeps me in shape, I suppose.
 :[Walter unlocks the wooden door and holds the door open, letting Scout enter first.]
 pause(1)
 changeBackground()
+changeambience()
+
 //interior
 :[Scout is greeted by a cramped, but cozy interior. Windows are on all sides of the room, adorned with charcoal drawings and photos of nature.]
 :[In one corner of the room sits a simple bed with a neatly folded plaid blanket folded at the foot. In another corner is a small kitchenette with a small selection of cooking tools stored in an open cupboard.]
@@ -165,6 +167,7 @@ Walter:Well, I won’t keep you here long. I’m sure you still have a lot plann
 Walter:If you ever change your mind, you know where to find me.
 :[Walter walks Scout to the door, opening it for them.]
 :[Scout steps out into the rain, making their way back down the winding stairs and into the valley.]
+changeAmbience();
 //no_fishing
 goto:end
 
@@ -173,9 +176,11 @@ id:going_fishing
 inScene:
 //going_fishing
 changeBackground()
+changeAmbience()
 pause(1.5)
 :[With the fishing gear in hand, Walter leads Scout back down the winding stairs of the tower. Occasionally, he glances back at Scout to make sure they don’t slip and fall in the rain.]
 :[As they reach the base, Walter leads Scout to a sheltered spot right under the tower where the rain isn't too bad.]
+changeAmbience(a_rainonwater)
 changeBackground()
 pause(1.5)
 Walter:This spot should do just fine. 
@@ -184,6 +189,7 @@ Walter:Just hold the rod like this...
 Walter:...and cast.
 >wait_click
 changeBackground(nofade)
+playsfx(s_bobbersplash)
 pause(1)
 changeBackground(nofade)
 pause(1)
@@ -201,6 +207,7 @@ pause(3)
 changeBackgroundUnbound(nofade)
 >wait_click
 changeBackground(nofade)
+playsfx(s_bigsplash)
 >wait_click
 Walter:Not bad at all. 
 :[Walter places the fish in a small bucket nearby, giving Scout an approving nod.]

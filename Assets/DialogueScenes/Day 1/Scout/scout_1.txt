@@ -18,8 +18,8 @@ Journal: Today, I finally took that big step and moved out on my own. I feel…
 
 
 id:choice_1
+playsfx(s_writing)
 Journal: I met Walter, the fire lookout. He seems like…
-
 
 [choice_2]
 ...a very serious guy.
@@ -30,7 +30,9 @@ Journal: I met Walter, the fire lookout. He seems like…
 
 
 id:choice_2
+playsfx(s_writing)
 Journal: He talked a bit about the other residents of the valley. He seems to…
+
 
 
 [choice_3]
@@ -42,6 +44,7 @@ Journal: He talked a bit about the other residents of the valley. He seems to…
 
 
 id:choice_3
+playsfx(s_writing)
 Journal: Annie invited me to hang out tomorrow. She seems like…
 
 
@@ -54,6 +57,7 @@ Journal: Annie invited me to hang out tomorrow. She seems like…
 
 
 id:choice_4
+playsfx(s_writing)
 Journal: It feels like Annie…
 
 
@@ -66,6 +70,7 @@ Journal: It feels like Annie…
 
 
 id:choice_5
+playsfx(s_writing)
 Journal: I also ran into Tyler. He seems like…
 
 
@@ -78,6 +83,7 @@ Journal: I also ran into Tyler. He seems like…
 
 
 id:choice_6
+playsfx(s_writing)
 Journal: We talked a little about the other residents. He seems to…
 
 
@@ -90,6 +96,7 @@ Journal: We talked a little about the other residents. He seems to…
 
 
 id:choice_7
+playsfx(s_writing)
 Journal: I hope that…
 
 
@@ -102,15 +109,17 @@ Journal: I hope that…
 
 
 id:choice_8
+playsfx(s_writing)
 :[Scout finishes their journal, setting it back in their backpack. They climb into their bed, ready to take on whatever challenges tomorrow might bring.]
 
 
 pause(2)
 changeBackground()
 
-
 :[The sun rises once more over Bellespring Valley, casting a golden glow on the cottage. A new day begins, full of possibilities and new connections to be made.]
 changeBackground()
+changeambience()
+
 :[Scout stretches, makes breakfast, and steps out of the cottage, map in hand, ready to start the day with their new friends.]
 changeBackground()
 

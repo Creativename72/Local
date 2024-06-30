@@ -92,6 +92,32 @@ public class DialogueSegment
                 canBind = false;
                 current = null;
             }
+            else if (line.ToLower().Contains("changeambience(")) 
+            {
+                lines.Add(new DialogueLine(line) {
+                    ambienceChanger = true,
+                });
+            }
+            else if (line.ToLower().Contains("playtempambience(")) 
+            {
+                lines.Add(new DialogueLine(line) {
+                    tempAmbiencePlayer = true,
+                });
+            }
+            else if (line.ToLower().Contains("stoptempambience(")) 
+            {
+                if (!canBind)
+                {
+                    current = new DialogueLine("");
+                    lines.Add(current);
+                }
+                current.tempAmbienceStopper = true;
+            }
+            else if (line.ToLower().Contains("playsfx(")) {
+                lines.Add(new DialogueLine(line) {
+                    sfxPlayer = true,
+                });
+            }
             else if (text[i].Contains(">"))
             {
                 DialogueLine functionLine = new(text[i])
@@ -137,6 +163,10 @@ public class DialogueLine
     public bool pause = false;
     public bool segmentChanger = false;
     public bool fade = true;
+    public bool ambienceChanger = false;
+    public bool tempAmbiencePlayer = false;
+    public bool tempAmbienceStopper = false;
+    public bool sfxPlayer = false;
     public DialogueLine(string textraw)
     {
         text = textraw;

@@ -51,6 +51,7 @@ Get rid of it.
 
 id:hold_onto
 Tyler:Yeah, I should. Lemme just... move this... over there...
+playsfx(s_itempickup)
 :[Tyler slowly drags the sculpture through the mud to a space behind the trailer. When he comes back, he’s out of breath.]
 changeBackground()
 goto:progress
@@ -58,6 +59,7 @@ goto:progress
 id:get_rid
 Tyler:Prolly the right call. It’s a bit of an eyesore, ain’t it.
 Tyler:Welp. Bye bye, lil’ guy.
+playsfx(s_itempickup)
 :[Tyler slowly drags the sculptures to the “toss” pile.]
 changeBackground()
 goto:progress

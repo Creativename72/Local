@@ -33,6 +33,7 @@ id:fine
 Annie: Here, come on in, make yourself at home.
 :[Annie leads Scout into the cabin.]
 :[The interior exudes warmth and charm. The walls are covered in photos of Annie and others, paintings and knick-knacks.]
+changeAmbience()
 changeBackground()
 :[Annie shows Scout to the seating area.]
 [cozy]

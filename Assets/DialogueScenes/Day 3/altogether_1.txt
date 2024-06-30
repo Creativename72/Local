@@ -9,6 +9,7 @@ id:start
 [Chop the vegetables.]
 
 id:chop
+playsfx(s_chopping)
 :[Scout grabs the potatoes, carrots, and onions from Tyler’s garden and begins peeling and dicing them into small, even pieces.]
 
 [heat]
@@ -16,26 +17,31 @@ id:chop
 
 
 id:heat
+playsfx(s_placingstovepot)
 :[Scout heats up the pot on the stove and adds a splash of oil, waiting for it to shimmer.]
 [simmer]
 [Simmer the vegetables.]
 
 id:simmer
+playsfx(s_simmeringveggies)
 :[Scout adds the veggies to the pot, then puts on the lid, reduces the heat, and lets it simmer for about 15 minutes, allowing the veggies to become tender.]
 [fish_and_season]
 [Add the fish and season.]
 
 id:fish_and_season
+playsfx(s_cookingfish)
 :[Scout adds vegetable stock and drops the fish chunks into the pot and adds pepper, salt, paprika, and onion powder. They stir the soup well and let it cook until the fish is nice and flaky.]
 [cream]
 [Finish with cream.]
 
 id:cream
+playsfx(s_pouringcream)
 :[Once the fish is perfectly cooked, Scout turns off the heat and stirs in the cream until a nice texture is formed.]
 [taste]
 [Have a taste.]
 
 id:taste
+playsfx(s_tastingwithspoon)
 :[As the flavors meld together in their mouth, Scout savors the creamy, rich taste of the chowder. The sweetness of the carrots, the earthiness of the potatoes, and the delicate flavor of the fish combine perfectly with the spices, creating a comforting and satisfying dish.]
 :[Scout takes a spoonful of the chowder and has a taste. They savor the creamy rich taste of the base, the sweetness of the veggies, the flakiness of the fish, and the complex flavors of the spices.]
 goto:greetings
@@ -289,16 +295,19 @@ Scout:"..."
 
 
 id:atPeace
+playsfx(s_writing)
 Journal: …more at peace with the past.
 goto:nextjournal
 
 
 id:reconnect_ready
+playsfx(s_writing)
 Journal: …ready to reconnect with everyone.
 goto:nextjournal
 
 
 id:weight_lifted
+playsfx(s_writing)
 Journal: …like a huge weight was lifted off his shoulders.
 goto:nextjournal
 
@@ -318,16 +327,19 @@ Journal: Annie was…
 
 
 id:excited
+playsfx(s_writing)
 Journal: …excited about spending time with friends once more.
 goto:nextjournal2
 
 
 id:grateful
+playsfx(s_writing)
 Journal: …grateful for the break from work.
 goto:nextjournal2
 
 
 id:glad
+playsfx(s_writing)
 Journal: …glad about the future plans she’s made with everyone.
 goto:nextjournal2
 
@@ -347,21 +359,25 @@ Journal: And Tyler…
 
 
 id:opened_up
+playsfx(s_writing)
 Journal: …opened up more than I expected.
 goto:end
 
 
 id:seems_happy
+playsfx(s_writing)
 Journal: …seems really happy to be around friends again.
 goto:end
 
 
 id:missed_this
+playsfx(s_writing)
 Journal: …showed everyone how much he missed this.
 goto:end
 
 
 id:end
+playsfx(s_writing)
 Journal: I’m looking forward to our next dinner. It feels like the start of something wonderful here in Bellespring Valley.
 
 
