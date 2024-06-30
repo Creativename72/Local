@@ -150,6 +150,6 @@ Bernice: Anyways, I should get going. My daughter is waiting for me in the city.
 
 Bernice: It's hard to leave after all these years, but I'm excited for you to experience all the valley has to offer. Take care of my friends, and take care of yourself, too!
 
-
+inScene:-,Scout
 :[After a moment, the truck drives off, up the road, and towards the city.]
 :[Scout is alone on the porch of the cottage. They set the soup pot down on a table inside, then look at the map, deciding who they should check on first.]
