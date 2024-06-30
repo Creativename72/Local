@@ -73,8 +73,13 @@ public class DialogueController : MonoBehaviour
             }
             else if (pauseEnd > 0)
             {
+                if (!dialogueEnabled)
+                {
+                    Debug.Log("UNPAUSING");
+                }
                 dialogueEnabled = true;
                 pauseEnd = -1;
+                
                 simulateMouseClick();
             }
             subcontainer.SetActive(dialogueEnabled);
@@ -147,7 +152,7 @@ public class DialogueController : MonoBehaviour
         return line.Substring(line.IndexOf(":") + 1).Trim();
     }
 
-    protected void sayOptions()
+    public void sayOptions()
     {
         currentSpeaker.setText("");
         speakerContainer.SetActive(false);
@@ -214,47 +219,51 @@ public class DialogueController : MonoBehaviour
             this.textCurrentlyScrolling = false;
             this.textScrollDelay = this.textScrollDelayQuantity;
         }
+        //TODO:options
+        DialogueLine nextLine = currentScene.nextLine();
+        if (nextLine == null)
+        {
+            return;
+        }
+        if (nextLine.segmentChanger)
+        {
+            string destSegment = nextLine.text.Split(":")[1].Trim();
+            if (destSegment.ToLower() == "end")
+            {
+                endDialogue();
+                return;
+            }
+            currentScene.gotoSegment(nextLine.text.Split(":")[1].Trim());
+            return;
+        }
 
-        string[] nextLineList = currentScene.nextLine();
-        string nextLine = nextLineList[1];
-        string type = nextLineList[0];
-
-        Debug.Log(nextLine);
-        Debug.Log(type);
-
-        if (type.ToLower() == "e")
+        if (nextLine.sceneChanger)
         {
-            endDialogue();
+            bgs.changeBackground();
+            Debug.Log("Changing background");
         }
-        else if (type == "l")
+        if (nextLine.spriteChanger)
         {
-            sayLine(nextLine);
+            this.setCharacters(nextLine.spriteChanges);
         }
-        else if (type == "o")
-        {
-            sayOptions();
-        }
-        else if (type == "g")
-        {
-            currentScene.gotoSegment(nextLine.Split(":")[1].Trim());
-        }
-        // NOTE, do not use pause() in text files and PauseDialogue() concurrently unless you want unintended behavior.
-        else if (type == "p")
+        if (nextLine.pause)
         {
             Debug.Log("PAUSING");
-            bool b = float.TryParse(nextLine, out float f);
+            string t = nextLine.text[6..];
+            t = t[0..(t.Length - 2)];
+            bool b = float.TryParse(t, out float f);
             if (!b)
                 throw new UnityException("Bad format: pause() does not contain valid number!");
             pauseEnd = f + Time.time;
             simulateMouseClick();
         }
-        else if (type == "f")
+        if (nextLine.function)
         {
-            string key = nextLine;
+            string key = nextLine.text;
 
             if (functions.ContainsKey(key))
             {
-                functions[nextLine].Invoke();
+                functions[key].Invoke();
                 simulateMouseClick();
             }
             else
@@ -262,19 +271,14 @@ public class DialogueController : MonoBehaviour
                 throw new UnityException("Function \"" + key + "\" does not exist!");
             }
         }
-        else if (type == "sc")
+        if (nextLine.canRead)
         {
-            setCharacters(nextLineList[2]);
-            sayLine(nextLine);
-        } else if (type == "scs")
+            sayLine(nextLine.text);
+        } else
         {
-            setCharacters(nextLineList[1]);
             OnMouseDown();
         }
-        else
-        {
-            throw new UnityException("Bad format: " + type + nextLine);
-        }
+
     }
 
     public void enableOptions(int amt)

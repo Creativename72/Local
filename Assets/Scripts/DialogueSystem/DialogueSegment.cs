@@ -7,75 +7,83 @@ public class DialogueSegment
     private ArrayList lines;
     public int currentLine = 0;
     public DialogueController p;
+    private DialogueLine current = null;
+    private bool canBind = false;
 
     public DialogueSegment(string textraw, DialogueController parent)
     {
         this.p = parent;
         string[] text = textraw.Split("\n");
         lines = new ArrayList();
+        
 
         for (int i = 0; i < text.Length; i++)
         {
             string line = text[i];
-            if (text[i].ToLower().Contains("inscene:"))
+            if (line.ToLower().Contains("inscene:"))
             {
-                if (lines.Count > 0)
+                if (!canBind)
                 {
-                    DialogueLine lastLine = (DialogueLine) lines[lines.Count - 1];
-                    lastLine.spriteChanger = true;
-                    lastLine.spriteChanges = text[i];
-                } else
+                    current = new DialogueLine("");
+                    lines.Add(current);
+                }
+                current.spriteChanger = true;
+                current.spriteChanges = line;
+            }
+            else if (line.Contains(":"))
+            {
+                string speaker = line.Split(":")[0].Trim().ToLower();
+                if (speaker == "goto")
                 {
-                    DialogueLine newLine = new DialogueLine("");
-                    newLine.spriteChanger = true;
-                    newLine.spriteChanges = text[i];
-                    newLine.skipRead = true;
-                    lines.Add(newLine);
+                    current = new DialogueLine(line);
+                    current.segmentChanger = true;
+                    lines.Add(current);
+                    current = null;
+                    canBind = false;
+                }
+                else
+                {
+                    current = new DialogueLine(line);
+                    current.canRead = true;
+                    lines.Add(current);
+                    canBind = true;
                 }
             }
-            else if (text[i].Contains(":"))
+            else if (line.Contains("["))
             {
-                DialogueLine newLine = new DialogueLine(text[i]);
-                lines.Add(newLine);
-            }
-            else if (text[i].Contains("["))
-            {
-                if (lines.Count == 0)
+                if (!canBind)
                 {
-                    lines.Add(new DialogueLine(""));
+                    current = new DialogueLine("");
+                    lines.Add(current);
+                    canBind = true;
                 }
-                DialogueLine current = (DialogueLine)lines[lines.Count - 1];
-                string id = text[i].Substring(text[i].IndexOf("[") + 1, text[i].IndexOf("]") - text[i].IndexOf("[") - 1);
+                string id = line.Substring(line.IndexOf("[") + 1, line.IndexOf("]") - line.IndexOf("[") - 1);
                 current.addOption(id, text[i + 1]);
                 i++; //makes sure the dialogue option isn't treated as an id if italicized
             }
-            else if (text[i].ToLower().Contains("changebackground()"))
+            else if (line.ToLower().Contains("changebackground()"))
             {
-                Debug.Log("choosing change bg type");
-                Debug.Log(((DialogueLine)lines[lines.Count - 1]).text);
-                if (((DialogueLine)lines[lines.Count - 1]).text.ToLower().Contains(">wait_click"))
+                if (!canBind)
                 {
-                    Debug.Log("wait click changebg");
-                    DialogueLine newLine = new DialogueLine("");
-                    newLine.sceneChanger = true;
-                    newLine.skipRead = true;
-                    lines.Add(newLine);
+                    current = new DialogueLine("");
+                    lines.Add(current);
                 }
-                {
-                    Debug.Log("line bound changebg");
-                    ((DialogueLine) lines[lines.Count - 1]).sceneChanger = true;
-                }
+                current.sceneChanger = true;
             }
-            else if (text[i].ToLower().Contains("changecamera()"))
+            else if (line.ToLower().Contains("changebackgroundunbound()"))
             {
-                ((DialogueLine)lines[lines.Count - 1]).camChanger = true;
+                current = new DialogueLine("");
+                lines.Add(current);
+                current.sceneChanger = true;
             }
-            else if (text[i].ToLower().Contains("pause("))
+            else if (line.ToLower().Contains("pause("))
             {
                 lines.Add(new DialogueLine(line)
                 {
                     pause = true,
-                }) ;
+                });
+                canBind = false;
+                current = null;
             }
             else if (text[i].Contains(">"))
             {
@@ -84,6 +92,8 @@ public class DialogueSegment
                     function = true
                 };
                 lines.Add(functionLine);
+                canBind = false;
+                current = null;
             }
         }
     }
@@ -109,14 +119,16 @@ public class DialogueLine
 {
     public string text;
     public ArrayList options;
+
+    public bool canRead = false;
     public bool hasOptions = false;
     public bool sceneChanger = false;
-    public bool function = false;
-    public bool pause = false;
     public bool spriteChanger = false;
     public string spriteChanges = "";
-    public bool skipRead = false;
-    public bool camChanger = false;
+
+    public bool function = false;
+    public bool pause = false;
+    public bool segmentChanger = false;
     public DialogueLine(string textraw)
     {
         text = textraw;
@@ -132,6 +144,7 @@ public class DialogueLine
 
     public void readOptions(DialogueController p)
     {
+        Debug.Log(options.ToString());
         p.enableOptions(options.Count);
         for (int i = 0; i < options.Count; i++)
         {

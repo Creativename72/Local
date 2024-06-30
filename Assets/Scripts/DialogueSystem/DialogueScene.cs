@@ -7,7 +7,7 @@ public class DialogueScene
     private Dictionary<string, DialogueSegment> segmentsDictionary;
     private string currentSegment;
     private DialogueLine currentLine;
-    private bool optionsFlag = false;
+    public bool optionsFlag = false;
     private bool canChoose = false;
     public DialogueController parent;
 
@@ -26,73 +26,35 @@ public class DialogueScene
         //debug_CheckDictionary();
     }
 
-    public string[] nextLine()
+    public DialogueLine nextLine()
     {
         
         if (optionsFlag)
         {
             canChoose = true;
+            parent.sayOptions();
             currentLine.readOptions(parent);
-            return new[] { "o", "" };
+            return null;
         }
         DialogueLine nLine = segmentsDictionary[currentSegment.Trim()].nextLine();
         if (nLine == null)
         {
-            return new[] { "e", "" };
+            parent.endDialogue();
+            return null;
         }
-
-        if (nLine.sceneChanger)
-        {
-            parent.bgs.changeBackground();
-            if (nLine.skipRead)
-            {
-                Debug.Log("change background skipread");
-                return this.nextLine();
-            }
-        }
-        if (nLine.camChanger)
-        {
-            //parent.cmac.changeCamera();
-        }
-        if (nLine.spriteChanger)
-        {
-            if (!nLine.skipRead)
-            {
-                return new[] { "sc", nLine.text, nLine.spriteChanges };
-            } else
-            {
-                return new[] { "scs", nLine.spriteChanges };
-            }
-        }
-        else if (nLine.pause)
-        {
-            string t = nLine.text[6..];
-            t = t[0..(t.Length - 2)];
-            return new[] { "p", t };
-        }
-        else if (nLine.hasOptions)
+        if (nLine.hasOptions)
         {
             optionsFlag = true;
             currentLine = nLine;
             if (nLine.text == "")
             {
                 canChoose = true;
+                parent.sayOptions();
                 currentLine.readOptions(parent);
-                return new[] { "o", "" };
+                return null;
             }
-        } else if (nLine.function)
-        {
-            return new[] { "f", nLine.text[1..].Trim() }; 
         }
-        else if (nLine.text.Split(":")[1].Trim().ToLower() == "end")
-        {
-            return new[] { "e", "" };
-        }
-        else if (nLine.text.Split(":")[0].Trim().ToLower() == "goto")
-        {
-            return new[] { "g", nLine.text };
-        }
-        return new[] { "l", nLine.text };
+        return nLine;
     }
 
     public void chooseOption(int option)

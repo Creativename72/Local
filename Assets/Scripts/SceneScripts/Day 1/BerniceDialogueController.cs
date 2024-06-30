@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using System.Linq;
 using System;
 
+
+//DEPRECATED FILE------------------------------------------------------
 public class BerniceDialogueController : DialogueController, IPointerClickHandler
 {
 
@@ -29,7 +31,7 @@ public class BerniceDialogueController : DialogueController, IPointerClickHandle
             if (!dialogueEnabled)
                 return;
 
-            string[] nextLineList = currentScene.nextLine();
+            string[] nextLineList = { "a", "b" };//currentScene.nextLine();
             string nextLine = nextLineList[1];
             string type = nextLineList[0];
 
