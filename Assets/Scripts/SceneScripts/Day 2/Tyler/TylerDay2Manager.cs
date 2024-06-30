@@ -54,8 +54,8 @@ public class TylerDay2Manager : MonoBehaviour
         continueButton.SetActive(false);
         pointsInteracted = 0;
         currentState = State.IntroDialogue;
-        dialogueController.t = tylerDay2Text;
-        dialogueController.runDialogue();
+        //dialogueController.t = tylerDay2Text; 
+        //dialogueController.runDialogue();
 
         // set actions to occur for each object
         bike.GetComponent<HighlightableObject>().OnClick(() =>
