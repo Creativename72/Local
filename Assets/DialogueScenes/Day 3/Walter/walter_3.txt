@@ -188,10 +188,10 @@ changeBackground()
 Walter: Water’s nice and calm today, that’s good.
 Walter: Go ahead and cast your line.
 >wait_click
+changeBackground(nofade)
 pause(1)
-changeBackground()
+changeBackground(nofade)
 pause(1)
-changeBackground()
 Walter: And now, we wait.
 pause(3)
 Walter: You know, fishing is a lot like making friends. You need patience, a bit of luck, a willingness to keep trying, even when things don’t seem to be biting.
@@ -206,11 +206,11 @@ Walter: We can just sit and wait for the fish to join us on their own time.
 pause(3)
 Walter: Hmm, nothing yet?
 Walter: Let’s keep at it. Persistence pays off.
-changeBackground()
+changeBackgroundUnbound(nofade)
 >wait_click
-changeBackground()
+changeBackground(nofade)
 >wait_click
-changeBackground()
+changeBackground(nofade)
 Walter: Great job, Scout!
 inscene: Walter, Scout
 
@@ -220,7 +220,7 @@ Walter: Hmm...
 Walter: Listen, Scout, you should head back down on your own. I’m sure you still got lots of ingredients to prepare.
 Walter: I think I’ll stay here a while. It’s a perfect day for fishing...
 [thanks_spending]
-:[Alright. Thanks for spending the afternoon with me, Walter.]
+[Alright. Thanks for spending the afternoon with me, Walter.]
 
 id:thanks_spending
 [and_for_helping]
