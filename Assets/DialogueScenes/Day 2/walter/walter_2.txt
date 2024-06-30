@@ -172,21 +172,21 @@ goto:end
 id:going_fishing
 inScene:
 //going_fishing
-pause(1)
 changeBackground()
+pause(1.5)
 :[With the fishing gear in hand, Walter leads Scout back down the winding stairs of the tower. Occasionally, he glances back at Scout to make sure they don’t slip and fall in the rain.]
 :[As they reach the base, Walter leads Scout to a sheltered spot right under the tower where the rain isn't too bad.]
-pause(1)
 changeBackground()
+pause(1.5)
 Walter:This spot should do just fine. 
 Walter:Here. Take this rod, it looks like your size.
 Walter:Just hold the rod like this...
 Walter:...and cast.
 >wait_click
+changeBackground(nofade)
 pause(1)
-changeBackground()
-pause(3)
-changeBackground()
+changeBackground(nofade)
+pause(1)
 Walter:And now, we wait.
 pause(3)
 Walter:Back in the city, I put myself out there a lot. I’d go to community events, try to be more social.
@@ -197,9 +197,9 @@ Walter:But you’ll never know unless you cast your line. The important thing is
 pause(3)
 Walter:That’s what I always tell myself. Though, maybe I’ve been neglecting that for a while now.
 Walter:Haven’t really talked to anyone new in so long...
-changeBackground()
+changeBackgroundUnbound(nofade)
 >wait_click
-changeBackground()
+changeBackground(nofade)
 >wait_click
 Walter:Not bad at all. 
 :[Walter places the fish in a small bucket nearby, giving Scout an approving nod.]

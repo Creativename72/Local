@@ -61,7 +61,7 @@ public class DialogueSegment
                 current.addOption(id, text[i + 1]);
                 i++; //makes sure the dialogue option isn't treated as an id if italicized
             }
-            else if (line.ToLower().Contains("changebackground()"))
+            else if (line.ToLower().Contains("changebackground("))
             {
                 if (!canBind)
                 {
@@ -69,12 +69,19 @@ public class DialogueSegment
                     lines.Add(current);
                 }
                 current.sceneChanger = true;
+                if (line.ToLower().Contains("nofade")) {
+                    current.fade = false;
+                }
             }
-            else if (line.ToLower().Contains("changebackgroundunbound()"))
+            else if (line.ToLower().Contains("changebackgroundunbound("))
             {
                 current = new DialogueLine("");
                 lines.Add(current);
                 current.sceneChanger = true;
+                if (line.ToLower().Contains("nofade"))
+                {
+                    current.fade = false;
+                }
             }
             else if (line.ToLower().Contains("pause("))
             {
@@ -129,6 +136,7 @@ public class DialogueLine
     public bool function = false;
     public bool pause = false;
     public bool segmentChanger = false;
+    public bool fade = true;
     public DialogueLine(string textraw)
     {
         text = textraw;
@@ -144,7 +152,6 @@ public class DialogueLine
 
     public void readOptions(DialogueController p)
     {
-        Debug.Log(options.ToString());
         p.enableOptions(options.Count);
         for (int i = 0; i < options.Count; i++)
         {

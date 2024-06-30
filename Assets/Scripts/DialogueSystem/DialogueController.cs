@@ -239,8 +239,8 @@ public class DialogueController : MonoBehaviour
 
         if (nextLine.sceneChanger)
         {
-            bgs.changeBackground();
-            Debug.Log("Changing background");
+            bgs.changeBackground(nextLine.fade);
+            //Debug.Log("Changing background");
         }
         if (nextLine.spriteChanger)
         {
@@ -248,7 +248,7 @@ public class DialogueController : MonoBehaviour
         }
         if (nextLine.pause)
         {
-            Debug.Log("PAUSING");
+            //Debug.Log("PAUSING");
             string t = nextLine.text[6..];
             t = t[0..(t.Length - 2)];
             bool b = float.TryParse(t, out float f);
@@ -259,7 +259,7 @@ public class DialogueController : MonoBehaviour
         }
         if (nextLine.function)
         {
-            string key = nextLine.text;
+            string key = nextLine.text.Substring(1, nextLine.text.Length - 1).Trim();
 
             if (functions.ContainsKey(key))
             {
@@ -323,8 +323,8 @@ public class DialogueController : MonoBehaviour
     }
 
     public void AddFunction(string key, Action action)
-    {
-        functions[key] = action;
+    {   
+        this.functions[key] = action;
     }
 
     private IEnumerator Wait(float time, Action after)

@@ -27,23 +27,27 @@ public class BackgroundHandler : MonoBehaviour
         }
     }
 
-    public void changeBackground()
+    public void changeBackground(bool doFade = true)
     {
-        StartCoroutine(backgroundChange());
+        StartCoroutine(backgroundChange(doFade));
     }
 
-    private IEnumerator backgroundChange() {
-        bgFader.Fade();
+    private IEnumerator backgroundChange(bool doFade) {
+        if (doFade)
+        {
+            bgFader.Fade();
 
-        yield return new WaitForSeconds(0.75f);
-
+            yield return new WaitForSeconds(0.75f);
+        }
         currentBg++;
         if (currentBg >= bgs.Length)
         {
             currentBg = bgs.Length - 1;
         }
         s.sprite = bgs[currentBg];
-
-        bgFader.Fade();
+        if (doFade)
+        {
+            bgFader.Fade();
+        }
     }
 }
