@@ -30,7 +30,7 @@ playsfx(s_simmeringveggies)
 
 id:fish_and_season
 playsfx(s_cookingfish)
-:[Scout adds vegetable stock and drops the fish chunks into the pot and adds pepper, salt, paprika, and onion powder. They stir the soup well and let it cook until the fish is nice and flaky.]
+:[Scout adds vegetable stock, drops the fish chunks into the pot, then adds pepper, salt, paprika and onion powder. They stir the soup well and let it cook until the fish is nice and flaky.]
 [cream]
 [Finish with cream.]
 

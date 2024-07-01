@@ -80,7 +80,7 @@ Tyler: Yeah, you too.
 [you_live_like_this]
 You live in a trailer?
 [stuff]
-Sure is a lotta stuff everywhere here.
+You sure have a lotta stuff everywhere here.
 
 
 id:you_live_like_this

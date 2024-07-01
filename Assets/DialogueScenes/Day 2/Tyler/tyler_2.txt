@@ -35,7 +35,7 @@ Tyler:[He chuckles.] Good idea.
 goto:play
 
 id:rain
-Tyler:Ah, I dunno. [He checks his wrist, which doesn’t have a watch on it.]
+Tyler:Ah, I dunno. [He checks his wrist, which still doesn’t have a watch on it.]
 Tyler:Like, at least ‘n hour or two. We didn’t decide on a meetin’ time yesterday...
 Tyler:[He shrugs.] It’s whatever. I like the rain. Now I look all mysterious ‘n brooding. Grr.
 goto:play

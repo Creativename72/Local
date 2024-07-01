@@ -108,7 +108,7 @@ Walter:There's so much to see here, Scout, it'll really take your breath away.
 goto:continue_1
 
 id:continue_1
-:[Walter pauses, this gaze drifting around the interior space. He takes a moment to absorb his surroundings, listening to the soft sounds of the rain against the windows. He stares out the window as he speaks.]
+:[Walter pauses, his gaze drifting around the interior space. He takes a moment to absorb his surroundings, listening to the soft sounds of the rain against the windows. He stares out the window as he speaks.]
 Walter:You know, I don’t often get the opportunity to talk to people in person. Or at all, really, in a casual way.
 Walter:My job, my position - it’s isolating. I spend most of my days alone up here, with only the occasional radio check-in for company.
 Walter:It's not that I mind the solitude. It’s just that sometimes… I miss the act of conversation, the kind you have with a friend over a cup of tea or a walk in the park. It weighs on me.
@@ -117,10 +117,10 @@ Walter:Annie and Tyler... we used to be good friends, you know. I’d hang out w
 Walter:Now, it's been months since I’ve talked to them… [Walter looks out into the distance.]
 Walter:Tyler was setting up a water pump at the edge of the river. I was supervising. Annie was keeping us company.
 Walter:I had received a dispatch on my walkie talkie and had to head back to my tower to check on something. I told Tyler to wait for me to return before starting the pump, and I told Annie to keep an eye on him. Metaphorically. 
-Walter:Of course, he didn’t listen. I heard the explosion from across the valley. From the trail I could see a pillar of smoke rising over the opposite side of the lake. 
+Walter:Of course, he didn’t listen. I heard the explosion from across the valley. I just remember seeing a pillar of smoke rising over the opposite side of the lake. It was so big I could see it from the trail. 
 Walter:I came back just in time to see Annie crashing Tyler’s burning truck into his water silo. 
 Walter:I was furious. Furious that Tyler was being a reckless idiot. Furious that Annie was driving the truck when she clearly is unfit to do so. I tore into them.
-Walter:Why didn’t they listen! Ack, it’s just... I still can’t believe...
+Walter:Why didn’t they listen?! Ack, it’s just... I still can’t believe...
 Walter:Especially since my role is to keep this valley, and its inhabitants, safe. I just...
 [keep_safe]
 Wow, that’s crazy.

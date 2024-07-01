@@ -13,7 +13,7 @@ Annie:We used to be close. Walter was here first, he’s the fire watch. Then I 
 Annie:I think we were both enjoying the offline sort of connection. We didn’t really talk to anyone in person outside our jobs at that point.
 Annie:Then Tyler crashed here with his trailer. And like, he’s a cool guy. We like the same music and stuff.
 Annie:On the weekends we hung out with each other a lot. It was the only thing to really do here in the valley, for me at least.
-Annie:There was an incident at some point, and we like, stopped talkin’ to each other after it happened. That was a while ago when we all still hung out with each other..
+Annie:There was an incident at some point, and we like, stopped talkin’ to each other after it happened. That was a while ago when we all still hung out with each other.
 [falling]
 You had a falling out?
 
@@ -29,7 +29,7 @@ Annie:I, like, totally wrecked his truck and his water thing and his farm, man. 
 Annie:But then Walter comes running back, and he’s mad at Tyler for being stupid, and then he gets mad at ME, too!
 Annie:He gets mad at ME for trying to help! 
 Annie:Like, yeah, I can’t really see, but...
-Annie:The truck was on fire! What, should I have just let the whole site burn down?! I was basically doing his fire watching job for him.
+Annie:The truck was on fire! What was I supposed to do? It's not like I was gonna just sit back and let the whole site burn down! I was basically doing his fire watching job for him.
 Annie:Ack, I dunno. It was such a stupid situation. I was so upset about how those two reacted. It was a split moment decision, geez...
 [react]
 Wow, that’s crazy!
