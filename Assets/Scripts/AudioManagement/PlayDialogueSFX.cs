@@ -18,4 +18,8 @@ public class PlayDialogueSFX : MonoBehaviour
         // Debug.Log("Play SFX: "+n);
         audioPlayer.PlayOneShot(Resources.Load<AudioClip>("SFX/"+n), 1f);
     }
+
+    public void PlayButtonSFX(float v) {
+        audioPlayer.PlayOneShot(Resources.Load<AudioClip>("SFX/s_nextbutton"), v);
+    }
 }
