@@ -874,6 +874,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7093000049954813103, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3a5911794f695e41a803a8697d815ad, type: 3}
 --- !u!1 &895074779
@@ -1047,6 +1051,7 @@ MonoBehaviour:
   highlightMat: {fileID: 0}
   defaultMat: {fileID: 0}
   UILocation: {fileID: 0}
+  audioPlayer: {fileID: 0}
 --- !u!1 &1318641852
 GameObject:
   m_ObjectHideFlags: 0
