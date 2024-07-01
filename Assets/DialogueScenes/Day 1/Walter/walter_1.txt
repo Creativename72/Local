@@ -17,8 +17,8 @@ id:start
 id:longer_path
 :[The path winds gently through the lush landscape, offering breathtaking views of the surrounding mountains and meadows. It takes almost an hour for Scout to reach the base of the watchtower.]
 :[As Scout approaches the tower’s stone base, a brown bear emerges from the entrance, stepping forward to greet them. His expression is hard to read.]
-inScene: scout, walter
 changeBackground()
+inScene: scout, walter
 
 Bear: You’re finally here. Took you a while to get here, didn’t it?
 
@@ -66,8 +66,8 @@ goto:path_connect
 id:shorter_path        
 :[Taking the direct path through the bramble proves to be a little more difficult than Scout anticipated. They stumble a little over the rough terrain, but ultimately make it to the watchtower unscathed.]
 :[As Scout approaches the tower, a brown bear emerges from the bottom entrance, stepping forward at a brisk pace. His expression is hard to read.]
-inScene: scout, walter
 changeBackground()
+inScene: scout, walter
 
 Bear: Halt.
 
