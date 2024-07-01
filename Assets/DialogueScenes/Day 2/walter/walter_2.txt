@@ -16,7 +16,7 @@ Thanks, Walter. I appreciate that.
 
 id:thanks_walter
 :[A brief smile flashes on his face.]
-Walter:[He nods, glancing up at the sly.] Looks like the rain won’t be letting up soon.
+Walter:[He nods, glancing up at the sky.] Looks like the rain won’t be letting up soon.
 Walter:Since we’re closer to my tower, why don’t we head back there? I don’t want you getting sick from standing out in the rain.
 [start_walking]
 Sounds good.

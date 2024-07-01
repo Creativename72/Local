@@ -106,7 +106,7 @@ Bernice:How about a Fish Chowder? Use the cream as the base, and you’ll just n
 Sounds good!
 
 id:approved
-Bernice:Alright, write this down. You’ll need fish, any fish will do. For spices: salt, pepper, paprika, and onion powder. And for veggies: potatoes, carrots and onions. 
+Bernice:Alright, write this down. You’ll need fish, any fish will do. For spices, salt, pepper, paprika, and onion powder. And for veggies, potatoes, carrots and onions. 
 Bernice:Got all that? I’ll text you the recipe when it’s time.
 [thanks]
 Thanks, Bernice. I won’t let you down.
