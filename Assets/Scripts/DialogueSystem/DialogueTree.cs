@@ -30,6 +30,7 @@ public class DialogueTree
     private const char ESCA_C = '\\';
     private const char FORM_C = '*';
     private const char LINE_C = '\n';
+    private const char SPACE = ' ';
     private readonly char[] commands = { CHAR_C, VARI_C, COMM_C, NODE_C, GOTO_C, FUNC_C, OPTI_C, TOOL_C, EXIT_C, STAR_C, ESCA_C, FORM_C, LINE_C };
 
     private TextAsset textAsset;
@@ -183,14 +184,20 @@ public class DialogueTree
             StringBuilder sb = new();
 
             int varIndex = text.IndexOf(VARI_C);
-            string afterVar = text[varIndex..];
-            int varLength = afterVar.IndexOf(' ');
-            string var = RemoveCommand(VARI_C, afterVar[..varLength]);
-
+            string afterAll = text[varIndex..];
+            string afterSymbol = RemoveCommand(VARI_C, afterAll);
+            int symbolLength = afterAll.Length - afterSymbol.Length;
+            int varLength = afterSymbol.IndexOf(VARI_C);
+            string beforeVar = text[..varIndex];
+            string var = afterSymbol[..varLength];
+            string afterVar = afterSymbol[(varLength + symbolLength)..];
+            
             if (!variables.ContainsKey(var))
                 throw new DialogueStateException(var);
 
-            sb.Append(text[..varIndex]).Append(variables[var].GetValue()).Append(text[(varIndex + varLength + 1)..]);
+            string varValue = variables[var].GetValue();
+
+            sb.Append(beforeVar).Append(varValue).Append(afterVar);
             text = sb.ToString();
         }
 
@@ -429,11 +436,17 @@ public class DialogueTree
 
         // priority of start node is #1 startNode, #2 ++ node, #3 first node
         if (startNode != null)
+        {
             currentNode = startNode;
-        else if (currentNode != null)
-            ; // ++ node defined
+        }
+        else if (currentNode == null)
+        {
+            // ++ node defined
+        }
         else
+        {
             currentNode = firstNode;
+        }
 
         // advance through lines in current node until index is on a Dialogue or Optional line
         Node currNodes = nodes[currentNode];
