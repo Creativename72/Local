@@ -4,7 +4,7 @@
 >> Func
 Narrator: *Hi, i'm the narrator*
 Narrator: *Hi, i'm saying some lines*
-[[ Go to next | Next >> Func
+[[ Go to next (( Tooltip stuff here | Next >> Func
 [[ Go to the end! | Next
 
 -- Next

@@ -56,7 +56,7 @@ public class DTController : MonoBehaviour
             string s = "";
             foreach (DialogueTree.OptionalLine.Option o in oLine.GetOptions())
             {
-                s += $"[{o.option} | {o.node} > {o.function}]";
+                s += o.ToString() + " ";
             }
             Debug.Log(s);
         }

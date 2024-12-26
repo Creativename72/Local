@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using static DialogueTree.OptionalLine;
 
 /// <summary>
 /// Class used to parse and output dialogue lines based on dialogue format text files
@@ -21,6 +22,7 @@ public class DialogueTree
     private const char GOTO_C = '|';
     private const char FUNC_C = '>';
     private const char OPTI_C = '[';
+    private const char TOOL_C = '(';
     private const char EXIT_C = '^';
     private const char STAR_C = '+';
     private const char LINE_C = '\n';
@@ -206,15 +208,23 @@ public class DialogueTree
                 // options
                 case OPTI_C:
                     {
-                        // parse string into option goto and func
+                        // parse string into option tooltip goto and func
                         if (!line.Contains(GOTO_C))
                             throw new DialogueParseException(i);
 
                         int gotoIndex = line.IndexOf(GOTO_C);
                         string optionText = line[..gotoIndex].Trim();
+                        string toolText = null;
                         string gotoText = RemoveCommand(GOTO_C, line[gotoIndex..]).Trim();
                         string funcText = null;
 
+                        // get function and tooltip if present
+                        if (optionText.Contains(TOOL_C))
+                        {
+                            int toolIndex = optionText.IndexOf(TOOL_C);
+                            toolText = RemoveCommand(TOOL_C, optionText[toolIndex..]).Trim();
+                            optionText = optionText[..toolIndex].Trim();
+                        }
                         if (gotoText.Contains(FUNC_C))
                         {
                             int funcIndex = gotoText.IndexOf(FUNC_C);
@@ -228,7 +238,7 @@ public class DialogueTree
                             nodes[parseCurrentNode].AddLine(new OptionalLine());
                         }
 
-                        ((OptionalLine)nodes[parseCurrentNode].LastLine()).AddOption(optionText, gotoText, funcText);
+                        ((OptionalLine)nodes[parseCurrentNode].LastLine()).AddOption(optionText, toolText, gotoText, funcText);
 
                     }
                     break;
@@ -391,6 +401,11 @@ public class DialogueTree
         {
             return name;
         }
+
+        public override string ToString()
+        {
+            return $"DialogueLine {{name:{name}}}, {{text:{text}}}";
+        }
     }
     public class OptionalLine : Line
     {
@@ -404,22 +419,29 @@ public class DialogueTree
             return options;
         }
 
-        public void AddOption(string option, string node, string function)
+        public void AddOption(string option, string tooltip, string node, string function)
         {
-            options.Add(new(option, node, function));
+            options.Add(new(option, tooltip, node, function));
         }
 
         public class Option
         {
-            public Option(string option, string node, string function)
+            public Option(string option, string tooltip, string node, string function)
             {
                 this.option = option;
+                this.tooltip = tooltip;
                 this.node = node;
                 this.function = function;
             }
             public string option;
+            public string tooltip;
             public string node;
             public string function;
+
+            public override string ToString()
+            {
+                return $"Option {{option:{option}}}, {{tooltip:{tooltip}}}, {{node:{node}}}, {{function:{function}}}";
+            }
         }
     }
 
