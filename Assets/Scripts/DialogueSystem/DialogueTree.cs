@@ -190,6 +190,8 @@ public class DialogueTree
             int varLength = afterSymbol.IndexOf(VARI_C);
             string beforeVar = text[..varIndex];
             string var = afterSymbol[..varLength];
+            // does not check that after symbols are actually $
+            // just removes same length of $ variables as on beginning.
             string afterVar = afterSymbol[(varLength + symbolLength)..];
             
             if (!variables.ContainsKey(var))
