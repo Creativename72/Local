@@ -48,21 +48,15 @@ public class DTController : MonoBehaviour
     private void PrintDialogue()
     {
         DialogueTree.Line line = tree.GetLine();
-        if (line is DialogueTree.DialogueLine dLine)
-            Debug.Log(dLine.GetDialogue());
-
-        if (line is DialogueTree.OptionalLine oLine)
-        {
-            string s = "";
-            foreach (DialogueTree.OptionalLine.Option o in oLine.GetOptions())
-            {
-                s += o.ToString() + " ";
-            }
-            Debug.Log(s);
-        }
+      
         if (line == null)
         {
             Debug.Log("END");
         }
+        else
+        {
+            Debug.Log(line.ToString());
+        }
     }
 }
+

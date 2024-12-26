@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using UnityEngine;
+using static DialogueTree;
 using static DialogueTree.OptionalLine;
 
 /// <summary>
@@ -25,8 +27,11 @@ public class DialogueTree
     private const char TOOL_C = '(';
     private const char EXIT_C = '^';
     private const char STAR_C = '+';
+    private const char ESCA_C = '\\';
+    private const char FORM_C = '*';
     private const char LINE_C = '\n';
-
+    private readonly char[] commands = { CHAR_C, VARI_C, COMM_C, NODE_C, GOTO_C, FUNC_C, OPTI_C, TOOL_C, EXIT_C, STAR_C, ESCA_C, FORM_C, LINE_C };
+    
     private TextAsset textAsset;
 
     private Dictionary<string, string> variables;
@@ -138,7 +143,7 @@ public class DialogueTree
         string text = textAsset.text;
 
         // replace all instances of $ with respective variables
-        while(text.Contains(VARI_C))
+        while (text.Contains(VARI_C))
         {
             StringBuilder sb = new();
 
@@ -153,7 +158,113 @@ public class DialogueTree
             sb.Append(text[..varIndex]).Append(variables[var]).Append(text[(varIndex + varLength + 1)..]);
             text = sb.ToString();
         }
-        // put all the lines in the text asset into nodes;
+
+        // remove comments
+        string[] commLines = text.Split('\n');
+        StringBuilder csb = new();
+        for (int i = 0; i < commLines.Length; i++)
+        {
+            string line = commLines[i];
+
+            // remove comments
+            if (line.Contains(COMM_C))
+                line = line[..line.IndexOf(COMM_C)];
+
+            csb.Append(line).Append('\n');
+        }
+        text = csb.ToString();
+
+        // bold and italicize the text
+        int escapeCount = 0;
+        bool bold = false;
+        bool italic = false;
+        StringBuilder fsb = new();
+        for (int i = 0; i < text.Length; i++)
+        {
+            char c = text[i];
+            char prevChar = i == 0 ? '\0' : text[i - 1];
+            char nextChar = i == text.Length - 1 ? '\0' : text[i + 1];
+
+            // character that is not escape once started escaping
+            if (c != FORM_C && escapeCount > 0)
+            {
+                bool newItalic = italic;
+                bool newBold = bold;
+                // shouldn't have more than 3 escapes
+                if (escapeCount > 3)
+                {
+                    throw new DialogueParseException("More than 3 escapes in a row");
+                }
+                switch (escapeCount)
+                {
+                    // invert italic *
+                    case 1:
+                        {
+                            newItalic = !italic;
+                        }
+                        break;
+                    // invert bold **
+                    case 2:
+                        {
+                            newBold = !bold;
+                        }
+                        break;
+                    // invert both ***
+                    case 3:
+                        {
+                            newItalic = !italic;
+                            newBold = !bold;           
+                        }
+                        break;
+                }
+
+                // if there were changes to any, insert the appropriate characters
+                if (bold != newBold)
+                {
+                    bold = newBold;
+                    fsb.Append(bold ? "<b>" : "</b>");
+                }
+                if (italic != newItalic)
+                {
+                    italic = newItalic;
+                    fsb.Append(italic ? "<i>" : "</i>");
+                }
+                fsb.Append(c);
+                escapeCount = 0;             
+            }
+            // character that is regular character with no escapes or is escape
+            else
+            {
+                // * character
+                if (c == FORM_C)
+                {
+                    if (prevChar != ESCA_C)
+                    {
+                        escapeCount++;
+                    }
+                    else
+                    {
+                        fsb.Append(c);
+                    }
+                }
+                // \ character
+                else if (c == ESCA_C)
+                {
+                    if (nextChar != FORM_C)
+                    {
+                        fsb.Append(c);
+                    }
+                }
+                // regular character
+                else
+                {
+                    fsb.Append(c);
+                }
+            }
+        }
+        text = fsb.ToString();
+
+        // put all the formatted lines in the text asset into nodes;
         string[] lines = text.Split(LINE_C);
         nodes = new();
         string parseCurrentNode = null;
@@ -164,16 +275,14 @@ public class DialogueTree
             string line = lines[i];
             line = line.Trim();
 
-            // remove comments
-            if (line.Contains(COMM_C))
-                line = line[..line.IndexOf(COMM_C)];
-
             // if the line is empty continue
             if (string.IsNullOrEmpty(line))
                 continue;
 
             char command = line[0];
-            line = RemoveCommand(command, line).Trim();
+            if (commands.Contains(command))
+                line = RemoveCommand(command, line).Trim();
+            
             switch (command)
             {
                 // node
@@ -276,7 +385,7 @@ public class DialogueTree
                         int charIndex = line.IndexOf(CHAR_C);
                         string charName = line[..charIndex];
                         string charText = RemoveCommand(CHAR_C, line[charIndex..]);
-                        
+
                         nodes[parseCurrentNode].AddLine(new DialogueLine(charName, charText));
                     }
                     break;
@@ -404,7 +513,7 @@ public class DialogueTree
 
         public override string ToString()
         {
-            return $"DialogueLine {{name:{name}}}, {{text:{text}}}";
+            return $"DialogueLine {{{{name:{name}}}, {{text:{text}}}}}";
         }
     }
     public class OptionalLine : Line
@@ -424,6 +533,21 @@ public class DialogueTree
             options.Add(new(option, tooltip, node, function));
         }
 
+        public override string ToString()
+        {
+            StringBuilder sb = new();
+            sb.Append("OptionalLine {");
+            for (int i = 0; i < options.Count; i++)
+            {
+                Option o = options[i];
+                sb.Append($"{{options[{i}] {{").Append(o.ToString()).Append("}}");
+                if (i < options.Count - 1)
+                    sb.Append(", ");
+            }
+            sb.Append("}");
+            return sb.ToString();
+        }
+
         public class Option
         {
             public Option(string option, string tooltip, string node, string function)
@@ -440,9 +564,10 @@ public class DialogueTree
 
             public override string ToString()
             {
-                return $"Option {{option:{option}}}, {{tooltip:{tooltip}}}, {{node:{node}}}, {{function:{function}}}";
+                return $"Option {{{{option:{option}}}, {{tooltip:{tooltip}}}, {{node:{node}}}, {{function:{function}}}}}";
             }
         }
+
     }
 
     public interface FunctionalLine : Line
@@ -491,6 +616,10 @@ public class DialogueTree
     public class DialogueParseException : Exception
     {
         public DialogueParseException(int lineIndex) : base($"{FORMAT_ERROR} at line {lineIndex}")
+        {
+
+        }
+        public DialogueParseException(string desc) : base($"{FORMAT_ERROR}. {desc}")
         {
 
         }

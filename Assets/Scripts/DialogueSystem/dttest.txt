@@ -8,7 +8,7 @@ Narrator: *Hi, i'm saying some lines*
 [[ Go to the end! | Next
 
 -- Next
-Scout: Hi, $var $var my name is scout! // can specify a variable using dollar sign and variable names
+Scout: Hi, $var $var my name is **scout**! // can specify a variable using dollar sign and variable names
 Scout: Hope you have a $var $var $var day!
 || End
 
