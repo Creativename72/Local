@@ -31,10 +31,10 @@ public class DialogueTree
     private const char FORM_C = '*';
     private const char LINE_C = '\n';
     private readonly char[] commands = { CHAR_C, VARI_C, COMM_C, NODE_C, GOTO_C, FUNC_C, OPTI_C, TOOL_C, EXIT_C, STAR_C, ESCA_C, FORM_C, LINE_C };
-    
+
     private TextAsset textAsset;
 
-    private Dictionary<string, string> variables;
+    private Dictionary<string, Variable> variables;
     private Dictionary<string, Action> functions;
     private List<Action> onClose;
 
@@ -56,13 +56,23 @@ public class DialogueTree
     }
 
     /// <summary>
-    /// Sets the variable in the dialogue to be changed upon dialogue parsing
+    /// Upon parse evaluation, sets the variable in the dialogue to the given value
     /// </summary>
     /// <param name="varName">name of the variable</param>
     /// <param name="value">text that the variable is to be set to</param>
     public void SetVariable(string varName, string value)
     {
-        variables[varName] = value;
+        variables[varName] = new Variable(value);
+    }
+
+    /// <summary>
+    /// Upon parse evaluation, sets the line active / inactive based on the given condition
+    /// </summary>
+    /// <param name="varName">name of the variable</param>
+    /// <param name="condition">condition that if true sets the line active</param>
+    public void SetVariable(string varName, Func<bool> condition)
+    {
+        variables[varName] = new LineVariable(condition);
     }
 
     /// <summary>
@@ -73,6 +83,31 @@ public class DialogueTree
     public void SetFunction(string funcName, Action action)
     {
         functions[funcName] = action;
+    }
+
+    public void Parse()
+    {
+        ParseText(null, 0);
+    }
+
+    /// <summary>
+    /// Parses the dialogue tree returning to its existing spot
+    /// </summary>
+    /// <param name="returnToExisting">if true, return to the existing spot when parsing</param>
+    public void Parse(bool returnToExisting)
+    {
+        if (returnToExisting)
+        {
+            int index = 0;
+            if (currentNode != null && nodes.ContainsKey(currentNode))
+                index = nodes[currentNode].GetLineIndex();
+
+            ParseText(currentNode, index);
+        }
+        else
+        {
+            ParseText(null, 0);
+        }
     }
 
     /// <summary>
@@ -138,7 +173,7 @@ public class DialogueTree
     /// <summary>
     /// Reads dialogue input in the Text Asset and builds the dialogue tree
     /// </summary>
-    public void Parse()
+    private void ParseText(string startNode, int startLineIndex)
     {
         string text = textAsset.text;
 
@@ -155,7 +190,7 @@ public class DialogueTree
             if (!variables.ContainsKey(var))
                 throw new DialogueStateException(var);
 
-            sb.Append(text[..varIndex]).Append(variables[var]).Append(text[(varIndex + varLength + 1)..]);
+            sb.Append(text[..varIndex]).Append(variables[var].GetValue()).Append(text[(varIndex + varLength + 1)..]);
             text = sb.ToString();
         }
 
@@ -213,7 +248,7 @@ public class DialogueTree
                     case 3:
                         {
                             newItalic = !italic;
-                            newBold = !bold;           
+                            newBold = !bold;
                         }
                         break;
                 }
@@ -230,7 +265,7 @@ public class DialogueTree
                     fsb.Append(italic ? "<i>" : "</i>");
                 }
                 fsb.Append(c);
-                escapeCount = 0;             
+                escapeCount = 0;
             }
             // character that is regular character with no escapes or is escape
             else
@@ -282,7 +317,7 @@ public class DialogueTree
             char command = line[0];
             if (commands.Contains(command))
                 line = RemoveCommand(command, line).Trim();
-            
+
             switch (command)
             {
                 // node
@@ -392,11 +427,17 @@ public class DialogueTree
             }
         }
 
-        // set the current node if none was specified to the first node
-        currentNode ??= firstNode;
+        // priority of start node is #1 startNode, #2 ++ node, #3 first node
+        if (startNode != null)
+            currentNode = startNode;
+        else if (currentNode != null)
+            ; // ++ node defined
+        else
+            currentNode = firstNode;
 
         // advance through lines in current node until index is on a Dialogue or Optional line
         Node currNodes = nodes[currentNode];
+        currNodes.SetLineIndex(startLineIndex);
 
         Line funcLine = currNodes.GetLine();
 
@@ -487,6 +528,14 @@ public class DialogueTree
         public void AdvanceLineIndex()
         {
             index++;
+        }
+        public int GetLineIndex()
+        {
+            return index;
+        }
+        public void SetLineIndex(int index)
+        {
+            this.index = index;
         }
     }
     public interface Line
@@ -610,6 +659,44 @@ public class DialogueTree
         public void Invoke()
         {
             // does nothing
+        }
+    }
+
+    /// <summary>
+    /// Variable is used to define variables to be replaced in the dialogue parser
+    /// </summary>
+    public class Variable
+    {
+        private string value;
+        public virtual string GetValue()
+        {
+            return value;
+        }
+
+        public Variable(string value)
+        {
+            this.value = value;
+        }
+    }
+
+    /// <summary>
+    /// Line variables are used to set sections of the text to be active if a condition is met
+    /// If the condition is not met, the text will be hidden.
+    /// </summary>
+    public class LineVariable : Variable
+    {
+        private Func<bool> condition;
+        public override string GetValue()
+        {
+            bool val = condition.Invoke();
+            if (val)
+                return string.Empty;
+            else
+                return COMM_C.ToString();
+        }
+        public LineVariable(Func<bool> condition) : base(null)
+        {
+            this.condition = condition;
         }
     }
 

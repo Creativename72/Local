@@ -5,13 +5,17 @@ public class DTController : MonoBehaviour
     [SerializeField] private TextAsset text;
 
     private DialogueTree tree;
+    private bool scoutNice;
 
     // Start is called before the first frame update
     void Start()
     {
+        scoutNice = false;
+
         tree = new DialogueTree(text);
         tree.SetFunction("Func", () => Debug.Log("Func!"));
         tree.SetVariable("var", "wonderful ");
+        tree.SetVariable("ScoutNice", () => scoutNice);
         tree.Parse();
         PrintDialogue();
     }
@@ -42,6 +46,11 @@ public class DTController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             PrintDialogue();
+        }
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            scoutNice = !scoutNice;
+            tree.Parse(true);
         }
     }
 
