@@ -32,6 +32,7 @@ public class DialogueTree
     private const char LINE_C = '\n';
     private const char SPACE = ' ';
     private readonly char[] commands = { CHAR_C, VARI_C, COMM_C, NODE_C, GOTO_C, FUNC_C, OPTI_C, TOOL_C, EXIT_C, STAR_C, ESCA_C, FORM_C, LINE_C };
+    private readonly char[] optionsCommands = { GOTO_C, FUNC_C, TOOL_C };
 
     private TextAsset textAsset;
 
@@ -123,15 +124,18 @@ public class DialogueTree
         Line curr = node.GetLine();
         if (curr is OptionalLine oLine)
         {
-            List<OptionalLine.Option> options = oLine.GetOptions();
+            List<Option> options = oLine.GetOptions();
             if (index < 0 || index >= options.Count)
                 throw new DialogueAccessException();
 
-            Goto(options[index].node);
-
-            string function = options[index].function;
-            if (function != null)
-                Func(function);
+            // invoke options as needed such as function or goto
+            Option selected = options[index];
+            if (selected.function != null)
+                Func(selected.function);
+            if (selected.node != null)
+                Goto(selected.node);
+            else
+                node.AdvanceLineIndex();
         }
         else
         {
@@ -193,7 +197,7 @@ public class DialogueTree
             // does not check that after symbols are actually $
             // just removes same length of $ variables as on beginning.
             string afterVar = afterSymbol[(varLength + symbolLength)..];
-            
+
             if (!variables.ContainsKey(var))
                 throw new DialogueStateException(var);
 
@@ -361,28 +365,41 @@ public class DialogueTree
                 // options
                 case OPTI_C:
                     {
-                        // parse string into option tooltip goto and func
-                        if (!line.Contains(GOTO_C))
-                            throw new DialogueParseException(i);
-
-                        int gotoIndex = line.IndexOf(GOTO_C);
-                        string optionText = line[..gotoIndex].Trim();
+                        int length = FirstIndexOf(optionsCommands, line);
+                        if (length < 0)
+                            length = line.Length;
+                        string optionText = line[..length].Trim();
                         string toolText = null;
-                        string gotoText = RemoveCommand(GOTO_C, line[gotoIndex..]).Trim();
+                        string gotoText = null;
                         string funcText = null;
 
-                        // get function and tooltip if present
-                        if (optionText.Contains(TOOL_C))
+                        // get goto function and tooltip if present
+                        if (line.Contains(GOTO_C))
                         {
-                            int toolIndex = optionText.IndexOf(TOOL_C);
-                            toolText = RemoveCommand(TOOL_C, optionText[toolIndex..]).Trim();
-                            optionText = optionText[..toolIndex].Trim();
+                            int startIndex = line.IndexOf(GOTO_C);
+                            string textAfter = RemoveCommand(GOTO_C, line[startIndex..]);
+                            int endIndex = FirstIndexOf(optionsCommands, textAfter);
+                            if (endIndex < 0)
+                                endIndex = textAfter.Length;
+                            gotoText = textAfter[..endIndex].Trim();
                         }
-                        if (gotoText.Contains(FUNC_C))
+                        if (line.Contains(TOOL_C))
                         {
-                            int funcIndex = gotoText.IndexOf(FUNC_C);
-                            funcText = RemoveCommand(FUNC_C, gotoText[funcIndex..]).Trim();
-                            gotoText = gotoText[..funcIndex].Trim();
+                            int startIndex = line.IndexOf(TOOL_C);
+                            string textAfter = RemoveCommand(TOOL_C, line[startIndex..]);
+                            int endIndex = FirstIndexOf(optionsCommands, textAfter);
+                            if (endIndex < 0)
+                                endIndex = textAfter.Length;
+                            toolText = textAfter[..endIndex].Trim();
+                        }
+                        if (line.Contains(FUNC_C))
+                        {
+                            int startIndex = line.IndexOf(FUNC_C);
+                            string textAfter = RemoveCommand(FUNC_C, line[startIndex..]);
+                            int endIndex = FirstIndexOf(optionsCommands, textAfter);
+                            if (endIndex < 0)
+                                endIndex = textAfter.Length;
+                            funcText = textAfter[..endIndex].Trim();
                         }
 
                         // add option to existing / new options
@@ -509,6 +526,31 @@ public class DialogueTree
             else
                 return line;
         }
+    }
+
+    /// <summary>
+    /// Returns the first index of any of the specified chars in the given array
+    /// </summary>
+    /// <param name="chars">characters to check</param>
+    /// <param name="text">text to parse through</param>
+    /// <returns>index of this character in text or -1 if there was no instance</returns>
+    private int FirstIndexOf(char[] chars, string text)
+    {
+        if (chars.Length <= 0)
+            return -1;
+
+        int min = int.MaxValue;
+        for (int i = 1; i < chars.Length; i++)
+        {
+            int index = text.IndexOf(chars[i]);
+            if (index >= 0)
+                min = Math.Min(min, text.IndexOf(chars[i]));
+        }
+        // no hits
+        if (min == int.MaxValue)
+            return -1;
+
+        return min;
     }
 
     private class Node

@@ -10,6 +10,11 @@ $ScoutNice$[[ Go to the end! | Next
 -- Next
 Scout: Hi, $var$ $var$ my name is **scout**! // can specify a variable using dollar sign and variable names
 Scout: Hope you have a $$var$$$var$$$var$$ day!
+[Option 0
+[Option 1
+Scout: next line!
+[Option a > Func
+[Option b | Next
 || End
 
 // sweet !
