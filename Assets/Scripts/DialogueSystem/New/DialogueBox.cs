@@ -175,7 +175,7 @@ public class DialogueBox : MonoBehaviour
             }
         }
         
-        return dialogueString.Insert(insertIndex, "<color=#00000000>");
+        return dialogueString.Insert(insertIndex, ALPHA);
     }
 
     /// <summary>
