@@ -63,9 +63,13 @@ MonoBehaviour:
   s: {fileID: 0}
   end: 0
   a: {fileID: 0}
+  ambience: {fileID: 0}
   scrollingText: 1
   textCurrentlyScrolling: 0
   changeBackgroundOnResume: 0
+  m_dialogueSFXEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1221396763148549830
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using UnityEngine;
 public class DTController : MonoBehaviour
 {
     [SerializeField] private TextAsset text;
+    [SerializeField] private DialogueBox box;
 
     private DialogueTree tree;
     private bool scoutNice;
@@ -18,11 +19,20 @@ public class DTController : MonoBehaviour
         tree.SetVariable("ScoutNice", () => scoutNice);
         tree.Parse();
         PrintDialogue();
+
+        box.Enable(true);
+        box.SetDialogue("Tyler", "Hello world!", true);
+        box.SetChoice(0, "It makes you an idiot.", null);
+        box.SetChoice(1, "Weak.", "Nice unlocked!");
+        box.SetChoice(2, "Strong.", null);
+        box.AddChoiceListener(num => Debug.Log($"Choice {num} was pressed!"));
     }
 
     // Update is called once per frame
     void Update()
     {
+        return;
+
         if (Input.GetMouseButtonDown(0))
         {
             tree.AdvanceLine(-1);
