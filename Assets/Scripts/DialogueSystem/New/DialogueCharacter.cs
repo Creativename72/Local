@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,33 +7,56 @@ using UnityEngine;
 /// Used to hold various properties held by a certain character in game
 /// </summary>
 
-[CreateAssetMenu(fileName = "Character", menuName = "ScriptableObjects/CharacterScriptableObject", order = 1)]
-public class DialogueCharacter : ScriptableObject
+public class DialogueCharacter : MonoBehaviour
 {
-    // identifier to be used in the dialogue text to refer to this character
+    [Header("Identifiers")]
     [SerializeField] private string identifier;
-    // name of this character to be used when displaying text on the dialogue box
     [SerializeField] private string characterName;
-    // sprites used by this character in scenes
-    [SerializeField] private Sprite[] characterSprites;
+    [SerializeField] private Location location;
 
-    public static DialogueCharacter Walter { get => new("Walter", "Walter", new string[] { "walter" }); private set { } }
-    public static DialogueCharacter Annie { get => new("Annie", "Annie", new string[] { "annie1", "annie2" }); private set { } }
-    public static DialogueCharacter Tyler { get => new("Tyler", "Tyler", new string[] { "tyler1", "tyler2" }); private set { } }
-    public static DialogueCharacter Scout { get => new("Scout", "Scout", new string[] { "scout" }); private set { } }
-    public static DialogueCharacter Bernice { get => new("Bernice", "Bernice", new string[] { "bernice" }); private set { } }
+    [Header("Sprite attributes")]
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private List<Sprite> characterSprites;
 
-    public DialogueCharacter(string identifier, string characterName, string[] spriteReferences)
+    private const string ERROR = "Invalid arguments used";
+
+    // getters and setters for visible fields
+    public string GetIdentifier() { return identifier; }
+    public string GetCharacterName() { return characterName; }
+    public Location GetLocation() { return location; }
+    public void SetCharacterName(string characterName) { this.characterName = characterName; }
+    public void SetLocation(Location location) { this.location = location; }
+    public void SetSprite(int index)
     {
-        this.identifier = identifier;
-        this.characterName = characterName;
-        
-        for (int i = 0; i < spriteReferences.Length; i++)
+        // sprite number must be within parameters
+        if (index >= 0 && index < characterSprites.Count)
         {
-            characterSprites[i] = Resources.Load<Sprite>(spriteReferences[i]);
+            spriteRenderer.sprite = characterSprites[index];
+
+        } else
+        {
+            spriteRenderer.sprite = null;
         }
     }
-    public string Identifier { get { return identifier; } }
-    public string CharacterName { get { return characterName; } }
-    public Sprite[] CharacterSprites { get { return characterSprites; } }
+    public void Show(bool show)
+    {
+        spriteRenderer.enabled = show;
+    }
+
+    public void Awake()
+    {
+        SetSprite(0);
+        Show(false);
+    }
+    public enum Location
+    {
+        LEFT,
+        RIGHT,
+        CENTER,
+    }
+
+    public class CharacterException : Exception
+    {
+        public CharacterException(string message) : base($"{ERROR}. {message}") { }
+    }
 }

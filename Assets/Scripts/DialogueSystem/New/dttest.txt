@@ -2,7 +2,7 @@
 
 -- Start
 >> Func
-Narrator: *Hi, i'm the narrator*
+Narrator: ***Hi, i'm the narrator***
 Narrator: *Hi, i'm saying some lines*
 [[ Go to next (( Tooltip stuff here | Next >> Func
 $ScoutNice$[[ Go to the end! | Next

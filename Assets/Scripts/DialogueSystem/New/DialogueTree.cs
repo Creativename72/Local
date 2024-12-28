@@ -34,8 +34,6 @@ public class DialogueTree
     private readonly char[] commands = { CHAR_C, VARI_C, COMM_C, NODE_C, GOTO_C, FUNC_C, OPTI_C, TOOL_C, EXIT_C, STAR_C, ESCA_C, FORM_C, LINE_C };
     private readonly char[] optionsCommands = { GOTO_C, FUNC_C, TOOL_C };
 
-    private TextAsset textAsset;
-
     private Dictionary<string, Variable> variables;
     private Dictionary<string, Action> functions;
     private List<Action> onClose;
@@ -48,13 +46,12 @@ public class DialogueTree
     /// Constructs a new dialogue tree with the given text asset
     /// </summary>
     /// <param name="textAsset">Text used by the tree</param>
-    public DialogueTree(TextAsset textAsset)
+    public DialogueTree()
     {
         variables = new();
         functions = new();
         onClose = new();
         nodes = new();
-        this.textAsset = textAsset;
     }
 
     /// <summary>
@@ -62,19 +59,13 @@ public class DialogueTree
     /// </summary>
     /// <param name="varName">name of the variable</param>
     /// <param name="value">text that the variable is to be set to</param>
-    public void SetVariable(string varName, string value)
+    public void SetVariable(string varName, Variable var)
     {
-        variables[varName] = new Variable(value);
+        variables[varName] = var;
     }
-
-    /// <summary>
-    /// Upon parse evaluation, sets the line active / inactive based on the given condition
-    /// </summary>
-    /// <param name="varName">name of the variable</param>
-    /// <param name="condition">condition that if true sets the line active</param>
-    public void SetVariable(string varName, Func<bool> condition)
+    public bool IsEmpty()
     {
-        variables[varName] = new LineVariable(condition);
+        return nodes.Count == 0;
     }
 
     /// <summary>
@@ -87,16 +78,16 @@ public class DialogueTree
         functions[funcName] = action;
     }
 
-    public void Parse()
+    public void Parse(TextAsset asset)
     {
-        ParseText(null, 0);
+        ParseText(asset, null, 0);
     }
 
     /// <summary>
     /// Parses the dialogue tree returning to its existing spot
     /// </summary>
     /// <param name="returnToExisting">if true, return to the existing spot when parsing</param>
-    public void Parse(bool returnToExisting)
+    public void Parse(TextAsset asset, bool returnToExisting)
     {
         if (returnToExisting)
         {
@@ -104,11 +95,11 @@ public class DialogueTree
             if (currentNode != null && nodes.ContainsKey(currentNode))
                 index = nodes[currentNode].GetLineIndex();
 
-            ParseText(currentNode, index);
+            ParseText(asset, currentNode, index);
         }
         else
         {
-            ParseText(null, 0);
+            ParseText(asset, null, 0);
         }
     }
 
@@ -163,7 +154,7 @@ public class DialogueTree
     /// <summary>
     /// Returns the line at the current Node line index
     /// </summary>
-    /// <returns></returns>
+    /// <returns>The line if it exists, else returns null</returns>
     public Line GetLine()
     {
         Node curr = nodes[currentNode];
@@ -178,7 +169,7 @@ public class DialogueTree
     /// <summary>
     /// Reads dialogue input in the Text Asset and builds the dialogue tree
     /// </summary>
-    private void ParseText(string startNode, int startLineIndex)
+    private void ParseText(TextAsset textAsset, string startNode, int startLineIndex)
     {
         string text = textAsset.text;
 
@@ -314,7 +305,6 @@ public class DialogueTree
 
         // put all the formatted lines in the text asset into nodes;
         string[] lines = text.Split(LINE_C);
-        nodes = new();
         string parseCurrentNode = null;
         string firstNode = null;
         bool setStart = false;
@@ -444,8 +434,8 @@ public class DialogueTree
                             throw new DialogueParseException(i);
 
                         int charIndex = line.IndexOf(CHAR_C);
-                        string charName = line[..charIndex];
-                        string charText = RemoveCommand(CHAR_C, line[charIndex..]);
+                        string charName = line[..charIndex].Trim();
+                        string charText = RemoveCommand(CHAR_C, line[charIndex..]).Trim();
 
                         nodes[parseCurrentNode].AddLine(new DialogueLine(charName, charText));
                     }
@@ -540,16 +530,16 @@ public class DialogueTree
             return -1;
 
         int min = int.MaxValue;
-        for (int i = 1; i < chars.Length; i++)
+        for (int i = 0; i < chars.Length; i++)
         {
             int index = text.IndexOf(chars[i]);
             if (index >= 0)
-                min = Math.Min(min, text.IndexOf(chars[i]));
+                min = Math.Min(min, index);
         }
         // no hits
         if (min == int.MaxValue)
             return -1;
-
+        
         return min;
     }
 
@@ -779,7 +769,7 @@ public class DialogueTree
 
     public class DialogueStateException : Exception
     {
-        public DialogueStateException(string state) : base($"{STATE_ERROR} state: ${state}")
+        public DialogueStateException(string state) : base($"{STATE_ERROR} state: {state}")
         {
 
         }

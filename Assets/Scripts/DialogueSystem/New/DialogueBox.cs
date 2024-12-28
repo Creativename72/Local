@@ -22,6 +22,8 @@ public class DialogueBox : MonoBehaviour
     [SerializeField] private float scrollSpeed;
 
     private const string ERROR = "Invalid usage of dialogue box";
+    private const string ALPHA = "<color=#00000000>";
+    private const int SHOW_TEXT = -1000;
 
     private string dialogueString;
     private float scrollStartTime;
@@ -51,7 +53,7 @@ public class DialogueBox : MonoBehaviour
         }
         else
         {
-            scrollStartTime = -1000;
+            scrollStartTime = SHOW_TEXT;
         }
     }
 
@@ -84,6 +86,36 @@ public class DialogueBox : MonoBehaviour
         choiceListeners.ForEach(choiceFunc => choiceFunc.Invoke(choiceId));
     }
 
+    /// <summary>
+    /// Removes all choices from being displayed
+    /// </summary>
+    public void ClearChoices()
+    {
+        for (int i = 0; i < NumChoices(); i++)
+        {
+            SetChoice(i, null, null);
+        }
+    }
+
+    /// <summary>
+    /// Returns number of chocie options
+    /// </summary>
+    /// <returns></returns>
+    public int NumChoices()
+    {
+        return choices.Length;
+    }
+
+    public bool IsScrolling()
+    {
+        return FinishedText() != ScrolledText();
+    }
+
+    public void FinishScrolling()
+    {
+        scrollStartTime = SHOW_TEXT;
+    }
+
     public void Awake()
     {
         dialogueString = string.Empty;
@@ -104,24 +136,66 @@ public class DialogueBox : MonoBehaviour
     public void Update()
     {
         if (containerEnabled)
-            UpdateText();
+            dialogueText.text = ScrolledText();
     }
 
     /// <summary>
-    /// Updates the main dialogue text based on scroll time
+    /// Returns a string to be used in the the main dialogue text based on scroll time
     /// </summary>
-    private void UpdateText()
+    /// <returns>The formatted string</returns>
+    private string ScrolledText()
     {
         float dt = Time.time - scrollStartTime;
+        // number of characters to be displayed
         int chars = Mathf.Min((int)(dt / scrollSpeed), dialogueString.Length);
 
-        dialogueText.text = dialogueString.Insert(chars, "<color=#00000000>");
+        // actual index to insert the alpha character
+        int insertIndex = 0;
+
+        // if there is a < increment the index by the number of characters in between
+        int count = 0;
+        while (count < chars && insertIndex < dialogueString.Length)
+        {
+            string sub = dialogueString[insertIndex..];
+
+            // escaping just add length of escape to i
+            if (sub[0] == '<')
+            {
+                int length = sub.IndexOf('>') + 1;
+                if (length < -1)
+                    insertIndex += sub.Length;
+                else
+                    insertIndex += length;
+            }
+            // not escaping, increment i and count characters
+            else
+            {
+                insertIndex++;
+                count++;
+            }
+        }
+        
+        return dialogueString.Insert(insertIndex, "<color=#00000000>");
+    }
+
+    /// <summary>
+    /// Returns the finished string of text
+    /// </summary>
+    /// <returns></returns>
+    private string FinishedText()
+    {
+        return dialogueString + ALPHA;
     }
 
 
     public class DialogueBoxException : Exception
     {
         public DialogueBoxException() : base(ERROR)
+        {
+
+        }
+
+        public DialogueBoxException(string message) : base($"{ERROR}. {message}")
         {
 
         }
