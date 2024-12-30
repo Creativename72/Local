@@ -6,6 +6,8 @@ public class MockDay : MonoBehaviour
 {
     [SerializeField] private DialogueCharacter walter;
     [SerializeField] private DialogueCharacter narrator;
+    [SerializeField] private DialogueCharacter scout;
+
     [SerializeField] private TextAsset text;
     [SerializeField] private DC dc;
 
@@ -19,6 +21,7 @@ public class MockDay : MonoBehaviour
         dc.AddDialogue(text);
         dc.CreateCharacter(walter);
         dc.CreateCharacter(narrator);
+        dc.CreateCharacter(scout);
         dc.StartDialogue();
     }
 

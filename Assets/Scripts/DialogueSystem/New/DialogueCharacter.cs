@@ -18,6 +18,9 @@ public class DialogueCharacter : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private List<Sprite> characterSprites;
 
+    [Header("Sound")]
+    [SerializeField] private AudioClip talkSFX;
+
     private const string ERROR = "Invalid arguments used";
 
     // getters and setters for visible fields
@@ -33,11 +36,13 @@ public class DialogueCharacter : MonoBehaviour
         {
             spriteRenderer.sprite = characterSprites[index];
 
-        } else
+        }
+        else
         {
             spriteRenderer.sprite = null;
         }
     }
+    public AudioClip GetTalkSFX() { return this.talkSFX; }
     public void Show(bool show)
     {
         spriteRenderer.enabled = show;

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using static UnityEngine.Rendering.DebugUI;
 
 /// <summary>
 /// Handles placing character sprites on the game screen

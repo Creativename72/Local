@@ -13,6 +13,8 @@ public class DialogueBox : MonoBehaviour
     [SerializeField] private GameObject container;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextMeshProUGUI speakerText;
+    [SerializeField] private AudioSource audioPlayer;
+
     [Header("References to created Choices and Hover")]
     [SerializeField] private DialogueChoice[] choices;
     [SerializeField] private DialogueHover hover;
@@ -20,6 +22,7 @@ public class DialogueBox : MonoBehaviour
     // speed at which characters appear in
     [Header("Box Settings")]
     [SerializeField] private float scrollSpeed;
+    [SerializeField] private float speakSpeed;
 
     private const string ERROR = "Invalid usage of dialogue box";
     private const string ALPHA = "<color=#00000000>";
@@ -29,6 +32,8 @@ public class DialogueBox : MonoBehaviour
     private float scrollStartTime;
     private bool containerEnabled;
     private List<Action<int>> choiceListeners;
+    private DialogueCharacter currentlySpeaking;
+    private float speakStartTime;
 
     public void Enable(bool enabled)
     {
@@ -39,9 +44,9 @@ public class DialogueBox : MonoBehaviour
     /// <summary>
     /// Sets the dialogue text to the given strings
     /// </summary>
-    /// <param name="speaker">Who is currently speaking</param>
-    /// <param name="dialogueString">text that they are saying</param>
-    /// <param name="scroll">whether to scroll the text or not</param>
+    /// <param name="speaker"></param>
+    /// <param name="dialogueString"></param>
+    /// <param name="scroll"></param>
     public void SetDialogue(string speaker, string dialogueString, bool scroll)
     {
         this.dialogueString = dialogueString;
@@ -55,6 +60,23 @@ public class DialogueBox : MonoBehaviour
         {
             scrollStartTime = SHOW_TEXT;
         }
+
+        currentlySpeaking = null;
+    }
+
+    /// <summary>
+    /// Sets the dialogue text to the given strings with a given character who may be speaking
+    /// </summary>
+    /// <param name="speaker">Who is currently speaking</param>
+    /// <param name="dialogueString">text that they are saying</param>
+    /// <param name="scroll">whether to scroll the text or not</param>
+    public void SetDialogue(DialogueCharacter speaker, string dialogueString, bool scroll)
+    {
+        SetDialogue(speaker.GetCharacterName(), dialogueString, scroll);
+
+        currentlySpeaking = speaker;
+        audioPlayer.clip = speaker.GetTalkSFX();
+        speakStartTime = Time.time - speakSpeed;
     }
 
     /// <summary>
@@ -136,7 +158,10 @@ public class DialogueBox : MonoBehaviour
     public void Update()
     {
         if (containerEnabled)
+        {
             dialogueText.text = ScrolledText();
+            PlaySpeakSounds();
+        }
     }
 
     /// <summary>
@@ -174,19 +199,33 @@ public class DialogueBox : MonoBehaviour
                 count++;
             }
         }
-        
+
         return dialogueString.Insert(insertIndex, ALPHA);
     }
 
     /// <summary>
     /// Returns the finished string of text
     /// </summary>
-    /// <returns></returns>
+    /// <returns>finished text displayed</returns>
     private string FinishedText()
     {
         return dialogueString + ALPHA;
     }
 
+    private void PlaySpeakSounds()
+    {
+        if (currentlySpeaking == null || !IsScrolling())
+            return;
+
+        float now = Time.time;
+        float dt = now - speakStartTime;
+
+        if (dt > speakSpeed)
+        {
+            speakStartTime = now;
+            audioPlayer.Play();
+        }
+    }
 
     public class DialogueBoxException : Exception
     {

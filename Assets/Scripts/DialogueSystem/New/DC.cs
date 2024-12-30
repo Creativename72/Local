@@ -104,11 +104,15 @@ public class DC : MonoBehaviour
         {
             // if the character is set set the speakers name to that characters name
             string speaker = dLine.GetCharacter();
-            if (characters.ContainsKey(speaker))
+            characters.TryGetValue(speaker, out DialogueCharacter character);
+            if (character != null)
             {
-                speaker = characters[speaker].GetCharacterName();
+                dialogueBox.SetDialogue(character, dLine.GetDialogue(), true);
             }
-            dialogueBox.SetDialogue(speaker, dLine.GetDialogue(), true);
+            else
+            {
+                dialogueBox.SetDialogue(speaker, dLine.GetDialogue(), true);
+            }
             dialogueBox.ClearChoices();
         }
 
