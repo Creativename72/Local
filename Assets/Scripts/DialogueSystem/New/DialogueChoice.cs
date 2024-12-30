@@ -19,7 +19,7 @@ public class DialogueChoice : MonoBehaviour
     private string tooltip;
     private bool isLocked;
     /// <summary>
-    /// Sets this dialogue choice box
+    /// Sets this dialogue choice box's text
     /// </summary>
     /// <param name="text">text to be shown</param>
     /// <param name="tooltip">tooltip for this box</param>

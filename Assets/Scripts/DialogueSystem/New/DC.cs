@@ -18,11 +18,13 @@ public class DC : MonoBehaviour
     private DialogueTree tree;
     // characters that have been loaded into this dialogue system
     private Dictionary<string, DialogueCharacter> characters;
+    private bool dialogueEnabled;
 
     private void Awake()
     {
         tree = new();
         characters = new();
+        dialogueEnabled = true;
     }
     public void CreateCharacter(DialogueCharacter character)
     {
@@ -48,6 +50,28 @@ public class DC : MonoBehaviour
     }
 
     /// <summary>
+    /// Enables / disables interactions with the dialogue box, closing it / opening it
+    /// </summary>
+    /// <param name="enable">enable / disable dialogue</param>
+    public void Enable(bool enable)
+    {
+        dialogueEnabled = enable;
+        dialogueBox.Enable(enable);
+
+        if (enable)
+            SetDialogue();
+    }
+
+    /// <summary>
+    /// Adds an function to be invoked upon dialogue ending
+    /// </summary>
+    /// <param name="action">function invoked</param>
+    public void OnEndDialogue(Action action)
+    {
+        tree.AddCloseListener(action);
+    }
+
+    /// <summary>
     /// Starts the dialogue controller
     /// </summary>
     /// <exception cref="DialogueControllerException">If there is no dialogue input given</exception>
@@ -61,8 +85,12 @@ public class DC : MonoBehaviour
         // called on an option click
         dialogueBox.AddChoiceListener(selected =>
         {
-            tree.AdvanceLine(selected);
-            SetDialogue();
+            // only be able to select choices if dialogue is enabled
+            if (dialogueEnabled)
+            {
+                tree.AdvanceLine(selected);
+                SetDialogue();
+            }
         });
     }
 
@@ -70,7 +98,8 @@ public class DC : MonoBehaviour
     void Update()
     {
         // called on a mouse click
-        if (Input.GetMouseButtonDown(0))
+        // only be able to advance if dialogue is enabled
+        if (Input.GetMouseButtonDown(0) && this.dialogueEnabled)
         {
             if (tree.GetLine() is DialogueTree.DialogueLine dLine)
             {
@@ -91,7 +120,7 @@ public class DC : MonoBehaviour
     {
         DialogueTree.Line line = tree.GetLine();
 
-        if (line == null)
+        if (line == null || !dialogueEnabled)
         {
             dialogueBox.Enable(false);
             return;

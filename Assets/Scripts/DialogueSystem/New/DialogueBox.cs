@@ -80,7 +80,7 @@ public class DialogueBox : MonoBehaviour
     }
 
     /// <summary>
-    /// Sets the given dialogue option
+    /// Sets the given dialogue option's text
     /// </summary>
     /// <param name="choiceId">selected choice</param>
     /// <param name="text">text to put into the given choice</param>
