@@ -14,6 +14,7 @@ Scout: Hope you have a $$var$$$var$$$var$$ day!
 [Option 0
 [Option 1
 Scout: next line!
+>ScoutLeave
 [Option a > Func
 [Option b | Next
 || End

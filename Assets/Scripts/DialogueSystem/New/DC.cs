@@ -26,10 +26,11 @@ public class DC : MonoBehaviour
         characters = new();
         dialogueEnabled = true;
     }
-    public void CreateCharacter(DialogueCharacter character)
+    public DialogueCharacter CreateCharacter(DialogueCharacter character)
     {
-        characterController.CreateCharacter(character);
+        DialogueCharacter created = characterController.CreateCharacter(character);
         characters.Add(character.GetIdentifier(), character);
+        return created;
     }
 
     /// <summary>

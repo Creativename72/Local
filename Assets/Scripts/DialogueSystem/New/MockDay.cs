@@ -16,6 +16,7 @@ public class MockDay : MonoBehaviour
     void Start()
     {
         dc.SetFunction("Func", () => Debug.Log("Func!"));
+
         // pauses the game for 3 seconds
         dc.SetFunction("Pause", () =>
         {
@@ -25,11 +26,18 @@ public class MockDay : MonoBehaviour
 
         dc.SetVariable("var", new("wonderful"));
         dc.SetVariable("ScoutNice", new DialogueTree.LineVariable(() => true));
+        
 
         dc.AddDialogue(text);
         dc.CreateCharacter(walter);
         dc.CreateCharacter(narrator);
-        dc.CreateCharacter(scout);
+        DialogueCharacter s = dc.CreateCharacter(scout);
+
+        dc.SetFunction("ScoutLeave", () =>
+        {
+            s.Show(false);
+
+        });
         dc.StartDialogue();
     }
 
