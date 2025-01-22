@@ -1,0 +1,11 @@
+-Start
+[[There’s a photo of you and someone else in front of a Route 66 sign?
+Annie: *She leans closer, squinting slightly.* Oh my goodness, that’s from the road trip Maggie and I took a few years back!
+>ChangeSisterName
+Annie: Maggie’s my sister, by the way. She’s a total diner enthusiast—like, obsessed.
+Annie: We decided to do this big diner-hopping road trip, trying to hit every spot in the state. She even made this super detailed map with a whole itinerary.
+Annie: *She chuckles.* But, uh... we only made it to, like, six diners before we tapped out.
+[[Trip ended early?
+Annie: I dunno, man. Like, you can only have so much pancakes, burgers, and apple pie before the thought of it makes you want to throw up.
+Annie: *She smiles fondly.* But honestly? It was a blast. We saw all these weird roadside attractions, and just spent hours driving and chatting.
+Annie: And the best part? Just being with her. We don’t get to do stuff like that much anymore.

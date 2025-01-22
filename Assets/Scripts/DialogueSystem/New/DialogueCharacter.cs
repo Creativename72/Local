@@ -27,7 +27,7 @@ public class DialogueCharacter : MonoBehaviour
     public string GetIdentifier() { return identifier; }
     public string GetCharacterName() { return characterName; }
     public Location GetLocation() { return location; }
-    public void SetCharacterName(string characterName) { this.characterName = characterName; }
+    public void SetName(string characterName) { this.characterName = characterName; }
     public void SetLocation(Location location) { this.location = location; }
     public void SetSprite(int index)
     {
@@ -43,7 +43,7 @@ public class DialogueCharacter : MonoBehaviour
         }
     }
     public AudioClip GetTalkSFX() { return this.talkSFX; }
-    public void Show(bool show)
+    public void SetVisible(bool show)
     {
         spriteRenderer.enabled = show;
     }
@@ -51,7 +51,7 @@ public class DialogueCharacter : MonoBehaviour
     public void Awake()
     {
         SetSprite(0);
-        Show(false);
+        SetVisible(false);
     }
     public enum Location
     {

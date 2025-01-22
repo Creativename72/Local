@@ -1,0 +1,230 @@
+-Start
+Narrator:*The weather is clear and crisp, the morning sun breaking through the mist that lingers in the valley. Scout makes their way along the winding trail to Walter’s watchtower. The scent of pine mixes with the smell of damp soil from last night’s rain.*
+Narrator:*As Scout climbs the tower and reaches the balcony, they pause to take in the view of the valley below.*
+Narrator:*Through the windows of the tower, Scout spots Walter seated at his desk. His broad shoulders are hunched slightly as he sketches on a notepad.*
+[[*Knock on the door.* | KnockOnDoor
+[[*Yell for his attention.* | YellForAttention
+[[*Run to the other side of the balcony and wave at him through the window.* | RunToBalcony
+
+-KnockOnDoor
+Narrator:*Scout steps up to the wooden door and knocks firmly. Walter glances up from his sketchpad. He straightens his posture and gets up to answer the door.*
+Walter: Scout, good to see you. Come on in.
+|ScoutEnters
+
+-YellForAttention
+Narrator:*Scout calls out, their voice cutting through the crisp air. Inside, Walter’s head jerks up in surprise. He swivels his chair around, looking toward the door with a slightly annoyed expression.*
+Walter: *He stands to open the door, scratching the back of his neck.* Gosh, Scout, no need to yell. You startled me.
+|ScoutEnters
+
+-RunToBalcony
+Narrator:*Scout steps to the side of the balcony and waves at Walter through the window. Walter glances up, his furrowed brows softening into a faint smile. He shakes his head and rises from his chair.*
+Walter: Forget where the front door is? 
+|ScoutEnters
+
+-ScoutEnters
+>ChangeBackground
+>showCharactersFade
+Narrator:*Scout enters Walter’s living space. The air is much warmer than the coolness of the valley outside. Scout takes a moment to collect their bearings.*
+Walter: So, what brings you back here this time?
+[[I’m organizing a dinner get-together and wanted to invite you.
+[[Bernice suggested I host a dinner for everyone. Thought I’d invite you. (( The dinner is Bernice’s idea.
+Narrator:*Walter crosses his arms, his gaze flickering to the window before meeting Scout’s.*
+Walter: With everyone, huh? So, with Annie and Tyler.
+Walter: I don’t know, Scout. It’s been a long time since the three of us were in the same room. It’s going to be... awkward. I’m not sure we’re ready for something like this.
+$WalterBlamesHimself$[[You can’t carry this alone. This could help. (( You think Walter still blames himself. || WalterBlamesHimself //IF FLAG WalterBlamesHimself 
+$WalterBlamesTyler$[[Tyler regrets it too. This might help. (( You think Walter blames Tyler. || WalterBlamesTyler //IF FLAG WalterBlamesTyler
+$WalterBlamesEveryone$[[You all made mistakes. This could be a fresh start. (( You believe Walter thinks everyone made mistakes. || WalterBlamesEveryone //IF FLAG WalterBlamesEveryone
+[[It’s a step forward. You still care about each other. || StepYouStillCare
+[[Bernice wanted you to come. (( The dinner is Bernice’s idea. || BerniceWantedCome
+
+-WalterBlamesHimself
+Walter: I... don’t know if it’s that simple, Scout. There’s a lot I’ve been holding onto, and letting it go doesn’t come easy.
+Narrator:*Walter exhales deeply, crossing his arms.*
+Walter: But... you’re right. I owe it to myself—and to them—to try. 
+Walter: Maybe it’s time, but I’m not sure if I’m ready.
+>SetFlag{WalterGoodEndingPush, true} //SET FLAG WalterGoodEndingPush
+|PushCheck
+
+-WalterBlamesTyler
+Walter: Regret doesn’t erase what he did. He ignored a direct warning, Scout.
+Narrator:*Walter’s tone softens slightly as he looks away.*
+Walter: Still, if he’s willing to own up to it, maybe I can try meeting him halfway. 
+Walter: I hear you, but I don’t know if I can face him yet. I’ll need to think it over.
+>SetFlag{WalterGoodEndingPush, true} //SET FLAG WalterGoodEndingPush
+|PushCheck
+
+-WalterBlamesEveryone
+Walter: Mistakes or not, the damage feels permanent sometimes.
+Narrator:*Walter exhales deeply, crossing his arms.*
+Walter: But I guess... sitting on this forever isn’t helping anyone. 
+Walter: I’m not saying no, but I’m not saying yes either. It’s... a lot to consider. 
+>SetFlag{WalterGoodEndingPush, true} //SET FLAG WalterGoodEndingPush
+|PushCheck
+
+-StepYouStillCare
+Walter: Caring doesn’t fix what’s broken.
+Narrator:*Walter exhales deeply, crossing his arms.*
+Walter: But I guess... sitting on this forever isn’t helping anyone. 
+Walter: I’m not saying no, but I’m not saying yes either. It’s... a lot to consider. 
+>SetFlag{WalterGoodEndingPush, true} //SET FLAG WalterGoodEndingPush
+|PushCheck
+
+-BerniceWantedCome
+Walter: Bernice, huh? Figures she’d think we could just sit down and patch everything up.
+Narrator:*Walter lets out a reluctant sigh.*
+Walter: I’ll show up. For her sake. But don’t expect this to change anything.
+|PushCheck
+
+-PushCheck
+$WalterGoodEndingPush$ | PossibleGoodEnding
+|DecidedEnding
+
+-PossibleGoodEnding
+$WalterBlamesHimself$[[When we fished, you said you have to keep trying. (( You remember your conversation with Walter while fishing. || WhenWeFished // IF FLAG WalterFish
+$WalterBlamesHimself$[[You have to be able to forgive yourself. || YouHaveToForgiveYourself
+$WalterBlamesHimself$[[If you don’t feel ready, then it’s okay to stay out of it. || DontFeelReady
+$WalterBlamesTyler$[[Tyler made a mistake, but it’s time to forgive him. || TylerMadeMistake
+$WalterBlamesTyler$[[Tyler said he misses those times with you, fishing and grilling together. (( Tyler told you about where he got the fish for his grill. || TylerMissesThoseTimes
+$WalterBlamesTyler$[[If you still can’t forgive him, then maybe it’s not worth trying. || CantForgiveTyler
+$WalterBlamesEveryone$[[The Lakeside photo Bernice took, doesn’t it remind you of the times you’ve shared. (( Annie showed you the lakeside photo Walter loved. || LakesidePhoto
+$WalterBlamesEveryone$$WalterFish$[[When we fished, you said these things take patience and effort. (( You remember your conversation with Walter while fishing. || WhenWeFishedYouSaid //IF FLAG WalterFish
+$WalterBlamesEveryone$[[ If you don’t feel ready, then it’s okay to stay out of it. || ItsOkayToStayOut
+Narrator:**You didn't decide an ending for walter in your journal?**
+|DecidedEnding
+
+-WhenWeFished
+Walter: You’re right. I did say that, didn’t I?
+Walter: *He sighs, rubbing the back of his neck.* 
+Walter: Maybe this is my chance to try. To stop standing in place and move forward.
+Walter: I’ll come to the dinner, and I’ll do my best to keep an open mind. 
+>SetFlag{WalterGoodEnding, true} //SET FLAG WalterGoodEnding
+|DecidedEnding
+
+-YouHaveToForgiveYourself
+Walter: Forgive myself...
+Walter: That’s easier said than done, Scout. But maybe you’re right. I can’t keep holding onto this.
+Walter: I’ll come to the dinner, and I’ll try to focus on moving forward.
+>SetFlag{WalterGoodEnding, true} //SET FLAG WalterGoodEnding
+|DecidedEnding
+
+-DontFeelReady
+Walter: *He shakes his head, his tone firm.* No, I’ll come. If nothing else, I owe it to everyone to show up.
+Walter: But don’t expect much from me. Some things... they just don’t get fixed.
+|DecidedEnding
+
+-TylerMadeMistake
+Walter: *He sighs.* Yeah, he did make a mistake. A big one.
+Walter: But... maybe it’s time I stopped holding that over him. He’s grown, even in the few years I’ve known him.
+Walter: And I’m sure he’s grown even more since the time we stopped talking.
+Walter: I’ll show up, and I’ll give him a fair chance. It’ll be a fresh start, Scout. You have my word.
+>SetFlag{WalterGoodEnding, true} //SET FLAG WalterGoodEnding
+|DecidedEnding
+
+-TylerMissesThoseTimes
+Walter: *His brows lift in surprise.* He said that?
+Walter:  I guess I’ve been too stuck in my own head to see it.
+Walter: I’ll come to the dinner. If he’s willing to try, then I owe it to him—and myself—to do the same.
+>SetFlag{WalterGoodEnding, true} //SET FLAG WalterGoodEnding
+|DecidedEnding
+
+-CantForgiveTyler
+Walter: *He exhales sharply.* Forgive him or not, I’ll show up. It’s... what I should do.
+Walter: But don’t expect much from me. Some things... they just don’t get fixed.
+|DecidedEnding
+
+-LakesidePhoto
+Walter: That photo... I still have that around here. 
+Narrator:*He opens his bedside cabinet and pulls out the photo, dusting it off with the pad of his finger.*
+Walter: And yes, it does remind me of those times.
+Walter: *He takes a deep breath.* Maybe it’s time I stop letting those good memories gather dust.
+Walter: I’ll come to the dinner. I owe it to all of use to see if we can make things better.
+>SetFlag{WalterGoodEnding, true} //SET FLAG WalterGoodEnding
+|DecidedEnding
+
+-WhenWeFishedYouSaid
+Walter: *He chuckles faintly.* Guess I should take my own advice, huh?
+Walter: *Walter nods slowly.* I’ll come to the dinner. I owe it to all of use to see if we can make things better. //SET FLAG WalterGoodEnding
+>SetFlag{WalterGoodEnding, true} //SET FLAG WalterGoodEnding
+|DecidedEnding
+
+-ItsOkayToStayOut
+Walter: *He shakes his head, his tone firm.* No, I’ll come. If nothing else, I owe it to everyone to show up.
+Walter: *He looks away.* But don’t expect much from me. Some things... they just don’t get fixed.
+|DecidedEnding
+
+-DecidedEnding
+Narrator:*He exhales deeply and rolls his shoulders back, shaking off the tension.*
+Walter: Alright. Enough heavy talk. Let’s focus on the dinner. You said this was a meal, right? What are we bringing to the table?
+[[Fish chowder. Bernice’s recipe!
+Walter: Fish chowder, huh? That takes me back to when I still worked in the city.
+Walter: I’d go in before sunrise, while the streets were still dark and quiet. I’d be alone in the kitchen, chopping vegetables, deboning fish...
+Walter: *His voice softens.* I loved those mornings. Just me and the rhythm of the work. The quiet was comforting. Like the city hadn’t woken up yet.
+Narrator:*He snaps out of his thoughts, turning his focus back to Scout.*
+Walter: Anyway, fish chowder. We’re gonna need the main ingredient. What were you thinking for the fish?
+[[Not sure. Was planning on asking you.
+Walter: *He smiles.* Well, I’ve always had a fondness for trout. The sweet undertone, with a hint of nuttiness...
+Walter: The lake just up the trail’s full of them. They’re easy to spot with their gold scales and red stripes.
+[[Sounds good! Let’s head out. || SoundsGoodLetsHeadOut
+[[I can’t see red! || CantSeeRed
+
+-SoundsGoodLetsHeadOut
+Narrator:*He grabs his fishing gear, giving Scout an encouraging nod.*
+Walter: Alright, follow me. Let’s see if we can reel in something worth cooking.
+|FishingStart
+
+-CantSeeRed
+Walter: *Walter chuckles.* No need to worry. I still got a good set of eyes. 
+Narrator:*He grabs his fishing gear, giving Scout an encouraging nod.*
+Walter: Alright, follow me. Let’s see if we can reel in something worth cooking.
+|FishingStart
+
+-FishingStart
+>ChangeBackground
+>pause2
+Narrator:*Walter and Scout move along the trail leading to the mountain-top lake, their footsteps crunching softly against the damp earth. Walter glances around as they walk.*
+Walter: This trail used to be a lot busier. Families, hikers, campers… It’s been quieter these past few years.
+>pause2
+Walter: Sometimes I miss it. Seeing people out here, enjoying the scenery, and each other’s company.
+>pause2
+Walter: Places like this, they bring people together. Always thought the outdoors were one of the best ways to connect with each other.
+Walter: Maybe times are changing. People have found new spaces to find others.
+>pause2
+Walter: *He glances at Scout, his expression softening.* You’re doing something good here, Scout. Bringing everyone together, reminding us of what we’ve got in this valley. I think a lot of us lost sight of that. So… thank you.
+>pause2
+Walter: *He stops walking, pointing ahead.* The lake’s just up here. Come on.
+>ChangeBackground
+>pause2
+>hideCharactersFade
+Narrator:*The trail opens up to reveal a serene mountain lake, its surface reflecting the trees and sky above. Walter sets his gear down and pulls out two rods, handing one to Scout.*
+Walter: Here. Water’s nice and calm today—perfect for fishing. Go ahead and cast your line.
+>FishingCast
+Walter: And now, we wait.
+>pause2
+Walter: You know, fishing’s a lot like making friends. You need patience, a bit of luck, and a willingness to keep trying, even when nothing seems to be biting.
+>pause2
+Walter: You could sit here for hours without a single nibble. And then, just when you’re about to pack it in, you feel that tug on the line.
+>pause2
+Walter: You’ve gotta check your bait, keep casting, and let the fish come to you. Same as letting people open up in their own time. It takes patience and effort.
+>pause2
+Walter: Your dinner idea was nice. Create a space where everyone feels comfortable. It’s kinda like finding the right spot to fish.
+Walter: Like here. Calm waters, good shade, nice temperature. 
+Walter: We can just sit and wait for the fish to join us on their own time.
+>pause2
+Walter: Hmm. Nothing biting yet?
+Walter: Let’s keep at it. Persistence pays off.
+>FishingBite
+Narrator:*Walter holds up the line with his paw.*
+Walter: Nice work, Scout!
+Narrator:*Walter examines the trout, nodding appreciatively.*
+Walter: That’s a good-sized trout. This’ll make a fine addition to Bernice’s chowder.
+Narrator:*Walter’s expression softens as he turns to Scout.*
+Walter: Hmm... Listen, Scout, you’ve got other ingredients to gather, don’t you? You should head back down. I think I’ll stay here for a bit. It’s a perfect day for fishing, and I could use the quiet.
+[[Alright. Thanks for spending the afternoon with me, Walter.
+[[And for helping me get the fish.
+Walter: *He gives a small nod.* I’ll see you tonight, then.
+Narrator:*Walter watches Scout pack up their gear before turning back to the lake. He casts his line once more, the fishing rod a steady silhouette against the calm waters.*
+>ChangeBackground
+>ShowScout
+Narrator:*Scout starts down the trail, the fresh trout in their pack. Behind them, the sun casts its warm, golden glow on the valley.*
+
+//END HANGOUT

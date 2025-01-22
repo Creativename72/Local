@@ -54,7 +54,7 @@ public class House : MonoBehaviour, IHouse
     public void Click() {
         audioPlayer.Play(0);
         MapController.Instance.HouseStates[(int) thisHouse] = false;
-        MapController.Instance.LoadNextScene(sceneNames[nextScene]);
+        GameManager.Instance.ChangeScene(sceneNames[nextScene]);
         MapController.Instance.UpdateDay();
     }
 

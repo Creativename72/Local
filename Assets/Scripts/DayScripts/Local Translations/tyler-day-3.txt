@@ -1,0 +1,263 @@
+-Start
+Narrator:*Scout walks along the familiar trail toward Tyler’s trailer. The sun shines brightly, and a gentle breeze rustles the leaves overhead.*
+Narrator:*As they round the corner, they spot Tyler lying on his back in the grass, arms stretched behind his head, a juice box dangling from his fingers. He doesn’t look over as Scout approaches.*
+Narrator:*Scout stops near him, taking in the sight of Tyler sprawled out, completely at ease.*
+>ShowTyler
+[[What are you doing? | WhatDoing
+[[*Join him without saying anything.* | JoinHim
+
+-WhatDoing
+
+Narrator:*Tyler takes a long, slow sip from his juice box, squinting up at the sky.*
+Tyler: Watchin’ clouds. Not much else goin’ on today, so... why not?
+[[Mind if I join you? | MindIfIJoin
+[[*Join him.* | JoinHim
+
+-MindIfIJoin
+Tyler: Knock yourself out, man. Plenty o’ grass to go around.
+|SuddenlyShifts
+
+-JoinHim
+Narrator:*Scout sits down on the grass beside Tyler, glancing up at the sky. Tyler doesn’t say anything, but a small smirk crosses his face as he sips his juice.*
+|SuddenlyShifts
+
+-SuddenlyShifts
+Tyler: *He suddenly shifts, turning onto his side.* What’s up, Scout.
+Tyler: Was gonna pull some stuff from the garden today, y’know? Check on the veggies and all that.
+Tyler: *He chuckles softly, gesturing at the sky.* But, uh, this felt way more important. Juice box, clouds, grass… hard to beat.
+[[What’s in your garden?
+Narrator:*He pauses, looking vaguely thoughtful as he stares up at the sky.*
+Tyler: It’s a lotta stuff. I’ve been using a technique I learned back in the city, helps the plants grow together.
+Tyler: I’ll show ya later, if we get the chance.
+Narrator:*He pauses, sitting up.*
+Tyler: So? What brings you out here today? Or are you just wanting to kick back with me and enjoy this perfect day?
+[[I’m hosting a dinner get-together with everyone in the valley.
+Narrator:*Tyler lowers the juice box mid-sip, blinking at Scout like they just spoke another language. He shifts to sit up, brushing stray bits of grass off his jacket.*
+Tyler: Wait. Everyone? Like, Walter and Annie too?
+[[Yeah. Everyone. | Everyone
+[[Is that a problem? | IsThatProblem
+
+-Everyone
+Narrator:*Tyler exhales sharply through his nose, leaning back on his hands. He avoids Scout’s gaze, staring at the sky instead.*
+Tyler: Huh. That’s... big.
+Tyler: I mean, I get it, Scout, but... it’s complicated. You know what happened.
+|ScoutExplanation
+
+-IsThatProblem
+Narrator:*Tyler exhales sharply through his nose, leaning back on his hands. He avoids Scout’s gaze, staring at the sky instead.*
+Tyler: I dunno. Maybe?
+Tyler: I mean... Scout, you know what happened.
+|ScoutExplanation
+
+-ScoutExplanation
+$TylerFrustratedWithWalter$[[Walter wasn’t trying to control you. He just wanted to keep things safe. (( You think Tyler is frustrated with Walter. | WalterWanted
+$TylerWantsDistance$[[Avoiding it won’t fix anything, Tyler. (( You think Tyler is trying to distance himself. | AvoidingWontFix
+$TylerWantsIndependence$[[You’ve already proven you can stand on your own. (( You think Tyler wants to appear independent. | StandOnYourOwn
+[[It’s not about what happened, Tyler. It’s about moving forward. | MovingForward
+[[Bernice would want you to go, to see you all together again. | BerniceWouldWant
+
+
+
+-WalterWanted
+Tyler: Safe? Sure. But sometimes it felt like he didn’t trust me to figure stuff out.
+Tyler: Like I couldn’t make my own decisions without him babysitting me.
+[[Remember when you used to grill fish with Walter? You make a great team. (( Tyler used to grill fish Walter caught and share it together. || RememberGrillWalter
+[[You’re not the same person. Show him you’ve grown. || NotSamePerson
+[[If you don’t feel like showing up, that’s okay too. || DontFeelLikeShowingUp
+
+-RememberGrillWalter
+Tyler: *Tyler glances away, frowning slightly.* Yeah, we did.
+Tyler: But don’t say sappy stuff like that. That we make a great team. It’s weird. 
+Tyler: *He sighs.* I don’t wanna be a stick in the mud at the party. 
+>SetFlag{TylerGoodEnding, true} //SET FLAG TylerGoodEnding
+|GoodEndingCheck
+
+-NotSamePerson
+Tyler: *He shifts uncomfortably.* Maybe. But what if he still sees me like that?
+Tyler: I don’t want to show up and feel like I’m bein’ judged all over again. //SET FLAG TylerGoodEnding
+>SetFlag{TylerGoodEnding, true} //SET FLAG TylerGoodEnding
+|GoodEndingCheck
+
+-DontFeelLikeShowingUp
+Tyler: *He exhales slowly.* Yeah, maybe. I’m not sure I’m ready for that kind of thing anyway.
+|GoodEndingCheck
+
+
+
+-AvoidingWontFix
+Tyler: *He sighs, rubbing his face.* Yeah, I know.
+Tyler: But it’s easier to stay outta it than to dive back into all that drama.
+[[The valley’s not the same without you three. It feels like something’s missing. || SomethingMissingInValley
+[[Staying out is easier, but don’t let fear hold you back from something good. || StayingOutIsEasier
+[[If you want to stay out of it, I won’t push you. || IWontPushYou
+
+-SomethingMissingInValley
+Tyler: *He crosses his arms.* Yeah. Guess I’ve felt that too.
+Tyler: *He speaks softly.* Just... feels like too much time’s passed, y’know? Like maybe it’s too late to fix it.
+>SetFlag{TylerGoodEnding, true} //SET FLAG TylerGoodEnding
+|GoodEndingCheck
+
+-StayingOutIsEasier
+Tyler: *Tyler’s expression tightens.* Fear, huh? You think that’s what this is?
+Tyler: ...maybe you’re right. Maybe I *am* scared. Scared of screwin’ up again, of facin’ them after all this time.
+Tyler: But, I guess... if I don’t try, I’ll never know if we could’ve fixed things, huh.
+>SetFlag{TylerGoodEnding, true} //SET FLAG TylerGoodEnding
+|GoodEndingCheck
+
+-IWontPushYou
+Tyler: *He shrugs, but his expression unreadable.* Thanks. I’ll sit this one out.
+|GoodEndingCheck
+
+
+
+-StandOnYourOwn
+Tyler: *He hesitates.* Have I, though? I mean, I’ve got my garden, my trailer, my... mess of hobbies, sure. But do people really see that as standin’ on my own?
+[[You don’t have to be alone to prove your independence. || DontHaveToBeAlone
+[[Walter and Annie care about you. They just want to see you happy. || WalterAndAnnieCare
+[[You don’t owe anyone anything. Do what feels right for you. || YouDontOweAnyone
+
+-DontHaveToBeAlone
+Tyler: *He looks at Scout, surprised.* Huh... I guess I never thought about it like that.
+Tyler: *He sighs, running a hand through his hair.* Maybe I’m just too stubborn to admit it.
+>SetFlag{TylerGoodEnding, true} //SET FLAG TylerGoodEnding
+|GoodEndingCheck
+
+-WalterAndAnnieCare
+Tyler: *He frowns, tapping his foot against the ground.* You think so? I dunno. Sometimes it feels like they’re just tryin’ to tell me what to do.
+Tyler: I dunno. Maybe I have to meet them halfway...
+|GoodEndingCheck
+
+-YouDontOweAnyone
+Tyler: *He sighs in relief, nodding slightly.* Yeah... maybe you’re right. I’m not sure what good it’d do anyway.
+>SetFlag{TylerGoodEnding, true} //SET FLAG TylerGoodEnding
+|GoodEndingCheck
+
+
+
+-MovingForward
+Narrator:*He sighs, his gaze shifting to the horizon.*
+Tyler: Moving forward, huh. That’s easy to say, Scout, but it’s not so simple.
+Tyler: Feels like I’m stuck. Don’t even know where forward is anymore.
+[[Start small. Showing up is enough. ||  StartSmallShowingUp
+[[Walter and Annie want the same thing. You’re not alone in this. || WalterAndAnnie
+[[Just do what you think is right. || JustDoWhatYouThinkIsRight
+
+-StartSmallShowingUp
+Tyler: *He chuckles humorously.* Just showin’ up, huh. Guess that’s a step, right?
+>SetFlag{TylerGoodEnding, true} //SET FLAG TylerGoodEnding
+|GoodEndingCheck
+
+-WalterAndAnnie
+Tyler: *He frowns, his expression conflicted.* You think so? I dunno. They’ve got their own stuff to deal with. 
+>SetFlag{TylerGoodEnding, true} //SET FLAG TylerGoodEnding
+|GoodEndingCheck
+
+-JustDoWhatYouThinkIsRight
+Tyler: Ack, but I don’t know what’s right!
+Tyler: Walter would know. But, I, like... I dunno anymore...
+|GoodEndingCheck
+
+
+
+-BerniceWouldWant
+Narrator:*His expression hardens, and he sits up straighter.*
+Tyler: Bernice isn’t here, Scout. She doesn’t control my life, and no one else does either.
+Tyler: *He exhales sharply, rubbing the back of his neck.* Sorry. I didn’t mean to snap. It’s just... I need to figure this out on my own time, okay?
+Tyler: *He looks away, his voice softening.* Thanks for tryin’, but don’t push me. I’ll think about it when I’m ready.
+|GoodEndingCheck
+
+
+
+-GoodEndingCheck
+$TylerGoodEnding$Tyler: *Tyler turns to face Scout.* I’ll give it some thought, Scout. No promises, but I’ll think about showin’ up.
+Tyler: *He exhales and leans back slightly, his gaze shifting toward the garden.* In the meantime, anythin’ I can do for dinner? At least let me do somethin’ useful.
+[[We’re making fish chowder with veggies.
+[[If I could just get some fresh veggies from your garden...
+Tyler: *He raises an eyebrow, nodding thoughtfully.* Hmm, yeah, I can do that. Pretty sure I got somethin’ good growin’ out there.
+Tyler: C’mon, lemme show ya.
+Narrator:*Tyler gestures for Scout to follow him as he stands, dusting off his pants. He leads the way around the side of the trailer to the garden, his tone softening as he talks.*
+>EnterMinigameBackground //garden background, should be able to follow the old version
+>Scale06
+>hideCharactersFade
+Tyler: Welcome back to my little garden. Ain’t much, but it’s good, honest work.
+Tyler: So, what do you need for that soup?
+[[Carrots, onions, and potatoes.
+Tyler: *He nods, scanning the garden rows with a focused look.* Alright. Let’s see...
+Tyler: Potatoes are over there with the corn and beans. Carrots and onions? They’re in the plot next to the lettuce.
+>StartMinigame //MINIGAME HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Tyler: Nice workin’, Scout. This harvest’s lookin’ pretty good.
+[[You must put a lot of work into this place, huh.
+Tyler: *Tyler smiles at the compliment.* Yep, I sure do. Like I said, I try hard sometimes.
+Tyler: Back in the city, I learned a technique called the Three Sisters method. Or somethin’ like that.
+[[How come plants are planted together instead of separate?
+Tyler: I’ll tell ya. And it ain’t ‘cause I’m sloppy.
+Tyler: It’s a technique I picked up back in the city. Pretty neat.
+Tyler: Like, each plant helps the others out. Look...
+//Focus on left plot. CAMERA
+>FocusOnLeftPlot
+Tyler: The beans? They fix nitrogen in the soil, makin’ it rich for the corn and potatoes.
+Tyler: The corn grows tall, givin’ the beans something to climb on. And the shade it provides keeps the potatoes cool.
+Tyler: Then you got the potatoes. They loosen up the soil, lettin’ everyone’s roots grow deeper. Teamwork, y’know?
+//Focus on right plot.
+>FocusOnRightPlot
+Tyler: Over here, carrots keep pests away from the onions. The onions? They scare off aphids. And the lettuce? Keeps the ground moist and weed-free.
+Tyler: It’s like a whole garden community. Everyone plays their part.
+[[That’s really cool, Tyler! | ThatsReallyCoolTyler
+[[You’re a bit of a plant nerd, aren’t you. | YourABitOfAPlantNerd
+[[You don’t get it? You, Walter, and Annie are like the Three Sisters! | ThreeSisters
+
+-ThatsReallyCoolTyler
+Tyler: *He grins wide.* Hey, thanks, Scout. I think it’s cool too.
+Tyler: And it’s totally paying off. Harvests are healthier than ever.
+|CheckHarvestAgain
+
+-YourABitOfAPlantNerd
+Tyler: Never call me that again.
+Tyler: *He then chuckles.* Hah. Kidding. 
+|CheckHarvestAgain
+
+-ThreeSisters
+Tyler: *He freezes mid-thought.* What the...
+Tyler: *He then lets out a loud laugh.* Oh, come on, Scout. You’re really gonna compare us to a buncha plants?
+Tyler: What, so Walter’s the corn, standin’ tall and bossin’ everyone around? Annie’s the beans, climbin’ all over and gettin’ into trouble? And me? I’m the potato, sittin’ in the dirt doin’ nothin’?
+Tyler: Actually, that sounds pretty accurate.
+|CheckHarvestAgain
+
+-CheckHarvestAgain
+Tyler: *He goes to check out the harvest again, picking up a carrot with his hand.* Come on, let’s take a look at the harvest. I’ll pick out some good pieces for you.
+//back to tyler background
+>showCharactersFade
+>ExitMinigameBackground
+>Scale04
+Narrator:*Tyler carefully inspects the harvest, selecting a few of the best-looking vegetables. He hands them over to Scout with a small nod.*
+Tyler: These look good. Take these. Should work great for your soup.
+[[Thanks, Tyler! || ThanksTylerForVeggies
+[[You could be a produce vendor, Tyler. || YouCouldBeProduceVendor
+
+-ThanksTylerForVeggies
+Tyler: *He shrugs with a grin.* No biggie.
+|YoureAGoodFriend
+
+-YouCouldBeProduceVendor
+Tyler: *He chuckles.* What, like on the roadside or in the city market? Nah.
+Tyler: Well... maybe.
+|YoureAGoodFriend
+
+-YoureAGoodFriend
+Tyler: Hey, thanks for helpin’ out today. You’re a good friend, Scout.
+Tyler: About the dinner... I’m still thinkin’ about it. I just... 
+Tyler: Let me just see how I’m feeling. You understand.
+Tyler: *He scratches the back of his neck.* Anyway, I’m sure you’ve got more prep to do. I won’t keep ya.
+[[Thanks again, Tyler. || ThanksAgainTyler
+[[Hope to see you there. || HopeToSeeYouThere
+
+-ThanksAgainTyler
+Tyler: *He smirks as he heads back up the trailer steps.* See ya later, Scout.
+|ScoutLeavesHangout
+
+-HopeToSeeYouThere
+Tyler: *He smirks as he heads back up the trailer steps.* We’ll see, Scout. We’ll see.
+|ScoutLeavesHangout
+
+-ScoutLeavesHangout
+Narrator:*Scout leaves with the vegetables, walking along the road back to the valley center. Tyler’s trailer fades into the distance behind them.*

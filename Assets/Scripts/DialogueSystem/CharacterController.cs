@@ -27,7 +27,7 @@ public class CharacterController : MonoBehaviour
 
         DialogueCharacter newCharacter = Instantiate(character);
         newCharacter.name = character.GetCharacterName();
-        newCharacter.Show(true);
+        newCharacter.SetVisible(false);
 
         created.Add(newCharacter);
 

@@ -18,7 +18,7 @@ public class AnnieMinigameChecker : MonoBehaviour
 
     void Update()
     {
-        if (bgHandler != null && bgHandler.currentBg == 2)
+        if (bgHandler != null && bgHandler.currentBackground == 2)
         {
             enableSprites();
         }

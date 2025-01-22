@@ -1,4 +1,8 @@
+using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -6,9 +10,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject optionsMenu;
     [SerializeField] private GameObject menuArea;
+    [SerializeField] private AudioMixer audioFader;
+    [SerializeField] private FadeScript fader;
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
-
     public static GameManager Instance { get; private set; }
 
     private int menuDepth;
@@ -19,8 +24,9 @@ public class GameManager : MonoBehaviour
     {
         if (Instance != null && Instance.gameObject != this)
         {
-            Destroy(this);
-        } else
+            Destroy(this.gameObject);
+        }
+        else
         {
             Instance = this;
             DontDestroyOnLoad(this);
@@ -51,8 +57,13 @@ public class GameManager : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && !menuArea.GetComponent<Collider2D>().OverlapPoint(Input.mousePosition))
         {
             menuDepth = 0;
-            Debug.Log("CLICKED OFF PAUSE MENU");
+            // Debug.Log("CLICKED OFF PAUSE MENU");
         }
+    }
+
+    public bool Paused()
+    {
+        return menuDepth >= 1;
     }
 
     public float GameVolume()
@@ -74,7 +85,8 @@ public class GameManager : MonoBehaviour
 
     public void MainMenu()
     {
-        // Change scene to main menu
+        CloseMenus();
+        ChangeScene("TitleScreen");
         Debug.Log("MAIN MENU");
     }
 
@@ -83,5 +95,45 @@ public class GameManager : MonoBehaviour
         // Quit game
         Application.Quit();
         Debug.Log("EXIT GAME");
+    }
+
+    public void ChangeScene(string name)
+    {
+        ChangeScene(name, 1.5f);
+    }
+    public void ChangeScene(string name, float delay = 1.5f)
+    {
+        if (MusicPlayer.Instance != null)
+            MusicPlayer.Instance.StopMusic(null);
+
+        fader.FadeBlack(true);
+        StartCoroutine(FadeMixerGroup.StartFade(audioFader, "MusicVolume", delay, 0f));
+        StartCoroutine(FadeMixerGroup.StartFade(audioFader, "AmbienceVolume", delay, 0f));
+        StartCoroutine(Wait(delay, () =>
+        {
+            SceneManager.LoadScene(name, LoadSceneMode.Single);
+            fader.FadeBlack(false);
+            StartCoroutine(FadeMixerGroup.StartFade(audioFader, "MusicVolume", delay, 1f));
+            StartCoroutine(FadeMixerGroup.StartFade(audioFader, "AmbienceVolume", delay, 1f));
+        }));
+    }
+
+    public void UpdateDay()
+    {
+        MapController.Instance.UpdateDay();
+    }
+    public void CloseMenus()
+    {
+        this.menuDepth = 0;
+    }
+
+    public static void WaitRoutine(float seconds, Action a)
+    {
+        Instance.StartCoroutine(Instance.Wait(seconds, a));
+    }
+    public IEnumerator Wait(float seconds, Action a)
+    {
+        yield return new WaitForSeconds(seconds);
+        a.Invoke();
     }
 }

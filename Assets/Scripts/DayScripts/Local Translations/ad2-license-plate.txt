@@ -1,0 +1,15 @@
+-Start
+[[What about that license plate?
+Annie: Oh that? *She grins.* That’s from my drag racing days, believe it or not.
+[[You raced cars?
+Annie: Oh yeah, hard to picture now, huh? Back in the day, I lived for the thrill of the track.
+Annie: The roar of the engine, the surge of adrenaline... just you, the car, and the road. No distractions.
+Annie: *Her grin softens slightly.* I had to stop when my vision started going. It sucked, but hey, safety first, right?
+Annie: Buuuut... if it were legal to drive blind, I’d probably still do it.
+Annie: *She chuckles.* Kidding! Mostly. I think giving it up was for the best. You can’t live your whole life glued to the track. Sometimes you gotta pivot.
+[[Do you miss racing?
+Annie: Sometimes, yeah. But it’s been years now.
+Annie: *She shrugs lightly.* Life’s all about adapting, you know? You lose one thing, you find something else.
+Annie: These days, I’m just rolling with the punches. Literally, sometimes. Tripping over furniture’s kinda like an extreme sport of its own.
+Narrator:*She chuckles softly, the grin lingering as she leans back.*
+>SetFlag{AnnieRaces,true} //SET FLAG AnnieRaces

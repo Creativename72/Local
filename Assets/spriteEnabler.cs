@@ -13,7 +13,7 @@ public class spriteEnabler : MonoBehaviour
     {
         if (!hasRun)
         {
-            if (b.currentBg == 2)
+            if (b.currentBackground == 2)
             {
                 a.enableSprites();
                 hasRun = true;

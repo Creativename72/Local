@@ -1,0 +1,33 @@
+-Start
+[[Nice looking bike.
+Tyler: *A smile tugging at his lips.* Oh yeah. I was obsessed with bikers as a kid. Thought they were the coolest people ever—like, total badasses.
+Tyler: Used to ride this baby everywhere in the city. Felt invincible back then.
+Tyler: *He sighs, scratching the back of his head.* Now? Uh, not so much.
+[[What happened?
+Tyler: *He groans.* Took her out for a spin on some trails by the river, but wiped out real bad. Turns out “all-terrain” doesn’t really mean that.
+Tyler: Pretty sure the axle’s busted. That’s a bike part, right?
+Tyler: Yeah, I dunno. It’ll take a miracle to fix her back up, and I don’t know jack about bike repairs. Walter does, but... ugh. We’re not talkin’, I guess.
+Tyler: *He shrugs.* Anyway, what do you think? Should I keep it or just toss it?
+[[Keep it. You can fix it in the future. | KeepBike > SetFlag{TylerKeepBike, true}  //SET FLAG  TylerKeepBike
+[[Toss it. It’s junk. | TossBike 
+$AnnieRaces$[[Annie used to race cars, believe it or not. (( Annie told you she drag raced in the city. || AnnieRaces >> SetFlag{TylerKeepBike, true} //IF FLAG: AnnieRaces, MESSAGE: Annie told you she drag raced in the city. SET FLAG TylerKeepBike
+
+-KeepBike
+Tyler: *He nods slowly.* Yeah, maybe. I mean, it’s a good bike... when it worked.
+Tyler: *He grabs the bike and carefully tucks it under a tarp behind his trailer.* I’ll stash it somewhere dry for now.
+|EndBike
+
+-TossBike
+Tyler: *He looks at the bike one last time, then sighs.* Yeah, you’re probably right. Guess I’m all biked out.
+Tyler: *He moves the bike to the “toss” pile, giving it a small pat before walking away.*
+|EndBike
+
+-AnnieRaces
+Tyler: *He freezes, then bursts out laughing.* Annie? Drag racing? No way.
+Tyler: *He shakes his head, grinning wide.* That’s insane. I mean, I can kinda see it. She’s got that low-key rebel vibe under all that cottage-core crud.
+Tyler: *He gives the bike a once-over.* Man, I guess we all got our wild stories, huh? Alright, I’ll keep it. Maybe I’ll figure somethin’ out with it.
+Narrator:*Tyler tucks the bike under a tarp, still chuckling to himself.*
+|EndBike
+
+-EndBike
+Tyler: *He brushes his hands off, turning back to Scout.* Alright, what’s next?

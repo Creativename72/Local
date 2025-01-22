@@ -1,0 +1,144 @@
+-start
+Narrator:*The fire watchtower stands in the distance, at the top of the hill. A walking trail meanders through the lush greenery of the valley, appearing long but safe. It’ll be a scenic walk to the tower following this trail.*
+Narrator:*Off the beaten path is a direct route to the tower through the rocks and shrubbery. It’s much shorter and, while the terrain looks uneven, it doesn’t seem like too difficult of a climb for someone willing to take the risk.*
+[[Take the longer winding path. | WalterSafePath > SetFlag{WalterSafePath, true} // SET FLAG: WalterSafePath
+[[Take the shorter path through the rocks. | WalterRockyPath > SetFlag{WalterRockyPath, true} // SET FLAG: WalterRockyPath
+
+-WalterSafePath
+Narrator:*The path winds gently through the lush landscape, offering breathtaking views of the surrounding mountains and meadows. The air is crisp and cool, carrying a faint scent of pine.*
+>ChangeBackground
+Narrator:*It takes almost an hour for Scout to reach the base of the watchtower, and their legs start to ache from the climb.*
+>ShowWalter
+Narrator:*As Scout approaches, a brown bear steps out from the entrance of the tower, stretching his arms above his head. He pauses mid-stretch when he notices Scout and blinks, his expression unreadable.*
+>StartSpeaking
+Walter: Visitors don’t usually make it this far. Trail’s that way. // name is Bear
+Narrator:*He gestures vaguely toward the hiking trail below, his tone dry but not unfriendly.*
+Walter: How was the walk up?
+[[It was beautiful. | beautiful
+[[The walk was exhausting. | exhausting
+
+-beautiful
+Walter: *He nods curtly.* It's nice this time of year.
+Walter: The quiet’s good... most of the time. Just me, the trees, and the occasional wayward hiker. Keeps things simple.
+Narrator:*THe remains silent for a moment, his gaze distant. After a while, he clears his throat, looking back at Scout.*
+|bearLook
+
+-exhausting
+Walter: *He glances at Scout, his tone deadpan.* Builds character.
+Walter: *He then smirks faintly.* Or kills you. Either way, it’s efficient.
+|bearLook
+
+-WalterRockyPath
+Narrator:*Taking the direct path through the bramble proves to be more difficult than Scout anticipated. The rocks are uneven, and the shrubs grab at their clothes.*
+Narrator:*At one point, Scout nearly loses their footing but manages to catch themselves on a low-hanging branch.*
+>ChangeBackground
+Narrator:*Scout steadies themself and pushes forward, just beginning to catch sight of the fire watchtower through the trees. Before they can take another step, a deep voice cuts through the stillness.*
+>ShowWalter
+Walter: Hold it.
+>StartSpeaking
+Narrator:*Scout freezes as a large brown bear steps out from behind a tree. He towers over them, his heavy boots crunch against the dirt as he moves. The bear’s sharp eyes narrow as he looks Scout up and down, his expression firm.*
+Walter: Care to explain what you’re doing here? This isn’t the designated walking trail.
+[[I was trying to find a shortcut. | shortcut
+[[I didn’t think it would be a big deal. | bigDeal
+
+-shortcut
+Narrator:*The bear lets out a heavy sigh, shaking his head.*
+Walter: Shortcut, huh? *He raises an eyebrow.* You new folks and your brilliant ideas.
+Walter: You’re lucky the only thing you’ve run into is me. Could’ve been worse. Could’ve been a rockslide. Or poison oak. Or someone who thinks pouring gasoline on a hot engine solves problems.
+Narrator:*He pauses, his expression briefly softening, but his tone remains firm.*
+Walter: The hiking trails are marked for a reason. 
+|bearLook
+
+-bigDeal
+Narrator:*The bear crosses his arms tighter, his brow furrowing.*
+Walter: This valley might look peaceful, but it doesn’t take much for a small mistake to turn into a big problem. You trip on a rock, twist your ankle, and suddenly you’re stranded out here.
+Walter: And then it’s my job to call in a rescue helicopter, haul you out, and explain to everyone why you thought playing daredevil was a good idea. That’s not the kind of excitement we need around here.
+|bearLook
+
+-bearLook
+Narrator:*The bear gives Scout a final look, his sharp eyes scanning them up and down.*
+Walter: You don’t look like the usual hikers I deal with. What are you doing out here anyway?
+[[I just moved into the valley.
+Narrator:*The bear’s tone shifts slightly, polite but neutral. His expression remains as unreadable as ever.*
+Walter: Bernice must finally be moving out.
+Narrator:*He pauses briefly, weighing his words, then gives a single nod.*
+Walter: I wasn’t expecting to meet someone new today.
+Narrator:*He extends his paw.*
+>changeWalterName
+Walter: Walter. Fire watchman for this area. Been keeping an eye on the valley for a while now.
+[[I’m Scout. Nice to meet you.
+Walter: Likewise. Welcome to Bellespring Valley. It’s a quiet place, but it’s got its charms.
+Walter: *His nod is brisk.* Scout. What brings you to the valley?
+[[Needed a change of pace. The city was too hectic. | cityTooHectic
+[[The nature here. It’s so peaceful. | peaceful
+[[Honestly? I’m not sure. | notSure
+
+-cityTooHectic
+Walter: *He nods in understanding.* The city’s like that... Loud. Cluttered. Everyone rushing somewhere, like their lives depend on it.
+Walter: Out here? Different story. You’ve got time. Time to listen, time to think... time to realize you don’t miss it.
+|thatsTheThing
+
+-peaceful
+Walter: Peaceful... sure.
+Walter: On days like this? It’s not bad. Not bad at all.
+|thatsTheThing
+
+-notSure
+Walter: *He gives a slow nod.* That's fine. Wandering's as good of a reason as any.
+Walter: The valley grows on you, whether you plan for it to or not.
+Walter: Just don’t expect it to give you all the answers. Sometimes, it’s just trees and dirt.
+|thatsTheThing
+
+-thatsTheThing
+Walter: That’s the thing about this place.
+Walter: It doesn’t ask much from you. You just have to respect it.
+Walter: Out here, it’s simple. Know your role, and the valley provides the rest.
+Narrator:*He pauses for a moment, glancing at Scout.*
+Walter: So, have you met anyone else in the valley yet?
+$MetAnnie$[[I spoke with Annie already. ((You've met Annie. | MetAnnie //IF FLAG: MetAnnie MESSAGE: You’ve met Annie.
+$MetTyler$[[I’ve talked to Tyler earlier today. (( You've met Tyler. | MetTyler //IF FLAG: MetTyler, MESSAGE: You’ve met Tyler.
+[[Not yet. | NotYet
+
+-MetAnnie
+Narrator:*He nods, his expression hard to read, though his tone softens slightly.*
+Walter: She’s... all the city I can tolerate. Keeps herself busy, though. Always has to be doing something.
+Walter: Haven’t spoken much lately. I suppose we’ve both got our reasons.
+Walter: *He clears his throat, turning his attention back to Scout.* If you see her again, remind her it’s okay to slow down. Just for a bit.
+> SetFlag{AnnieWalterSlowDown, true} //SET Flag: AnnieWalterSlowDown
+|ScoutLooksOut
+
+-MetTyler
+Narrator:*Walter lets out a low, unimpressed “hmph”, crossing his arms.*
+Walter: So, you’ve met him, huh? Reckless as always, I bet.
+Walter: Tyler’s good at making messes he can’t clean up. And he’s good at convincing himself it’s fine.
+Walter: *Walter stops himself, glancing at Scout before exhaling.* Sorry. That’s... unkind.
+Walter: He’s a good kid, really. Just needs to get his head on right.
+|ScoutLooksOut
+
+-NotYet
+Walter: No one yet, huh?
+Walter: You’ll meet them soon enough. It’s not like there’s many of us out here.
+Walter: *He gestures vaguely toward the valley.* Annie’s up the hill in her cabin. Always moving, always working. Feels like she’s working herself half to death sometimes. 
+Walter: Honestly, the girl needs to take a break every so often. 
+> SetFlag{AnnieWalterSlowDown, true} //SET Flag: AnnieWalterSlowDown
+Walter: And Tyler. He’s in his trailer in his corner of the valley, making noise and making messes. Always moving, but never forward.
+Walter: *Walter’s tone grows quieter.* We don’t talk much anymore, any of us. Things used to be different. But, well, life happens.
+Walter: *He crosses his arms, his voice steady again.* Just take them as they are. Everyone’s got their quirks, I guess.
+|ScoutLooksOut
+
+-ScoutLooksOut
+Narrator:*Scout looks out toward the valley, then glances back at Walter.*
+[[Do you know a lot of people around here?
+Walter: Mmm, not like Bernice does. She knew everyone, and everyone knew her.
+Walter: I’ll miss having her around. She’s been here so long, it’s hard to picture this place without her. She had a way of making the valley feel... connected.
+Narrator:*Walter shakes his head, almost to himself, before turning back to Scout.*
+Walter: Anyway, the valley’s yours to explore now. It’s not a bad place once you get used to it.
+Narrator:*Before Scout can respond, a garbled voice crackles from Walter’s walkie-talkie. He pulls it from his vest, holding it up to listen.*
+Walter: *He speaks into this walkie-talkie.* Yeah, I’m here. On my way.
+Narrator:*He tucks the walkie-talkie back into his vest and looks at Scout, his tone brisk but with a hint of warmth.*
+Walter: Sorry. Duty calls.
+Narrator:*He starts to turn but pauses, giving Scout a quick nod.*
+Walter: Come by tomorrow if you’ve got time. It’s... nice having someone to talk to.*
+>HideWalter
+Narrator:*With that, Walter heads back toward the watchtower, his heavy boots crunching against the dirt as he climbs the steps. Scout watches him disappear inside before turning back to the trail, ready to continue exploring.*
+> SetFlag{MetWalter, true} //SET FLAG: MetWalter

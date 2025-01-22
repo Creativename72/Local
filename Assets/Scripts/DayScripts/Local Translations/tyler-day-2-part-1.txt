@@ -1,0 +1,111 @@
+-Start
+Narrator:*The sky is overcast, and a light drizzle falls over the valley. The air is cool and damp as Scout follows the muddy trail leading up to Tyler’s encampment. The faint sound of rain patters against the metal of his trailer.*
+>ShowTyler
+Narrator:*Scout approaches Tyler’s trailer. Tyler stands leaning casually against the side, arms crossed. His outfit is notably bold today. Bolder than the PJs he wore yesterday, at least.*
+Narrator:*He waits for Scout to approach before speaking.*
+Tyler: *He raises an eyebrow, smirking.* Well? Whaddya think? *He gestures to his outfit with a flourish.*
+[[Of your jacket? It’s cool on you. | CoolOnYou
+[[What in the world are you wearing? | TylerTryhard $TylerTryhard$(( You think Tyler tries too hard. //FLAG: NONE, BUT IF FLAG TylerTryhard, MESSAGE: You think Tyler tries too hard.
+
+-CoolOnYou
+Tyler: *Tyler grins, puffing his chest out a bit.* Heck yeah.
+Tyler: *He strikes a playful pose.* You caught me in my PJs last time, so I figured I’d show you what I’m really about.//SET FLAG TylerIsCool
+|AfterClothes
+
+-TylerTryhard
+Tyler: *He scoffs dramatically.* It’s called style, sweetie. I wouldn’t expect you to understand.
+Tyler: *He winks.* Just thought I’d give you a taste of what I’m normally rockin’. You should consider yourself lucky.
+|AfterClothes
+
+-AfterClothes //this is a new set of dialogue options
+[[How long have you been standing in the rain like that? | HowLongInRain
+[[You should sleep in that outfit, so you’re always ready. | SleepInOutfit
+
+-HowLongInRain
+Tyler: Ah, I dunno. *He checks his wrist, which doesn’t have a watch on it.*
+Tyler: *He shrugs.* But it’s whatever. I like the rain. Now I look all mysterious ‘n brooding. Grr.
+|TylerGesture
+
+-SleepInOutfit
+Tyler: *He lets out a loud laugh, shaking his head.* Oh, so I can wake up lookin’ this epic, huh?
+Tyler: *He grins.* Not a bad idea. I’ll keep that in mind next time you surprise me in the morning.
+|TylerGesture
+
+-TylerGesture
+Narrator:*Tyler steps forward, gesturing toward Scout.*
+Tyler: Hey, thanks for droppin’ by again. I wasn’t sure what time you’d show up, so I’ve just been hanging out. Enjoyin’ the rain, y’know?
+Tyler: Anyways, do you play?
+[[Yeah, I play. | YeahIPlay
+[[Nope. | NoIDontPlay
+[[What are you talking about? | WhatTalkingAbout
+
+-YeahIPlay
+Tyler: *Tyler lights up.* Heck yeah.
+Tyler: *He waves toward the trailer.* Wait here. I’ve got somethin’ to show ya.
+|TylerDisappears
+
+-NoIDontPlay
+Narrator:*He groans dramatically.* Lame.
+Tyler: [He smirks.] Don’t worry. I’ll change your mind in a sec. Wait here.
+|TylerDisappears
+
+-WhatTalkingAbout
+Tyler: Play music, what else?
+Tyler: Like in a band. It’s cool stuff.
+Tyler: Wait here. I have somethin’ in my trailer.
+|TylerDisappears
+
+-TylerDisappears
+>HideTyler
+Narrator:*Tyler disappears inside the trailer.*
+Narrator:*Moments later, the sounds of rummaging and clatter drift out the door.*
+>ShowTyler
+Narrator:*Tyler emerges with an electric guitar slung over his shoulders. He yanks the power cord and a set of speakers come tumbling down the trailer steps into the mud.*
+Tyler: *Grinning.* Look what I just picked up! Cool stuff, huh?
+[[Yes. Very cool. || StrikePowerChord $TylerCool$(( You think Tyler is cool.//FLAG: NONE, BUT IF FLAG TylerCool, MESSAGE: You think Tyler is cool.
+$TylerTryhard$[[You’re trying a bit too hard, don’t you think? || DoNotHarsh (( You think Tyler tries too hard to be cool. //FLAG TylerTryhard, MESSAGE: You think Tyler tries too hard to be cool.
+[[Is it safe to be playing that in the rain? || PlayInRain
+
+-DoNotHarsh
+Tyler: *He gives you a mock offended look.* Do not harsh my vibe, man. I’m channeling greatness here.
+|StrikePowerChord
+
+-PlayInRain
+Tyler: *He laughs, rolling his eyes.* What are you, Walter? Relax. It’s just a little water.
+|StrikePowerChord
+
+-StrikePowerChord
+Narrator:*Tyler smirks and strikes a power chord. Instead of a blast of music, a feeble crackle emits from the speakers. Tyler’s expression falters.*
+Tyler: Ah, crap.
+Narrator:*He unplugs and re-plugs the cables, fiddling with the connections, only to get the same crackling sound. He groans, giving the speakers a frustrated kick.*
+Tyler: Man... Stuff’s always breakin’ around here. I don’t get it.
+Tyler: *He sighs, setting the guitar down carefully on the steps of the trailer.*
+Tyler: *Shaking his head.* Y’know, I’ve got all this junk lyin’ around from hobbies I never stuck with.
+Tyler: Guess I thought each one was gonna be my thing, but... yeah.
+[[Maybe it’s time to clean things up. | TimeToCleanUp
+[[You sure have a lot of hobbies, huh? | LotsHobbies
+$TylerFindSelf$[[Do you think you’re still figuring out what your thing really is? | TylerFindSelf (( You believe Tyler is still trying to figure out what he wants to be. //IF FLAG: TylerFindSelf, MESSAGE: You believe Tyler is still trying to figure out what he wants to be.
+
+-TimeToCleanUp
+Tyler: *He looks up, considering your suggestion.* Hmm… maybe.
+Tyler: But you’re helpin’, right? Yeah, you’re totally helpin’.
+|LetsStartCleaning
+
+-LotsHobbies
+Tyler: *He shrugs, a small grin returning.* Yeah, I picked up a lotta stuff over the years.
+Tyler: Dunno what to tell you. I like changin’ things up.
+Tyler: *He glances around at the scattered items.* Anyways, yeah, I think I should get around to cleanin’ this mess up. Mind lending a hand?
+|LetsStartCleaning
+
+-TylerFindSelf
+Tyler: *He pauses, caught off guard by the question. After a moment, he scratches the back of his head.*
+Tyler: Maybe? Yeah, I guess so.
+Tyler: *He sighs, his tone softening.* Feels like I’ve been searchin’ for somethin’ for a long time, but I don’t even know what it is yet.
+Tyler: Guess that’s why I keep tryin’ new stuff. One of these days, somethin’s gotta stick, right?
+Tyler: Anyway... let’s clean this junk up before I get all philosophical or somethin’.
+|LetsStartCleaning
+
+-LetsStartCleaning
+Narrator:*Tyler gestures toward the mess around his trailer, already moving to pick up the speakers.*
+Tyler: Alright, let’s do this. I’ll even let you pick what we tackle first. But fair warning—some of this stuff’s heavy.
+Tyler: *He smirks.* And no judgin’. Every piece of junk here was, at some point, my dream. Cool?

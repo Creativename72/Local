@@ -1,0 +1,56 @@
+//BACK TO NORMAL CONVERSATION STYLE
+-StartPart2
+Annie: *She exhales softly, leaning back in her seat.* You know, it’s funny. Looking at all this stuff... it reminds me of how much I used to do.
+Annie: Back in the city, my life was just… packed. Not just work—cool stuff. Cool people.
+Annie: Like, my weekends were drag racing or exploring a new art exhibit. Weeknights? Probably hanging out with friends or trying some random class just because it sounded fun.
+Annie: I was never sitting still. And now... here I am, keeping busy in a whole different way.
+[[You’re still doing a lot. Maybe too much? | TakeTime $AnnieSelf$(( You think Annie needs to find time for herself. //FLAG: NONE, BUT IF FLAG: AnnieSelf, MESSAGE: You think Annie needs to find time for herself.
+[[You’ve always liked keeping busy, huh? | LikedKeepingBusy
+
+-TakeTime
+Annie: Maybe. But what else am I supposed to do out here?
+Annie: Sitting around feels... wrong, you know? Like, if I’m not doing something, I’m wasting time.
+|ScaredOfQuiet
+
+
+-LikedKeepingBusy
+Annie: Always. Even before I moved here, I couldn’t stand being idle. There’s just... always something to do, right?
+Annie: I don’t think it’s in my nature to sit around. If I’m not working or occupied, it feels like I’m... slacking.
+|ScaredOfQuiet
+
+-ScaredOfQuiet
+Annie: It’s not like I’m scared of quiet or anything. I just...
+Annie: I need to feel useful. Productive. Like I’m contributing something, you know?
+Annie: If I’m not, what’s the point? It’s like... the wheels stop turning, and I don’t know how to deal with that.
+Narrator:*She pauses, folding her hands in her lap.*
+Annie: I know it’s not healthy, maybe, but staying busy keeps me moving forward. Even if it’s just... running in place.
+[[Maybe it’s time to slow down and take a break. || SlowDownScout $AnnieBreak$(( You think Annie needs a break.//FLAG: NONE, BUT IF FLAG: AnnieBreak, MESSAGE: You think Annie needs a break.
+[[Walter asked me to tell you to take it easy. || SlowDownWalter $AnnieWalterSlowDown$(( Walter thinks Annie should take a break. //FLAG: AnnieWalterSlowDown, MESSAGE: Walter thinks Annie should take a break.
+[[If it works for you, then maybe it’s not a problem. || NotProblem
+
+-SlowDownScout
+Annie: *She hesitates, her brows furrowing.* Slow down, huh? It’s not easy for me, you know.
+Annie: But maybe you’re right. Maybe I should... figure out how to stop spinning my wheels so much. 
+>SetFlag{AnnieTakesABreak, true} //SET FLAG AnnieTakesABreak
+|ThanksForSaying 
+
+-SlowDownWalter
+Annie: *She blinks, looking at Scout with surprise.* Walter said that?
+Annie: *She sighs, her expression softening.* Yeah, okay. He’s probably right. He’s always watching out for me, even if I don’t always see it. 
+>SetFlag{AnnieTakesABreak, true} //SET FLAG AnnieTakesABreak
+|ThanksForSaying
+
+-NotProblem
+Annie: Yeah, maybe. I mean, this is just how I’ve always been. 
+Annie: But... it’s exhausting sometimes. And I wonder if there’s something I’m missing, you know? Something I’m not letting myself see.
+|ThanksForSaying
+
+-ThanksForSaying
+Annie: *She leans back with a tired smile.* Thanks for saying that, Scout. I don’t know if I’ll ever be great at slowing down, but... I’ll think about it.
+Annie: And hey, thanks for keeping me company today. You’re a good one.
+Narrator:*Annie stretches, her arms reaching up as she lets out a small yawn.*
+Annie: *She chuckles softly.* Whew, I think I might actually take that nap now. You’ve got me all reflective and everything.
+[[Glad I could help.
+Annie: *She smiles warmly.* Thanks for keeping me company, Scout. It’s nice having someone to talk to, you know?
+Annie: Don’t be a stranger, okay? If you’re ever bored, just knock. I’d love to have you over again.
+Narrator:*She walks Scout to the door, the soft sound of rain still pattering outside.*

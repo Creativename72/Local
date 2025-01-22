@@ -1,0 +1,127 @@
++start
+-start
+Narrator:*A quaint little cabin sits on the right side of the valley’s peaks, overlooking the city in the far distance.*
+Narrator:*A long walking trail leads up to it from the bus stop along the side of the road.*
+Narrator:*The path is lined with sturdy rope guardrails and small lights, provding support and guidance along the way. It’s well maintained and very smooth.*
+Narrator:*Atop the hill, a quaint, cozy cabin nestled amongst the pine trees. From here, Scout has a view of the whole valley, along with the city in the distance.*
+Narrator:*As Scout steps onto the porch, they can hear someone speaking inside.*
+[[Ring the doorbell. | rangDoorBell > AnnieRangDoorbell //SET FLAG AnnieRangDoorbell
+[[Wait for the speaking to finish. | waitForSpeaking
+
+-rangDoorBell
+Narrator:*The speaking stops for a moment. Scout hears footsteps quickly approaching the door.*
+>ShowAnnie
+Narrator:*A mole wearing thick glasses and a wireless headset opens the door. Her expression is hard to read.*
+Annie: *She points at her headset and lets out a sigh. She speaks to whoever is on the other line.* Let me put you on hold for just a moment, ‘kay?
+Annie: *She turns to Scout.* Hey! Erm, I’m on a call at the moment, gimme a sec.
+>HideAnnie
+Narrator:*She quickly closes the door. Scout can hear her one sided chatter as she makes her way back to her desk.*
+Narrator:*A few minutes later, she seems to wrap up her conversation. She opens the front door once again.*
+>ShowAnnie
+Annie: Sorry ‘bout that! Tough customer call. Anyways...
+|SoWhoAreYou
+
+-waitForSpeaking
+Narrator:*The conversation goes on for a few minutes before wrapping up. When the speaking stops, Scout rings the doorbell.*
+Narrator:*There’s a shuffling of feet as whoever is inside the cabin makes their way to the door.*
+Narrator:*A mole wearing thick glasses and a wireless headset opens the door just a crack. Her head tilts as she looks Scout up and down, squinting slightly.*
+Annie: Tyler? That you? Did you finally clean up-
+Annie: *She pauses mid-sentence, leaning in slightly.* Oh. Nope. Definitely not Tyler.
+Narrator:*She fully opens the door and steps out onto the porch.*
+>ShowAnnie
+Annie: Sorry, my bad! You’re about his height, and... yeah, the light out here’s not exactly doing me any favors.
+|SoWhoAreYou
+
+-SoWhoAreYou
+Annie: *She adjusts her glasses and tilts her head slightly.* So, who’re you? Neighbor? Delivery? Or...?
+[[I’m Scout. I just moved into the valley.
+Annie: *Her face lights up, and she offers a warm smile.* Oh! Scout, huh? Nice to meet ‘cha! I’m Annie.
+>setAnnieName // change name from mole
+Annie: *She leans against the doorframe, crossing her arms casually.* So, you’re the one who took over Bernice’s old place, huh? She mentioned leaving a while back. Something about her knees giving her trouble.
+Annie: *She chuckles softly.* Didn’t expect someone to move in so soon. You’re not replacing her, are you?
+[[No, I hope not! | iHopeNot
+[[Yes, I am Bernice 2.0, new and improved. | bernice2.0 > AnnieJoked //SET FLAG AnnieJoked
+
+-iHopeNot
+Annie: *She laughs, her voice warm and genuine.* Nah, I’m just messin’ with ya. Bernice is one of a kind. Even if you tried, you’d never match her endless cookie stash or those wild stories about the valley from back in her day.
+Annie: *Her smile softens.* She might’ve left the valley, but she’s left her mark here. No replacing her.
+|anyways
+
+-bernice2.0
+Annie: *She smirks, adjusting her headset.* Ha! Unless you can rock a turtleneck like her, you’ve got a long way to go.
+|anyways
+
+-anyways
+Annie: Anyways, it’s nice to hear a fresh voice in the valley. The valley’s been... well, a little too quiet lately.
+Narrator:*She tilts her head slightly, listening to the faint breeze rustling through the trees.*
+Annie: But quiet has its perks. The air here always smells so fresh, y’know? Like pine and that weird earthy smell that makes you feel like you’re in a nature documentary.
+Annie: *Pauses, grinning slightly.* Though sometimes it just smells like Tyler’s burning tires in his front yard again.
+Annie: So have you met the others yet? Tyler and Walter?
+
+$MetWalter$[[I met Walter near his tower. (( You’ve met Walter. | metWalter
+$MetTyler$[[I hung with Tyler at his trailer. (( You’ve met Tyler. | metTyler
+[[Nope! Starting with you. | startingWithYou
+
+-metWalter
+Annie: *She nods.* Yeah, he’s... how do I say it? Dependable. Solid as a rock, really.
+Annie: He’s the kind of guy you can always count on when it matters. I really admire that about him.
+Annie: But, man, he’s got a bit of a scary side too. Like, when he’s mad? Whew, you don’t want to be on the receiving end of that.
+Narrator:*Annie leans against the doorframe, her tone growing more reflective.*
+Annie: We used to talk more, actually. But... I don’t know. I think we both got too caught up in our own stuff. It happens, I guess.
+Annie: Anyway, I’m glad you got to meet him. He’s a good guy. Helped me set up those safety rails for the steps up to my cottage. Guess he’s the expert on all that safety stuff.
+|howFindingValley
+
+-metTyler
+Annie:  Oh, yeah, Tyler’s... funny. I mean, I think he’s funny. Don’t know if he’s always trying to be, though.
+Annie: He’s always trying to play it cool, like nothing gets to him. But... just between you and me... I think he cares more than he lets on.
+Annie: But he’s good company. Always has a way of making things interesting, that’s for sure.
+Annie: We used to talk a lot more, you know? But... I guess life happens. Maybe he thinks he’s too cool for me, or I just got busy with work stuff.
+Annie: And, well, when you fall out of touch, it gets harder to reach out again, doesn’t it?
+Annie: *She shakes her head lightly.* Anyway, Tyler’s Tyler. He’s got his own rhythm, and I guess I’ve got mine. Maybe one of these days, we’ll get back on the same page.
+|howFindingValley
+
+-startingWithYou
+Annie: Starting with me, huh? Oooh, I’m honored!
+Annie: Well, you’ll meet them soon enough. The valley’s not exactly a metropolis. You’ll bump into them sooner or later.
+Annie: *She gestures vaguely toward the valley.* Walter’s over in his watchtower. He’s a tough nut, but once you get past the whole “safety first” thing, he’s solid. Dependable. The kind of person who’ll drop everything to help you out if you need it.
+Annie: And then there’s Tyler. He’s down in his trailer at the bottom of the valley. Tyler’s... well, he’s Tyler. Always up to something. 
+Annie: You know, he literally crash landed here in the valley. Surprised his truck hasn’t been towed off to a compound yet.
+Annie: *Her smile falters slightly.* We don’t really hang out like we used to. Guess I just got caught up with work, and, well... time slips away, doesn’t it?
+Annie: Anyway, they’re both great in their own ways. You’ll see.
+|howFindingValley
+
+-howFindingValley
+Annie: How are you finding the valley so far? Settling in okay?
+[[It’s great! So peaceful and quiet. | peaceful
+[[It’s a great change of pace. | changeOfPace
+[[I dunno yet, only been here 3 hours! | 3hours
+
+-peaceful
+Annie: Have you been to the lake yet? Air’s so crisp this time of year, it’s like breathing in bottled serenity.
+Annie: Sure beats sittin’ in here all day talkin’ to the technologically challenged.
+|letsOutSigh
+
+-changeOfPace
+Annie: I’ll say. I love the city and all that, but here, like, the air’s so fresh, and I can actually hear myself think.
+Annie: Like, back in the city, it was HONK HONK BEEP BEEP every second of the day, and here it’s like… nothing. You know?
+Annie: It’s kinda dumb, but I moved to the valley to get some peace and quiet, but with my work and everything, it’s like I just can’t get away, haha.
+Narrator:*Annie closes her eyes and takes a deep breath in, savoring the peaceful moment outside.*
+|letsOutSigh
+
+-3hours
+Annie: *She laughs, shaking her head.* Three hours? And you’re already making rounds? You’re ambitious, I’ll give you that.
+Annie: Maybe you can give *me* a tour later. Haven’t been out much myself.
+|letsOutSigh
+
+-letsOutSigh
+Annie: *She lets out a sigh, leaning against the doorframe.* You know, it’s still pretty early in my shift. You caught me at a good time.
+Annie: After a full day of calls, I’m usually just... fried. Like, brain-melted, socially-drained, don’t-even-talk-to-me kind of fried.
+Annie: *She flashes a quick grin.* So yeah, thanks for giving me a break from explaining how to unplug a router for the millionth time.
+Narrator:*Just as she’s about to say more, a faint ringing sound cuts through the air. Annie winces slightly, the smile slipping from her face.*
+Annie: *She groans playfully.* Oh c’mon! It’s like they *know* when I’m trying to make friends.
+Narrator:*She straightens up, tapping the side of her headset as she gestures back toward the cabin.*
+Annie: But hey, tomorrow’s my day off! You should stop by again! We can head down to the lake or... I don’t know, just hang out. It’s nice to talk to someone face to face, y’know?
+Narrator:*Before Scout can respond, Annie gives them a quick smile and steps back inside, already clicking her headset to answer the call.*
+Annie: *As the door closes behind her, her voice picks up, cheerful but professional.* Hi, thanks for calling PineNet Support! My name’s Annie, what can I help you with today? Let’s troubleshoot that, step by step...
+Narrator:*The door shuts with a faint creak. Scout lingers for a moment, catching snippets of Annie’s cheerful, practiced troubleshooting as it fades into the valley’s quiet ambiance. They turn and make their way back down the trail, the smell of pine and fresh rain in the air.*
+>MetAnnie //SET FLAG: MetAnnie

@@ -15,16 +15,16 @@ public class MockDay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dc.SetFunction("Func", () => Debug.Log("Func!"));
+        dc.AddFunction("Func", () => Debug.Log("Func!"));
 
         // pauses the game for 3 seconds
-        dc.SetFunction("Pause", () =>
+        dc.AddFunction("Pause", () =>
         {
             dc.Enable(false);
             StartCoroutine(Wait(3, () => dc.Enable(true)));
         });
 
-        dc.SetVariable("var", new("wonderful"));
+        dc.SetVariable("var", new DialogueTree.Variable("wonderful"));
         dc.SetVariable("ScoutNice", new DialogueTree.LineVariable(() => true));
         
 
@@ -33,9 +33,9 @@ public class MockDay : MonoBehaviour
         dc.CreateCharacter(narrator);
         DialogueCharacter s = dc.CreateCharacter(scout);
 
-        dc.SetFunction("ScoutLeave", () =>
+        dc.AddFunction("ScoutLeave", () =>
         {
-            s.Show(false);
+            s.SetVisible(false);
 
         });
         dc.StartDialogue();

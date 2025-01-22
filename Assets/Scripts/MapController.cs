@@ -18,19 +18,22 @@ public class MapController : MonoBehaviour
     public static MapController Instance { get; private set; }
 
 
-// This should be on by default, turn it off if you want to start on a specific scene for testing purposes
+    // This should be on by default, turn it off if you want to start on a specific scene for testing purposes
     [SerializeField] bool LoadSceneOnStart;
     [SerializeField] string initialScene;
     public SceneChangeEvent m_sceneChangeEvent;
 
     private bool initialSkip = true;
 
-    
-    void Awake() {
-        if (Instance != null && Instance != this) {
+
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
             Destroy(gameObject);
         }
-        else {
+        else
+        {
             Instance = this;
         }
 
@@ -40,17 +43,20 @@ public class MapController : MonoBehaviour
         };
         UpdateDay();
 
-        if (m_sceneChangeEvent == null) {
+        if (m_sceneChangeEvent == null)
+        {
             m_sceneChangeEvent = new SceneChangeEvent();
         }
 
-        if (LoadSceneOnStart) {
+        if (LoadSceneOnStart)
+        {
             LoadNextScene(initialScene);
             initialSkip = false;
         }
     }
 
-    public void LoadNextScene(string name) {
+    public void LoadNextScene(string name)
+    {
         StartCoroutine(LoadNextSceneAsync(name));
     }
 
@@ -60,10 +66,11 @@ public class MapController : MonoBehaviour
     
         @param n Name of the next scene to load
     **/
-    IEnumerator LoadNextSceneAsync(string n) {
+    IEnumerator LoadNextSceneAsync(string n)
+    {
         // Debug.Log("MapController: Fading out Music, SFX and Ambience");
-        screenFader.ToggleFade();
-        StartCoroutine(FadeMixerGroup.StartFade(audioFader, "MusicVolume", audioFadeDuration, 0f)); // Fade out sfx, music, ambience
+        screenFader.FadeBlack(false);
+        StartCoroutine(FadeMixerGroup.StartFade(audioFader, "MusicVolume", audioFadeDuration, 0f)); // FadeBlack out sfx, music, ambience
         // StartCoroutine(FadeMixerGroup.StartFade(audioFader, "SFXVolume", audioFadeDuration, 0f));
         StartCoroutine(FadeMixerGroup.StartFade(audioFader, "AmbienceVolume", audioFadeDuration, 0f));
 
@@ -79,10 +86,10 @@ public class MapController : MonoBehaviour
         }
         if (currentScene != "-")
             SceneManager.UnloadSceneAsync(currentScene);
-        
-        s.enabled = false;
+
+        // s.enabled = false;
         currentScene = n;
-        Debug.Log("Scene Loaded: " +currentScene);
+        Debug.Log("Scene Loaded: " + currentScene);
         m_sceneChangeEvent.Invoke(n);
 
         // Debug.Log("MapController: Fading in Music, SFX and Ambience");
@@ -90,16 +97,19 @@ public class MapController : MonoBehaviour
         // Music fade in will be handled by the BaseSceneManagers for character scenes
         // StartCoroutine(FadeMixerGroup.StartFade(audioFader, "SFXVolume", audioFadeDuration, 1f));
         StartCoroutine(FadeMixerGroup.StartFade(audioFader, "AmbienceVolume", audioFadeDuration, 1f));
-        screenFader.ToggleFade();
+        screenFader.FadeBlack(true);
     }
 
-    public void UpdateDay() {
-        if (!HouseStates[0] && !HouseStates[1] && 
-            !HouseStates[2] && !HouseStates[3]) {
+    public void UpdateDay()
+    {
+        if (!HouseStates[0] && !HouseStates[1] &&
+            !HouseStates[2] && !HouseStates[3])
+        {
             currentStage++;
-            Debug.Log("current stage:" + currentStage);
+            // Debug.Log("current stage:" + currentStage);
 
-            switch(currentStage) {
+            switch (currentStage)
+            {
                 case 1:
                     HouseStates[0] = true;
                     HouseStates[1] = false;
@@ -136,12 +146,12 @@ public class MapController : MonoBehaviour
                     HouseStates[2] = false;
                     HouseStates[3] = false;
                     break;
-        }
+            }
         }
     }
-
-
 }
+
+
 
 
 [System.Serializable]

@@ -1,0 +1,42 @@
+-Start
+Narrator:*As the sun dips below the horizon, Scout sits at their desk in their new cottage. The cool twilight filters in through the open window, accompanied by the soothing sounds of crickets and the faint rustle of leaves.*
+>GoInside
+>changeBackground
+Narrator:*Scout opens their journal, turns to a fresh page, and begins writing about their first day in Bellespring Valley.*
+Journal: Today, I finally took that leap and moved out to the valley. It feels like...
+
+[[...a fresh start I’ve been needing for a while.
+[[...a big change I’m still adjusting to.
+[[...a chance to figure out who I really am.
+>WriteEntry
+Journal: I met Walter today. He’s the fire lookout, and he seems to enjoy his line of work.
+Journal: He mentioned the other residents during our chat. I think he...
+[[...cares deeply about the people here, even if he keeps his distance. >  WalterCares //SET WalterCares
+[[...enjoys his solitude more than he lets on. > WalterSolitude //SET WalterSolitude
+[[...might feel conflicted about how things have changed in the valley. > WalterConflicted //SET WalterConflicted
+>WriteEntry
+Journal: I met Annie today. She lives up on the hill in a cozy cabin and seems to be juggling a lot with her work. 
+[[...needs someone to remind her to take breaks. > AnnieBreaks //Set AnnieBreaks
+[[...misses having closer connections outside her job. > AnnieConnections//Set AnnieConnections
+[[...needs to find more time for herself. > AnnieSelf //Set AnnieSelf
+>WriteEntry
+Journal: I met Tyler today. He lives down by the campsite in a trailer. He’s got a unique way of doing things.
+Journal: Spending time with him, I got the sense that he...
+[[...knows how to make an impression. > TylerCool//SET TylerCool
+[[...tries too hard to seem like he doesn’t care. > TylerTryhard //SET TylerTryhard
+[[...is still figuring out who he wants to be. > TylerFindSelf //SET TylerFindSelf
+>WriteEntry
+Journal: After meeting everyone today, I feel like the valley has so much potential. I hope that I can...
+[[...make meaningful connections with the people here.
+[[...find peace in this place.
+[[...figure out my own path, one step at a time.
+>WriteEntry
+Narrator:*Scout finishes their journal, setting it back in their backpack. They climb into bed, listening to the gentle rustling of the lake breeze as they drift off.*
+//fade to black
+//3 seconds
+//fade back into background of scout interior
+>changeBackground
+>pause3
+>changeBackground
+> FadeToScoutInterior
+Narrator:*Sunlight spills through the windows as Scout wakes up, stretches, and takes in the peaceful morning. They fix a quick breakfast, grab the map Bernice left behind, and step outside into the crisp morning air.*

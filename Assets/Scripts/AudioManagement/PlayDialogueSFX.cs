@@ -22,4 +22,9 @@ public class PlayDialogueSFX : MonoBehaviour
     public void PlayButtonSFX(float v) {
         audioPlayer.PlayOneShot(Resources.Load<AudioClip>("SFX/s_nextbutton"), v);
     }
+
+    public void PlaySFX(AudioClip clip)
+    {
+        audioPlayer.PlayOneShot(clip);
+    }
 }

@@ -1,0 +1,33 @@
+-Start
+[[That decorative plate you have is nice. Is this from the city?
+Annie: Mmhm. A little memento from San Viva. Born and raised there.
+Annie: The rest of my family’s still there, too. Love that place to death.
+Annie: Life in San Viva was... a lot. Non-stop. Always something happening, somewhere to be. I loved it.
+Annie: Felt like I knew everyone on my block. There was always someone to hang with, always something to do.
+Annie: *Her tone softens.* But when my vision started to go, things changed. Fast.
+Annie: Crossing the street felt like playing a game of chance. Crowds? A total nightmare.
+Annie: I couldn’t keep up with the hustle anymore. The city, the place I’d always called home, started to feel... alien.
+Annie: It was overwhelming. I’d always teased my friends who couldn’t keep up with the city life. And then... I *was* them.
+[[So you moved to the valley?
+Annie: Yep. Packed my bags and left.
+Annie: It was a tough call, but I think it was the right one. The quiet, the pace here... It’s what I needed.
+[[Pretty big decision, right? |ToughDecision
+[[Is it harder to make connections out here? |HarderMakingConnections $AnnieConnections$(( You believe Annie misses having connections outside of work. //IF FLAG AnnieConnections, MESSAGE: You believe Annie misses having connections outside of work.
+
+-ToughDecision
+Annie: Oh, for sure. But, like... I gotta admit...
+Annie: I miss it. Living around my friends and family in San Viva.
+|MyHangingOut
+
+-HarderMakingConnections
+Annie: I guess it has, in a way.
+Annie: I thought the valley would be a fresh start. And it was, for a bit.
+Annie: But... it’s not easy, keeping those connections alive. Everyone’s so far away now.
+|MyHangingOut
+
+-MyHangingOut
+Annie: Most of the time, my "hanging out" is all online now. It’s not the same as grabbing coffee or watching a movie together in the same room, y’know?
+Annie: *She sighs.* Funny thing is, my job has me talking to folks over the phone for hours. Then I log off, and I’m right back on my computer doing the same thing with friends.
+Annie: It’s exhausting. Even when you’re just sitting there, staring at a screen.
+Annie: I dunno. In-person connection... it’s been kinda hard for me.
+Annie: *Her voice trails off slightly.* Even though I moved here years ago, it still feels like I’m trying to figure it all out.

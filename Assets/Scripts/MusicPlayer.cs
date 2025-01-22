@@ -5,17 +5,18 @@ using UnityEngine;
 public class MusicPlayer : MonoBehaviour
 {
     //PLACE THE PREFAB OF THE MUSIC PLAYER IN THE FIRST SCENE OF THE GAME
-    private static MusicPlayer instance; //singleton instance of the music player
+    //singleton Instance of the music player
+    public static MusicPlayer Instance { get; private set; }
 
     AudioSource musicPlayer; //persistent musicPlayer
 
     // Start is called before the first frame update
     void Start()
     {
-        //verify that this object is the singleton instance, otherwise delete
-        if (instance == null)
+        //verify that this object is the singleton Instance, otherwise delete
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
         else

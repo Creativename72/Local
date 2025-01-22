@@ -1,0 +1,279 @@
+//Trail Background
+-Start
+Narrator:*The skies are overcast, and a soft drizzle paints the valley in shades of gray. The scent of rain-soaked earth fills the air as Scout heads out along the eastern trails toward the watchtower.*
+Narrator:*Up ahead, a tall figure appears through the mist. Walter, his sturdy frame unmistakable, trudges steadily down the trail, a faint sound of boots crunching on damp gravel.*
+>showCharacters
+Walter: Oh, Scout. Didn’t expect to see you out here in this weather.
+Walter: *He shifts his weight slightly.* I was just heading to the lake. Thought I’d, uh, check up on you.
+[[Check up on me?
+Walter: Yeah. Just making sure you’re settling in alright. With the move and everything.
+[[Thanks, Walter. I appreciate that.
+Narrator:*For a brief moment, a small smile flickers across Walter’s face before he looks up at the sky.*
+Walter:*He nods.* Doesn’t look like this rain’s going to let up anytime soon.
+Walter: Since we’re close to my tower, why don’t we head up there? No sense getting soaked out here.
+[[Sounds good.
+[[Yeah, let’s get outta here!
+Narrator:*Walter turns without another word, setting off back up the trail. Scout follows, their footsteps blending with the gentle rhythm of the rain. Walter glances over his shoulder occasionally, his steady pace slowing just enough to ensure Scout keeps up.*
+>ChangeBackground
+//Watchtower Outside Background
+Narrator:*The rain grows lighter as they reach the base of the watchtower, the structure rising tall against the misty horizon. Walter stops at the bottom of the stairs, turning to face Scout.*
+Walter: Ready to climb?
+[[Are guests allowed in the tower? |GuestsAllowed
+[[Do you climb these steps every day? |ClimbEveryDay
+
+-GuestsAllowed
+Walter: Of course. It’s not just a watchtower—it’s my home. Guests are always welcome.
+|StartClimbing
+
+-ClimbEveryDay
+Walter: Every day. Sometimes more than once.
+Walter: *He taps his chest lightly.* Good for the heart, or so they say.
+|StartClimbing
+
+-StartClimbing
+Narrator:*The wooden stairs creak softly beneath their weight as they climb. The sound of the rain fades, replaced by the occasional whisper of wind winding through the structure.*
+Narrator:*At the top, the tower’s balcony offers a view of the valley shrouded in mist. Walter steps ahead, unlocking the door with a practiced motion. He pushes it open and gestures for Scout to enter.*
+>ChangeBackground //Walter Interior Background
+Walter: Welcome. Make yourself at home.
+Narrator:*Scout is greeted by a cramped but cozy interior. Windows line all sides of the room, letting in the soft light of the rainy day.*
+Narrator:*In one corner of the room sits a simple bed, its plaid blanket neatly folded at the foot. Another corner features a small kitchenette, the open cupboard stocked with a modest collection of cooking tools and supplies.*
+Narrator:*Near the entrance, an electronic keyboard rests against the wall beside a fishing rack displaying an assortment of rods and lures.*
+|LoopQuestions
+
+//IF POSSIBLE, CAN WE MAKE THESE DIALOGUE OPTIONS LOOP? READ COMMENT
+// set these flags to false after each is used
+-LoopQuestions
+$AskedAllQuestions$|EndLoop
+$NotAskedPlayKeyBoard$[[Nice keyboard! Do you play? | PlayKeyboard > PlayKeyboard
+$NotAskedSmallKitchen$[[That’s a small kitchen for a bear your size. | SmallKitchen > SmallKitchen
+$NotAskedLikeFishing$[[That's a lotta rods. You like fishing? | LikeFishing > LikeFishing
+
+-PlayKeyboard
+Walter: *He shrugs.* Barely. I dabble here and there. Not very well.
+Walter: I wanted to take lessons while I was living in the city, but it’s too late now, I suppose.
+Walter: Don’t really have anyone to play with, either. Firewatch dispatch probably doesn’t want me serenading them over the emergency line, anyway.
+|LoopQuestions
+
+-SmallKitchen
+Walter: *He glances at the kitchenette, his tone even.* Gets the job done. I’m not exactly cooking five-course meals here.
+Walter: HQ sends a food drop every month or so. I could get fresher stuff from the city, but it’s not worth the hassle. 
+Walter: I stick to the basics—sandwiches, soups, stews. Nothing too complicated.
+Walter: At my old job, I made huge batches of stuff like this.
+[[Where did you used to work?
+Walter: *He leans back slightly, his voice steady.* I used to work in an elementary school kitchen. Back in the city.
+Walter: I’d get there before sunrise, chop vegetables, set things out... peaceful work. Until the kids showed up.
+Walter: *He shakes his head.* You’d think they’d never eaten before with how they’d tear through the place.
+Walter: It was noisy, chaotic. Half the time, they didn’t even want what I made. I quit the day I found spaghetti in the cash register.
+Walter: *His tone softens.* This job? It’s quiet. Nobody throws soup at me. That’s a win in my book.
+[[Bernice told me you cooked with her. (( Bernice told you Walter occasionally visits her to cook meals together. //FLAG: NONE, MESSAGE: Bernice told you Walter occasionally visits her to cook meals together.
+Walter: That’s true. I used to bring fish down to her cottage sometimes. She’d always have fresh vegetables waiting. No clue where she got them. 
+Walter: *He chuckles faintly.* She didn’t go to the city often, so unless she had a secret garden stashed somewhere, I never figured it out. //SET FLAG TylerVeggiesToBernice
+Walter: She always knew how to make things work out here. Had a knack for it. Maybe it comes with age.
+|LoopQuestions
+
+-LikeFishing
+Walter: *For a moment, there’s a flicker of something close to excitement in his tone.* Yeah, you could say that. It’s one of my favorite things to do out here.
+Walter: *He gestures toward the rack.* Each rod has its own story. That one over there? Caught a pike so big I thought it was gonna pull me in.
+Walter: And that one? Snapped clean in half trying to reel in something bigger. Never did find out what it was.
+Walter: *He turns toward the window, the faintest hint of a smile on his face.* The valley’s good for it. Lakes, rivers, all kinds of fish. It’s peaceful, but it keeps you sharp.
+Walter: You learn patience out there. And sometimes... you just learn to appreciate the quiet.
+[[Sounds nice. | SoundsNice
+$WalterFishForTyler$[[Tyler mentioned you used to bring him fish to grill. (( Tyler said Walter used to fish for him. | FishForHim //IF WalterFishForTyler, MESSAGE: Tyler said Walter used to fish for him.
+-SoundsNice
+Walter: Yes. It really is.
+|LoopQuestions
+-FishForHim
+Walter: *He raises an eyebrow, clearly surprised.* He actually told you that, huh?
+Walter: *He glances at the rods, his tone reflective.* Yeah, I used to bring him fish sometimes. He wasn’t much of a fisherman himself, and I figured... why not share?
+Walter: *His voice softens.* He’d throw them on the grill, and we’d sit out by his trailer, eating and talking about... whatever came to mind. I enjoyed those moments with him.
+Walter: *His gaze drifts to the window.* Haven’t done that in a long time, though. Things changed, I guess.
+Narrator: *Walter shifts his weight slightly, clearing his throat.*
+Walter: Anyway, enough about that.
+>SetFlag{WalterTalkedAboutTylerFishing, true}  //SET FLAG WalterTalkedAboutTylerFishing
+|LoopQuestions
+
+-EndLoop
+Narrator: *Walter pauses, his gaze drifting around the interior space. He takes a moment to absorb his surroundings, listening to the soft patter of the rain against the windows. He stares out the window as he speaks.*
+Walter: You know, I don’t often get the opportunity to talk to people in person. Or at all, really, in a casual way.
+Walter: My job, my position—it’s isolating. I spend most of my days alone up here, with only the occasional radio check-in for company.
+
+$WalterCares$[[You care for the others in the valley, don’t you? (( You believe Walter cares for others, even if he keeps his distance. | WalterCares //FLAG: WalterCares, MESSAGE: You believe Walter cares for others, even if he keeps his distance.
+$WalterSolitude$[[You like the quiet, though, right? ((  You believe Walter prefers solitude. | Solitude //FLAG: WalterSolitude, MESSAGE: You believe Walter prefers solitude.
+[[ Does being on your own like this ever... get to you? | GetToYou
+
+-WalterCares
+Walter: *He turns to Scout, his expression unreadable.* I do. They might not know it, but I keep an eye on them when I can.
+Walter: Just... sometimes it feels easier to watch from a distance than to step in.
+|WalterGivesContext
+
+-Solitude
+Walter: *He nods slowly.* I do. The quiet clears my head. Gives me space to think.
+Walter: *He exhales deeply.* But lately, I wonder if I’m using solitude as an excuse. It’s easier to say I prefer it than to face what I’ve been avoiding.
+|WalterGivesContext
+
+-GetToYou
+Walter: *He shrugs slightly.* It’s not the worst thing in the world. Nobody’s arguing with me up here.
+Walter: But it’s not perfect. Talking to yourself only gets you so far, and the radio doesn’t talk back.
+Walter: Some days, though... it’d be nice if it did.
+|WalterGivesContext
+
+-WalterGivesContext
+Walter: *He sighs.* I suppose you don’t have much context on what happened to our friendship.
+$AnnieFullStory$[[Annie told me. But I want your side. (( Annie told you what happened. | AnnieFullStory //IF FLAG: AnnieFullStory, MESSAGE: Annie told you what happened.
+$TylerStory$[[Tyler said I should ask you what happened. (( Tyler said you should ask someone else. | TylerStory //IF FLAG: TylerStory, MESSAGE: Tyler said you should ask someone else.
+[[What happened? || WhatHappend
+
+-AnnieFullStory
+Narrator: *Walter’s expression hardens slightly, and he looks down at the floor.*
+Walter: So, Annie gave you her take, huh?
+Walter: Look, I get it. Annie’s heart was in the right place, but driving a truck into a water silo? That’s not something you just... do.
+Walter: *He exhales sharply, running a hand through his fur.* Annie’s legally blind, Scout. She’s not even allowed to operate a vehicle anymore, and for good reason. 
+Walter: *His voice softens slightly, but there’s still a hint of frustration.* I get it. She wanted to help. But sometimes trying to fix things without thinking makes everything worse.
+|NewChoices
+
+-TylerStory
+Walter: Oh, so Tyler passed the buck to me, huh? Typical.
+Walter: *He sighs heavily, running a hand through his fur.* You probably noticed how he brushes things off like they’re no big deal. But let me tell you, Scout. It was a big deal.
+Narrator:*He pauses for a moment, before turning to Scout.*
+Walter: Tyler was setting up a water pump by the river. I was supervising. Annie was keeping us company.
+Walter: *He runs a hand through his fur.* I got a dispatch call on the walkie. Had to head back to the tower. I told Tyler to wait before starting the pump and asked Annie to... keep an eye on him. 
+Walter: That was dumb of me. But I figured it would be fine.
+Narrator:*He pauses, his tone sharpening.*
+Walter: Of course, Tyler didn’t listen. I heard the explosion halfway across the valley. Smoke was already rising by the time I got back.
+Walter: *He clenches his jaw.* And Annie? She thought driving Tyler’s truck into the water silo would stop the fire. She meant well, but it was reckless. Too reckless.
+Narrator:*Walter grips the edge of the window frame, staring out at the rain-soaked valley.*
+Walter: I tore into them both. Tyler, for being a reckless idiot. Annie, for thinking she could handle something so dangerous. I was furious.
+Walter: *His voice drops.* It’s my job to keep this valley—and the people in it—safe. And that day, I felt like I’d failed all of us.
+Narrator:*He exhales sharply, letting the tension in his shoulders ease slightly.*
+Walter: Haven’t spoken to either of them much since. Too many things left unsaid. 
+> SetFlag{WalterFullStory,true} //SET FLAG WalterFullStory
+|NewChoices
+
+-WhatHappend
+Narrator:*Walter lets out a long breath, his gaze lingering on the rain-speckled window. He folds his arms, his shoulders tense as he speaks.*
+Walter: Annie and Tyler... we used to be good friends, you know. I’d hang out with them almost every day when I was off duty.
+Walter: Now, it’s been months since we’ve talked.
+Narrator:*He pauses for a moment, before turning to Scout.*
+Walter: Tyler was setting up a water pump by the river. I was supervising. Annie was keeping us company.
+Walter: *He runs a hand through his fur.* I got a dispatch call on the walkie. Had to head back to the tower. I told Tyler to wait before starting the pump and asked Annie to... keep an eye on him. 
+Walter: That was dumb of me. But I figured it would be fine.
+Narrator:*He pauses, his tone sharpening.*
+Walter: Of course, Tyler didn’t listen. I heard the explosion halfway across the valley. Smoke was already rising by the time I got back.
+Walter: *He clenches his jaw.* And Annie? She thought driving Tyler’s truck into the water silo would stop the fire. She meant well, but it was reckless. Too reckless.
+Narrator:*Walter grips the edge of the window frame, staring out at the rain-soaked valley.*
+Walter: I tore into them both. Tyler, for being a reckless idiot. Annie, for thinking she could handle something so dangerous. I was furious.
+Walter: *His voice drops.* It’s my job to keep this valley—and the people in it—safe. And that day, I felt like I’d failed all of us.
+Narrator:*He exhales sharply, letting the tension in his shoulders ease slightly.*
+Walter: Haven’t spoken to either of them much since. Too many things left unsaid. 
+> SetFlag{WalterFullStory,true} //SET FLAG WalterFullStory
+|NewChoices
+
+-NewChoices
+$WalterCares$[[You care about them, though. Even now, it’s obvious. (( You think Walter still cares. | WalterCaresPart2 //IF FLAG: WalterCares, MESSAGE: You think Walter still cares.
+$WalterConflicted$[[You’ve been carrying this alone. Maybe talking to them would help. (( You think Walter still feels conflicted about what happened. | WalterConflicted // IF FLAG: WalterConflicted, MESSAGE: You think Walter still feels conflicted about what happened.
+[[ It’s not too late to make things right. | NotTooLate
+$WalterLakesidePhoto$[[Do you still have Annie’s lakeside photo? (( Annie said he likes the photo of the three friends by the lake. | WalterLakesidePhoto //IF FLAG: WalterLakesidePhoto, MESSAGE: Annie said he likes the photo of the three friends by the lake.
+
+
+-WalterCaresPart2
+Walter: *He glances at Scout, his expression unreadable.* Yeah. That’s the problem, isn’t it?
+Walter: You try to protect people, and sometimes... you just end up pushing them away.
+Walter: I... I do care. I’ll make it right. I just... don’t know where to start.
+|WalterSlumps
+
+-WalterConflicted
+Walter: Maybe. But saying the words... it won’t undo what happened.
+Walter: I wouldn’t know what to say. Or what they’d want to hear from me.
+|WalterSlumps
+
+-NotTooLate
+Walter: *He huffs softly, a faint, humorless smile tugging at his lips.* Does it? Sometimes I wonder if they’ve already moved on, and I’m just sitting up here clinging to nothing.
+Walter: I don’t even know where to start. What if talking to them just stirs it all back up again?
+Walter: Some things feel easier to leave buried. But maybe that’s just me making excuses.
+|WalterSlumps
+
+-WalterLakesidePhoto
+Walter: *He stiffens slightly, glancing at Scout.* Huh. How’d you know about that?
+[[Annie mentioned it. She said you really liked it.
+Walter: Didn’t think she’d even remember that photo, let alone talk about it. Yeah, I still have it. Somewhere in the tower. Hold on.
+Narrator:*Walter strides over to a small cabinet near the bed, pulling open the drawers. He digs through a neat but tightly packed collection of papers, notebooks, and envelopes. After a moment, he pulls out the slightly worn photograph.*
+Narrator:*The corners of his mouth tug into a faint smile.*
+Walter: Here it is.
+Walter: We used to spend a lot of time like this. So simple.
+Walter: Thanks for asking about it. Sometimes it’s nice to pull this stuff out, you know? It’s good to remember, even if things aren’t the same anymore. 
+>SetFlag{WalterTalkedAboutLakesidePhoto, true} //SET FLAG WalterTalkedAboutLakesidePhoto
+|WalterSlumps
+
+-WalterSlumps
+Narrator:*Walter sighs, his shoulders slumping slightly. He turns back to Scout, his expression somewhere between thoughtful and distant.*
+Walter: Thanks for listening. Again.
+Walter: Can’t exactly unload all this on the dispatcher over the radio. Haha.
+Narrator:*He falls silent, gazing out over the rain-soaked valley.*
+Walter: Let’s set this aside for now.
+Walter: *He takes a deep breath.* You know, it’s not a bad day for fishing.
+Walter: Rain brings fish to the surface, so more bites. If you’re up for it, we can give it a try.
+Walter: The base of the tower’s a nice spot. Blocks most of the rain. Your call.
+[[Yeah, let’s fish! | LetsFish //SET FLAG WalterFishing
+[[I’ve never fished before, but I can try! | CanTry //SET FLAG WalterFishing
+[[Maybe not today, with this weather. | NotToday
+
+
+-LetsFish
+Walter: *He gives a small nod, turning toward the rack of fishing rods.* Good choice. Let’s see if the fish are biting today.
+Narrator:*Walter picks out two rods, along with a tackle box and a set of lures. He hands one rod to Scout and gestures toward the stairs.*
+Walter: Come. Follow me down the steps.
+|Fishing
+
+-CanTry
+Walter: *He chuckles softly.* It’s not too complicated. I’ll teach you the basics.
+Walter: *He grabs the fishing gear.* Just be patient, and we’ll see if we can catch anything today.
+Narrator:*Walter hands Scout a rod and leads them down the winding stairs.*
+|Fishing
+
+-NotToday
+Walter: *He nods in understanding.* That’s alright. Maybe another day, when the sun comes out.
+Narrator:*Walter pauses by the window, watching the rain fall for a moment before turning back to Scout.*
+Walter: Well, I won’t keep you here long. I’m sure you’ve still got plenty to do today.
+Walter: If you ever change your mind, you know where to find me.
+Narrator:*Walter walks Scout to the door, opening it for them. Scout steps out into the rain, heading down the stairs and back into the valley.*
+|End
+
+-Fishing
+>ChangeBackground
+>hideCharactersFade
+Narrator:*Walter leads Scout down the stairs, careful to glance back occasionally to ensure they don’t slip in the rain. As they reach the base of the tower, he gestures to a sheltered spot under the structure.*
+>ChangeBackground
+Walter: This spot should do just fine. Keeps most of the rain off.
+Walter: *He hands Scout a rod.* Here. Take this. It looks like your size.
+Walter: Just hold the rod like this…
+Walter: ...and cast.
+>FishingCast //Wait for player to cast
+Walter: And now, we wait.
+>pause3
+Walter: Back in the city, I tried to put myself out there a lot. Community events, meetups, et cetera. 
+>pause3
+Walter: It wasn’t easy, especially for someone like me, but I learned something important: not every cast gets a bite.
+>pause3
+Walter: You can’t always make a new friend or form a connection every time you try.
+>pause3
+Walter: But you’ll never know unless you cast your line. The important thing is to keep trying, even when it feels... pointless.
+>pause3
+Walter: That’s what I always told myself. Lately, though... maybe I’ve been neglecting that advice. Haven’t really talked to anyone new in a long time.
+//Pause for 3 seconds, no dialogue
+//Bite happens, bobber goes under water, player needs to click
+//fish up some sort of fish, probably a different type of fish than the one required tomorrow, prolly bass
+//Once fish is fished up, go back to normal dialogue screen with outside background
+//OR we show a screen with the fish on it, along with the name of the fish (sort of like pretending its a real fishing minigame from another game
+>FishingBite
+
+Walter: Not bad at all. Moments like these make the waiting worth it, don’t you think?
+Narrator:*A crackle comes from Walter’s walkie-talkie, pulling his attention away. He listens intently to the garbled message before sighing.*
+Walter: Duty calls. Storm’s getting closer. I need to check the readings.
+Narrator:*He picks up the bucket with the fish inside and turns back to Scout.*
+Walter: I’ll take this with me. Maybe I’ll cook it up later.
+Narrator:*Walter glances at Scout, his tone softer.*
+Walter: Thanks for spending time with me today. It’s been... nice. We should do this again sometime.
+Narrator:*He climbs back up the tower steps, giving Scout a small wave before disappearing inside. Scout is left standing at the base, the rain easing as they head back into the valley.*
+|End
+
+-End

@@ -1,0 +1,136 @@
+-Start
+Narrator:*A dirt path leads up to the trailer, branching off from the main road and winding through the trees.*
+Narrator:*A beat-up trailer sits nestled among the foliage, its faded paint marked with graffiti and scratches from years of wear. The yard around it is littered with old tools, scrap metal, and half-finished projects.*
+Narrator:*Clearly, there’s been no attempt to hide this mess.*
+[[Knock on the door.
+Narrator:*Something stirs from within the trailer. The sound of something being knocked over. A curse word.*
+Narrator:*Whoever’s on the other side quickly scrambles to the door, opening it just a crack. It’s hard to make out who’s inside.*
+Tyler: ...Who’re you supposed ‘ta be? // Tyler's name is ???
+[[I’m Scout.
+Narrator:*The voice grumbles in response, the eyes narrowing slightly.*
+Tyler: What, like a junior scout or somethin’? You tryin’ to sell me cookies?
+[[No… Scout is my name. I just moved into the valley. | SizingScout
+[[Yep! Got twin mint and shortstacks, take your pick. | TylerPranked > TylerPranked //SET FLAG: TylerPranked
+
+-TylerPranked
+Narrator:*The eyes glance over Scout, then flick toward the empty space behind them.*
+Tyler: I don’t see no cookie wagon behind you...
+Tyler: You tryin’ to pull a fast one on me?
+[[Kidding. I just moved into the valley.
+Narrator:*The voice chuckles, a low, rough sound.*
+Tyler: Yeah, sounds ‘bout right.
+|SizingScout
+
+-SizingScout
+Narrator:*There’s a pause, like he’s sizing Scout up.*
+>ShowTyler
+Narrator:*The door swings open fully with a groan, revealing a badger still in his pajamas. His fur is ruffled, like he just rolled out of bed. He rubs his eyes and lets out a big yawn.*
+Badger: Well, Scout, you picked a heckuva time to show up uninvited. *He yawns.* What do you want?
+[[Just trying to make some friends around the valley.
+Narrator:*The badger blinks at Scout for a moment, then shrugs lazily.*
+>SetTylerName
+Tyler: I’m Tyler. Just so ya know.
+[[Nice to meet you, Tyler!
+Tyler: Cool.
+Tyler: You’re startin’ with me, huh? Bold move.
+$MetWalter$[[I’ve met Walter already. (( You’ve met Walter. | MetWalter //IF FLAG MetWalter, MESSAGE:You’ve met Walter.
+$MetAnnie$[[Actually, I’ve met Annie. (( You’ve met Annie. | MetAnnie //IF FLAG:MetAnnie, MESSAGE: You’ve met Annie.
+[[Yep, starting with you. | StartingWithYou
+
+
+-MetWalter
+Tyler: You met ol’ Walter already?
+Narrator:*Tyler snorts, shaking his head as his grin turns sour.*
+Tyler: Bet he gave you the whole safety lecture, huh? "Stick to the trails, don’t run with scissors," blah blah blah. Like he’s the boss of the whole valley or somethin’.
+Narrator:*He folds his arms, his gaze drifting toward the ground as his tone sharpens.*
+Tyler: We don’t talk much these days. He’s up in his tower playin’ the hero, and I’m down here mindin’ my own business.
+Tyler: He’s always gotta be right, y’know? Like his way’s the only way. Gets old real fast.
+Narrator:*After a moment, Tyler exhales sharply, brushing the subject off with a wave of his hand.*
+Tyler: Anyway, he’s alright, I guess. Just... yeah. Don’t worry about it.
+|WhatNext
+
+-MetAnnie
+Tyler: Oh, you’ve met Annie, huh?
+Narrator:*He lets out a quiet huff.*
+Tyler: She’s... yeah, she’s always busy with her tech stuff now. Guess that’s her thing. Keeps her too busy to bother with much else.
+Narrator:*He pauses, his jaw tightening for a moment before he speaks again, his tone sharpening.*
+Tyler: We don’t exactly... see eye to eye anymore. Long story short, she thought she was helpin’ me out once, but let’s just say it didn’t exactly turn out that way.
+Tyler: She’s got her tech stuff, I’ve got my... whatever this is. Guess we’re just too different, y’know?
+Narrator:*Tyler looks away, kicking at the dirt with his boot.*
+Tyler: Anyway, she’s probably fine. Just do me a favor and don’t bring me up when you see her, yeah?
+|WhatNext
+
+-StartingWithYou
+Tyler: *Tyler smirks.* Guess that makes me your introduction to the valley. Hate to break it to you, but it’s all downhill from here.
+Narrator:*He chuckles, shaking his head and leaning against the doorframe.*
+Tyler: Nah, but seriously, it’s not a bad place. Good air. Good dirt. Top-notch dirt, even.
+Tyler: M’ sure you’ve heard of the others already. Annie’s up on her molehill, surrounded by her computers, probably talking to satellites or something.
+Tyler: And Walter’s up in his tower. Mr. Safety Bear, keeping us all in line.
+Narrator:*He shrugs lazily, gesturing vaguely to the yard around him.*
+Tyler: And I’m just... here. Holdin’ down fort as best I can. 
+Tyler: But hey, you picked me first. What does that say about *your* judgment, hmm?
+Narrator:*He gives Scout a lazy grin before pushing off the doorframe.*
+Tyler: Anyway, you’ll meet ‘em soon enough. I’m just glad I get to set the bar nice and low for ya. Makes everyone else look real impressive.
+|WhatNext
+
+-WhatNext
+Narrator:*Tyler pauses for just a moment.*
+Tyler: So... what’s next? You taking a grand tour of the whole valley, or am I the main show today?
+[[You live in a trailer? | LiveInTrailer
+[[Sure is a lotta stuff everywhere here. | LotsOfStuff
+
+-LiveInTrailer
+Tyler: *He cracks a grin.* You bet I do. It’s my ticket to freedom. My mobile fortress.
+Tyler: I mean, sure, it don’t exactly move anymore, but who needs wheels when you’ve got a view like this? 
+Tyler: *He gestures vaguely to the cluttered yard.* Home sweet home.
+|PerkUp
+
+-LotsOfStuff
+Tyler: Yep, and it’s my stuff, so no scroungin’.
+Tyler: *He chuckles, pointing at Scout.* I’m keepin’ my eye on you.
+|PerkUp
+
+-PerkUp
+Tyler: *He suddenly perks up, hopping down from the trailer’s steps.* Hey, why don’t I show ya around? Might as well give you the full Tyler experience.
+Narrator:*Tyler gestures for Scout to follow him, leading them through the yard.*
+Tyler: *He puts his hands on his hips, surveying the cluttered yard like a proud homeowner.* Well, this here’s the front yard. Prime real estate for, uh... well, whatever I’m workin’ on at the moment.
+Tyler: Most people got a living room. I got all *this*. Beautiful, ain’t it?
+Tyler: Yeah, it’s a bit of a junkyard, but hey, it’s got... personality. Least I don’t have to deal with no nosy neighbors complainin’ about my... decor choices.
+Narrator:*He saunters over to a dented water reservoir, patting the side like a loyal companion.*
+Tyler: And this bad boy? That’s my water system. Good for showers, washing, whatever. Pump’s been busted a while, leaks all over, but, y’know, it mostly works. Kinda.
+Narrator:*He meanders over to a beat-up red truck, running his hand along the side like it’s a family heirloom.*
+Tyler: And this beauty right here? That’s my truck.
+Tyler: I take her into the city when I need... well, when she’s feelin’ up for it.
+Tyler: *He flashes a grin.* Any questions so far?
+[[Is the hood supposed to be missing? | HoodMissing
+[[What do you do for a living? | Living
+[[Ever thought about cleaning up? | CleaningUp > TylerMessy //SET FLAG: TylerMessy
+
+-HoodMissing
+Tyler: *He shrugs.* Yeah, well, I needed the scrap metal to patch up the water reservoir. 
+Tyler: Plus, it adds character, don’t ya think?
+|MostlyJustMe
+
+-Living
+Tyler: I meant questions ‘bout my *space*, man.
+Tyler: *He shrugs.* I’m just doing my thing, y’know? No boss, no deadlines, no rules. Stuff breaks, I fix it. Eventually. Probably... Simple as that.
+|MostlyJustMe
+
+-CleaningUp
+Tyler: *He raises an eyebrow.* What‘chu try’na say ‘bout my home, huh?
+Tyler: Yeah, it’s a mess, but it’s my mess. Don’t like it? Well, you’re welcome to pitch in and help clean.
+|MostlyJustMe
+
+-MostlyJustMe
+Tyler: Yeeeep, it’s mostly just me out here. I’m a bit of a lone wolf. Rawr.
+Tyler: So that’s the grand tour. Not bad, right? Rustic charm, plenty o’ personality, and a whole lotta... potential. 
+Narrator:*Tyler glances toward the trees, scratching his head thoughtfully, before checking his wrist, which doesn’t have a watch on it.*
+Tyler: Anyways, phew, wow, it’s like, what, 2 o’ clock already? I gotta go get me some breakfast.
+Tyler: Anyway, this was... uh, cool. Drop by again, yeah? Bring some... I dunno, snacks or something. I’ll be around.
+Tyler: I’ll try to look a little more... y’know, presentable.
+Narrator:*Tyler winks as he climbs the trailer steps, pausing for a moment before glancing back over his shoulder.*
+Tyler: Or not. Guess you’ll just have to wait and see.
+Narrator:*With that, he slams the door shut, leaving Scout standing outside in the quiet clearing.*
+>HideTyler
+Narrator:*Scout takes one last look at the cluttered yard before turning back toward the dirt path, heading onto the main road to continue exploring the valley.* 
+>MetTyler //SET FLAG: MetTyler

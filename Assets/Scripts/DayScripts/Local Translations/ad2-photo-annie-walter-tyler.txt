@@ -1,0 +1,26 @@
+-Start
+[[This lake photo… Is that you with Walter and Tyler?
+Annie: Huh? Oh yeah, that’s us. Wow, I forgot that was still up.
+Annie: That was back when we used to hang out all the time. Weekends were usually spent down by the lake.
+Annie: Tyler would bring his guitar, Walter would grumble about the noise, and I’d... well, I’d just sit back and enjoy the company.
+[[Sounds like good memories.
+Annie: *She nods, smiling faintly.* Yeah. It was simple, you know? No screens, no work calls. Just us and the water.
+Annie: Bernice took the photo. She always had her camera on her. 
+Annie: Walter loves this photo. He must have a copy of it somewhere at his place. 
+>SetFlag{WalterLakesidePhoto, true} //SET FLAG WalterLakesidePhoto
+[[He still cares, you know. About you and Tyler. || WalterCares $WalterCares$(( You believe Walter still cares about the others.//IF FLAG: WalterCares, MESSAGE: *You believe Walter still cares about the others.*
+[[Do you ever think about reaching out to them again? | ReachingOutAgain
+
+-WalterCares
+Annie: *She glances at Scout, her smile softening.* Yeah, I guess. Maybe I just don’t know how to bridge that gap anymore.
+|NeverTooLate
+
+-ReachingOutAgain
+Annie: *She sighs.* Sometimes. But I’m not sure where I’d even start. We all just... drifted apart after everything.
+|NeverTooLate
+
+-NeverTooLate
+[[It’s never too late to try.
+Annie: Maybe. I guess part of me misses that. Being able to just... exist with them, no expectations or pressure.
+Annie: But the past feels so far away now.
+Narrator:*Annie brushes the edge of the photo gently, her fingers lingering before she pulls her hand away.*

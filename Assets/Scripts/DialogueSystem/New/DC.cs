@@ -1,17 +1,18 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using static DialogueTree.OptionalLine;
+using static UnityEditor.Progress;
 
 /// <summary>
 /// Controls the dialogue system as a whole
 /// </summary>
 public class DC : MonoBehaviour
 {
-
     [SerializeField] private DialogueBox dialogueBox;
     [SerializeField] private CharacterController characterController;
-
 
     private const string INVALID_STATE = "Dialogue controller in invalid state";
 
@@ -19,33 +20,107 @@ public class DC : MonoBehaviour
     // characters that have been loaded into this dialogue system
     private Dictionary<string, DialogueCharacter> characters;
     private bool dialogueEnabled;
+    private bool printDialogue;
 
     private void Awake()
     {
         tree = new();
         characters = new();
         dialogueEnabled = true;
+        printDialogue = false;
     }
     public DialogueCharacter CreateCharacter(DialogueCharacter character)
     {
         DialogueCharacter created = characterController.CreateCharacter(character);
-        characters.Add(character.GetIdentifier(), character);
+        characters.Add(character.GetIdentifier(), created);
         return created;
+    }
+    public void AddGameFlags()
+    {
+        GameFlags.ForEachFlag<bool>((name, val) =>
+        {
+            this.SetVariable(name, () => GameFlags.GetFlag<bool>(name));
+        });
+    }
+
+    public void AddDefaultFunctions(BackgroundHandler backgroundHandler = null, AmbienceInScene ambience = null)
+    {
+        if (ambience != null)
+        {
+            this.AddFunction("ChangeAmbience", () => ambience.ChangeAmbience());
+            this.AddFunction("changeAmbience", () => ambience.ChangeAmbience());
+        }
+        if (backgroundHandler != null)
+        {
+            this.AddFunction("changeBackground", () => backgroundHandler.changeBackground());
+            this.AddFunction("ChangeBackground", () => backgroundHandler.changeBackground());
+        }
+        
+        this.AddFunction("pause1", () =>
+        {
+            Pause(1);
+        });
+        this.AddFunction("pause2", () =>
+        {
+            Pause(2);
+        });
+        this.AddFunction("pause3", () =>
+        {
+            Pause(3);
+        });
+        this.AddFunction("SetFlag", (arguments) =>
+        {
+            if (arguments.Length != 2)
+            {
+                throw new DialogueControllerException("SetFlag() must have 2 arguments.");
+            }
+            string flagName = arguments[0];
+            bool parsed = bool.TryParse(arguments[1], out bool value);
+            if (!parsed)
+            {
+                throw new DialogueControllerException("SetFlag() did not parse bool correctly.");
+            }
+            Debug.Log($"Setting flag {flagName} to {value}");
+            GameFlags.SetFlag(flagName, value);
+        });
+        this.AddFunction("showCharacters", () => characters.Values.ToList().ForEach(c => c.SetVisible(true)));
+        this.AddFunction("showCharactersFade", () => StartCoroutine(Wait(0.75f, () => characters.Values.ToList().ForEach(c => c.SetVisible(true)))));
+        this.AddFunction("hideCharacters", () => characters.Values.ToList().ForEach(c => c.SetVisible(false)));
+        this.AddFunction("hideCharactersFade", () => StartCoroutine(Wait(0.75f, () => characters.Values.ToList().ForEach(c => c.SetVisible(false)))));
+    }
+    public void Pause(float seconds)
+    {
+        this.Enable(false);
+        StartCoroutine(Wait(seconds, () => this.Enable(true)));
+    }
+
+    private IEnumerator Wait(float seconds, Action a)
+    {
+        yield return new WaitForSeconds(seconds);
+        a.Invoke();
     }
 
     /// <summary>
     /// Adds dialogue to the controller
     /// </summary>
     /// <param name="text">text asset to be added</param>
-    public void AddDialogue(TextAsset text)
+    public void AddDialogue(TextAsset text, bool returnToExisting = true)
     {
-        tree.Parse(text, true);
+        tree.Parse(text, returnToExisting);
     }
     public void SetVariable(string varName, DialogueTree.Variable variable)
     {
         tree.SetVariable(varName, variable);
     }
-    public void SetFunction(string func, Action action)
+    public void SetVariable(string varName, Func<bool> func)
+    {
+        tree.SetVariable(varName, func);
+    }
+    public void AddFunction(string func, Action action)
+    {
+        tree.SetFunction(func, action);
+    }
+    public void AddFunction(string func, Action<string[]> action)
     {
         tree.SetFunction(func, action);
     }
@@ -67,9 +142,31 @@ public class DC : MonoBehaviour
     /// Adds an function to be invoked upon dialogue ending
     /// </summary>
     /// <param name="action">function invoked</param>
-    public void OnEndDialogue(Action action)
+    public void AddEndFunction(Action action)
     {
         tree.AddCloseListener(action);
+    }
+    public void ClearEndFunctions()
+    {
+        tree.ClearCloseListeners();
+    }
+
+    public void ReparseOnNodeChange(bool value)
+    {
+        this.tree.ReparseOnNodeChange(value);
+    }
+    public void ClearDialogue()
+    {
+        this.tree.ClearNodes();
+        this.dialogueBox.SetDialogue("", "", false);
+    }
+    public bool IsDone()
+    {
+        return this.tree.IsDone();
+    }
+    public void EnablePrint(bool enable)
+    {
+        this.printDialogue = enable;
     }
 
     /// <summary>
@@ -82,14 +179,26 @@ public class DC : MonoBehaviour
             throw new DialogueControllerException("Dialogue controller has no input");
 
         SetDialogue();
+    }
 
+    private void Start()
+    {
         // called on an option click
         dialogueBox.AddChoiceListener(selected =>
         {
             // only be able to select choices if dialogue is enabled
             if (dialogueEnabled)
             {
-                tree.AdvanceLine(selected);
+                int index = 0;
+                DialogueTree.Line line = tree.GetLine();
+
+                if (line is DialogueTree.OptionalLine line1)
+                {
+                    int c = line1.GetOptions().Count();
+                    index = GetOptionalIndex(selected, c);
+                }
+
+                tree.AdvanceLine(index);
                 SetDialogue();
             }
         });
@@ -99,8 +208,8 @@ public class DC : MonoBehaviour
     void Update()
     {
         // called on a mouse click
-        // only be able to advance if dialogue is enabled
-        if (Input.GetMouseButtonDown(0) && this.dialogueEnabled)
+        // only be able to advance if dialogue is enabled, and game is not paused
+        if (Input.GetMouseButtonDown(0) && this.dialogueEnabled && !GameManager.Instance.Paused())
         {
             if (tree.GetLine() is DialogueTree.DialogueLine dLine)
             {
@@ -152,9 +261,10 @@ public class DC : MonoBehaviour
             List<Option> options = oline.GetOptions();
             for (int i = 0; i < dialogueBox.NumChoices(); i++)
             {
-                if (i < options.Count)
+                int optionsIndex = GetOptionalIndex(i, options.Count());
+                if (optionsIndex >= 0)
                 {
-                    Option o = options[i];
+                    Option o = options[optionsIndex];
                     dialogueBox.SetChoice(i, o.option, o.tooltip);
                 }
                 else
@@ -164,7 +274,13 @@ public class DC : MonoBehaviour
             }
         }
 
-        PrintDialogue();
+        if (printDialogue)
+            PrintDialogue();
+    }
+
+    public int GetOptionalIndex(int choiceIndex, int optionsCount)
+    {
+        return optionsCount - 1 - choiceIndex;
     }
 
     private void PrintDialogue()
@@ -181,6 +297,7 @@ public class DC : MonoBehaviour
         }
     }
 
+
     public class DialogueControllerException : Exception
     {
         public DialogueControllerException(string message) : base($"{INVALID_STATE}. {message}")
@@ -189,4 +306,3 @@ public class DC : MonoBehaviour
         }
     }
 }
-

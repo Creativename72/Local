@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,11 +12,17 @@ public class BackgroundFaderHelper : MonoBehaviour
     [SerializeField] Animator anim;
 
 
-    public void Fade() {
-        fadeBlack = !fadeBlack;
-        if(anim != null)
+    public void FadeBlack(bool value) {
+        fadeBlack = value;
+        if (anim != null)
         {
-            anim.SetBool("FadeBlack", fadeBlack);
+            anim.SetBool("FadeBlack", value);
         }
+    }
+
+    internal void SetVisible()
+    {
+        anim.SetTrigger("SetVisible");
+        anim.ResetTrigger("SetVisible");
     }
 }

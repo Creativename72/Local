@@ -22,17 +22,17 @@ public class FadeScript : MonoBehaviour
     void Start()
     {
         if (fadeOnStart) {
-            ToggleFade();
+            FadeBlack(true);
         }
     }
 
     //toggles the fade state of the animator
-    public void ToggleFade()
+    public void FadeBlack(bool value)
     {
-        fadeBlack = !fadeBlack;
+        fadeBlack = value;
         if(fadeAnim != null)
         {
-            fadeAnim.SetBool("FadeBlack", fadeBlack);
+            fadeAnim.SetBool("FadeBlack", value);
         }
     }
 

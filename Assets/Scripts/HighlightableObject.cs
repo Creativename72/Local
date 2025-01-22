@@ -1,15 +1,17 @@
 using System;
 using UnityEngine;
 
-//[RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(Collider2D))]
 public class HighlightableObject : MonoBehaviour
 {
+    [Header("Customization")]
     [SerializeField] public SpriteRenderer sprite;
     [SerializeField] private Color defaultColor = Color.white;
     [SerializeField] private Color highlightColor = Color.gray;
-    private Action onClick;
-    public bool enableHighlight;
-    public bool enableClick;
+    protected Action onClick;
+    [Header("Click / Highlight")]
+    [SerializeField] protected bool enableHighlight = true;
+    [SerializeField] protected bool enableClick = true;
 
     public void OnClick(Action a)
     {
@@ -18,7 +20,7 @@ public class HighlightableObject : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        Debug.Log("Mouse enter");
+        // Debug.Log("Mouse enter");
         if (enableHighlight)
             sprite.color = highlightColor;
     }
@@ -32,11 +34,9 @@ public class HighlightableObject : MonoBehaviour
     void Start()
     {
         sprite.color = defaultColor;
-        enableHighlight = true;
-        enableClick = true;
     }
 
-    private void OnMouseDown()
+    public virtual void OnMouseDown()
     {
         if (enableClick && onClick != null)
             onClick.Invoke();

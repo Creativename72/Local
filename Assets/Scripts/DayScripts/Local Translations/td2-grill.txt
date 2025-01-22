@@ -1,0 +1,36 @@
+-Start
+[[Nice grill. Do you still use it?
+Tyler: *He glances at the grill, then shrugs.* Nah, haven’t fired it up in a while.
+Tyler: Used to love grillin’ fish, but I’m not much of a fish guy anymore.
+Tyler: Tried veggies, but man, it just ain’t the same.
+[[So where’d you get the fish? | WhereGetFish >> SetFlag{WalterFishForTyler, true} //SET FLAG WalterFishForTyler
+[[What are you eating nowadays? | WhatEating
+
+-WhereGetFish
+Tyler: Psh. Walter.
+Tyler: *His expression hardens slightly.* Look, Walter’s good at what he does ‘n all, but I don’t need his help. I can figure stuff out on my own. 
+|MaybeShouldGetRid
+
+-WhatEating
+Tyler: Simple stuff.  Canned, frozen foods, whatever I can get at the general store a few miles up the road.
+Tyler: And the veggies I’m growin’, if I’m feeling like it.
+|MaybeShouldGetRid
+
+-MaybeShouldGetRid
+Tyler: *He crosses his arms, looking back at the grill.* Whatever. Maybe I should just get rid of this thing.
+[[Keep it. You might use it in the future. || TylerKeepGrill >> SetFlag{TylerKeepGrill, true} // SET FLAG TylerKeepGrill
+[[Yeah, toss. | TylerTossGrill
+
+-TylerKeepGrill
+Tyler: ...yeah. Maybe you’re right.
+Tyler: He’s a good grill. We did have some great times.
+|AnythingElse
+
+-TylerTossGrill
+Narrator:*Tyler drags the grill over to a spot near his garden, patting it lightly before stepping away.*
+Tyler: Mmhm. Ain’t no point keepin’ him around if I’m not usin’ him.
+Narrator:*Tyler starts dragging the grill toward the toss pile, giving it one last look before pushing it aside with a small sigh.*
+|AnythingElse
+
+-AnythingElse
+Tyler: Hokay... Anythin’ else?

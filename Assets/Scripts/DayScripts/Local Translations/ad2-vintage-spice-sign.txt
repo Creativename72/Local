@@ -1,0 +1,12 @@
+-Start
+[[Where’d you get that spice sign?
+Annie: That old thing? Picked it up at the farmers’ market back in the city.
+Annie: My sister Maggie takes me there every few weeks. Since I moved out here, it’s kinda become our thing.
+Annie: They hold the market at the pier every weekend. Maggie’s always dragging me around, trying to get me to buy all these exotic spices and fancy kitchen doodads.
+Annie: *She chuckles.* Half the time, I don’t even know what I’m buying, but it’s fun. We spend hours chatting with vendors, sampling spices, enjoying the sea breeze. It’s a good time.
+[[Do you cook a lot?
+Annie: Yeah, been picking it back up recently. It’s tricky, though. I have to give everything a good sniff just to figure out what I’m working with.
+Annie: *She laughs lightly.* Spices, flour, powdered sugar—one mix-up, and it’s a disaster. But I manage.
+Annie: Big win recently: I figured out how to stop setting off the fire alarm every time I turn on the stove. That’s a major achievement for me.
+Annie: *Her tone shifts slightly.* Only downside is getting new ingredients. I either have to trek back to the city or order everything online. That’s the price you pay for living out here, I guess.
+Narrator:*She shrugs, her smile returning as she glances back at the sign.*

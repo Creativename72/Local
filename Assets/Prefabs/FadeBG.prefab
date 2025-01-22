@@ -61,8 +61,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -91,6 +91,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeAnim: {fileID: 7270793260945653194}
+  fadeBlack: 0
+  nextScene: 
+  fadeOnStart: 0
 --- !u!95 &7270793260945653194
 Animator:
   serializedVersion: 5
@@ -101,7 +104,7 @@ Animator:
   m_GameObject: {fileID: 7270793260945653192}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3ed067891757bb446841213e7c1702c6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7f8de60b4c3d2744ebad30a3ea7d2fff, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

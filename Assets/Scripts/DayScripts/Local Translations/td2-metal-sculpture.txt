@@ -1,0 +1,42 @@
+-Start
+[[What are these?
+Tyler: *He gestures at the sculptures with a shrug.* Oh, these? It’s like... art.
+Tyler: Thought I’d get all artsy-fartsy for a change, ya know? Try somethin’ new.
+Tyler: Walter’s always sketchin’ these cool landscapes, and everyone’s like, "Oh, Walter’s so talented!" Figured I’d give somethin’ like that a shot.
+Tyler: I have all this junk lyin’ around, might as well make somethin’ cool outta them.
+Tyler: Showed these off to Annie, she didn’t see my vision. At all.
+[[It’s amazing! | Amazing
+[[What is this even supposed to be? | WhatSupposedToBe
+[[It’s good that you have a creative outlet, Tyler. | GoodCreativeOutlet
+
+-Amazing
+Tyler: *He grins, shaking his head.* You’re just sayin’ that. But hey, I’ll take it. Ego boost achieved.
+|Questions
+
+-WhatSupposedToBe
+Tyler: *He scratches his head, looking at it critically.* I, uh... think it’s a self-portrait. 
+Tyler: Or maybe I just welded random junk together. Who’s to say?
+|Questions
+
+-GoodCreativeOutlet
+Tyler: *He gives you a mock glare.* What, is that your way of dodging givin’ me a real compliment?
+Tyler: *Grins.* But yeah, you’re right. It was kinda fun messin’ around with this stuff.
+|Questions
+
+-Questions
+Tyler: So... keep or toss?
+[[You should hold onto it. | HoldOn > SetFlag{TylerKeepArt, true} //SET FLAG TylerKeepArt
+[[Get rid of it. | GetRid
+
+-HoldOn
+Tyler: *He nods slowly.* Yeah, maybe you’re right. It’s growin’ on me a bit.
+Tyler: *He grabs the sculpture and starts dragging it through the mud.* Just... gonna stash this back here. 
+|AnythingElse
+
+-GetRid
+Tyler: *He laughs.* Yeah, it’s prolly for the best. Ain’t gonna win any awards with this thing.
+Tyler: *He drags the sculpture to the toss pile, shaking his head as he walks back.* Bye-bye, junk art.
+|AnythingElse
+
+-AnythingElse
+Tyler: *He claps his hands together.* Makin’ good progress. What else?

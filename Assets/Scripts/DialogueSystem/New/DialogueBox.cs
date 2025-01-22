@@ -11,7 +11,10 @@ public class DialogueBox : MonoBehaviour
     // holding all the pieces of the dialogue box
     [Header("Attatched GameObjects")]
     [SerializeField] private GameObject container;
-    [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private GameObject speakerContainer;
+    [SerializeField] private TextMeshProUGUI dialogueTextWithSpeaker;
+    [SerializeField] private TextMeshProUGUI dialougeTextNoSpeaker;
+
     [SerializeField] private TextMeshProUGUI speakerText;
     [SerializeField] private AudioSource audioPlayer;
 
@@ -34,6 +37,7 @@ public class DialogueBox : MonoBehaviour
     private List<Action<int>> choiceListeners;
     private DialogueCharacter currentlySpeaking;
     private float speakStartTime;
+    private TextMeshProUGUI currentDialogueText;
 
     public void Enable(bool enabled)
     {
@@ -49,8 +53,23 @@ public class DialogueBox : MonoBehaviour
     /// <param name="scroll"></param>
     public void SetDialogue(string speaker, string dialogueString, bool scroll)
     {
-        this.dialogueString = dialogueString;
+        bool hasSpeaker = !string.IsNullOrEmpty(speaker);
+
+        this.dialogueString = DialogueTree.FormatAsterisks(dialogueString);
         this.speakerText.text = speaker;
+
+        dialogueTextWithSpeaker.text = string.Empty;
+        dialougeTextNoSpeaker.text = string.Empty;
+
+        if (hasSpeaker)
+        {
+            speakerContainer.SetActive(true);
+            currentDialogueText = dialogueTextWithSpeaker;
+        } else
+        {
+            speakerContainer.SetActive(false);
+            currentDialogueText = dialougeTextNoSpeaker;
+        }
 
         if (scroll)
         {
@@ -87,7 +106,7 @@ public class DialogueBox : MonoBehaviour
     /// <param name="tooltip">tooltip of the given choice</param>
     public void SetChoice(int choiceId, string text, string tooltip)
     {
-        choices[choiceId].Set(text, tooltip);
+        choices[choiceId].Set(DialogueTree.FormatAsterisks(text), DialogueTree.FormatAsterisks(tooltip));
     }
 
     /// <summary>
@@ -159,7 +178,7 @@ public class DialogueBox : MonoBehaviour
     {
         if (containerEnabled)
         {
-            dialogueText.text = ScrolledText();
+            currentDialogueText.text = ScrolledText();
             PlaySpeakSounds();
         }
     }

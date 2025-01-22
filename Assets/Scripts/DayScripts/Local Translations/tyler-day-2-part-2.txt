@@ -1,0 +1,77 @@
+//continue button appears after everything but graffiti is interacted with. Graffiti is optional
+-StartPart2
+Tyler: That should be all.
+[[Looks a lot better now.
+Tyler: *He nods, his tone thoughtful.* Yeah, I guess it does. Thanks for the help.
+Tyler: And ah, I guess you can see how many hobbies I’ve dropped over the years, ha.
+Narrator:*Tyler hesitates, glancing at Scout, then gestures for them to follow.*
+Tyler: Lemme show you somethin’.
+Narrator:*Scout follows Tyler around the back of the trailer. Nestled near the edge of the clearing is a large, well-tended vegetable garden. The plants are neatly arranged, their green leaves vibrant even in the overcast light. It’s clear Tyler has put a lot of care into this space.*
+Tyler: This right here. My garden.
+
+[[Impressive! | Impressive
+[[You did all this? |YouDidAllThis
+[[Do you send some of these veggies to Bernice? | SendToBernice $TylerVeggiesToBernice$ ((//IF FLAG TylerVeggiesToBernice, MESSAGE: Walter mentioned Bernice getting fresh veggies from somewhere.
+
+-Impressive
+Tyler: *Tyler’s face lights up.* Thanks man. Gotta try sometimes, I suppose.
+| ItsBeenHarder
+
+-YouDidAllThis
+Tyler: *He scratches his neck sheepishly.* Yeah. I guess I’ve got a lotta free time to figure this stuff out, huh.
+| ItsBeenHarder
+
+-SendToBernice
+Tyler: *He blinks, caught off guard, then scratches his head.* Yeah, I used to. Bernice liked havin’ fresh stuff, and I figured, why not? I’ve always grown more than I can eat.
+Tyler: She’d always make somethin’ good with ‘em. Like soups or casseroles. She’d bring me some back, too, as a “thank you,” even when I told her she didn’t have to.
+Tyler: *He chuckles lightly, glancing at the garden.* Honestly, it felt good. Like... I was helpin’ someone.
+Tyler:  Sucks that she’s gone, though. 
+| ItsBeenHarder
+
+-ItsBeenHarder
+Tyler: *Tyler touches the side of the water reservoir.* It’s been getting harder to water my plants since my water tank exploded.
+[[Woah, what happened? || TylerStory
+$WalterFullStory$[[Walter told me what happened. (( Walter told you what happened. || WalterFullStory //IF FLAG WalterFullStory, MESSAGE: Walter told you what happened.
+$AnnieFullStory$[[Annie told me her side of things. (( Annie told you what happened. || AnnieFullStory //IF FLAG AnnieFullStory, MESSAGE: Annie told you what happened.
+
+-TylerStory
+Tyler: *He shifts uncomfortably.* Uh, yeah, it’s a mess. Walter, water pump, truck, fire, Annie, the whole deal.
+Tyler: *He waves his hand dismissively.* Go ask one of them if you want all the details. I’m over it. 
+>SetFlag{TylerStory,true} //SET FLAG TylerStory
+|TylerSigh
+
+-WalterFullStory
+Tyler: *He tilts his head, thinking for a moment.* Yeah, Walter probably gave you the play-by-play. He’s good at making things sound real neat and tidy, huh?
+Tyler: *He sighs, his tone softening.* Look, Walter wasn’t wrong. I shouldn’t have turned on the pump without him there. But... I didn’t think it’d go that wrong, y’know?
+Tyler: *He glances at Scout, his expression earnest.* Walter’s always lookin’ out for people, and I get it. But sometimes, I just wanna figure things out on my own without feeling like I need a babysitter.
+|TylerSigh
+
+-AnnieFullStory
+Tyler: *His eyebrows raise, and he chuckles softly.* Annie, huh? Bet she made herself sound like some action hero, drivin’ my truck into the reservoir and all.
+Tyler: No?
+Tyler: *He scratches his neck.* Look, she was tryin’ to help. I know that. But it was my truck, my pump, my mess. And she kinda made it worse, y’know?
+Tyler: *He shrugs lightly.* I don’t blame her for reactin’ the way she did. It was a bad situation all around. I just... wish we’d all handled it better.
+|TylerSigh
+
+-TylerSigh
+Narrator:*Tyler lets out a short sigh, turning his attention back to the reservoir.*
+Tyler: *He mutters.* Anyway. My water thing’s busted. That’s the takeaway.
+Narrator:*Tyler sighs, brushing a hand through his hair.*
+Tyler: Anyway, thanks for helpin’ me clean up today.
+Tyler: It’s... kinda nice, y’know? Having someone around to talk to. Makes all this junk feel a little less overwhelming.
+[[It does look a lot better now.
+Tyler: *He grins.* Yeah, I guess it does. Maybe I can actually find stuff out here now without trippin’ over a busted bike or somethin’.
+Narrator:*Tyler gestures toward his garden.*
+Tyler: And hey, if you ever want some veggies or whatever, let me know. They’re not much, but they’re fresh. And... y’know, I don’t mind sharin’.
+[[Thanks, Tyler.
+Tyler: *He rubs the back of his neck.* No problem. And, uh... you’re welcome back anytime. Even if it’s just to hang out or chat or whatever.
+Narrator:*Tyler walks over to his truck, which now has a small pile of items in the bed.*
+Tyler: I gotta haul this stuff into the city before the depot closes. Don’t wanna miss my chance to get rid of all this junk.
+Narrator:*He turns back to Scout, his grin softening slightly.*
+Tyler: See you around, yeah? Don’t be a stranger.
+>HideTyler
+Narrator:*With that, Tyler hops into his truck, starting the engine with a sputter and a growl. He waves as he pulls out onto the main road, disappearing down the valley path.*
+Narrator:*Scout lingers for a moment, the sound of the truck fading into the distance. They take one last look at the now-tidied space around the trailer before turning to make their way back down the trail.*
+Narrator:*The rain has lightened, and the scent of damp earth and pine fills the air as Scout disappears among the trees, heading back toward their corner of the valley.*
+
+// END

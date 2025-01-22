@@ -1,0 +1,164 @@
+//ANNIE HOUSE BACKGROUND OUTSIDE
+-Start
+Narrator:*Scout makes their way up the trail to Annie’s cabin, the scent of rain-soaked pine filling the air. The path feels quieter than usual, the mist softening the edges of the valley around them.*
+Narrator:*As Scout reaches the top of the hill, they just catch the light from Annie’s bedroom window flicker on. Moments later, the door opens to reveal Annie, her thick glasses slightly askew and a yawn barely stifled behind her hand.*
+>ShowAnnie
+Annie: Oh, hey there, Scout. Didn’t think you’d be stopping by so early.
+Annie: *She adjusts her glasses, blinking sleepily.* Sorry if I look like a mess. I just woke up.
+[[Tough night?
+Annie: *She sighs.* Yeah, had one of those marathon calls again. This guy just would not stop yapping. Ended up staying on like an hour past my shift.
+[[Couldn’t you just hang up? | HangUp
+[[Sounds rough. | SoundsRough
+
+-HangUp
+Annie: *She tilts her head thoughtfully.* Mmm, nah. Company policy says we gotta stick around for at least half an hour after our shift ends if we’re still on a call.
+Annie: Besides, I don’t like leaving people hanging. They’re calling because they need help, you know? I’d feel bad just cutting them off.
+|AnnieStretches
+
+-SoundsRough
+Annie: Tell me about it. Fridays are always the worst with these late shifts.
+Annie: Makes me feel like a total zombie on weekends. Coffee can only do so much, right?
+|AnnieStretches
+
+-AnnieStretches
+Narrator:*Annie stretches briefly, letting out a groan before placing her hands on her hips.*
+Annie: I know we had plans to head down to the lake today, but... eh. My energy’s at like, zero. Plus, with the rain, I doubt it’d be much fun anyway.
+Annie: Think I might just take a nap later instead. You okay with staying in for a bit? I could use some company before I crash.
+[[Of course!| StayingForABit
+[[Actually, I think I’ll head out. | HeadOut
+
+-StayingForABit
+Narrator:*Annie chuckles at Scout’s response, stepping aside to let them in.*
+Annie: Come on in. Make yourself at home. Just excuse the mess. Haven’t exactly been up for tidying lately.
+|AnnieInterior
+
+-HeadOut
+Annie: *Her expression falters slightly, but she quickly covers it with a small smile.* Oh. Yeah, I get it. No worries. Thanks for stopping by, though.
+Annie: *She steps back toward the door, her tone casual but quieter.* Catch you around, okay?
+Narrator:*Scout nods as Annie gives a quick wave and shuts the door behind her. The light from her cabin fades as Scout heads back down the trail, the soft patter of rain filling the silence.*//SET Flag:BrushAnnieOff
+>EndEarly
+|End //END HANGOUT
+
+-AnnieInterior 
+>ChangeBackground //ANNIE INTERIOR BACKGROUND
+>ChangeAmbience
+Narrator:*Annie leads Scout into the cabin.*
+Narrator:*The interior is small but thoughtfully arranged. Photos of Annie with others line the walls, interspersed with paintings and well-worn knick-knacks. The faint smell of spices lingers in the air.*
+
+[[Your place is so cozy! | Cozy
+[[Love your decorations. | LoveDecorations
+
+-Cozy
+Annie: Hey, thanks!
+Annie: *She glances around the room.* Glad things are still presentable. Ever since I lost part of my vision, though, I didn’t really bother sprucing things up.
+Annie: Like, the only person who’d notice it anyway is my sister when she visits.
+|LostVisionLoop
+
+-LoveDecorations
+Annie: Oh, really? Thanks a lot!
+Annie: *She gestures to the wall.* Ever since my vision got worse, it’s like I don’t even notice half this stuff anymore.
+Annie: My sister’s usually the one who mentions if something’s fallen over or looks off. She’s my backup pair of eyes.
+|LostVisionLoop
+
+//HAVE THESE OPTIONS LOOP. READ COMMENT
+-LostVisionLoop
+$AskedAllQuestions$ | EnoughAboutThat
+$NotAskedLostVision$[[What do you mean, you lost your vision? | WhatDoYouMean
+$NotAskedOtherResidents$[[What about the other residents? Do they visit? || OtherResidents $AnnieConnections$(( You believe Annie misses having connections outside of work. //FLAG: NONE, but ONLY IF AnnieConnections is set: MESSAGE: 
+
+-WhatDoYouMean
+Annie: *She rubs the back of her neck.* Yeah. I had normal vision until a few years ago.
+Annie: It started going gradually. At first, I could get by okay, but then it got bad enough that I had to make some major changes.
+Annie: *She gestures vaguely towards the wall of photos.* My sister helped a lot. She was always there.
+Annie: She still drives me to the city sometimes for weekend trips. Helps me stock up on things I can’t get out here.
+>LostVisionAsked
+|LostVisionLoop
+
+-OtherResidents
+Annie: You mean Bernice, Walter, and Tyler?
+Annie: I have Bernice over for tea sometimes, but honestly, I don’t love her climbing up here. Trails like this aren’t easy on her knees.
+Annie: As for Walter and Tyler...
+Narrator:*Annie’s voice trails off. She shifts her weight a bit before continuing.*
+Annie: We used to hang out a lot, actually. Here at the cabin, by the lake—pretty much anywhere.
+Annie: Then... well, there was a situation. It got messy.
+Annie: Things haven’t been the same since. I haven’t spoken to them much in a while.
+$WalterFullStory$[[Walter told me. Sounds like a rough situation. (( Walter told you what happened. | WalterFullStory //IF FLAG:WalterFullStory, MESSAGE: Walter told you what happened.
+$TylerStory$[[Tyler told me to ask you what happened. (( Tyler didn’t want to tell you the full story yet. | TylerStory  //IF FLAG TylerStory, MESSAGE: Tyler didn’t want to tell you the full story yet.
+[[What happened? | WhatHappend
+
+-WalterFullStory
+Annie: *Her expression hardens for a moment before softening into something more reflective.*
+Annie: Of course he told you his side. Bet he made it sound like I was completely out of line, huh?
+Annie: *She crosses her arms.* Look, I get it. I’m not exactly a firefighter, and yeah, maybe driving the truck into the water silo wasn’t the smartest move.
+Annie: And maybe it was extra not smart to do it when I can’t even see 5 feet out the windshield.
+Annie: But what else was I supposed to do? There was a fire, and Tyler was just standing there like a bozo!
+Narrator:*Her tone softens, frustration giving way to a hint of sadness.*
+Annie: I know I messed up. But Walter didn’t have to treat me like some reckless idiot. I was trying to help, you know?
+Annie: And Tyler... he never even apologized for starting the whole thing in the first place. 
+>SetFlag{AnnieFullStory,true} //SET FLAG AnnieFullStory
+| AnnieReflection
+
+-TylerStory
+Annie: Oh, did he, now? Tyler...
+Annie: It’s a long story.
+Annie: But basically, one day, Tyler was setting up some sort of water pump at his little camp.
+Annie: Walter was there to make sure he didn’t blow himself up. And I was there just to hang.
+Annie: Walter had to go do firewatch stuff, as he does. And he was like, “Ty, don’t even think about starting the pump without me here.”
+Annie: But like, when Walter was out of earshot, Tyler decided he was a big boy or something and flipped the switch.
+Annie: The front of his truck just exploded, it was crazy.
+Annie: Tyler kinda froze, and I freaked out and hopped in the truck and rammed it into the water tower.
+Annie: I, like, totally wrecked his truck and his water thing and his farm, man. Flooded camp, wrecked front of truck, toppled over the tower, I think. Tyler was furious.
+Annie: But then Walter comes running back, and he’s mad at Tyler for being stupid, and then he gets mad at ME, too!
+Annie: He gets mad at ME for trying to help! 
+Annie: Like, yeah, I can’t really see, but…
+Annie: The truck was on fire! What, should I have just let the whole site burn down?! I was basically doing his fire watching job for him.
+Annie: Ack, I dunno. It was such a stupid situation. I was so upset about how those two reacted. It was a split moment decision, geez…
+Annie: *She sighs heavily.* And that’s how everything went sideways. I haven’t really talked to either of them much since.
+>SetFlag{AnnieFullStory,true} //SET FLAG AnnieFullStory
+| AnnieReflection
+
+-WhatHappend
+Annie: Yeah. It’s a long story.
+Annie: But basically, one day, Tyler was setting up some sort of water pump at his little camp.
+Annie: Walter was there to make sure he didn’t blow himself up. And I was there just to hang.
+Annie: Walter had to go do firewatch stuff, as he does. And he was like, “Ty, don’t even think about starting the pump without me here.”
+Annie: But like, when Walter was out of earshot, Tyler decided he was a big boy or something and flipped the switch.
+Annie: The front of his truck just exploded, it was crazy.
+Annie: Tyler kinda froze, and I freaked out and hopped in the truck and rammed it into the water tower.
+Annie: I, like, totally wrecked his truck and his water thing and his farm, man. Flooded camp, wrecked front of truck, toppled over the tower, I think. Tyler was furious.
+Annie: But then Walter comes running back, and he’s mad at Tyler for being stupid, and then he gets mad at ME, too!
+Annie: He gets mad at ME for trying to help! 
+Annie: Like, yeah, I can’t really see, but…
+Annie: The truck was on fire! What, should I have just let the whole site burn down?! I was basically doing his fire watching job for him.
+Annie: Ack, I dunno. It was such a stupid situation. I was so upset about how those two reacted. It was a split moment decision, geez…
+Annie: *She sighs heavily.* And that’s how everything went sideways. I haven’t really talked to either of them much since.
+>SetFlag{AnnieFullStory,true} //SET FLAG AnnieFullStory
+| AnnieReflection
+
+-AnnieReflection
+Narrator:*Annie shakes her head, letting out a long sigh.*
+Annie: It’s just... stupid. I miss how things used to be. We had a good thing going, you know?
+Annie: And now it feels like there’s this wall between us.
+>OtherResidentsAsked
+|LostVisionLoop
+
+-EnoughAboutThat
+Annie: *She sighs, rubbing the back of her neck.* Anyway, enough about that mess. No point dwelling on the past, right?
+Annie: *She glances around the room, her tone lightening just a bit.* You know, sometimes I forget what I even have up on these walls.
+Annie: Half the time, I gotta get my nose right up to the photos just to figure out what’s what.
+[[I could point stuff out for you! | PointStuffOut
+[[Looks like there’s a lot of stories up there. | LotStories
+
+-PointStuffOut
+Annie: That’s so sweet of you! Yeah, let’s do it.
+Annie: *She gestures toward the wall, her smile widening slightly.* Take a look and let me know what catches your eye.
+|End
+
+-LotStories
+Annie: *Her smile softens, and she tilts her head thoughtfully.* Oh, you have no idea.
+Annie: Some of this stuff’s been up there so long, it’s like a little museum of my life.
+Annie: *She laughs lightly.* Though, to be honest, I’ve probably forgotten half the stories behind them.
+Annie: Go ahead, pick something out. Maybe I’ll surprise myself and actually remember.
+|End
+
+-End

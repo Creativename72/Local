@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 683309394239283069}
   - component: {fileID: 683309394239283068}
   m_Layer: 0
-  m_Name: SceneAmbience
+  m_Name: AmbienceManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

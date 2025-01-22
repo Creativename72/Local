@@ -7,7 +7,7 @@ public class ClickDialogue : MonoBehaviour
     public DialogueController d;
     public TextAsset t;
     public SpriteRenderer s;
-    
+
     bool dialogueViewed = false; //tracks if this item's dialogue was viewed/clicked on
     public bool hideOnClick = false;
 
@@ -23,8 +23,9 @@ public class ClickDialogue : MonoBehaviour
                 this.gameObject.SetActive(false);
                 s.enabled = false;
             }
-            
-        } else
+
+        }
+        else
         {
             d.simulateMouseClick();
         }
