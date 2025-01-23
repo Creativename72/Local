@@ -81,7 +81,6 @@ public class TylerDay2 : MonoBehaviour
         dialogueController.AddFunction("HideTyler", () => tyler.SetVisible(false));
 
         dialogueController.AddDefaultFunctions(backgroundHandler);
-
         dialogueController.AddDialogue(part1);
         dialogueController.StartDialogue();
         dialogueController.ReparseOnNodeChange(true);

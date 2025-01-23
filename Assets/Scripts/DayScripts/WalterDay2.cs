@@ -81,7 +81,7 @@ public class WalterDay2 : MonoBehaviour
         if (waitForCast && Input.GetButtonDown("Fire1"))
         {
             backgroundHandler.changeBackground(false);
-            GameManager.WaitRoutine(0.5f, () =>
+            GameManager.WaitRoutine(2f, () =>
             {
                 backgroundHandler.changeBackground(false);
                 dialogueController.Enable(true);

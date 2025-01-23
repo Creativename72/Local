@@ -46,7 +46,7 @@ Tyler: *He waves toward the trailer.* Wait here. I’ve got somethin’ to show 
 
 -NoIDontPlay
 Narrator:*He groans dramatically.* Lame.
-Tyler: [He smirks.] Don’t worry. I’ll change your mind in a sec. Wait here.
+Tyler: *He smirks.* Don’t worry. I’ll change your mind in a sec. Wait here.
 |TylerDisappears
 
 -WhatTalkingAbout

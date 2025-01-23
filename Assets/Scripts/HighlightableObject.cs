@@ -10,8 +10,8 @@ public class HighlightableObject : MonoBehaviour
     [SerializeField] private Color highlightColor = Color.gray;
     protected Action onClick;
     [Header("Click / Highlight")]
-    [SerializeField] protected bool enableHighlight = true;
-    [SerializeField] protected bool enableClick = true;
+    protected bool enableHighlight = true;
+    protected bool enableClick = true;
 
     public void OnClick(Action a)
     {
