@@ -1,0 +1,224 @@
+//1. DONE
+
+-Start
+Narrator:*The sun has dipped below the horizon, casting an amber glow across the valley. Inside Scout’s cozy kitchen, warm light illuminates the counter. The gathered ingredients from Walter, Annie, and Tyler are neatly arranged in front of them.*
+Narrator:*Scout rolls up their sleeves, ready to dive into the final preparations.*
+//for each of these choices, play the correct sound effect after the choice is selected
+//also no character art for cooking
+[Chop the vegetables. > PlaySound{chop}
+Narrator:*Scout grabs a potato and starts peeling. The peeler slips. After fumbling, they slice uneven chunks of potatoes, carrots, and onions.*
+[Heat the pot and add some oil. > PlaySound{heatPot}
+Narrator:*Scout places a pot on the stove, clicks the burner a few times, and pours in some oil. They tilt the pot to spread it around.*
+[Saute the vegetables. > PlaySound{sauteVeggies}
+Narrator:*The vegetables sizzle loudly. Oil pops as they stir, and they slam the lid on.*
+[Add the fish and season. > PlaySound{addFish}
+Narrator:*Scout tosses the fish into the pot, splashing broth. They shake in spices, pausing to read the labels, then adding more.*
+[Finish with cream. > PlaySound{cream}
+Narrator:*They pour in the cream and stir, watching the broth turn creamy.* > PlaySound{stir}
+[Have a taste. > PlaySound{taste}
+Narrator:*Scout tastes the chowder, nodding in relief. The veggies are soft, the fish is flaky, and it smells good.*
+//interior background (should already be this)
+//character art
+> ShowScout
+Narrator:*Scout wipes their hands on a dish towel and takes a deep breath. The chowder isn’t perfect, but it’s ready.*
+Narrator:*A knock at the door interrupts them.*
+
+//2.
+
+Narrator:*Scout wipes their hands quickly on a dish towel and heads to the door. Opening it, they find Walter standing tall, holding a plate of something wrapped in a cloth. The smell of warm bread wafts through the doorway.*
+Walter: Evening, Scout. Smells good in there. Thought I’d bring something to the table. Just some flatbread I made.
+Walter: It’s the best I can do with what I get in the supply drops. Hope it’s alright.
+[Come on in, Walter.
+Narrator:*Scout steps aside, gesturing for him to come in. Walter enters and places the flatbread on the counter, his gaze scanning the cozy room.*
+Walter: Been a long time since I was last here.
+Walter: Bernice took all the furniture when she left, didn’t she? Feels... quieter now.
+Walter: I remember climbing up on that roof one winter to patch the chimney for her. Smoke kept filling the room, and she was freezing. Took me half a day to figure it out.
+Walter: When you live alone, you learn to fix a lot of things yourself. But... sometimes it’s good to have someone else there. Someone to lend a hand.
+Narrator:*Walter glances at the pot on the stove, his expression softening.*
+Walter: Chowder’s comin’ along, huh? Smells great. Bet it’ll turn out just fine.
+Narrator:*He pauses, looking back at Scout.*
+Walter: I’ve been thinking about it a lot, y’know—what happened between all of us. And I’m ready to let it go.
+Walter: Tonight feels like the right time to start talking again. Put the past behind us.
+Narrator:*Walter leans back against the counter, crossing his arms with a faint smile.*
+Walter: Thanks for doing this, Scout. Really. This kind of thing... it matters.
+
+//3.
+
+//4.
+
+Tyler: Alright, where’s everybody? Don’t tell me I’m the first one here—oh wait, Walter! There you are.
+Narrator:*Tyler spots Walter leaning against the counter, arms crossed, with a faint smile on his face.*
+Walter: Tyler. Glad you made it.
+Narrator:*Tyler hesitates, taking a small step closer.*
+Tyler: So... are we good?
+Narrator:*Walter’s expression softens, and he nods slightly.*
+Walter: Yeah, Tyler. We’re good.
+Narrator:*Tyler exhales in relief, his grin returning as he gestures toward the pile of snacks he brought.*
+Tyler: Good. Because I come bearing gifts. 
+Narrator:*Walter moves to the counter, glancing over the snack pile Tyler brought. After a moment, he picks up a bag of chips, tearing it open and popping a chip into his mouth.*
+Walter: Haven’t had junk food like this in... ages. Supply drops don’t exactly come with these luxuries.
+Tyler: *Tyler chuckles.* Luxuries? Walter, that stuff is trash. That’s why I brought it.
+Walter: Perspective, Tyler. Processed food like this is a rarity for me.
+Tyler: *Tyler winks.* Well, just say the word, and I’ll deliver trash food to your tower anytime.
+Walter: *Walter smiles faintly.* I’ll keep that in mind.
+Narrator:*Tyler leans back against the counter, grabbing a cookie from another bag and taking a bite. He glances around the room, his tone light but curious.*
+Tyler: So, uh... where’s Annie? Figured she’d be here earlier than me.
+Tyler: You did invite her, right, Scout?
+[She might be working.
+[Not sure if she can make it tonight.
+Walter: *Walter sighs.* That girl really needs to take a break. Always working herself into the ground.
+Walter: If we’re on speaking terms again, I may pay her a visit tomorrow. Hopefully she didn’t take another morning shift.
+Narrator:*The three settle in, with Walter leaning against the counter while Tyler tears open another bag of snacks. As time passes, the conversation drifts, becoming easier and more comfortable.*
+Narrator:*Walter shares stories from the fire tower. Tyler, growing restless, gets a mischievous look in his eyes. He opens a pack of cookies and glances at Walter.*
+Tyler: *Tyler grins.* Alright, tower guy, let’s set the scene. It’s ancient Greece. You’re some kinda emperor, sittin’ on your marble throne-
+Walter: They did not have emperors in ancient Greece.
+Tyler: Whatever. Point is, you’re reclining, soakin’ in the sun and the breeze. And who’s your humble servant? *Me.*
+Narrator:*Tyler holds a cookie between his fingers, slowly bringing it towards Walter’s face like he’s feeding grapes to royalty.*
+Tyler: Open up, mi lord. Let thy loyal subject grace thee with-
+Walter: Tyler.
+Tyler: -a morsel most decadent, reserved for only the highest-
+Walter: *Tyler.*
+Narrator:*Walter snatches the cookie from Tyler’s fingers, passing it between his hands, before tossing it to Scout. They catch it and scarf it down like a prize.*
+Tyler: Aww, c’mon... we were just havin’ some fun.
+
+//5.
+
+Narrator:*As more time passes, and as Tyler continues to pester Walter, it becomes clear that Annie isn’t coming. Walter starts moving towards the kitchen.*
+Walter: *He exhales.* Well... I think it’s safe to say Annie won’t be making it.
+Tyler: Dang. I miss her.
+Tyler: Well, guess it’s just us, huh? A good ol’ boys’ night.
+Narrator:*Walter does not respond. He reaches for the ladle and starts serving up bowls of chowder. He dishes them out in front of everyone at the dining table, along with servings of flatbread. Tyler slides bags of chips to each bowl as well.*
+Tyler: *He holds his bowl up to his nose.* Alright. Moment of truth.
+Narrator:*They all take bites of the chowder. Clearly, it’s a hit.*
+Walter: It’s delicious. Nice work, Scout.
+Tyler: Heck, this is good. Certainly better than the chowder they got at the gas station.
+Tyler: Scout~ You wouldn’t say no to cooking for me more often, would you?
+[Of course I can cook for you guys! | OfCourseCook
+[Only if you keep providing me with more fresh produce! | OnlyProduce
+[Heck no. | HeckNo
+
+- OfCourseCook
+Tyler: *Tyler grins.* I knew I loved you, Scout!
+Walter: *Walter chuckles and shakes his head.* Just don’t let him take advantage of your kindness, Scout.
+Tyler: *Tyler feigns offense.* Wow, Walter. I am *so* much more than a guy who freeloads off of others for home-cooked meals. I bring snacks *and* personality.
+|TylerGrinsLeanBack
+
+-OnlyProduce
+Tyler: Yeah, of course! Didn’t know they’d taste so good when cooked properly.
+Narrator:*Walter looks up at Tyler, caught off guard.*
+Walter: What? Since when do you grow your own produce?
+Tyler: *Tyler blushes a little, mumbling.* I, uh... well, I kinda got into gardening. Been at it for a while now.
+Walter: *Walter narrows his eyes.* And you never thought to mention this before?
+Tyler: *Tyler shrugs.* What can I say? I like my tough-guy image. If I start talkin’ about my home grown carrots, people might think I’m turnin’ soft.
+Walter: *Walter chuckles.* It might already be too late, Tyler.
+|TylerGrinsLeanBack
+
+-HeckNo
+Tyler: *Tyler clutches his heart dramatically.* Ouch... right in the heart, Scout.
+Walter: You’ll live.
+Tyler: No, no. Can’t believe this... Left out in the cold, starving... I’ll die like this...
+Walter: ...you done?
+Tyler: No, never.
+|TylerGrinsLeanBack
+
+-TylerGrinsLeanBack
+Narrator:*Tyler grins as he leans back in his chair, tossing a chip into his mouth.*
+Narrator:*Walter chuckles, dipping a piece of flatbread into his chowder before taking a bite.*
+Narrator:*Tyler, watching Walter, follows suit, opening a bag of nacho chips and dipping them into his soup before stuffing a fistfull into his mouth.*
+Tyler: *Tyler speaks while his mouth is full.* Walter, you gotta try this.
+Walter: I really don’t.
+Narrator:*Tyler takes a cookie and dips it into his chowder, before scarfing it down.*
+Tyler: Walter-
+Walter: **No.**
+Tyler: Man. Your loss.
+Narrator:*The room settles into a more comfortable silence, the sounds of eating filling the space. Tyler finishes off his chowder before leaning back in his chair, stretching his arms behind his head.*
+Tyler: Y’know, I didn’t think I’d be sittin’ here like this again. With you, I mean.
+Narrator:*Walter sets his spoon down, looking across the table at Tyler.*
+Walter: Yeah. Me neither
+Narrator:*Tyler fidgets with an empty chip bag, avoiding Walter’s gaze for a moment.*
+Tyler: Listen, I know I’ve been a pain in the butt. I’ve screwed up plenty, and I figured, you weren’t too hyped to see me again.
+Walter: I suppose... holding grudges doesn’t get us anywhere. And I held onto mine for too long.
+Walter: No real purpose in it anymore. The past is the past.
+Narrator:*Tyler looks up at him, silent for a moment. He lets out a short laugh, shaking his head.*
+Tyler: Hah. So what, that’s it? We’re just good now?
+Walter: *Walter shrugs.* Yeah. No need to complicate things.
+Tyler: *Tyler smirks.* Keepin’ things simple. Guess I should’ve known. Just glad the hard part’s over.
+Walter: *Walter raises an eyebrow.* This is just the start, Tyler. It’s not about one conversation—we gotta keep making an effort.
+Tyler: *Tyler leans back, stretching his arms behind his head.* Yeah, yeah, I will, I will. You can count on that.
+
+//6.
+
+Narrator:*Before the moment can settle too much— a knock at the door breaks the silence.*
+Narrator:*Scout glances toward the entrance before heading over to open it.*
+Narrator:*Annie stands on the porch, looking tired but managing a small smile.*
+Annie: Hey, Scout. Just got off my shift.
+Annie: Wasn’t super busy, but, y’know... lots of small talk. Kinda drains ya after a while.
+Narrator:*Scout steps aside to let her in, and Annie walks into the room. She takes a quick look around, brushing her hands on her jacket.*
+Narrator:*As she steps in, Walter spots her and offers her a warm smile.*
+Walter: Annie. It’s good to see you.
+Narrator:*Before Annie can respond, Tyler practically pounces on her, grinning wide.*
+Tyler: Annie! There she is! You’re late. Fashionably late, right? Man, I was startin’ to think you were ditchin’ us!
+Narrator:*Annie turns toward his voice, offering a small wave.*
+Annie: Hey, Tyler.
+Tyler: *Tyler grins, trying to lighten the mood once more.* Man, it’s been forever! You, me, Walter, just like old times, right?
+Annie: *She smiles faintly as she slumps into a chair.* Yeah... I guess.
+Narrator:*Tyler’s grin falters slightly.*
+Tyler: You guess? C’mon, Annie, this is supposed to be fun! We’ve got chowder, snacks, and-
+Annie: *She cuts him off gently, her tone apologetic.* I know, Tyler. I just... I’m beat. Work’s been non-stop lately. I’m glad I’m here, but I don’t think I have it in me to be, like... super hyped right now.
+Narrator:*Tyler’s shoulders sag, his enthusiasm draining.*
+Tyler: Oh. Uh... yeah. No, I get it.
+Narrator:*Tyler helps guide her to the dining table as Walter enters the kitchen, emerging with a serving of chowder and flatbread.*
+Walter: Eat up. The chowder’s good, and it's cold out.
+Annie: *She takes a small bite, nodding faintly.* It's good.
+Annie: I’m... not super hungry, though. I snacked a bit during my shift.
+Narrator:*Walter hesitates, then nods.*
+Walter: I’ll pack it up for you. You can take it home.
+Annie: *She offers a small smile.* That’d be great. It’ll make a good meal for tomorrow.
+Narrator:*Walter silently picks up the bowl and moves back toward the kitchen, leaving Annie sitting at the table with Scout and Tyler.*
+Narrator:*Tyler leans forward, resting his hands on the table.*
+Tyler: Man, Annie, you look exhausted. You sure you’re holding up alright?
+Annie: *She exhales a quiet laugh, rubbing her eyes.* That bad, huh? Yeah... long shift. Lotta customers. Lotta talking.
+Tyler: Well, I’m just glad you’re here. Missed seein’ your stupid face.
+Annie: *Annie chuckles a little.* I missed hearing your stupid voice.
+Narrator:*Walter returns with the packaged meal, and, along with Scout, the four of them share light conversation for a while longer.*
+
+//7.
+
+Narrator:*After some time, Annie asks for the time and stretches, yawning.*
+Annie: I should probably get going. I’m beat, and I’ve got an early shift tomorrow.
+Walter: Oh... you’re still taking early shifts, huh. 
+Walter: I think you really... Nevermind...
+Narrator:*Walter hands her the packed food, then pauses for a moment before speaking.*
+Walter: I’ll walk you back. It’s late, and the valley gets dark fast.
+Annie: *She hesitates, then nods.* Alright. Thanks.
+Tyler: Well, guess this is goodnight. Don’t go gettin’ lost in the dark, alright?
+Walter: I’ll make sure she doesn’t.
+Narrator:*The two head for the door. Scout follows, watching as they step outside into the cool night air. Walter gives Scout a small nod before walking with Annie down the path.*
+Walter: Night, Scout.
+Annie: Thanks for hosting, Scout. Sorry I wasn’t... all here tonight.
+Narrator:*Tyler waves goodbye at Annie before realizing that she wouldn’t see him. He watches as the two disappear down the street before turning to Scout.*
+Tyler: I... I feel good about tonight.
+Tyler: I mean, Annie wasn’t all the way here, but I was talkin’ with Walter again. And he let me pester him without pushin’ me away!
+Tyler: This is a good start, Scout, like he said.
+Tyler: Thanks for puttin’ this together. I appreciate it.
+Narrator:*He smirks before heading towards the door.*
+Tyler: Welp. Should get outta your hair. Thanks for havin’ me, Scout. And, y’know... for keepin’ us all from bein’ total strangers.
+Narrator:*He gives a lazy wave before hoping out the door, swinging it shut behind him. Soon after, the sound of his truck rumbles to life before fading into the distance. The house falls silent once more.*
+Narrator:*Scout lingers for a moment before moving to clean up. After everything is put away, they settle at their desk and pull out their journal.*
+
+Journal: Tonight went well. Not perfect, but... a step forward, at least. Walter seems...
+[...relieved to be reconnecting, even if its slow.
+[...to hold back a little still, but willing to try.
+[...happy to have things return to how they once were, somewhat.
+Journal: Annie was…
+[...too drained to really be here.
+[...still caught up in her own responsibilities.
+[...struggling to find space for herself in all this.
+Journal: And Tyler…
+[...was trying his best to keep things fun.
+[...is satisfied with how things turned out.
+[...is willing to let things go and be with his friends again.
+Journal: I don’t think everything is fixed yet. Maybe it won’t be for a while. But... at least we tried. And that’s gotta count for something.
+Narrator:*Scout closes their journal slowly, the weight of the day sinking in. They glance out the window at the dark valley beyond, letting out a soft sigh.*
+Journal: Tomorrow’s another day.
+Narrator:*Scout sets the journal aside, the faint sound of crickets filling the room as they sit quietly in thought.*

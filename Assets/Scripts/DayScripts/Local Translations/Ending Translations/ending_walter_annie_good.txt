@@ -1,0 +1,167 @@
+//1. DONE
+
+-Start
+Narrator:*The sun has dipped below the horizon, casting an amber glow across the valley. Inside Scout’s cozy kitchen, warm light illuminates the counter. The gathered ingredients from Walter, Annie, and Tyler are neatly arranged in front of them.*
+Narrator:*Scout rolls up their sleeves, ready to dive into the final preparations.*
+//for each of these choices, play the correct sound effect after the choice is selected
+//also no character art for cooking
+[Chop the vegetables. > PlaySound{chop}
+Narrator:*Scout grabs a potato and starts peeling. The peeler slips. After fumbling, they slice uneven chunks of potatoes, carrots, and onions.*
+[Heat the pot and add some oil. > PlaySound{heatPot}
+Narrator:*Scout places a pot on the stove, clicks the burner a few times, and pours in some oil. They tilt the pot to spread it around.*
+[Saute the vegetables. > PlaySound{sauteVeggies}
+Narrator:*The vegetables sizzle loudly. Oil pops as they stir, and they slam the lid on.*
+[Add the fish and season. > PlaySound{addFish}
+Narrator:*Scout tosses the fish into the pot, splashing broth. They shake in spices, pausing to read the labels, then adding more.*
+[Finish with cream. > PlaySound{cream}
+Narrator:*They pour in the cream and stir, watching the broth turn creamy.* > PlaySound{stir}
+[Have a taste. > PlaySound{taste}
+Narrator:*Scout tastes the chowder, nodding in relief. The veggies are soft, the fish is flaky, and it smells good.*
+//interior background (should already be this)
+//character art
+> ShowScout
+Narrator:*Scout wipes their hands on a dish towel and takes a deep breath. The chowder isn’t perfect, but it’s ready.*
+Narrator:*A knock at the door interrupts them.*
+
+//2.
+
+Narrator:*Scout wipes their hands quickly on a dish towel and heads to the door. Opening it, they find Walter standing tall, holding a plate of something wrapped in a cloth. The smell of warm bread wafts through the doorway.*
+Walter: Evening, Scout. Smells good in there. Thought I’d bring something to the table. Just some flatbread I made.
+Walter: It’s the best I can do with what I get in the supply drops. Hope it’s alright.
+[Come on in, Walter.
+Narrator:*Scout steps aside, gesturing for him to come in. Walter enters and places the flatbread on the counter, his gaze scanning the cozy room.*
+Walter: Been a long time since I was last here.
+Walter: Bernice took all the furniture when she left, didn’t she? Feels... quieter now.
+Walter: I remember climbing up on that roof one winter to patch the chimney for her. Smoke kept filling the room, and she was freezing. Took me half a day to figure it out.
+Walter: When you live alone, you learn to fix a lot of things yourself. But... sometimes it’s good to have someone else there. Someone to lend a hand.
+Narrator:*Walter glances at the pot on the stove, his expression softening.*
+Walter: Chowder’s comin’ along, huh? Smells great. Bet it’ll turn out just fine.
+Narrator:*He pauses, looking back at Scout.*
+Walter: I’ve been thinking about it a lot, y’know—what happened between all of us. And I’m ready to let it go.
+Walter: Tonight feels like the right time to start talking again. Put the past behind us.
+Narrator:*Walter leans back against the counter, crossing his arms with a faint smile.*
+Walter: Thanks for doing this, Scout. Really. This kind of thing... it matters.
+
+//3.
+
+Narrator:*Scout hears the ringing of the doorbell. They open the door to find Annie standing there, holding a wicker basket full of jars. Her face lights up with a warm smile.*
+Annie: Hey, Scout. Took me a while—haven’t needed to come to this side of the valley in ages. Had to stop a couple times just to get my bearings.
+Annie: Figured I’d bring something fun. These are all the mystery jars I had in my pantry. Can’t read the labels, so I never took the gamble. Thought there might be some tasty treats among the collection.
+[Welcome, Annie!
+Narrator:*Annie enters the cottage, tilting her head up and sniffing the air.*
+Annie: Wow, it smells amazing in here. Is that chowder?
+Annie: I can smell all the spices you used! Glad you could make good use of them.
+Narrator:*Scout nods, gesturing toward the pot on the stove. Annie sets her basket down near the counter, leaning in slightly to get a better whiff.*
+Annie: You’ve outdone yourself, Scout! Can’t wait to try it.
+Narrator:*Walter, leaning casually against the counter, straightens up when Annie enters. A smile spreads across his face.*
+Walter: Annie. Long time no see. 
+Walter: I-I mean... It’s good to have you here.
+Narrator:*Annie’s face lights up as she turns toward his voice.*
+Annie: Walter! Oh my gosh, it’s so good to hear your voice again! I can’t believe it’s been so long! How’ve you been?
+Walter: *Walter chuckles warmly.* Oh, you know. Busy with the tower, keeping the valley in one piece. You?
+Annie: *She laughs.* Busy, as always.
+$AnnieWalterSlowDown$ | SlowDown //IF FLAG AnnieWalterSlowDown is TRUE
+| NoSlow
+
+-SlowDown
+Annie: Taking a break, like you told me to.
+| ActuallyWholeWeek
+
+- NoSlow
+Annie: Finally taking a break from work today.
+| ActuallyWholeWeek
+
+-ActuallyWholeWeek
+Annie: Actually, I’ve got the whole week off—had someone cover my shifts. I’m finally looking forward to some *real* R&R for once.
+Walter: *He exhales in visible relief, his smile widening.* Oh, thank goodness. I was starting to worry you’d work yourself into the ground... glad you’re finally listening to reason.
+Annie: Oh hush. Anyways~ Look what I brought!
+Narrator:*She holds up her basket of miscellaneous jarred goods. Walter goes to pick some up to inspect.*
+Walter: Hmm...
+Annie: My sister convinced me to buy these forever ago. I guess I never had the guts to try ‘em blind. Tonight seems like the perfect time to gamble, right?
+Walter: Hmm... pickled veggies... candied fruit... wait, is this... cake in a jar?
+Annie: Cake? Seriously? Dang! I’ve been missing out on all that?
+Walter: Annie, some of this stuff is expired.
+Annie: What! No way! Dang, I shoulda had someone read me those labels months ago!
+Narrator:*She laughs as she sits down at the dining table, resting her head on her fists on the table.*
+Annie: So, Walter. Serious question. Do you think I’d make a good fire lookout?
+Walter: No.
+Annie: Wooow, no hesitation? Not even a “hmm, let me think”?
+Walter: No.
+Annie: Ugh, you don’t see the vision. Imagine me, up in that tower of yours, scanning the horizon, radio in hand, keeping the whole place safe.
+Walter: But you *can’t* scan the valley, Annie.
+Annie: I can smell them.
+Walter: ...no.
+Annie: What if I got a seeing-eye hawk to spot fires for me. And it would report back to me and stuff.
+Walter: Report back *how*? How would you communicate with it?
+Annie: I would caw and squawk, Walter. 
+Walter: *No.*
+Annie: Man, you are really shutting me down.
+Walter: Because it’s a bad idea, Annie.
+Annie: ...but I would look good in the uniform, right?
+Walter: Hmm... I suppose.
+Annie: Heck yeah.
+
+//4.
+
+//5.
+
+Narrator:*Time passes as the three chat casually, catching up on life in the valley and beyond. Walter and Annie are clearly relieved to be on speaking terms again. But as the clock ticks on and the evening deepens, a noticeable lull settles over the group.*
+Walter: *Walter glances toward the door, then at Scout.* Guess it’s getting late. Don’t think we’ll be hearing from Tyler tonight.
+Annie: *Annie sighs, leaning back in her chair.* Yeah... I was hoping he’d come. But, y’know, it’s Tyler. He’s probably still sorting through his own stuff.
+[Tyler should be here.
+[Maybe he really isn’t ready.
+[Chowder time.
+Narrator:*Walter nods, getting up from the dining table and heading into the kitchen. He opens the pot and serves three bowls of piping-hot chowder. Meanwhile, Scout and Annie divvy out Walter’s flatbread and pop open a few jars of pickled veggies from Annie’s pantry.*
+Narrator:*Walter brings the bowls out into the dining room, placing a serving in front of the both of them.*
+Annie: *Annie takes a deep inhale.* This smells amazing, Scout. I can smell all those spices.
+Walter: *Walter nods, breaking off a piece of flatbread.* Agreed. Feels good to have a proper meal like this.
+Walter: And better when shared with friends.
+Narrator:*Walter quietly slurps some chowder and smiles.*
+Walter: This is really good. You’ve got a real knack for this, Scout.
+Annie: *Annie scoops some chowder onto a piece of flatbread.* And this bread? Dang, Walter, you’ve got some skills. You sure you’re not secretly a baker?
+Walter: *He chuckles softly.* Just something I picked up over the years. 
+Narrator:*As they finish their bowls, Annie leans back with a satisfied sigh, patting her stomach.*
+Annie: Yummers.
+
+//6.
+
+Annie: *She glances at Walter.* You know, Walter... it’s been nice. I mean, this—sitting down, sharing a meal. It’s been too long.
+Walter: *Walter nods slowly, his gaze dropping to the table.* Yeah. It has. I... didn’t realize how much I missed this.
+Annie: *Annie gives him a small smile.* You’ve been a bit of a hermit, huh?
+Walter: Guess I have. But I had my reasons, Annie. After everything that happened, it felt... easier to stay away.
+Annie: *Annie nods.* I get that. I’ve done the same thing. Poured everything into work so I wouldn’t have to think about all the... messy stuff.
+Walter: *Walter looks up, meeting her gaze.* But maybe that wasn’t the right call. Staying away hasn’t fixed anything. And tonight... it’s made me realize I don’t want things to stay like this.
+Annie: Me neither, Walter. I mean, we’ve been through too much together to let things stay broken.
+Walter: *Walter nods, smiling.* Then let’s start fixing it. It’s not going to happen overnight, but... I want to try.
+Annie: *Annie leans back with a relieved smile.* I’d like that.
+
+//7.
+
+Narrator:*Time passes as the three continue to chat, and for the first time in months, Walter and Annie both feel at ease with each other.*
+Narrator:*Eventually, Annie stands and stretches her arms above her head.*
+Annie: *She lets out a small sigh.* Well, I should probably get going. My sister and I have a day trip planned tomorrow.
+Walter: *He stands as well, brushing off his hands.* A day trip, huh? That sounds good. It’s nice that you’re taking some time for yourself.
+Walter: I’ll walk you back to your cabin. It’s dark out, and I don’t mind the longer hike.
+Narrator:*The two head for the door. Scout follows, watching as they step outside into the cool night air. Walter gives Scout a small nod before walking with Annie down the path.*
+Walter: Goodnight, Scout.
+Annie: Thanks for having us, Scout. Let’s hang out again soon, okay? 
+Annie: We can go pester Tyler, If he’ll have us.
+Narrator:*Scout watches as Walter and Annie disappear into the moonlit valley, their figures illuminated briefly before fading into the darkness. The door closes softly behind them, and the cottage grows quiet once more.*
+Narrator:*After clearing everything up, they head to the desk and pull out their journal.*
+
+Journal: Tonight felt like a step forward. Walter seems...
+[...ready to let go of some of the past.
+[...willing to rebuild old connections.
+[...grateful for this opportunity to reconnect.
+Journal: Annie was...
+[...excited to reconnect with Walter.
+[...grateful for the time away from work.
+[...hopeful about mending the group dynamic.
+Journal: And Tyler...
+[...never showed.
+[...wasn’t ready to take the step I was hoping for.
+[...still feels like he’s avoiding everyone.
+Journal: I wanted tonight to bring us closer, but maybe it’s not something that can happen overnight. Maybe it’ll take more time.
+Narrator:*Scout closes their journal slowly, the weight of the day sinking in. They glance out the window at the dark valley beyond, letting out a soft sigh.*
+Journal: Tomorrow’s another day.
+Narrator:*Scout sets the journal aside, the faint sound of crickets filling the room as they sit quietly in thought.*
