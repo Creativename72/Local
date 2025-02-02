@@ -15,11 +15,11 @@ public class MapManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int day = GameFlags.GetFlag<int>("DayNumber");
+        int day = GameStateManager.Instance.GetFlag<int>("DayNumber");
 
-        bool walterVisited = GameFlags.GetFlag<bool>("WalterVisited");
-        bool annieVisited = GameFlags.GetFlag<bool>("AnnieVisited");
-        bool tylerVisited = GameFlags.GetFlag<bool>("TylerVisited");
+        bool walterVisited = GameStateManager.Instance.GetFlag<bool>("WalterVisited");
+        bool annieVisited = GameStateManager.Instance.GetFlag<bool>("AnnieVisited");
+        bool tylerVisited = GameStateManager.Instance.GetFlag<bool>("TylerVisited");
         bool showScout = walterVisited && annieVisited && tylerVisited;
 
         // enabling highlights
@@ -44,9 +44,9 @@ public class MapManager : MonoBehaviour
                 case 1: GameManager.Instance.ChangeScene(walterIcon.day1Scene); break;
                 case 2: GameManager.Instance.ChangeScene(walterIcon.day2Scene); break;
                 case 3: GameManager.Instance.ChangeScene(walterIcon.day3Scene); break;
-                default: Debug.LogWarning("Invalid Day Number in GameFlags"); break;
+                default: Debug.LogWarning("Invalid Day Number in GameStateManager"); break;
             }
-            GameFlags.SetFlag("WalterVisited", true);
+            GameStateManager.Instance.SetFlag("WalterVisited", true);
         });
 
         annieIcon.OnClick(() =>
@@ -57,9 +57,9 @@ public class MapManager : MonoBehaviour
                 case 1: GameManager.Instance.ChangeScene(annieIcon.day1Scene); break;
                 case 2: GameManager.Instance.ChangeScene(annieIcon.day2Scene); break;
                 case 3: GameManager.Instance.ChangeScene(annieIcon.day3Scene); break;
-                default: Debug.LogWarning("Invalid Day Number in GameFlags"); break;
+                default: Debug.LogWarning("Invalid Day Number in GameStateManager"); break;
             }
-            GameFlags.SetFlag("AnnieVisited", true);
+            GameStateManager.Instance.SetFlag("AnnieVisited", true);
         });
 
         tylerIcon.OnClick(() =>
@@ -70,9 +70,9 @@ public class MapManager : MonoBehaviour
                 case 1: GameManager.Instance.ChangeScene(tylerIcon.day1Scene); break;
                 case 2: GameManager.Instance.ChangeScene(tylerIcon.day2Scene); break;
                 case 3: GameManager.Instance.ChangeScene(tylerIcon.day3Scene); break;
-                default: Debug.LogWarning("Invalid Day Number in GameFlags"); break;
+                default: Debug.LogWarning("Invalid Day Number in GameStateManager"); break;
             }
-            GameFlags.SetFlag("TylerVisited", true);
+            GameStateManager.Instance.SetFlag("TylerVisited", true);
         });
 
         // change the day counter and unvisit everyone for visiting scout
@@ -84,13 +84,13 @@ public class MapManager : MonoBehaviour
                 case 1: GameManager.Instance.ChangeScene(scoutIcon.day1Scene); break;
                 case 2: GameManager.Instance.ChangeScene(scoutIcon.day2Scene); break;
                 case 3: GameManager.Instance.ChangeScene(scoutIcon.day3Scene); break;
-                default: Debug.LogWarning("Invalid Day Number in GameFlags"); break;
+                default: Debug.LogWarning("Invalid Day Number in GameStateManager"); break;
             }
 
-            GameFlags.SetFlag("DayNumber", Math.Clamp(day + 1, 1, 3));
-            GameFlags.SetFlag("WalterVisited", false);
-            GameFlags.SetFlag("AnnieVisited", false);
-            GameFlags.SetFlag("TylerVisited", false);
+            GameStateManager.Instance.SetFlag("DayNumber", Math.Clamp(day + 1, 1, 3));
+            GameStateManager.Instance.SetFlag("WalterVisited", false);
+            GameStateManager.Instance.SetFlag("AnnieVisited", false);
+            GameStateManager.Instance.SetFlag("TylerVisited", false);
         });
     }
 

@@ -62,7 +62,7 @@ public class TylerDay3 : MonoBehaviour
         });
 
         dialogueController.AddDialogue(dialogueText);
-        dialogueController.AddEndFunction(() => GameManager.Instance.ChangeScene("Map"));
+        dialogueController.AddEndFunction(() => { GameManager.Instance.ChangeScene("Map"); GameManager.Instance.SaveGame(); });
         dialogueController.ReparseOnNodeChange(true);
         dialogueController.StartDialogue();
 

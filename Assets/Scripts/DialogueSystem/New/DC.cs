@@ -37,9 +37,9 @@ public class DC : MonoBehaviour
     }
     public void AddGameFlags()
     {
-        GameFlags.ForEachFlag<bool>((name, val) =>
+        GameStateManager.Instance.ForEachFlag<bool>((name, val) =>
         {
-            this.SetVariable(name, () => GameFlags.GetFlag<bool>(name));
+            this.SetVariable(name, () => GameStateManager.Instance.GetFlag<bool>(name));
         });
     }
 
@@ -81,7 +81,7 @@ public class DC : MonoBehaviour
                 throw new DialogueControllerException("SetFlag() did not parse bool correctly.");
             }
             Debug.Log($"Setting flag {flagName} to {value}");
-            GameFlags.SetFlag(flagName, value);
+            GameStateManager.Instance.SetFlag(flagName, value);
         });
         this.AddFunction("showCharacters", () => characters.Values.ToList().ForEach(c => c.SetVisible(true)));
         this.AddFunction("showCharactersFade", () => StartCoroutine(Wait(0.75f, () => characters.Values.ToList().ForEach(c => c.SetVisible(true)))));

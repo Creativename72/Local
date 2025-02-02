@@ -17,7 +17,7 @@ public class BerniceIntro : MonoBehaviour
         DialogueCharacter narrator = dialogueController.CreateCharacter(narratorCreator);
 
         bernice.SetLocation(DialogueCharacter.Location.RIGHT);
-        
+
         scout.SetLocation(DialogueCharacter.Location.LEFT);
         //
         dialogueController.AddDefaultFunctions(backgroundHandler);
@@ -25,14 +25,20 @@ public class BerniceIntro : MonoBehaviour
         dialogueController.AddFunction("showBernice", () => bernice.SetVisible(true));
         dialogueController.AddFunction("setBerniceName", () => bernice.SetName("Bernice"));
         dialogueText.ForEach(dialogueText => dialogueController.AddDialogue(dialogueText));
-        dialogueController.AddEndFunction(() => GameManager.Instance.ChangeScene("Map"));
+        dialogueController.AddEndFunction(() =>
+        {
+            GameManager.Instance.ChangeScene("Map");
+            GameManager.Instance.SaveGame();
+        });
         dialogueController.StartDialogue();
+
+        GameStateManager.Instance.SetFlag("BerniceIntro", true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-    
+
 }

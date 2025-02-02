@@ -54,10 +54,10 @@ public class FinalHangout : MonoBehaviour
             audioPlayer.PlaySFX(writeSFX);
         });
         dialogueController.AddDefaultFunctions(backgroundHandler, ambienceInScene, audioPlayer);
-        
-        bool walterGood = GameFlags.GetFlag<bool>("WalterGoodEnding");
-        bool annieGood = GameFlags.GetFlag<bool>("AnnieGoodEnding");
-        bool tylerGood = GameFlags.GetFlag<bool>("TylerGoodEnding");
+
+        bool walterGood = GameStateManager.Instance.GetFlag<bool>("WalterGoodEnding");
+        bool annieGood = GameStateManager.Instance.GetFlag<bool>("AnnieGoodEnding");
+        bool tylerGood = GameStateManager.Instance.GetFlag<bool>("TylerGoodEnding");
 
         if (!annieGood && !walterGood && !tylerGood)
         {
@@ -108,7 +108,7 @@ public class FinalHangout : MonoBehaviour
         }
 
         dialogueController.StartDialogue();
-        dialogueController.AddEndFunction(() => GameManager.Instance.ChangeScene("EndScene"));
+        dialogueController.AddEndFunction(() => { GameManager.Instance.ChangeScene("EndScene"); GameManager.Instance.SaveGame(); });
     }
 
     // Update is called once per frame

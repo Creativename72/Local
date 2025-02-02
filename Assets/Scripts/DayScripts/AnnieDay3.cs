@@ -51,9 +51,9 @@ public class AnnieDay3 : MonoBehaviour
         int count = 1; // one option always shows
 
         // we want these options to always show
-        if (GameFlags.GetFlag<bool>("AnnieMovesForward")) count++;
-        if (GameFlags.GetFlag<bool>("AnnieWalterBreak")) count++;
-        if (GameFlags.GetFlag<bool>("AnnieMissesCity")) count++;
+        if (GameStateManager.Instance.GetFlag<bool>("AnnieMovesForward")) count++;
+        if (GameStateManager.Instance.GetFlag<bool>("AnnieWalterBreak")) count++;
+        if (GameStateManager.Instance.GetFlag<bool>("AnnieMissesCity")) count++;
 
         bool show = count < 3;
 
@@ -97,7 +97,7 @@ public class AnnieDay3 : MonoBehaviour
                 minigame.SetActive(false);
             });
             dialogueController.ClearEndFunctions();
-            dialogueController.AddEndFunction(() => GameManager.Instance.ChangeScene("Map"));
+            dialogueController.AddEndFunction(() => { GameManager.Instance.ChangeScene("Map"); GameManager.Instance.SaveGame(); });
         }
 
         if (inMinigame)

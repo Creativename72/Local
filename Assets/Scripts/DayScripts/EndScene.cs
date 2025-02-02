@@ -10,9 +10,9 @@ public class EndScene : MonoBehaviour
     void Start()
     {
         bool goodEnding =
-            GameFlags.GetFlag<bool>("WalterGoodEnding") &&
-            GameFlags.GetFlag<bool>("AnnieGoodEnding") &&
-            GameFlags.GetFlag<bool>("TylerGoodEnding");
+            GameStateManager.Instance.GetFlag<bool>("WalterGoodEnding") &&
+            GameStateManager.Instance.GetFlag<bool>("AnnieGoodEnding") &&
+            GameStateManager.Instance.GetFlag<bool>("TylerGoodEnding");
 
         endingText.text = goodEnding ? "Good ending." : "";
     }
@@ -23,6 +23,7 @@ public class EndScene : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             GameManager.Instance.ChangeScene("TitleScreen");
+            GameManager.Instance.NewGame();
         }
     }
 }

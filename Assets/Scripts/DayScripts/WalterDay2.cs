@@ -38,9 +38,9 @@ public class WalterDay2 : MonoBehaviour
         dialogueController.SetVariable("NotAskedPlayKeyBoard", () => !askedPlayKeyBoard);
         dialogueController.SetVariable("NotAskedSmallKitchen", () => !askedSmallKitchen);
         dialogueController.SetVariable("NotAskedLikeFishing", () => !askedLikeFishing);
-        GameFlags.ForEachFlag<bool>((name, val) =>
+        GameStateManager.Instance.ForEachFlag<bool>((name, val) =>
         {
-            dialogueController.SetVariable(name, () => GameFlags.GetFlag<bool>(name));
+            dialogueController.SetVariable(name, () => GameStateManager.Instance.GetFlag<bool>(name));
         });
 
         dialogueController.AddFunction("PlayKeyboard", () => askedPlayKeyBoard = true);
@@ -68,7 +68,7 @@ public class WalterDay2 : MonoBehaviour
         });
 
 
-        dialogueController.AddEndFunction(() => GameManager.Instance.ChangeScene("Map"));
+        dialogueController.AddEndFunction(() => { GameManager.Instance.ChangeScene("Map"); GameManager.Instance.SaveGame(); });
         dialogueText.ForEach(dialogueText => dialogueController.AddDialogue(dialogueText));
         dialogueController.ReparseOnNodeChange(true);
         dialogueController.StartDialogue();

@@ -1,9 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using static DialogueTree;
 
 public class TylerDay2 : MonoBehaviour
 {
@@ -45,7 +40,7 @@ public class TylerDay2 : MonoBehaviour
     {
         dialogueController.ClearDialogue();
         dialogueController.AddDialogue(part2);
-        dialogueController.AddEndFunction(() => GameManager.Instance.ChangeScene("Map"));
+        dialogueController.AddEndFunction(() => { GameManager.Instance.ChangeScene("Map"); GameManager.Instance.SaveGame(); });
         dialogueController.StartDialogue();
         currentState = State.PostDialogue;
         tyler.SetVisible(true);
@@ -73,9 +68,9 @@ public class TylerDay2 : MonoBehaviour
         tyler.SetSprite(1);
         scout.SetVisible(true);
 
-        GameFlags.ForEachFlag<bool>((name, val) =>
+        GameStateManager.Instance.ForEachFlag<bool>((name, val) =>
         {
-            dialogueController.SetVariable(name, () => GameFlags.GetFlag<bool>(name));
+            dialogueController.SetVariable(name, () => GameStateManager.Instance.GetFlag<bool>(name));
         });
         dialogueController.AddFunction("ShowTyler", () => tyler.SetVisible(true));
         dialogueController.AddFunction("HideTyler", () => tyler.SetVisible(false));

@@ -30,9 +30,9 @@ public class WalterDay3 : MonoBehaviour
         scout.SetLocation(DialogueCharacter.Location.RIGHT);
         walter.SetLocation(DialogueCharacter.Location.LEFT);
 
-        GameFlags.ForEachFlag<bool>((name, val) =>
+        GameStateManager.Instance.ForEachFlag<bool>((name, val) =>
         {
-            dialogueController.SetVariable(name, () => GameFlags.GetFlag<bool>(name));
+            dialogueController.SetVariable(name, () => GameStateManager.Instance.GetFlag<bool>(name));
         });
         dialogueController.AddFunction("FishingCast", () =>
         {
@@ -62,7 +62,7 @@ public class WalterDay3 : MonoBehaviour
             });
         });
         dialogueController.AddDefaultFunctions(backgroundHandler, ambienceInScene);
-        dialogueController.AddEndFunction(() => GameManager.Instance.ChangeScene("Map"));
+        dialogueController.AddEndFunction(() => { GameManager.Instance.ChangeScene("Map"); GameManager.Instance.SaveGame(); });
         dialogueController.AddDialogue(dialogueText);
         dialogueController.ReparseOnNodeChange(true);
         dialogueController.StartDialogue();

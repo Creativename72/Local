@@ -59,6 +59,7 @@ public class AnnieDay2 : MonoBehaviour
             dialogueController.ClearEndFunctions();
             dialogueController.ClearDialogue();
             GameManager.Instance.ChangeScene("Map");
+            GameManager.Instance.SaveGame();
         });
         // does nothing for now but if we have a display for the items we can add functionality
         dialogueController.AddFunction("ChangeSisterName", () => { });
@@ -101,7 +102,7 @@ public class AnnieDay2 : MonoBehaviour
                 minigame.SetActive(false);
             });
             dialogueController.ClearEndFunctions();
-            dialogueController.AddEndFunction(() => GameManager.Instance.ChangeScene("Map"));
+            dialogueController.AddEndFunction(() => { GameManager.Instance.ChangeScene("Map"); GameManager.Instance.SaveGame(); });
         }
 
         if (inMinigame)

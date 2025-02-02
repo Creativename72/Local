@@ -22,20 +22,25 @@ public class AnnieDay1 : MonoBehaviour
         annie.SetName("Mole");
         annie.SetSprite(0);
         scout.SetVisible(true);
-        GameFlags.ForEachFlag<bool>((name, val) =>
+        annie.SetLocation(DialogueCharacter.Location.LEFT);
+        scout.SetLocation(DialogueCharacter.Location.RIGHT);
+        GameStateManager.Instance.ForEachFlag<bool>((name, val) =>
         {
-            dialogueController.SetVariable(name, () => GameFlags.GetFlag<bool>(name));
+            dialogueController.SetVariable(name, () => GameStateManager.Instance.GetFlag<bool>(name));
         });
         dialogueController.AddFunction("ShowAnnie", () => annie.SetVisible(true));
         dialogueController.AddFunction("HideAnnie", () => annie.SetVisible(false));
         dialogueController.AddFunction("setAnnieName", () => annie.SetName("Annie"));
-        dialogueController.AddFunction("AnnieRangDoorbell", () => GameFlags.SetFlag("AnnieRangDoorbell", true));
-        dialogueController.AddFunction("AnnieJoked", () => GameFlags.SetFlag("AnnieJoked", true));
-        dialogueController.AddFunction("MetAnnie", () => GameFlags.SetFlag("MetAnnie", true));
+        dialogueController.AddFunction("AnnieRangDoorbell", () => GameStateManager.Instance.SetFlag("AnnieRangDoorbell", true));
+        dialogueController.AddFunction("AnnieJoked", () => GameStateManager.Instance.SetFlag("AnnieJoked", true));
+        dialogueController.AddFunction("MetAnnie", () => GameStateManager.Instance.SetFlag("MetAnnie", true));
 
         dialogueController.AddDefaultFunctions(backgroundHandler);
 
-        dialogueController.AddEndFunction(() => GameManager.Instance.ChangeScene("Map"));
+        dialogueController.AddEndFunction(() => {
+            GameManager.Instance.ChangeScene("Map");
+            GameManager.Instance.SaveGame();
+        });
         dialogueText.ForEach(dialogueText => dialogueController.AddDialogue(dialogueText));
         dialogueController.StartDialogue();
     }

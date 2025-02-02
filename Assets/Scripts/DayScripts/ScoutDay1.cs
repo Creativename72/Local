@@ -26,7 +26,7 @@ public class ScoutDay1 : MonoBehaviour
             playDialogueSFX.PlaySFX(writeSFX);
         });
 
-        dialogueController.AddEndFunction(() => GameManager.Instance.ChangeScene("Map"));
+        dialogueController.AddEndFunction(() => { GameManager.Instance.ChangeScene("Map"); GameManager.Instance.SaveGame(); });
         dialogueController.AddDialogue(dialogueText);
         dialogueController.StartDialogue();
     }

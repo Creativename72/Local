@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private DataManager dataManager;
     [SerializeField] private GameObject escapeMenu;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject optionsMenu;
@@ -43,7 +44,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        escapeMenu.SetActive(menuDepth == 1);
+        escapeMenu.SetActive(menuDepth == 1 || menuDepth == 2);
         pauseMenu.SetActive(menuDepth == 1);
         optionsMenu.SetActive(menuDepth == 2);
         gameVolume = musicSlider.value;
@@ -87,16 +88,22 @@ public class GameManager : MonoBehaviour
 
     public void MainMenu()
     {
+        Debug.Log("Saving game...");
+       
         CloseMenus();
         ChangeScene("TitleScreen");
-        Debug.Log("MAIN MENU");
+        
     }
 
     public void ExitGame()
     {
         // Quit game
+        Debug.Log("Saving game...");
+        
+
+        Debug.Log("Exiting...");
         Application.Quit();
-        Debug.Log("EXIT GAME");
+        
     }
 
     public void ChangeScene(string name)
@@ -132,5 +139,28 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         a.Invoke();
+    }
+
+    // saving loading restoring...
+    public void NewGame()
+    {
+        dataManager.NewGame();
+    }
+    public void SaveGame()
+    {
+        dataManager.SaveGame();
+    }
+    public void LoadGame()
+    {
+        dataManager.LoadGame();
+    }
+    /// <summary>
+    /// Determines if the game can be loaded from an advanced state
+    /// </summary>
+    /// <returns>true if we can load the game from advance state, false otherwise</returns>
+    public bool IsLoadable()
+    {
+        GameState gs = dataManager.GetLoadedData();
+        return gs.DayNumber > 1 || gs.BerniceIntro;
     }
 }

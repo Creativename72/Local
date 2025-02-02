@@ -36,13 +36,13 @@ public class WalterDay1 : MonoBehaviour
             walter.SetLocation(DialogueCharacter.Location.LEFT);
         });
 
-        GameFlags.ForEachFlag<bool>((name, val) =>
+        GameStateManager.Instance.ForEachFlag<bool>((name, val) =>
         {
-            dialogueController.SetVariable(name, () => GameFlags.GetFlag<bool>(name));
+            dialogueController.SetVariable(name, () => GameStateManager.Instance.GetFlag<bool>(name));
         });
 
         dialogueController.AddDefaultFunctions(backgroundHandler);
-        dialogueController.AddEndFunction(() => GameManager.Instance.ChangeScene("Map"));
+        dialogueController.AddEndFunction(() => { GameManager.Instance.ChangeScene("Map"); GameManager.Instance.SaveGame(); });
         dialogueText.ForEach(dialogueText => dialogueController.AddDialogue(dialogueText));
         dialogueController.StartDialogue();
     }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class TylerDay1 : MonoBehaviour
 {
     [SerializeField] private DC dialogueController;
-    [SerializeField] List<TextAsset> dialogueText;
+    [SerializeField] TextAsset dialogueText;
     [SerializeField] DialogueCharacter scoutCreator;
     [SerializeField] DialogueCharacter tylerCreator;
     [SerializeField] DialogueCharacter narratorCreator;
@@ -21,24 +21,23 @@ public class TylerDay1 : MonoBehaviour
         DialogueCharacter tyler = dialogueController.CreateCharacter(tylerCreator);
 
         tyler.SetName("???");
+        tyler.SetLocation(DialogueCharacter.Location.LEFT);
+        scout.SetLocation(DialogueCharacter.Location.RIGHT);
         tyler.SetSprite(0);
         scout.SetVisible(true);
-        GameFlags.ForEachFlag<bool>((name, val) =>
-        {
-            dialogueController.SetVariable(name, () => GameFlags.GetFlag<bool>(name));
-        });
-        
-        dialogueController.AddFunction("TylerPranked", () => GameFlags.SetFlag("TylerPranked", true));
+        dialogueController.AddGameFlags();
+
+        dialogueController.AddFunction("TylerPranked", () => GameStateManager.Instance.SetFlag("TylerPranked", true));
         dialogueController.AddFunction("ShowTyler", () => tyler.SetVisible(true));
         dialogueController.AddFunction("HideTyler", () => tyler.SetVisible(false));
         dialogueController.AddFunction("SetTylerName", () => tyler.SetName("Tyler"));
-        dialogueController.AddFunction("TylerMessy", () => GameFlags.SetFlag("TylerMessy", true));
-        dialogueController.AddFunction("MetTyler", () => GameFlags.SetFlag("MetTyler", true));
+        dialogueController.AddFunction("TylerMessy", () => GameStateManager.Instance.SetFlag("TylerMessy", true));
+        dialogueController.AddFunction("MetTyler", () => GameStateManager.Instance.SetFlag("MetTyler", true));
 
-        dialogueController.AddDefaultFunctions(backgroundHandler);
+        dialogueController.AddDefaultFunctions(backgroundHandler, ambienceInScene);
 
-        dialogueController.AddEndFunction(() => GameManager.Instance.ChangeScene("Map"));
-        dialogueText.ForEach(dialogueText => dialogueController.AddDialogue(dialogueText));
+        dialogueController.AddEndFunction(() => { GameManager.Instance.ChangeScene("Map"); GameManager.Instance.SaveGame(); });
+        dialogueController.AddDialogue(dialogueText);
         dialogueController.StartDialogue();
     }
 
