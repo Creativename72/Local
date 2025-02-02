@@ -1,25 +1,27 @@
-//1. DONE
+//1. DONE FULLY
 
 -Start
 Narrator:*The sun has dipped below the horizon, casting an amber glow across the valley. Inside Scout’s cozy kitchen, warm light illuminates the counter. The gathered ingredients from Walter, Annie, and Tyler are neatly arranged in front of them.*
 Narrator:*Scout rolls up their sleeves, ready to dive into the final preparations.*
 //for each of these choices, play the correct sound effect after the choice is selected
 //also no character art for cooking
-[Chop the vegetables. > PlaySound{chop}
+[Chop the vegetables. > PlaySound{s_chopping}
 Narrator:*Scout grabs a potato and starts peeling. The peeler slips. After fumbling, they slice uneven chunks of potatoes, carrots, and onions.*
-[Heat the pot and add some oil. > PlaySound{heatPot}
+[Heat the pot and add some oil. > PlaySound{s_placingstovepot}
 Narrator:*Scout places a pot on the stove, clicks the burner a few times, and pours in some oil. They tilt the pot to spread it around.*
-[Saute the vegetables. > PlaySound{sauteVeggies}
+[Saute the vegetables. > PlaySound{s_simmeringveggies}
 Narrator:*The vegetables sizzle loudly. Oil pops as they stir, and they slam the lid on.*
-[Add the fish and season. > PlaySound{addFish}
+[Add the fish and season. > PlaySound{s_cookingfish}
 Narrator:*Scout tosses the fish into the pot, splashing broth. They shake in spices, pausing to read the labels, then adding more.*
-[Finish with cream. > PlaySound{cream}
-Narrator:*They pour in the cream and stir, watching the broth turn creamy.* > PlaySound{stir}
-[Have a taste. > PlaySound{taste}
+[Finish with cream. > PlaySound{s_pouringcream}
+Narrator:*They pour in the cream and stir, watching the broth turn creamy.*
+[Have a taste. > PlaySound{s_tastingwithspoon}
 Narrator:*Scout tastes the chowder, nodding in relief. The veggies are soft, the fish is flaky, and it smells good.*
 //interior background (should already be this)
 //character art
-> ShowScout
+> FadeScreen
+> Show{Scout, true, 0.75}
+> Move{Scout, LEFT, 0.75}
 Narrator:*Scout wipes their hands on a dish towel and takes a deep breath. The chowder isn’t perfect, but it’s ready.*
 Narrator:*A knock at the door interrupts them.*
 
@@ -29,6 +31,9 @@ Narrator:*Scout wipes their hands quickly on a dish towel and heads to the door.
 Walter: Scout. 
 Walter: Chowder smells good.
 [Come on in, Walter.
+> FadeScreen
+> Show{Walter, true, 0.75}
+> Move{Walter, RIGHT, 0.75}
 Narrator:*Scout steps aside to let him in. Walter enters, standing near the door awkwardly instead of making himself comfortable. His eyes scan the room briefly before settling on the floor.*
 Walter: Place looks fine. I remember when I would come here with Bernice.
 Walter: It’s different now, isn’t it. 
@@ -44,6 +49,10 @@ Narrator:*Scout hears the ringing of the doorbell. They open the door to find An
 Annie: Hey, Scout. Took me a while—haven’t needed to come to this side of the valley in ages. Had to stop a couple times just to get my bearings.
 Annie: Figured I’d bring something fun. These are all the mystery jars I had in my pantry. Can’t read the labels, so I never took the gamble. Thought there might be some tasty treats among the collection.
 [Welcome, Annie!
+> FadeScreen
+> Show{Annie, true, 0.75}
+> Move{Walter, CENTER, 0.75}
+> Move{Annie, RIGHT, 0.75}
 Narrator:*Annie enters the cottage, tilting her head up and sniffing the air.*
 Annie: Wow, it smells amazing in here. Is that chowder?
 Annie: I can smell all the spices you used! Glad you could make good use of them.
@@ -84,6 +93,13 @@ Tyler: *Tyler grins wide as he approaches the door.* Yo, Scout! Made it! I broug
 Tyler: And by stuffs, I mean a proper gas station buffet.
 Narrator:*He gestures with the bags, full of chips, cookies, and soda.*
 [Tyler! You’re here!
+// annie good ending moving characters tyler arrives
+> FadeScreen
+> Move{Scout, FAR_LEFT, 0.75}
+> Move{Walter, CENTER_LEFT, 0.75}
+> Move{Annie, CENTER_RIGHT, 0.75}
+> Move{Tyler, FAR_RIGHT, 0.75}
+> Show{Tyler, true, 0.75}
 Tyler: Of course! I talked it over with myself and thought, why am I still holdin’ onto all that past stuff anyway?
 Tyler: It’s time to let it go. Move forward, y’know? Plus, I wasn’t gonna let y’all eat all that chowder without me.
 Narrator:*Scout steps aside to let Tyler in. He marches straight to the counter and unloads the snacks into a huge pile, before turning and looking for the others.*
@@ -156,7 +172,6 @@ Narrator:*He exhales, grabbing his spoon and takes a bite of the chowder.*
 
 Walter:...
 Walter: Chowder’s good, Scout.
-
 Narrator:*The night goes on. Annie and Tyler’s laughter bounces off the walls as they share stories and tell jokes. Scout and Walter sit on the quieter side of the table.*
 Narrator:*Tyler stretches as he pushes his empty bowl and pile of empty chip bags away from him.*
 Tyler: Man, this was great. Haven’t had a homemade meal like this in a while.
@@ -170,6 +185,12 @@ Narrator:*Both of them head for the door.*
 Annie: We’ll go this again soon, yeah?
 Annie: We could go down to the lakeside like I said we would!
 Tyler: Annie, wait, do you remember last time, when we went to the lake we...
+// annie tyler leave together
+> FadeScreen
+> Show{Tyler, false, 0.75}
+> Show{Annie, false, 0.75}
+> Move{Walter, RIGHT, 0.75}
+> Move{Scout, LEFT, 0.75}
 Narrator:*Their conversation fades out as Tyler swings the door closed behind them, their laughter and conversation fading into the night.*
 Narrator:*Soon, the sound of Tyler’s truck pulling out of the driveway is heard, before it too fades away.*
 Narrator:*Walter remains seated for a moment, watching the door as the others leave. After a beat, he exhales and stands up, rolling his shoulders before silently moving to collect the empty bowls and utensils. Scout gets up and helps.*
@@ -177,21 +198,27 @@ Narrator:*The two clean up in silence for a while, the clinking of dishes fillin
 Walter: Sorry, Scout. For... not really being all the way here tonight.
 Narrator:*Scout doesn’t reply right away, just offering a small nod. Walter takes a step toward the door, pausing just before opening it.*
 Walter: Thanks for pulling this together. Even if I wasn’t ready for all of it... I appreciate it.
+> Show{Walter, false}
 Narrator:*He gives Scout one last nod before stepping outside. The door closes behind him, leaving Scout alone in the quiet house.*
 Narrator:*Scout settles at their desk and begins writing in their journal.*
 
+> ChangeBackground
+> Show{Scout, false, 0.75}
 Journal: Tonight was... different than I expected. Walter seems...
 [...like he still doesn’t know how to connect again.
 [...to feel out of place in the group.
 [...like he didn’t go in thinking he would resolve his issues.
+>WriteEntry
 Journal: Annie was...
 [...really happy to reconnect with Tyler again.
 [...back to how she was before.
 [...excluding Walter from the conversation.
+>WriteEntry
 Journal: And Tyler...
 [...really felt at home today.
 [...got along with Annie like no time had passed at all.
 [...didn’t care that Walter wasn’t willing to fully put the past behind him.
+>WriteEntry
 Journal: I don’t think everything is fixed yet. Maybe it won’t be for a while. But... at least we tried. And that’s gotta count for something.
 Narrator:*Scout closes their journal slowly, the weight of the day sinking in. They glance out the window at the dark valley beyond, letting out a soft sigh.*
 Journal: Tomorrow’s another day.

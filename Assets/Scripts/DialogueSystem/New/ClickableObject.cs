@@ -18,13 +18,12 @@ public class ClickableObject : HighlightableObject
             controller.ClearDialogue();
             controller.AddDialogue(clickText);
             controller.StartDialogue();
+            
             this.enableHighlight = false;
             this.enableClick = false;
-
             this.clicked = true;
         }
     }
-
     public void Update()
     {
         // if controller is running disable clicks and highlights

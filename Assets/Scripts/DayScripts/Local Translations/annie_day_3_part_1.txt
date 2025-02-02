@@ -1,0 +1,99 @@
+-Start
+Narrator:*Scout makes their way up the familiar trail to Annie’s cabin. The air is cool and crisp, with the faint scent of pine lingering in the breeze.*
+Narrator:*They step onto the porch and knock on the door. A moment later, Annie opens it, adjusting her glasses with one hand while holding a steaming mug in the other.*
+Annie: Hey there, Scout! Back so soon, hmm? Come on in.
+>ChangeBackground //Scene change to interior
+>ChangeAmbience
+>Show{Annie, true, 0.75}
+Narrator:*She leads them inside the cabin, the scent of an apple-scented candle drifting through the air. She settles onto the couch, patting the seat beside her for Scout to join.*
+Annie: Just made some tea and was flipping through my audiobooks. Been on a big mystery kick lately.
+Annie: Love a good thriller—though my sister keeps telling me to branch out.
+Narrator:*She takes a sip from her mug, tilting her head towards Scout.*
+Annie: Anyways! What’s up with you? Anything new happen?
+[[I was planning a little get-together dinner party with everyone in the valley. | IPlanning
+[[Bernice wanted me to host a dinner and get everyone together. | BerniceWanted
+
+-IPlanning
+Annie: *She perks up slightly.* A dinner party, huh? I’m guessing casual.
+Annie: *She chuckles.* Can’t imagine Walter *or* Tyler in fancy outfits.
+Annie: It’ll be so nice to see everyone again! It’s been so-
+| OhShoot
+
+-BerniceWanted
+Annie: She really wants to see us all get along again, huh? Guess I should’ve guessed.
+Annie: *She thinks for a moment.* It would be nice to see everyone again. It’s been so-
+| OhShoot
+
+-OhShoot
+Narrator:*She cuts herself off mid-sentence.*
+Annie: Oh, shoot! Scout, I just picked up a work shift for tonight.
+Annie: I didn’t have any plans this morning, so I thought getting in a few more hours of work would be fine.
+Narrator:*She sighs, rubbing the back of her neck.*
+Annie: Ugh, figures. Every time I actually want to do something, I’ve already overbooked myself.
+Narrator:*Annie shakes her head, giving a small apologetic smile.*
+Annie: Sorry, Scout. I’d love to come, really. But it’s just one of those things—I hate sitting around with nothing to do. Felt like I’d be wasting time if I didn’t grab the extra shift.
+$AnnieMovesForward$[[I know you want to move forward with everything. This is your chance. (( You think Annie wants things to change. || HuhIGuess //IF FLAG AnnieMovesForward TRUE
+$ShowYouNeedBreak$[[You need a break Annie. One night won’t hurt. || IKnowIKnow $AnnieBreakForReal$((You think Annie needs a break. //IF FLAG NONE, BUT IF FLAG AnnieWalterBreak TRUE AND FLAG AnnieBrushOff FALSE, THIS OPTION IS NOT AVAILABLE.
+$AnnieWalterBreak$[[Walter’s worried about you. He says you need a break. (( Walter wants Annie to take a break. || HeToldYou //IF FLAG AnnieWalterBreak TRUE
+$AnnieMissesCity$[[This could be like the city—just good food and good company. (( You think Annie misses the city. || OofWhereItHurts //IF FLAG AnnieMissesCity TRUE, MESSAGE: You think Annie misses the city.
+[[I get it. If work’s what feels right, then go for it. || WorkWhatFeelsRight //this is bad ending
+
+-HuhIGuess
+Annie: Huh... I guess it could be.
+Annie: And I guess I have been sitting on my butt not moving for a while now.
+Annie: Plus, I really do want to see Walter and Tyler again...
+Annie: Yeah, I’d much rather be going to the dinner than work another shift.
+Annie: I’ll see if I can find someone to cover my shift. Might be tricky on short notice, but... I’ve got a few favors to cash in. 
+>SetFlag{AnnieGoodEnding, true} //SET FLAG AnnieGoodEnding
+|EitherWayIHope
+
+-IKnowIKnow
+Annie: *She sighs.* I know, I know. I need a break.
+Annie: It’s just tough for me. Being productive is what keeps me motivated. Otherwise, I feel like I’m just sittin’ there.
+Annie: I mean... you are right. I do need one...
+Annie: Plus, I really do want to see Walter and Tyler again...
+Annie: *She pauses for a moment.* Okay, I’ll see if I can find someone to cover my shift. Might be tricky on short notice, but... I’ve got a few favors to cash in. 
+>SetFlag{AnnieGoodEnding, true} //SET FLAG AnnieGoodEnding
+|EitherWayIHope
+
+-HeToldYou
+Annie: He told you, did he? He’s been saying that to me even before everything split off.
+Annie: I’m sure if we were still talking, he’d say that to me now, too.
+Annie: ...I do want to see the others again. Help put Walter at ease, at least. That I’m not running myself completely ragged...
+Annie: *She pauses for a moment.* Okay, I’ll see if I can find someone to cover my shift. Might be tricky on short notice, but... I’ve got a few favors to cash in.
+>SetFlag{AnnieGoodEnding, true} //SET FLAG AnnieGoodEnding
+|EitherWayIHope
+
+-OofWhereItHurts
+Annie: *She chuckles a little.* Oof, hitting me where it hurts, huh?
+Annie: I mean, I already want to go... And yeah, I do miss that about the city.
+Annie: I’ll see if I can find someone to cover my shift. Might be tricky on short notice, but... I’ve got a few favors to cash in. //SET FLAG AnnieGoodEnding
+>SetFlag{AnnieGoodEnding, true} //SET FLAG AnnieGoodEnding
+|EitherWayIHope
+
+-WorkWhatFeelsRight
+Annie: *She sighs.* Yeah, that’s what I figured.
+Annie: Look, I do want to go to the dinner, but I already committed to working tonight’s shift.
+Annie: I don’t work the whole night, just ‘til the sun sets. I’ll try and see if I can make it a bit later! I’d still love to see everyone.
+|EitherWayIHope
+
+-EitherWayIHope
+Annie: *She sighs, shaking her head.* Either way, I hope it goes well. If I can’t make it, you better tell me all about it later.
+Annie: So, what’s on the menu? What are you making?
+[[Fish chowder. | FishChowder
+[[Fish chowder, Bernice’s recipe! | FishChowderBernice
+
+-FishChowder
+Annie: Oooh, good choice.
+|HelpYou
+
+-FishChowderBernice
+Annie: *She lets out a little whistle.* Ah, so you’re going with a Bernice special.
+|HelpYou
+
+-HelpYou
+Annie: Anything I can do to help? Just in case I can’t make it to the dinner, I still wanna pitch in somehow.
+[[I need fish, veggies, and spices.
+Annie: Oh! Well, Scout, you’ve come to the right place. My pantry’s stocked to the brim with spices.
+Annie: My sister and I always grab a ton when we go to the spice market in the city. Problem is... I don’t always know what I’m grabbing.
+Annie: *She gestures toward the small pantry in the corner of the kitchen.* So yeah, go nuts. Take what you need!

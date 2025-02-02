@@ -94,7 +94,6 @@ public class DialogueBox : MonoBehaviour
         SetDialogue(speaker.GetCharacterName(), dialogueString, scroll);
 
         currentlySpeaking = speaker;
-        audioPlayer.clip = speaker.GetTalkSFX();
         speakStartTime = Time.time - speakSpeed;
     }
 
@@ -242,7 +241,7 @@ public class DialogueBox : MonoBehaviour
         if (dt > speakSpeed)
         {
             speakStartTime = now;
-            audioPlayer.Play();
+            audioPlayer.PlayOneShot(currentlySpeaking.GetRandomTalkSFX());
         }
     }
 

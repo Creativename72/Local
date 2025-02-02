@@ -1,0 +1,10 @@
+-Start
+Annie: Alright, that’s everything you needed, right?
+[[Should be!
+Annie: Awesome! Hope it all comes together. And hey, if you mess up the chowder, at least you’ve got a bunch of random spices now, right?
+Annie: Anyways, no promises I’ll be able to come tonight. If I can’t, I want leftovers, okay?
+[[For sure!
+[[That’s assuming Tyler doesn’t eat everything first.
+Annie: And hey... Thanks for hangin’ out with me the past few days. I think I’m finally starting to get a handle on this whole work-life balance thing. Maybe.
+Annie: Alright, get outta here before you start burning daylight. Good luck with the cooking!
+Narrator:*Annie gives Scout a playful wave as they step outside. With spices in hand and a hopeful feeling in their chest, Scout heads back down the trail, the cool valley air pushing them forward.*

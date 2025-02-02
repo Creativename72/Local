@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 
 public class House : MonoBehaviour, IHouse
 {
-
+    public string gameFlag;
     public Character thisHouse;
     public string[] sceneNames;
     [SerializeField] private bool isActive;

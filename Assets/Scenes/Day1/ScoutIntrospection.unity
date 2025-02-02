@@ -144,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 683309394239283069, guid: faf5769a391f70d46b1d2a6332a8f58a, type: 3}
       propertyPath: progressionalAmbience.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 683309394239283069, guid: faf5769a391f70d46b1d2a6332a8f58a, type: 3}
       propertyPath: progressionalAmbience.Array.data[0]
@@ -152,6 +152,10 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: be21af8255730a84eb0c13b24d31aa09, type: 3}
     - target: {fileID: 683309394239283069, guid: faf5769a391f70d46b1d2a6332a8f58a, type: 3}
       propertyPath: progressionalAmbience.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5cf2f8ca8d42b144fb7941baf251aceb, type: 3}
+    - target: {fileID: 683309394239283069, guid: faf5769a391f70d46b1d2a6332a8f58a, type: 3}
+      propertyPath: progressionalAmbience.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: 33d5cbe2e0aacfb48bcc311f082d96f7, type: 3}
     - target: {fileID: 683309394239283070, guid: faf5769a391f70d46b1d2a6332a8f58a, type: 3}
@@ -798,6 +802,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e33f0c401322c7478712012dbe6c69c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &890280374 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3418908236530466391, guid: 23fb21835fff1474baafd95ef3be8394, type: 3}
+  m_PrefabInstance: {fileID: 769756898}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e33f0c401322c7478712012dbe6c69c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1001732197
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -968,10 +983,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueController: {fileID: 769756899}
-  dialogueText:
-  - {fileID: 4900000, guid: 25854216b82bafd418576fce66096efe, type: 3}
+  dialogueText: {fileID: 4900000, guid: 25854216b82bafd418576fce66096efe, type: 3}
   scoutCreator: {fileID: 769756901}
   narratorCreator: {fileID: 769756902}
+  journalCreator: {fileID: 890280374}
   ambienceInScene: {fileID: 405008483}
   backgroundHandler: {fileID: 1719419824}
   playDialogueSFX: {fileID: 1001732198}
@@ -1077,7 +1092,7 @@ PrefabInstance:
     - target: {fileID: 4918251080121622601, guid: 6103932380c0c1b4fa3e502ea94c5a31, type: 3}
       propertyPath: backgrounds.Array.data[3]
       value: 
-      objectReference: {fileID: 21300000, guid: 009af599739ef8b43bbd52f8b0fdd317, type: 3}
+      objectReference: {fileID: 21300000, guid: 394efd0287e235b4fa895472d188c355, type: 3}
     - target: {fileID: 4918251080121622602, guid: 6103932380c0c1b4fa3e502ea94c5a31, type: 3}
       propertyPath: m_Name
       value: Background Manager (1)

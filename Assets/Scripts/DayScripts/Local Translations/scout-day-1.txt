@@ -1,7 +1,7 @@
 -Start
 Narrator:*As the sun dips below the horizon, Scout sits at their desk in their new cottage. The cool twilight filters in through the open window, accompanied by the soothing sounds of crickets and the faint rustle of leaves.*
->GoInside
->changeBackground
+>ChangeAmbience
+>ChangeBackground
 Narrator:*Scout opens their journal, turns to a fresh page, and begins writing about their first day in Bellespring Valley.*
 Journal: Today, I finally took that leap and moved out to the valley. It feels like...
 
@@ -11,20 +11,20 @@ Journal: Today, I finally took that leap and moved out to the valley. It feels l
 >WriteEntry
 Journal: I met Walter today. He’s the fire lookout, and he seems to enjoy his line of work.
 Journal: He mentioned the other residents during our chat. I think he...
-[[...cares deeply about the people here, even if he keeps his distance. >  WalterCares //SET WalterCares
-[[...enjoys his solitude more than he lets on. > WalterSolitude //SET WalterSolitude
-[[...might feel conflicted about how things have changed in the valley. > WalterConflicted //SET WalterConflicted
+[[...cares deeply about the people here, even if he keeps his distance. > SetFlag{WalterCares, true} //SET WalterCares
+[[...enjoys his solitude more than he lets on. > SetFlag{WalterSolitude, true} //SET WalterSolitude
+[[...might feel conflicted about how things have changed in the valley. > SetFlag{WalterConflicted, true} //SET WalterConflicted
 >WriteEntry
 Journal: I met Annie today. She lives up on the hill in a cozy cabin and seems to be juggling a lot with her work. 
-[[...needs someone to remind her to take breaks. > AnnieBreaks //Set AnnieBreaks
-[[...misses having closer connections outside her job. > AnnieConnections//Set AnnieConnections
-[[...needs to find more time for herself. > AnnieSelf //Set AnnieSelf
+[[...needs someone to remind her to take breaks. > SetFlag{AnnieBreaks, true} //Set AnnieBreaks
+[[...misses having closer connections outside her job. > SetFlag{AnnieConnections, true} //Set AnnieConnections
+[[...needs to find more time for herself. > SetFlag{AnnieSelf, true} //Set AnnieSelf
 >WriteEntry
 Journal: I met Tyler today. He lives down by the campsite in a trailer. He’s got a unique way of doing things.
 Journal: Spending time with him, I got the sense that he...
-[[...knows how to make an impression. > TylerCool//SET TylerCool
-[[...tries too hard to seem like he doesn’t care. > TylerTryhard //SET TylerTryhard
-[[...is still figuring out who he wants to be. > TylerFindSelf //SET TylerFindSelf
+[[...knows how to make an impression. > SetFlag{TylerCool, true}//SET TylerCool
+[[...tries too hard to seem like he doesn’t care. > SetFlag{TylerTryhard, true} //SET TylerTryhard
+[[...is still figuring out who he wants to be. > SetFlag{TylerFindSelf, true} //SET TylerFindSelf
 >WriteEntry
 Journal: After meeting everyone today, I feel like the valley has so much potential. I hope that I can...
 [[...make meaningful connections with the people here.
@@ -35,8 +35,8 @@ Narrator:*Scout finishes their journal, setting it back in their backpack. They 
 //fade to black
 //3 seconds
 //fade back into background of scout interior
->changeBackground
->pause3
->changeBackground
-> FadeToScoutInterior
+> changeBackground
+> pause3
+> changeBackground
+> ChangeAmbience
 Narrator:*Sunlight spills through the windows as Scout wakes up, stretches, and takes in the peaceful morning. They fix a quick breakfast, grab the map Bernice left behind, and step outside into the crisp morning air.*

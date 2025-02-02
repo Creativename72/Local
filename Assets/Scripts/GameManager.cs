@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameObject escapeMenu;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject optionsMenu;
     [SerializeField] private GameObject menuArea;
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        escapeMenu.SetActive(menuDepth == 1);
         pauseMenu.SetActive(menuDepth == 1);
         optionsMenu.SetActive(menuDepth == 2);
         gameVolume = musicSlider.value;
@@ -116,11 +118,6 @@ public class GameManager : MonoBehaviour
             StartCoroutine(FadeMixerGroup.StartFade(audioFader, "MusicVolume", delay, 1f));
             StartCoroutine(FadeMixerGroup.StartFade(audioFader, "AmbienceVolume", delay, 1f));
         }));
-    }
-
-    public void UpdateDay()
-    {
-        MapController.Instance.UpdateDay();
     }
     public void CloseMenus()
     {

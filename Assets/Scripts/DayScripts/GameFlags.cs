@@ -12,6 +12,23 @@ using static DialogueTree;
 /// </summary>
 public class GameFlags : MonoBehaviour
 {
+    [Header("Endings")]
+    public bool WalterGoodEnding;
+    public bool AnnieGoodEnding;
+    public bool TylerGoodEnding;
+
+    [Header("Journal Day 2")]
+    public bool WalterBlamesHimself;
+    public bool WalterBlamesTyler;
+    public bool WalterBlamesEveryone;
+    public bool TylerFrustratedWithWalter;
+    public bool TylerWantsDistance;
+    public bool TylerWantsIndependence;
+    public bool AnnieMissesCity;
+    public bool AnnieMovesForward;
+    public bool AnnieBreakForReal;
+
+    [Header("Unsorted")]
     public bool KnowBerniceLiveTime;
     public bool PackedLightly;
     public bool MetWalter = false;
@@ -50,15 +67,15 @@ public class GameFlags : MonoBehaviour
     public bool WalterTalkedAboutTylerFishing = false;
     public bool TylerStory = false;
     public bool AnnieWalterBreak = false;
-    public bool WalterBlamesHimself;
-    public bool WalterBlamesTyler;
-    public bool WalterBlamesEveryone;
     public bool WalterGoodEndingPush;
-    public bool WalterGoodEnding;
-    public bool TylerFrustratedWithWalter;
-    public bool TylerWantsDistance;
-    public bool TylerWantsIndependence;
-    public bool TylerGoodEnding;
+
+    [Header("Map day info")]
+    [Range(1, 3)]
+    public int DayNumber = 1;
+    public bool AnnieVisited;
+    public bool WalterVisited;
+    public bool TylerVisited;
+
 
     // Get this object from anywhere without needing it to be in scene
     public void Awake()

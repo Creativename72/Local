@@ -5,7 +5,7 @@ using UnityEngine;
 public class HighlightableObject : MonoBehaviour
 {
     [Header("Customization")]
-    [SerializeField] public SpriteRenderer sprite;
+    [SerializeField] public SpriteRenderer spriteRenderer;
     [SerializeField] private Color defaultColor = Color.white;
     [SerializeField] private Color highlightColor = Color.gray;
     protected Action onClick;
@@ -22,18 +22,18 @@ public class HighlightableObject : MonoBehaviour
     {
         // Debug.Log("Mouse enter");
         if (enableHighlight)
-            sprite.color = highlightColor;
+            spriteRenderer.color = highlightColor;
     }
 
     private void OnMouseExit()
     {
-        sprite.color = defaultColor;
+        spriteRenderer.color = defaultColor;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        sprite.color = defaultColor;
+        spriteRenderer.color = defaultColor;
     }
 
     public virtual void OnMouseDown()
@@ -46,7 +46,7 @@ public class HighlightableObject : MonoBehaviour
     {
         this.enableHighlight = enableHighlight;
         if (!enableHighlight)
-            sprite.color = defaultColor;
+            spriteRenderer.color = defaultColor;
     }
 
     public void EnableClick(bool enableClick)

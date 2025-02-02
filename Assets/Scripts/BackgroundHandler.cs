@@ -20,14 +20,14 @@ public class BackgroundHandler : MonoBehaviour
 
     public BackgroundChangeEvent m_backgroundChangeEvent;
 
-    private bool transitioning;
+    private bool onBlack;
     private bool hasChangedBackground;
 
     private void Start()
     {
         currentBackground = 0;
         spriteRenderer.sprite = backgrounds[currentBackground];
-        transitioning = false;
+        onBlack = false;
         hasChangedBackground = false;
 
         if (m_backgroundChangeEvent == null) {
@@ -44,9 +44,37 @@ public class BackgroundHandler : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Fades the screen to black and back 0.75 seconds for each phase
+    /// </summary>
+    public void FadeInOut()
+    {
+        if (onBlack)
+        {
+            StopAllCoroutines();
+            bgFader.SetVisible();
+        }
+        
+        StartCoroutine(ScreenChange());
+    }
+    public IEnumerator ScreenChange()
+    {
+        bgFader.SetVisible();
+        onBlack = true;
+        StartCoroutine(FadeMixerGroup.StartFade(audioFader, "SFXVolume", audioFadeDuration, 0f));
+        StartCoroutine(FadeMixerGroup.StartFade(audioFader, "AmbienceVolume", audioFadeDuration, 0f));
+        bgFader.FadeBlack(true);
+        yield return new WaitForSeconds(0.75f);
+        StartCoroutine(FadeMixerGroup.StartFade(audioFader, "SFXVolume", audioFadeDuration, 1f));
+        StartCoroutine(FadeMixerGroup.StartFade(audioFader, "AmbienceVolume", audioFadeDuration, 1f));
+        bgFader.FadeBlack(false);
+        yield return new WaitForSeconds(0.75f);
+        onBlack = false;
+    }
+
     public void changeBackground(bool doFade = true)
     {
-        if (transitioning)
+        if (onBlack)
         {
             StopAllCoroutines();
             bgFader.SetVisible();
@@ -62,7 +90,7 @@ public class BackgroundHandler : MonoBehaviour
         hasChangedBackground = false;
         if (doFade)
         {
-            transitioning = true;
+            onBlack = true;
             // Debug.Log("BackgroundHandler: Fading out SFX and Ambience");
             StartCoroutine(FadeMixerGroup.StartFade(audioFader, "SFXVolume", audioFadeDuration, 0f));
             StartCoroutine(FadeMixerGroup.StartFade(audioFader, "AmbienceVolume", audioFadeDuration, 0f));
@@ -88,7 +116,7 @@ public class BackgroundHandler : MonoBehaviour
             StartCoroutine(FadeMixerGroup.StartFade(audioFader, "SFXVolume", audioFadeDuration, 1f));
             StartCoroutine(FadeMixerGroup.StartFade(audioFader, "AmbienceVolume", audioFadeDuration, 1f));
             yield return new WaitForSeconds(0.75f);
-            transitioning = false;
+            onBlack = false;
         }
     }
 

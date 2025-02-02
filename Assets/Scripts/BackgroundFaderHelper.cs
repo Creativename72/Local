@@ -20,8 +20,9 @@ public class BackgroundFaderHelper : MonoBehaviour
         }
     }
 
-    internal void SetVisible()
+    public void SetVisible()
     {
+        anim.SetBool("FadeBlack", false);
         anim.SetTrigger("SetVisible");
         anim.ResetTrigger("SetVisible");
     }

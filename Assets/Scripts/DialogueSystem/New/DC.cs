@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using static DialogueTree.OptionalLine;
-using static UnityEditor.Progress;
 
 /// <summary>
 /// Controls the dialogue system as a whole
@@ -21,6 +20,7 @@ public class DC : MonoBehaviour
     private Dictionary<string, DialogueCharacter> characters;
     private bool dialogueEnabled;
     private bool printDialogue;
+    private bool startedDialogueThisFrame;
 
     private void Awake()
     {
@@ -43,7 +43,7 @@ public class DC : MonoBehaviour
         });
     }
 
-    public void AddDefaultFunctions(BackgroundHandler backgroundHandler = null, AmbienceInScene ambience = null)
+    public void AddDefaultFunctions(BackgroundHandler backgroundHandler = null, AmbienceInScene ambience = null, PlayDialogueSFX audioPlayer = null)
     {
         if (ambience != null)
         {
@@ -55,7 +55,7 @@ public class DC : MonoBehaviour
             this.AddFunction("changeBackground", () => backgroundHandler.changeBackground());
             this.AddFunction("ChangeBackground", () => backgroundHandler.changeBackground());
         }
-        
+
         this.AddFunction("pause1", () =>
         {
             Pause(1);
@@ -87,6 +87,96 @@ public class DC : MonoBehaviour
         this.AddFunction("showCharactersFade", () => StartCoroutine(Wait(0.75f, () => characters.Values.ToList().ForEach(c => c.SetVisible(true)))));
         this.AddFunction("hideCharacters", () => characters.Values.ToList().ForEach(c => c.SetVisible(false)));
         this.AddFunction("hideCharactersFade", () => StartCoroutine(Wait(0.75f, () => characters.Values.ToList().ForEach(c => c.SetVisible(false)))));
+        // set walter visible with a wait
+        // Show {Walter, true, 0.75}
+        this.AddFunction("Show", (args) =>
+        {
+            if (args.Length < 2)
+            {
+                Debug.LogWarning("Not enough arguments for show funtion.");
+                return;
+            }
+            float wait = 0;
+            if (args.Length >= 3)
+            {
+                try
+                {
+                    wait = float.Parse(args[2]);
+                }
+                catch (Exception)
+                {
+                    Debug.LogWarning("Unable to parse time for show function.");
+                }
+            }
+            string character = args[0];
+            bool value = bool.Parse(args[1]);
+
+            if (!characters.ContainsKey(character))
+            {
+                Debug.LogWarning("Character has not yet been added to the dialogue controller.");
+                return;
+            }
+
+            GameManager.WaitRoutine(wait, () => characters[character].SetVisible(value));
+        });
+        this.AddFunction("Move", (args) =>
+        {
+            if (args.Length < 2)
+            {
+                Debug.LogWarning("Not enough arguments for move funtion.");
+                return;
+            }
+            float wait = 0;
+            if (args.Length >= 3)
+            {
+                try
+                {
+                    wait = float.Parse(args[2]);
+                }
+                catch (Exception)
+                {
+                    Debug.LogWarning("Unable to parse time for move function.");
+                }
+            }
+            string character = args[0];
+            if (!characters.ContainsKey(character))
+            {
+                Debug.LogWarning("Character has not yet been added to the dialogue controller.");
+                return;
+            }
+            if (!Enum.TryParse(args[1], out DialogueCharacter.Location location))
+            {
+                Debug.LogWarning("Unable to parse location from move function.");
+                return;
+            }
+
+            GameManager.WaitRoutine(wait, () => characters[character].SetLocation(location));
+        });
+        this.AddFunction("PlaySound", args =>
+        {
+            if (args.Length < 1)
+            {
+                Debug.LogWarning("Not enough arguments to execute PlaySound.");
+                return;
+            }
+
+            if (audioPlayer == null)
+            {
+                Debug.LogWarning("Audio player not defined in default functions.");
+                return;
+            }
+
+            audioPlayer.PlaySFX(args[0]);
+        });
+        this.AddFunction("FadeScreen", () =>
+        {
+            if (backgroundHandler == null)
+            {
+                Debug.LogWarning("Background handler added to default functions for FadeScreen.");
+                return;
+            }
+            backgroundHandler.FadeInOut();
+        });
     }
     public void Pause(float seconds)
     {
@@ -175,6 +265,8 @@ public class DC : MonoBehaviour
     /// <exception cref="DialogueControllerException">If there is no dialogue input given</exception>
     public void StartDialogue()
     {
+        startedDialogueThisFrame = true;
+
         if (tree.IsEmpty())
             throw new DialogueControllerException("Dialogue controller has no input");
 
@@ -186,7 +278,7 @@ public class DC : MonoBehaviour
         // called on an option click
         dialogueBox.AddChoiceListener(selected =>
         {
-            // only be able to select choices if dialogue is enabled
+            // only be able to select choices if dialogue is canVisit
             if (dialogueEnabled)
             {
                 int index = 0;
@@ -207,8 +299,15 @@ public class DC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // skip frame when just started dialogue
+        if (startedDialogueThisFrame)
+        {
+            startedDialogueThisFrame = false;
+            return;
+        }
+
         // called on a mouse click
-        // only be able to advance if dialogue is enabled, and game is not paused
+        // only be able to advance if dialogue is canVisit, and game is not paused
         if (Input.GetMouseButtonDown(0) && this.dialogueEnabled && !GameManager.Instance.Paused())
         {
             if (tree.GetLine() is DialogueTree.DialogueLine dLine)

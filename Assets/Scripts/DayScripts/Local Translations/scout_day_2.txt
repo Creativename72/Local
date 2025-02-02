@@ -1,0 +1,185 @@
+-Start
+Narrator:*Sometime after sunset, Scout once again finds themself in front of their journal, pen in hand. The room is quiet as they begin to reflect on the day's events.*
+Journal: Today I visited Tyler, Walter, and Annie, and learned more about their story. It feels like...
+[...there’s bad blood between them.
+[...they need someone to help bridge the gaps between them.
+[...they all care about each other, even if they don’t show it.
+>WriteEntry
+Journal: Walter gave his version of events today.
+Journal: It feels like there are a lot of feelings he's been holding onto.
+Journal: Walter seems to place most of the blame for what happened on...
+[...Tyler. > SetFlag {WalterBlamesTyler, true}
+[...everyone equally. > SetFlag {WalterBlamesEveryone, true}
+[...himself. > SetFlag {WalterBlamesHimself, true}
+>WriteEntry
+$AnnieBrushOff$| AnnieBrushOff
+| SpentTimeWithAnnie
+
+-AnnieBrushOff    
+Journal: I stopped by Annie’s today, but I didn’t stay long. Seem seemed...
+[...like she wanted to talk, but I wasn’t up for it.
+[...tired, but she tried to keep things light.
+[...a little disappointed, but she didn’t press me to stay.
+>WriteEntry
+|TylerJournal
+
+-SpentTimeWithAnnie
+Journal: I spent some time with Annie today, and I learned a lot about her. She seems...
+[...like she misses her life before coming here. > SetFlag{AnnieMissesCity, true}
+[...like she’s trying to move forward, even if she doesn’t know how. > SetFlag{AnnieMovesForward, true}
+[...like she needs a break, but won’t let herself take one. > SetFlag{AnnieBreakForReal, true}
+>WriteEntry
+|TylerJournal
+
+-TylerJournal
+Journal: I helped Tyler organize his place today.
+Journal: He’s clearly still carrying a lot from what happened, even if he tries to act like he’s moved on.
+Journal: Tyler seems to feel...
+[...frustrated with Walter’s authority. > SetFlag{TylerFrustratedWithWalter, true}
+[...like he needs to distance himself from the situation. > SetFlag{TylerWantsDistance, true}
+[...determined to prove his independence. SetFlag{TylerWantsIndependence, true}
+>WriteEntry
+Narrator:*As Scout is about to write another line into the journal, their phone buzzes against the desk. They glance at the screen. It’s from Bernice.*
+
+> ChangeBackground
+> Show{Scout, true, 0.75}
+//interior background (maybe scout sprite)
+
+Narrator:*Scout picks the phone up and answers.*
+[[Hello?
+Bernice: Scout, dear! Hope I didn’t catch you at a bad time. How are you doing?
+[[I’m doing well, still settling in.
+[[It’s been great so far!
+[[Holding up just fine!
+Bernice: Glad to hear it.
+Bernice: Now tell me, how are the others? Walter... has he been keeping to himself?
+[[Walter’s a bit lonely. He misses the sense of community that used to be here. | ABitLonely
+[[He’s still committed to his role as the protector of the Valley. | CommittedToRole
+[[He seems stuck in the past. Still hasn’t moved on from what happened with the others. | StuckInThePast
+
+-ABitLonely
+Bernice: I thought as much.
+Bernice: The three of them were such good friends, before things fell apart for them.
+| HowsAnnie
+
+-CommittedToRole
+Bernice: That sounds like him. Always watching, always carrying responsibility on his shoulders.
+| HowsAnnie
+
+-StuckInThePast
+Bernice: Ah... I was worried about that. Old wounds take time to heal, but time alone won’t do it.
+| HowsAnnie
+
+-HowsAnnie
+Bernice: And Annie? Still keeping herself busy?
+[[Yeah. She had to call off our hangout today, she was so tired. | SheWasSoTired
+[[She really needs a break from her work. | ReallyNeedsBreak
+[[She still misses the times she spent with Walter and Tyler. | MissesTime
+
+-SheWasSoTired
+Bernice: That girl always did have a hard time knowing when to stop.
+|HowsTyler
+
+-ReallyNeedsBreak
+Bernice: I was afraid of that. She doesn’t realize she’s running herself ragged.
+> SetFlag{AnnieBreakForReal, true}
+| HowsTyler
+
+-MissesTime
+Bernice: Of course she does. I think they all do, in a way.
+|HowsTyler
+
+-HowsTyler
+Bernice: And how's Tyler? Has he opened up?
+[[It’s hard to get through to him, to see what he’s really like. | HardToGet
+[[He showed me his garden, which is a good first step. | ShowedGarden
+[[It seems like he’s still trying to put on the cool guy act. | CoolGuy
+
+-HardToGet
+Bernice: That boy’s always putting up walls. But I think he wants someone to break through them.
+|BerniceSigh
+
+-ShowedGarden
+Bernice: Oh? Now that’s something. 
+Bernice: He used to bring me fresh veggies when I was making soup, you know.
+Bernice: Maybe he just wanted a good homemade meal... or maybe he really cares about this community.
+|BerniceSigh
+
+-CoolGuy
+Bernice: Yes, that sounds like him. All bravado, but deep down, he cares.
+|BerniceSigh
+
+-BerniceSigh
+Narrator:*Scout hears Bernice let out a soft sigh.*
+Bernice: Oh Scout... It doesn’t sound like any of them are doing particularly well.
+Bernice: The valley isn’t what it used to be. They’ve all grown so distant from one another. And that’s a shame.
+Bernice: Community is important. It’s what keeps people from getting lost in themselves.
+Narrator:*She pauses, then her tone shifts to something more hopeful.*
+Bernice: I have an idea. A way to get everyone in the same room again.
+Bernice: You should host a dinner. Something simple, something warm. A shared meal.
+[[Good idea! | TheWayISee
+[[I dunno... I don’t have a lot of ingredients to work with here... | OhDontWorry
+ 
+-OhDontWorry
+Bernice: Oh, don’t worry about that. We can work that out. 
+| TheWayISee
+
+-TheWayISee
+Bernice: The way I see it, half the battle is just giving them a reason to be in the same place.
+Bernice: But there is one thing you need to promise me.
+Benice: Don’t tell them this was my idea.
+[[Why not?
+[[Alright, I won’t.
+Bernice: I want them to come because they *want* to, not because they feel obligated to me.
+Bernice: If they think they’re doing it as a favor to an old woman, it won’t mean as much. This has to be their choice.
+Narrator:*Scout shifts in their seat, considering the idea. Before they can respond, Bernice continues.*
+Bernice: Now, let’s talk food. I was thinking of something simple but hearty.
+Bernice: And, this would be the perfect opportunity to put that old crock pot of mine to use.
+Bernice: It’s a fine thing. Served me well for years, and I bet it’ll do the same for you.
+Bernice: Now, what kind of cook are you, Scout?
+
+[[I can hold my own. | HoldMyOwn
+[[I’m... alright? Average? | Average
+[[I am bad. Objectively bad. | ObjectivelyBad
+
+-HoldMyOwn
+Bernice: Good. An important life skill to have, Scout.
+| FlippingThrough
+
+-Average
+Bernice: That’s alright. We can find something on the simpler side to make.
+| FlippingThrough
+
+-ObjectivelyBad
+Bernice: *She chuckles.* Oh, well, at least you’re being honest!
+Bernice: I’ll find something simple, no complicated steps...
+| FlippingThrough
+
+-FlippingThrough
+Narrator:*Scout hears Bernice flipping through some pages on the other end of the line, muttering to herself.*
+Bernice: Hmm... Nope, too complicated, too sweet... too many ingredients, too many steps... Aha!
+Bernice: How about a fish chowder? Perfect for a gathering to warm yourself up on a cold night.
+[[Sounds good!
+Bernice: Now, let’s see... What ingredients do you have on hand right now?
+[[I have milk and cream.
+[[I only have milk and cream.
+Bernice: *Bernice lets out an amused sigh.* Not even salt, Scout?
+Bernice: Alright, so you’ll need a few things. Listen closely.
+Bernice: You’ll need cream and milk for the base. Then, some fish, of course. Something fresh is best.
+Bernice: You’ll need veggies—carrots, onions, and potatoes. And finally, some seasonings. Salt, pepper, onion powder and paprika should do it.
+Bernice: It’s not too complicated, but you’ll need to ask around for some of it.
+[[I’ll talk to the others tomorrow and see if they can help. | ItllFeelNatural
+[[You want me to go around asking for free food? | AskingFreeFood
+
+-AskingFreeFood
+Bernice: Oh, don’t think about it like that! You’re all just pitching in to make something delicious together.
+| ItllFeelNatural
+
+-ItllFeelNatural
+Bernice: It’ll feel more natural this way. You have a reason to stop by, a small favor to ask. Makes the invitation feel more casual.
+Bernice: Alright, that’s my big scheme. Think you can pull it off?
+[[I’ll do my best!
+[[We’ll see...
+Bernice: Good luck, dear. And let me know how it goes.
+Narrator:*The call ends. Scout sets the phone down, staring at the ingredient list in front of them.*
+Narrator:*They settle down for the night, ready for their mission to bring the valley together to start the next morning.*

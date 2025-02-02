@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class AnnieDay2 : MonoBehaviour
 {
-    [Header("StartMinigame")]
+    [Header("General Day")]
     [SerializeField] GameObject minigame;
     [SerializeField] TextAsset textDayPart1;
     [SerializeField] TextAsset textDayPart2;
@@ -26,6 +26,7 @@ public class AnnieDay2 : MonoBehaviour
 
     private int itemsInspected;
     private bool inMinigame;
+    private bool inPart2;
 
     void Start()
     {
@@ -42,10 +43,7 @@ public class AnnieDay2 : MonoBehaviour
         scout.SetVisible(true);
         clickables.ForEach(clickable => clickable.OnClick(() => itemsInspected++));
 
-        GameFlags.ForEachFlag<bool>((name, val) =>
-        {
-            dialogueController.SetVariable(name, () => GameFlags.GetFlag<bool>(name));
-        });
+        dialogueController.AddGameFlags();
 
         bool askedLostVision = false;
         bool askedOtherResidents = false;
@@ -88,8 +86,9 @@ public class AnnieDay2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (itemsInspected >= 5 && dialogueController.IsDone())
+        if (itemsInspected >= clickables.Count && dialogueController.IsDone() && !inPart2)
         {
+            inPart2 = true;
             dialogueController.ClearDialogue();
             dialogueController.AddDialogue(textDayPart2);
             dialogueController.StartDialogue();

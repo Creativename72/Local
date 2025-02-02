@@ -19,19 +19,26 @@ public class DialogueCharacter : MonoBehaviour
     [SerializeField] private List<Sprite> characterSprites;
 
     [Header("Sound")]
-    [SerializeField] private AudioClip talkSFX;
+    [SerializeField] private AudioClip[] talkSFX;
 
     private const string ERROR = "Invalid arguments used";
+
+    private float customX;
 
     // getters and setters for visible fields
     public string GetIdentifier() { return identifier; }
     public string GetCharacterName() { return characterName; }
     public Location GetLocation() { return location; }
+    public float GetCustomX() { return customX; }
     public void SetName(string characterName) { this.characterName = characterName; }
     public void SetLocation(Location location) { this.location = location; }
+    public void SetLocation(Location location, float customX) { 
+        this.location = location;
+        this.customX = customX;
+    }
     public void SetSprite(int index)
     {
-        // sprite number must be within parameters
+        // spriteRenderer number must be within parameters
         if (index >= 0 && index < characterSprites.Count)
         {
             spriteRenderer.sprite = characterSprites[index];
@@ -42,7 +49,7 @@ public class DialogueCharacter : MonoBehaviour
             spriteRenderer.sprite = null;
         }
     }
-    public AudioClip GetTalkSFX() { return this.talkSFX; }
+    public AudioClip GetRandomTalkSFX() { return this.talkSFX[(int) (UnityEngine.Random.value * talkSFX.Length)]; }
     public void SetVisible(bool show)
     {
         spriteRenderer.enabled = show;
@@ -55,9 +62,14 @@ public class DialogueCharacter : MonoBehaviour
     }
     public enum Location
     {
+        FAR_LEFT,
         LEFT,
-        RIGHT,
+        CENTER_LEFT,
         CENTER,
+        CENTER_RIGHT,
+        RIGHT,
+        FAR_RIGHT,
+        CUSTOM,
     }
 
     public class CharacterException : Exception

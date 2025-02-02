@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 using UnityEngine.Audio;
+using System;
 
+[Obsolete("MapController is deprecated. Please use MapManager instead.")]
 public class MapController : MonoBehaviour
 {
     public int currentStage;
@@ -15,6 +17,8 @@ public class MapController : MonoBehaviour
     [SerializeField] AudioMixer audioFader;
     [SerializeField] float audioFadeDuration;
     [SerializeField] FadeScript screenFader;
+
+    [Obsolete("Don't reference this class from singleton.")]
     public static MapController Instance { get; private set; }
 
 
@@ -47,16 +51,12 @@ public class MapController : MonoBehaviour
         {
             m_sceneChangeEvent = new SceneChangeEvent();
         }
-
-        if (LoadSceneOnStart)
-        {
-            LoadNextScene(initialScene);
-            initialSkip = false;
-        }
     }
 
+    [Obsolete("LoadNextScene is deprecated, please use GameManager.Instance.ChangeScene() instead.")]
     public void LoadNextScene(string name)
     {
+        Debug.LogError("Using deprecated method LoadNextScene");
         StartCoroutine(LoadNextSceneAsync(name));
     }
 
@@ -87,7 +87,7 @@ public class MapController : MonoBehaviour
         if (currentScene != "-")
             SceneManager.UnloadSceneAsync(currentScene);
 
-        // s.enabled = false;
+        // s.canVisit = false;
         currentScene = n;
         Debug.Log("Scene Loaded: " + currentScene);
         m_sceneChangeEvent.Invoke(n);
