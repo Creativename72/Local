@@ -37,6 +37,7 @@ public class ScoutDay2 : MonoBehaviour
 
         dialogueController.AddDefaultFunctions(backgroundHandler, ambienceInScene);
         dialogueController.AddDialogue(dialogueText);
+        dialogueController.AddEndFunction(() => GameManager.Instance.MapAndSave());
         dialogueController.StartDialogue();
     }
 

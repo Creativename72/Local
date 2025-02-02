@@ -15,8 +15,8 @@ Journal: He mentioned the other residents during our chat. I think he...
 [[...enjoys his solitude more than he lets on. > SetFlag{WalterSolitude, true} //SET WalterSolitude
 [[...might feel conflicted about how things have changed in the valley. > SetFlag{WalterConflicted, true} //SET WalterConflicted
 >WriteEntry
-Journal: I met Annie today. She lives up on the hill in a cozy cabin and seems to be juggling a lot with her work. 
-[[...needs someone to remind her to take breaks. > SetFlag{AnnieBreaks, true} //Set AnnieBreaks
+Journal: I met Annie today. She lives up on the hill in a cozy cabin and seems to be juggling a lot with her work. She...
+[[...needs someone to remind her to take breaks. > SetFlag{AnnieBreak, true} //Set AnnieBreak
 [[...misses having closer connections outside her job. > SetFlag{AnnieConnections, true} //Set AnnieConnections
 [[...needs to find more time for herself. > SetFlag{AnnieSelf, true} //Set AnnieSelf
 >WriteEntry

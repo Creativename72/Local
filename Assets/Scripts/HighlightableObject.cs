@@ -1,18 +1,26 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class HighlightableObject : MonoBehaviour
 {
     [Header("Customization")]
-    [SerializeField] public SpriteRenderer spriteRenderer;
+    
     [SerializeField] private Color defaultColor = Color.white;
     [SerializeField] private Color highlightColor = Color.gray;
     protected Action onClick;
     [Header("Click / Highlight")]
+    protected bool visible = true;
     protected bool enableHighlight = true;
     protected bool enableClick = true;
-
+    protected SpriteRenderer spriteRenderer;
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.color = defaultColor;
+    }
     public void OnClick(Action a)
     {
         this.onClick = a;
@@ -26,12 +34,6 @@ public class HighlightableObject : MonoBehaviour
     }
 
     private void OnMouseExit()
-    {
-        spriteRenderer.color = defaultColor;
-    }
-
-    // Start is called before the first frame update
-    void Start()
     {
         spriteRenderer.color = defaultColor;
     }
@@ -52,5 +54,11 @@ public class HighlightableObject : MonoBehaviour
     public void EnableClick(bool enableClick)
     {
         this.enableClick = enableClick;
+    }
+
+    public void SetVisible(bool visible)
+    {
+        this.visible = visible;
+        this.spriteRenderer.enabled = visible;
     }
 }

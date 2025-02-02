@@ -258,7 +258,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f76589dea49fb2440886cbea606ee108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 49674945}
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   highlightColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
 --- !u!61 &49674944
@@ -498,7 +497,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f76589dea49fb2440886cbea606ee108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 313707893}
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   highlightColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
 --- !u!61 &313707895
@@ -633,17 +631,13 @@ MonoBehaviour:
   backgroundHandler: {fileID: 1095920725}
   part1: {fileID: 4900000, guid: a5c648339c2386a4c9dd90f4f0a5fa43, type: 3}
   part2: {fileID: 4900000, guid: f5eda621f0ca63f44b621df6ff49383b, type: 3}
-  graffiti: {fileID: 4900000, guid: da180d01d7f7b6141a80041766ea58ac, type: 3}
-  grill: {fileID: 4900000, guid: f8eb660054acc3a4cbb389b1b7591ad0, type: 3}
-  metalSculpture: {fileID: 4900000, guid: b1920167ac24fe449ad47ed87ed6c455, type: 3}
-  offTerrainBike: {fileID: 4900000, guid: 2bce3af3901d81642b389c147e9db65c, type: 3}
-  speakersGuitar: {fileID: 4900000, guid: d50a751e6b646f049a3c48700089e16f, type: 3}
   pointsOfInterest: {fileID: 1839432337}
-  bikeObject: {fileID: 1080925692}
-  grillObject: {fileID: 1103726298}
-  guitarObject: {fileID: 1297841551}
-  sculptureObject: {fileID: 927155204}
-  graffitiObject: {fileID: 584351273}
+  clickables:
+  - {fileID: 1080925697}
+  - {fileID: 584351278}
+  - {fileID: 1103726303}
+  - {fileID: 1297841556}
+  - {fileID: 927155209}
 --- !u!4 &447206442
 Transform:
   m_ObjectHideFlags: 0
@@ -705,7 +699,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f76589dea49fb2440886cbea606ee108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 560913023}
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   highlightColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
 --- !u!61 &560913022
@@ -797,7 +790,7 @@ GameObject:
   - component: {fileID: 584351277}
   - component: {fileID: 584351276}
   - component: {fileID: 584351275}
-  - component: {fileID: 584351274}
+  - component: {fileID: 584351278}
   m_Layer: 0
   m_Name: Graffiti
   m_TagString: Untagged
@@ -805,21 +798,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &584351274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 584351273}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f76589dea49fb2440886cbea606ee108, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprite: {fileID: 584351276}
-  defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  highlightColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
 --- !u!61 &584351275
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -913,6 +891,22 @@ Transform:
   m_Father: {fileID: 1839432338}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &584351278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584351273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e80f9f3c83e2186479b097f0490473a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  controller: {fileID: 835537909}
+  clickText: {fileID: 4900000, guid: da180d01d7f7b6141a80041766ea58ac, type: 3}
 --- !u!1001 &649087572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1189,7 +1183,7 @@ GameObject:
   - component: {fileID: 927155205}
   - component: {fileID: 927155208}
   - component: {fileID: 927155207}
-  - component: {fileID: 927155206}
+  - component: {fileID: 927155209}
   m_Layer: 0
   m_Name: Sculpture
   m_TagString: Untagged
@@ -1212,21 +1206,6 @@ Transform:
   m_Father: {fileID: 1839432338}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &927155206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 927155204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f76589dea49fb2440886cbea606ee108, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprite: {fileID: 927155208}
-  defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  highlightColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
 --- !u!61 &927155207
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1305,6 +1284,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &927155209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927155204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e80f9f3c83e2186479b097f0490473a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  controller: {fileID: 835537909}
+  clickText: {fileID: 4900000, guid: b1920167ac24fe449ad47ed87ed6c455, type: 3}
 --- !u!1001 &948798751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1662,7 +1657,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f76589dea49fb2440886cbea606ee108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 1011579861}
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   highlightColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
 --- !u!61 &1011579860
@@ -1754,7 +1748,7 @@ GameObject:
   - component: {fileID: 1080925693}
   - component: {fileID: 1080925696}
   - component: {fileID: 1080925695}
-  - component: {fileID: 1080925694}
+  - component: {fileID: 1080925697}
   m_Layer: 0
   m_Name: Bike
   m_TagString: Untagged
@@ -1777,21 +1771,6 @@ Transform:
   m_Father: {fileID: 1839432338}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1080925694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1080925692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f76589dea49fb2440886cbea606ee108, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprite: {fileID: 1080925696}
-  defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  highlightColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
 --- !u!61 &1080925695
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1870,6 +1849,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1080925697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080925692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e80f9f3c83e2186479b097f0490473a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  controller: {fileID: 835537909}
+  clickText: {fileID: 4900000, guid: 2bce3af3901d81642b389c147e9db65c, type: 3}
 --- !u!1001 &1095920724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1935,14 +1930,18 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: c18dc34950ff9f842854051079d0f6c2, type: 3}
     - target: {fileID: 4918251080121622601, guid: 6103932380c0c1b4fa3e502ea94c5a31, type: 3}
       propertyPath: backgrounds.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4918251080121622601, guid: 6103932380c0c1b4fa3e502ea94c5a31, type: 3}
       propertyPath: backgrounds.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 3c5ea3db975548844a44aac76d56f00e, type: 3}
+      objectReference: {fileID: 21300000, guid: c18dc34950ff9f842854051079d0f6c2, type: 3}
     - target: {fileID: 4918251080121622601, guid: 6103932380c0c1b4fa3e502ea94c5a31, type: 3}
       propertyPath: backgrounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 3c5ea3db975548844a44aac76d56f00e, type: 3}
+    - target: {fileID: 4918251080121622601, guid: 6103932380c0c1b4fa3e502ea94c5a31, type: 3}
+      propertyPath: backgrounds.Array.data[2]
       value: 
       objectReference: {fileID: 21300000, guid: c18dc34950ff9f842854051079d0f6c2, type: 3}
     - target: {fileID: 4918251080121622602, guid: 6103932380c0c1b4fa3e502ea94c5a31, type: 3}
@@ -1964,7 +1963,7 @@ PrefabInstance:
     - target: {fileID: 4918251080121622603, guid: 6103932380c0c1b4fa3e502ea94c5a31, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3c5ea3db975548844a44aac76d56f00e, type: 3}
+      objectReference: {fileID: 21300000, guid: c18dc34950ff9f842854051079d0f6c2, type: 3}
     - target: {fileID: 4918251080121622603, guid: 6103932380c0c1b4fa3e502ea94c5a31, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -1993,7 +1992,7 @@ GameObject:
   - component: {fileID: 1103726299}
   - component: {fileID: 1103726302}
   - component: {fileID: 1103726301}
-  - component: {fileID: 1103726300}
+  - component: {fileID: 1103726303}
   m_Layer: 0
   m_Name: Grill
   m_TagString: Untagged
@@ -2016,21 +2015,6 @@ Transform:
   m_Father: {fileID: 1839432338}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1103726300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1103726298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f76589dea49fb2440886cbea606ee108, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprite: {fileID: 1103726302}
-  defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  highlightColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
 --- !u!61 &1103726301
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2109,6 +2093,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1103726303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103726298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e80f9f3c83e2186479b097f0490473a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  controller: {fileID: 835537909}
+  clickText: {fileID: 4900000, guid: f8eb660054acc3a4cbb389b1b7591ad0, type: 3}
 --- !u!1 &1171808348
 GameObject:
   m_ObjectHideFlags: 0
@@ -2207,7 +2207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f76589dea49fb2440886cbea606ee108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 1171808350}
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   highlightColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
 --- !u!61 &1171808352
@@ -2247,7 +2246,7 @@ GameObject:
   - component: {fileID: 1297841552}
   - component: {fileID: 1297841555}
   - component: {fileID: 1297841554}
-  - component: {fileID: 1297841553}
+  - component: {fileID: 1297841556}
   m_Layer: 0
   m_Name: Guitar
   m_TagString: Untagged
@@ -2270,21 +2269,6 @@ Transform:
   m_Father: {fileID: 1839432338}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1297841553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1297841551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f76589dea49fb2440886cbea606ee108, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprite: {fileID: 1297841555}
-  defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  highlightColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
 --- !u!61 &1297841554
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2363,6 +2347,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1297841556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297841551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e80f9f3c83e2186479b097f0490473a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  controller: {fileID: 835537909}
+  clickText: {fileID: 4900000, guid: d50a751e6b646f049a3c48700089e16f, type: 3}
 --- !u!1 &1333148128
 GameObject:
   m_ObjectHideFlags: 0
@@ -2804,7 +2804,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2072133040}
   m_Layer: 0
-  m_Name: World (1)
+  m_Name: World
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

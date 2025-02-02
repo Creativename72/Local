@@ -1,6 +1,6 @@
 -Start
 Narrator:*The sky is overcast, and a light drizzle falls over the valley. The air is cool and damp as Scout follows the muddy trail leading up to Tyler’s encampment. The faint sound of rain patters against the metal of his trailer.*
->ShowTyler
+>Show{Tyler, true}
 Narrator:*Scout approaches Tyler’s trailer. Tyler stands leaning casually against the side, arms crossed. His outfit is notably bold today. Bolder than the PJs he wore yesterday, at least.*
 Narrator:*He waits for Scout to approach before speaking.*
 Tyler: *He raises an eyebrow, smirking.* Well? Whaddya think? *He gestures to his outfit with a flourish.*
@@ -56,10 +56,10 @@ Tyler: Wait here. I have somethin’ in my trailer.
 |TylerDisappears
 
 -TylerDisappears
->HideTyler
+>Show{Tyler, false}
 Narrator:*Tyler disappears inside the trailer.*
 Narrator:*Moments later, the sounds of rummaging and clatter drift out the door.*
->ShowTyler
+>Show{Tyler, true}
 Narrator:*Tyler emerges with an electric guitar slung over his shoulders. He yanks the power cord and a set of speakers come tumbling down the trailer steps into the mud.*
 Tyler: *Grinning.* Look what I just picked up! Cool stuff, huh?
 [[Yes. Very cool. || StrikePowerChord $TylerCool$(( You think Tyler is cool.//FLAG: NONE, BUT IF FLAG TylerCool, MESSAGE: You think Tyler is cool.

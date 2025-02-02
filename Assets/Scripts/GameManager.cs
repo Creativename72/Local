@@ -163,4 +163,13 @@ public class GameManager : MonoBehaviour
         GameState gs = dataManager.GetLoadedData();
         return gs.DayNumber > 1 || gs.BerniceIntro;
     }
+
+    /// <summary>
+    /// Saves game and moves control to the map
+    /// </summary>
+    public void MapAndSave()
+    {
+        ChangeScene("Map");
+        SaveGame();
+    }
 }

@@ -133,7 +133,7 @@ public class TylerDay3 : MonoBehaviour
                     harvestCount++;
                     highlight.EnableClick(false);
                     highlight.EnableHighlight(false);
-                    highlight.spriteRenderer.enabled = false;
+                    highlight.SetVisible(false);
                     playDialogueSFX.PlaySFX("s_harvest");
                 });
             }

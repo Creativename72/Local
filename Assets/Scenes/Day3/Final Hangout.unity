@@ -409,7 +409,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4918251080121622600, guid: 6103932380c0c1b4fa3e502ea94c5a31, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4918251080121622600, guid: 6103932380c0c1b4fa3e502ea94c5a31, type: 3}
       propertyPath: m_LocalPosition.x
@@ -600,7 +600,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7900593788435879382, guid: 00a22bffda28901498bc4cea8c1dcf56, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7900593788435879382, guid: 00a22bffda28901498bc4cea8c1dcf56, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1115,7 +1115,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 33d5cbe2e0aacfb48bcc311f082d96f7, type: 3}
     - target: {fileID: 683309394239283070, guid: faf5769a391f70d46b1d2a6332a8f58a, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 683309394239283070, guid: faf5769a391f70d46b1d2a6332a8f58a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1223,7 +1223,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7479167057154316105, guid: a64d7a5189fefc6419b0cab06fbbd52a, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 7479167057154316105, guid: a64d7a5189fefc6419b0cab06fbbd52a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1267,105 +1267,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a64d7a5189fefc6419b0cab06fbbd52a, type: 3}
---- !u!1 &1460405040
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1460405042}
-  - component: {fileID: 1460405041}
-  m_Layer: 0
-  m_Name: GameFlags
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1460405041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1460405040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6da8ba917e29bfb42a432770e9566f3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WalterGoodEnding: 0
-  AnnieGoodEnding: 0
-  TylerGoodEnding: 0
-  WalterBlamesHimself: 0
-  WalterBlamesTyler: 0
-  WalterBlamesEveryone: 0
-  TylerFrustratedWithWalter: 0
-  TylerWantsDistance: 0
-  TylerWantsIndependence: 0
-  AnnieMissesCity: 0
-  AnnieMovesForward: 0
-  AnnieBreakForReal: 0
-  KnowBerniceLiveTime: 0
-  PackedLightly: 0
-  MetWalter: 0
-  MetAnnie: 0
-  MetTyler: 0
-  WalterSafePath: 0
-  WalterRockyPath: 0
-  AnnieWalterSlowDown: 0
-  TylerPranked: 0
-  TylerMessy: 0
-  AnnieRangDoorbell: 0
-  AnnieJoked: 0
-  TylerVeggiesToBernice: 0
-  WalterCares: 0
-  WalterSolitude: 0
-  WalterConflicted: 0
-  WalterFullStory: 0
-  WalterFish: 0
-  AnnieBrushOff: 0
-  AnnieConnections: 0
-  AnnieFullStory: 0
-  AnnieBreak: 0
-  AnnieSelf: 0
-  TylerCool: 0
-  TylerTryhard: 0
-  TylerFindSelf: 0
-  AnnieRaces: 0
-  AnnieTakesABreak: 0
-  TylerIsCool: 0
-  TylerKeepBike: 0
-  TylerKeepArt: 0
-  TylerKeepGrill: 0
-  WalterFishForTyler: 0
-  WalterLakesidePhoto: 0
-  WalterTalkedAboutLakesidePhoto: 0
-  WalterTalkedAboutTylerFishing: 0
-  TylerStory: 0
-  AnnieWalterBreak: 0
-  WalterGoodEndingPush: 0
-  DayNumber: 1
-  AnnieVisited: 0
-  WalterVisited: 0
-  TylerVisited: 0
---- !u!4 &1460405042
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1460405040}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1629911521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1476,7 +1377,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4824537447286507237, guid: 23fb21835fff1474baafd95ef3be8394, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4824537447286507237, guid: 23fb21835fff1474baafd95ef3be8394, type: 3}
       propertyPath: m_LocalPosition.x

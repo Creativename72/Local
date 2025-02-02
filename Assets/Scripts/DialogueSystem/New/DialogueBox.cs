@@ -81,6 +81,9 @@ public class DialogueBox : MonoBehaviour
         }
 
         currentlySpeaking = null;
+
+        // clear the hover
+        hover.Set(false, "");
     }
 
     /// <summary>

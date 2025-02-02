@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class TylerDay2 : MonoBehaviour
@@ -13,21 +14,12 @@ public class TylerDay2 : MonoBehaviour
     [Header("TextAssets")]
     [SerializeField] TextAsset part1;
     [SerializeField] TextAsset part2;
-    [SerializeField] TextAsset graffiti;
-    [SerializeField] TextAsset grill;
-    [SerializeField] TextAsset metalSculpture;
-    [SerializeField] TextAsset offTerrainBike;
-    [SerializeField] TextAsset speakersGuitar;
 
     [Header("Clickables")]
     [SerializeField] private GameObject pointsOfInterest;
-    [SerializeField] private GameObject bikeObject;
-    [SerializeField] private GameObject grillObject;
-    [SerializeField] private GameObject guitarObject;
-    [SerializeField] private GameObject sculptureObject;
-    [SerializeField] private GameObject graffitiObject;
+    [SerializeField] private List<ClickableObject> clickables;
 
-    private int pointsInteracted;
+    private int itemsInspected;
     private State currentState;
     private DialogueCharacter scout;
     private DialogueCharacter narrator;
@@ -38,27 +30,37 @@ public class TylerDay2 : MonoBehaviour
 
     public void Continue()
     {
+        backgroundHandler.FadeInOut();
         dialogueController.ClearDialogue();
         dialogueController.AddDialogue(part2);
         dialogueController.AddEndFunction(() => { GameManager.Instance.ChangeScene("Map"); GameManager.Instance.SaveGame(); });
-        dialogueController.StartDialogue();
-        currentState = State.PostDialogue;
-        tyler.SetVisible(true);
-        scout.SetVisible(true);
-        tyler.SetLocation(DialogueCharacter.Location.LEFT);
+        currentState = State.Transition;
+        
+        GameManager.WaitRoutine(0.75f, () =>
+        {
+            tyler.SetVisible(true);
+            scout.SetVisible(true);
+            tyler.SetLocation(DialogueCharacter.Location.LEFT);
+
+        });
+        GameManager.WaitRoutine(1.5f, () =>
+        {
+            dialogueController.StartDialogue();
+        });
+
     }
     private enum State
     {
         IntroDialogue,
         Minigame,
-        PostDialogue,
+        Transition,
     }
 
     // Start is called before the first frame update
     void Start()
     {
         pointsOfInterest.SetActive(false);
-        pointsInteracted = 0;
+        itemsInspected = 0;
         currentState = State.IntroDialogue;
 
         scout = dialogueController.CreateCharacter(scoutCreator);
@@ -66,55 +68,22 @@ public class TylerDay2 : MonoBehaviour
         tyler = dialogueController.CreateCharacter(tylerCreator);
 
         tyler.SetSprite(1);
+        tyler.SetLocation(DialogueCharacter.Location.LEFT);
+        scout.SetLocation(DialogueCharacter.Location.RIGHT);
         scout.SetVisible(true);
 
-        GameStateManager.Instance.ForEachFlag<bool>((name, val) =>
+        clickables.ForEach(clickable => clickable.OnClick(() =>
         {
-            dialogueController.SetVariable(name, () => GameStateManager.Instance.GetFlag<bool>(name));
-        });
-        dialogueController.AddFunction("ShowTyler", () => tyler.SetVisible(true));
-        dialogueController.AddFunction("HideTyler", () => tyler.SetVisible(false));
+            itemsInspected++;
+            clickable.SetVisible(false);
+        }));
 
-        dialogueController.AddDefaultFunctions(backgroundHandler);
+        dialogueController.AddGameFlags();
+        dialogueController.AddDefaultFunctions(backgroundHandler, ambienceInScene);
         dialogueController.AddDialogue(part1);
-        dialogueController.StartDialogue();
         dialogueController.ReparseOnNodeChange(true);
+        dialogueController.StartDialogue();
 
-        bikeObject.GetComponent<HighlightableObject>().OnClick(() =>
-        {
-            TryStartDialogue(offTerrainBike, bikeObject);
-        });
-        grillObject.GetComponent<HighlightableObject>().OnClick(() =>
-        {
-            TryStartDialogue(grill, grillObject);
-        });
-        guitarObject.GetComponent<HighlightableObject>().OnClick(() =>
-        {
-            TryStartDialogue(speakersGuitar, guitarObject);
-        });
-        sculptureObject.GetComponent<HighlightableObject>().OnClick(() =>
-        {
-            TryStartDialogue(metalSculpture, sculptureObject);
-        });
-        graffitiObject.GetComponent<HighlightableObject>().OnClick(() =>
-        {
-            TryStartDialogue(graffiti, graffitiObject);
-        });
-
-    }
-
-    private void TryStartDialogue(TextAsset text, GameObject obj)
-    {
-        Debug.Log("trying to start dialogue?");
-        if (dialogueController.IsDone())
-        {
-            tyler.SetVisible(true);
-            dialogueController.ClearDialogue();
-            dialogueController.AddDialogue(text, false);
-            dialogueController.StartDialogue();
-            obj.SetActive(false);
-            pointsInteracted++;
-        }
     }
 
     // Update is called once per frame
@@ -122,20 +91,29 @@ public class TylerDay2 : MonoBehaviour
     {
         if (currentState == State.IntroDialogue && dialogueController.IsDone())
         {
-            currentState = State.Minigame;
-            pointsOfInterest.SetActive(true);
+            currentState = State.Transition;
+            backgroundHandler.changeBackground(true);
+            GameManager.WaitRoutine(0.75f, () =>
+            {
+                currentState = State.Minigame;
+            });
         }
-        else if (currentState == State.Minigame && dialogueController.IsDone())
+        else if (currentState == State.Minigame)
         {
+            pointsOfInterest.SetActive(true);
             scout.SetVisible(false);
-            tyler.SetVisible(false);
             tyler.SetLocation(DialogueCharacter.Location.RIGHT);
-            if (pointsInteracted >= 5)
+            tyler.SetVisible(!dialogueController.IsDone());
+
+            if (itemsInspected >= 5 && dialogueController.IsDone())
+            {
                 Continue();
-        } 
-        else if (currentState == State.PostDialogue)
+            }
+
+        }
+        else if (currentState == State.Transition)
         {
-           
+            // do nothing
         }
     }
 }

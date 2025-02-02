@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MapManager : MonoBehaviour
@@ -21,17 +19,18 @@ public class MapManager : MonoBehaviour
         bool annieVisited = GameStateManager.Instance.GetFlag<bool>("AnnieVisited");
         bool tylerVisited = GameStateManager.Instance.GetFlag<bool>("TylerVisited");
         bool showScout = walterVisited && annieVisited && tylerVisited;
+        bool visited = day != 1;
 
         // enabling highlights
-        walterIcon.EnableClick(!walterVisited);
-        annieIcon.EnableClick(!annieVisited);
-        tylerIcon.EnableClick(!tylerVisited);
-        scoutIcon.EnableClick(showScout);
+        walterIcon.SetVisited(visited);
+        annieIcon.SetVisited(visited);
+        tylerIcon.SetVisited(visited);
+        scoutIcon.SetVisited(true);
 
         // enabling icons
-        walterIcon.EnableIcon(!showScout);
-        annieIcon.EnableIcon(!showScout);
-        tylerIcon.EnableIcon(!showScout);
+        walterIcon.EnableIcon(!walterVisited);
+        annieIcon.EnableIcon(!annieVisited);
+        tylerIcon.EnableIcon(!tylerVisited);
         scoutIcon.EnableIcon(showScout);
 
 

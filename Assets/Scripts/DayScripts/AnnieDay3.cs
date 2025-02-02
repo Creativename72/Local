@@ -11,7 +11,10 @@ public class AnnieDay3 : MonoBehaviour
     [SerializeField] GameObject minigame;
     [SerializeField] TextAsset textDayPart1;
     [SerializeField] TextAsset textDayPart2;
+
+    [Header("Clickables")]
     [SerializeField] List<ClickableObject> clickables;
+    [SerializeField] ClickableObject mysteryJars;
 
     [Header("Dialogue System")]
     [SerializeField] private DC dialogueController;
@@ -43,7 +46,13 @@ public class AnnieDay3 : MonoBehaviour
         scout.SetVisible(true);
 
         // minigame init
-        clickables.ForEach(clickable => clickable.OnClick(() => itemsInspected++));
+        clickables.ForEach(clickable => clickable.OnClick(() =>
+        {
+            itemsInspected++;
+            clickable.SetVisible(false);
+        }));
+        mysteryJars.OnClick(() => itemsInspected++);
+
         minigame.SetActive(false);
         itemsInspected = 0;
 
@@ -60,7 +69,7 @@ public class AnnieDay3 : MonoBehaviour
         // if space show the last one
         dialogueController.SetVariable("ShowYouNeedBreak", () => show);
         dialogueController.AddDefaultFunctions(backgroundHandler, ambienceInScene);
-        
+
 
         dialogueController.AddDialogue(textDayPart1);
         dialogueController.StartDialogue();
@@ -82,7 +91,7 @@ public class AnnieDay3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (itemsInspected >= clickables.Count && dialogueController.IsDone() && !inPart2)
+        if (itemsInspected >= clickables.Count + 1 && dialogueController.IsDone() && !inPart2)
         {
             inPart2 = true;
             dialogueController.ClearDialogue();

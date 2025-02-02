@@ -69,7 +69,7 @@ Narrator:*Tyler walks over to his truck, which now has a small pile of items in 
 Tyler: I gotta haul this stuff into the city before the depot closes. Don’t wanna miss my chance to get rid of all this junk.
 Narrator:*He turns back to Scout, his grin softening slightly.*
 Tyler: See you around, yeah? Don’t be a stranger.
->HideTyler
+>Show{Tyler, false}
 Narrator:*With that, Tyler hops into his truck, starting the engine with a sputter and a growl. He waves as he pulls out onto the main road, disappearing down the valley path.*
 Narrator:*Scout lingers for a moment, the sound of the truck fading into the distance. They take one last look at the now-tidied space around the trailer before turning to make their way back down the trail.*
 Narrator:*The rain has lightened, and the scent of damp earth and pine fills the air as Scout disappears among the trees, heading back toward their corner of the valley.*
