@@ -30,5 +30,8 @@ public class ClickableObject : HighlightableObject
         bool done = controller.IsDone();
         this.enableClick = done && !clicked;
         this.enableHighlight = done && !clicked;
+
+        if (done)
+            spriteRenderer.color = defaultColor;
     }
 }

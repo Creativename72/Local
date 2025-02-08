@@ -17,14 +17,7 @@ public class MapIcon : HighlightableObject
     // Update is called once per frame
     void Update()
     {
-        if (enableClick)
-        {
-
-        }
-        else
-        {
-            spriteRenderer.sprite = unvisitedIcon;
-        }
+        
     }
 
     public void SetVisited(bool visited)

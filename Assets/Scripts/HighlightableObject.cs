@@ -8,8 +8,8 @@ public class HighlightableObject : MonoBehaviour
 {
     [Header("Customization")]
     
-    [SerializeField] private Color defaultColor = Color.white;
-    [SerializeField] private Color highlightColor = Color.gray;
+    [SerializeField] protected Color defaultColor = Color.white;
+    [SerializeField] protected Color highlightColor = Color.gray;
     protected Action onClick;
     [Header("Click / Highlight")]
     protected bool visible = true;
