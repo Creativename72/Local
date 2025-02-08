@@ -12,7 +12,7 @@ public class sceneSwitcherDevTool : MonoBehaviour
         if (b)
         {
             b = false;
-            MapController.Instance.LoadNextScene("Map");
+            GameManager.Instance.ChangeScene("Map");
         }
     }
 }

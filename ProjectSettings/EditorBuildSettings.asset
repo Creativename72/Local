@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/General/TitleScreen.unity
     guid: 6c581ef4538921444a523a9d3f025989
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Unused/Management.unity
     guid: 4f4a1fbef74030e49b2bce8748940692
   - enabled: 1
@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Day1/TylerIntro.unity
     guid: ff923f20418ea2d468965e7e29723bd6
   - enabled: 1
-    path: Assets/Scenes/Day1/Walterintro.unity
+    path: Assets/Scenes/Day1/WalterIntro.unity
     guid: 441ee0e5960688740891901c743fd924
   - enabled: 0
     path: 

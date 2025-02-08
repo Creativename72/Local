@@ -2,20 +2,21 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private DataManager dataManager;
+    [Header("Menus")]
     [SerializeField] private GameObject escapeMenu;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject optionsMenu;
-    [SerializeField] private GameObject menuArea;
-    [SerializeField] private AudioMixer audioFader;
+    [SerializeField] private GameObject mainMenuButton;
+    [Header("Misc")]
+    [SerializeField] private DataManager dataManager;
     [SerializeField] private FadeScript fader;
-    [SerializeField] private Slider musicSlider;
-    [SerializeField] private Slider sfxSlider;
+    [SerializeField] private AudioMixer audioFader;
     public static GameManager Instance { get; private set; }
 
     private int menuDepth;
@@ -39,6 +40,10 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         menuDepth = 0;
+
+        // hardcoded set the volumes
+        AudioManager.Instance.SetMusicVolume(0.5f);
+        AudioManager.Instance.SetSFXVolume(0.5f);
     }
 
     // Update is called once per frame
@@ -47,21 +52,16 @@ public class GameManager : MonoBehaviour
         escapeMenu.SetActive(menuDepth == 1 || menuDepth == 2);
         pauseMenu.SetActive(menuDepth == 1);
         optionsMenu.SetActive(menuDepth == 2);
-        gameVolume = musicSlider.value;
-        sfxVolume = sfxSlider.value;
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (menuDepth == 0)
-                menuDepth++;
+                OpenPause();
             else
-                menuDepth--;
+                ExitMenu();
         }
-        if (Input.GetButtonDown("Fire1") && !menuArea.GetComponent<Collider2D>().OverlapPoint(Input.mousePosition))
-        {
-            menuDepth = 0;
-            // Debug.Log("CLICKED OFF PAUSE MENU");
-        }
+
+        mainMenuButton.SetActive(SceneManager.GetActiveScene().name != "TitleScreen");
     }
 
     public bool Paused()
@@ -78,21 +78,25 @@ public class GameManager : MonoBehaviour
     {
         return sfxVolume;
     }
-
-    public void Options()
+    public void ExitMenu()
+    {
+        menuDepth = 0;
+    }
+    public void OpenPause()
+    {
+        menuDepth = 1;
+    }
+    public void OpenOptions()
     {
         // opening options
-        menuDepth++;
-        Debug.Log("OPTIONS");
+        menuDepth = 2;
+        AudioManager.Instance.UpdateSliders();
     }
 
     public void MainMenu()
-    {
-        Debug.Log("Saving game...");
-       
+    {       
         CloseMenus();
-        ChangeScene("TitleScreen");
-        
+        ChangeScene("TitleScreen");   
     }
 
     public void ExitGame()
@@ -106,29 +110,27 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void ChangeScene(string name)
-    {
-        ChangeScene(name, 1.5f);
-    }
     public void ChangeScene(string name, float delay = 1.5f)
     {
-        if (MusicPlayer.Instance != null)
-            MusicPlayer.Instance.StopMusic(null);
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.FadeTo(0, delay, () => AudioManager.Instance.StopMusic());
 
         fader.FadeBlack(true);
-        StartCoroutine(FadeMixerGroup.StartFade(audioFader, "MusicVolume", delay, 0f));
-        StartCoroutine(FadeMixerGroup.StartFade(audioFader, "AmbienceVolume", delay, 0f));
         StartCoroutine(Wait(delay, () =>
         {
             SceneManager.LoadScene(name, LoadSceneMode.Single);
             fader.FadeBlack(false);
-            StartCoroutine(FadeMixerGroup.StartFade(audioFader, "MusicVolume", delay, 1f));
-            StartCoroutine(FadeMixerGroup.StartFade(audioFader, "AmbienceVolume", delay, 1f));
+            if (AudioManager.Instance != null)
+                AudioManager.Instance.FadeTo(1, delay);
         }));
     }
     public void CloseMenus()
     {
         this.menuDepth = 0;
+    }
+    public static void NextFrame(Action a)
+    {
+        Instance.StartCoroutine(Instance.WaitFrame(a));
     }
 
     public static void WaitRoutine(float seconds, Action a)
@@ -138,6 +140,12 @@ public class GameManager : MonoBehaviour
     public IEnumerator Wait(float seconds, Action a)
     {
         yield return new WaitForSeconds(seconds);
+        a.Invoke();
+    }
+
+    public IEnumerator WaitFrame(Action a)
+    {
+        yield return new WaitForEndOfFrame();
         a.Invoke();
     }
 

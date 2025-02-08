@@ -35,6 +35,7 @@ public class DialogueBox : MonoBehaviour
     private float scrollStartTime;
     private bool containerEnabled;
     private List<Action<int>> choiceListeners;
+    private List<Action> clickListeners;
     private DialogueCharacter currentlySpeaking;
     private float speakStartTime;
     private TextMeshProUGUI currentDialogueText;
@@ -121,12 +122,29 @@ public class DialogueBox : MonoBehaviour
     }
 
     /// <summary>
+    /// Adds a listener to the dialogue click
+    /// </summary>
+    /// <param name="listener">Action to be invokd</param>
+    public void AddClickListener(Action listener)
+    {
+        clickListeners.Add(listener);
+    }
+
+    /// <summary>
     /// Used by the choice buttons to invoke choice listeners
     /// </summary>
     /// <param name="choiceId"></param>
     public void ButtonChoice(int choiceId)
     {
         choiceListeners.ForEach(choiceFunc => choiceFunc.Invoke(choiceId));
+    }
+
+    /// <summary>
+    /// Used by screen button to invoke click listeners
+    /// </summary>
+    public void Click()
+    {
+        clickListeners.ForEach(listener => listener.Invoke());
     }
 
     /// <summary>
@@ -164,6 +182,7 @@ public class DialogueBox : MonoBehaviour
         dialogueString = string.Empty;
         scrollStartTime = -1000;
         choiceListeners = new();
+        clickListeners = new();
 
         hover.Set(false, "");
         Enable(false);
@@ -247,6 +266,8 @@ public class DialogueBox : MonoBehaviour
             audioPlayer.PlayOneShot(currentlySpeaking.GetRandomTalkSFX());
         }
     }
+
+    
 
     public class DialogueBoxException : Exception
     {

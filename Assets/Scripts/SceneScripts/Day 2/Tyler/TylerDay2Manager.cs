@@ -127,18 +127,18 @@ public class TylerDay2Manager : MonoBehaviour
 
     /*
     //Only for scene music
-    //Finds MusicPlayer singleton and plays music associated with this scene
+    //Finds AudioManager singleton and plays music associated with this scene
     private void PlaySceneMusic()
     {
         if (sceneMusic != null)
         {
-            GameObject musicObj = GameObject.Find("MusicPlayer");
+            GameObject musicObj = GameObject.Find("AudioManager");
             if (musicObj != null)
             {
-                MusicPlayer musicPlayer = musicObj.GetComponent<MusicPlayer>();
-                if (musicPlayer != null)
+                AudioManager musicAudioSource = musicObj.GetComponent<AudioManager>();
+                if (musicAudioSource != null)
                 {
-                    musicPlayer.PlayMusic(sceneMusic);
+                    musicAudioSource.PlayMusic(sceneMusic);
                 }
             }
         }

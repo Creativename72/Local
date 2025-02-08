@@ -53,7 +53,7 @@ public class TylerDay3Manager : MonoBehaviour
                     highlight.EnableClick(false);
                     highlight.EnableHighlight(false);
                     highlight.SetVisible(false);
-                    sfxPlayer.PlaySFX("s_harvest");
+                    // AudioManager.Insta.PlaySFX("s_harvest");
                 });
             }
             else
@@ -133,18 +133,18 @@ public class TylerDay3Manager : MonoBehaviour
 
     /*
     //Only for scene music
-    //Finds MusicPlayer singleton and plays music associated with this scene
+    //Finds AudioManager singleton and plays music associated with this scene
     private void PlaySceneMusic()
     {
         if (sceneMusic != null)
         {
-            GameObject musicObj = GameObject.Find("MusicPlayer");
+            GameObject musicObj = GameObject.Find("AudioManager");
             if (musicObj != null)
             {
-                MusicPlayer musicPlayer = musicObj.GetComponent<MusicPlayer>();
-                if (musicPlayer != null)
+                AudioManager musicAudioSource = musicObj.GetComponent<AudioManager>();
+                if (musicAudioSource != null)
                 {
-                    musicPlayer.PlayMusic(sceneMusic);
+                    musicAudioSource.PlayMusic(sceneMusic);
                 }
             }
         }

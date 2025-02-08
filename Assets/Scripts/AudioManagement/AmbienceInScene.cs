@@ -24,64 +24,68 @@ public class AmbienceInScene : MonoBehaviour
         ambiencePlayer.Play(0);
     }
 
-    public void ChangeAmbience() {
-        StartCoroutine(AmbienceChange());
+    public void ChangeAmbience()
+    {
+        AudioManager.Instance.FadeTo(0, 1f, () =>
+        {
+            ambiencePlayer.Stop();
+            ambienceIndex++;
+            ambiencePlayer.clip = progressionalAmbience[ambienceIndex];
+            ambiencePlayer.Play(0);
+            AudioManager.Instance.FadeTo(1, 1f, null, "SFXAutomate");
+        }, "SFXAutomate");
     }
 
-    private IEnumerator AmbienceChange() {
+    public void ChangeAmbience(string n)
+    {
+        // StartCoroutine(AmbienceChange(n));
+    }
+
+    /*private IEnumerator AmbienceChange(string name)
+    {
         StartCoroutine(FadeMixerGroup.StartFade(audioFader, "AmbienceVolume", audioFadeDuration, 0f));
         yield return new WaitForSeconds(audioFadeDuration);
 
-        ambienceIndex++;
-        ambiencePlayer.clip = progressionalAmbience[ambienceIndex];
-        ambiencePlayer.Play(0);
-
-        StartCoroutine(FadeMixerGroup.StartFade(audioFader, "AmbienceVolume", audioFadeDuration, 1f));
-    }
-
-    public void ChangeAmbience(string n) {
-        StartCoroutine(AmbienceChange(n));
-    }
-
-    private IEnumerator AmbienceChange(string name) {
-        StartCoroutine(FadeMixerGroup.StartFade(audioFader, "AmbienceVolume", audioFadeDuration, 0f));
-        yield return new WaitForSeconds(audioFadeDuration);
-
-        AudioClip jumpTo = Resources.Load<AudioClip>("SFX/"+name);
-        if (progressionalAmbience.Contains(jumpTo)) {
+        AudioClip jumpTo = Resources.Load<AudioClip>("SFX/" + name);
+        if (progressionalAmbience.Contains(jumpTo))
+        {
             ambienceIndex = progressionalAmbience.IndexOf(jumpTo);
             ambiencePlayer.clip = progressionalAmbience[ambienceIndex];
             ambiencePlayer.Play(0);
         }
 
         StartCoroutine(FadeMixerGroup.StartFade(audioFader, "AmbienceVolume", audioFadeDuration, 1f));
+    }*/
+
+    public void PlayTempAmbience(string n)
+    {
+        // StartCoroutine(TempAmbiencePlayer(n));
+        // Debug.Log("temp played");
     }
 
-    public void PlayTempAmbience(string n) {
-        StartCoroutine(TempAmbiencePlayer(n));
-        Debug.Log("temp played");
-    }
-
-    private IEnumerator TempAmbiencePlayer(string name) {
+    /*private IEnumerator TempAmbiencePlayer(string name)
+    {
         StartCoroutine(FadeMixerGroup.StartFade(audioFader, "TempAmbienceVolume", audioFadeDuration, 0f));
         yield return new WaitForSeconds(audioFadeDuration);
 
-        Debug.Log("SFX/" +name);
+        Debug.Log("SFX/" + name);
         tempPlayer = gameObject.AddComponent<AudioSource>();
-        AudioClip test = Resources.Load<AudioClip>("SFX/"+name);
+        AudioClip test = Resources.Load<AudioClip>("SFX/" + name);
         tempPlayer.clip = test;
         tempPlayer.loop = true;
         tempPlayer.outputAudioMixerGroup = tempGroup;
         tempPlayer.Play(0);
 
         StartCoroutine(FadeMixerGroup.StartFade(audioFader, "TempAmbienceVolume", audioFadeDuration, 1f));
+    }*/
+
+    public void StopTempAmbience()
+    {
+        // StartCoroutine(TempAmbienceStopper());
     }
 
-    public void StopTempAmbience() {
-        StartCoroutine(TempAmbienceStopper());
-    }
-
-    private IEnumerator TempAmbienceStopper() {
+    /*private IEnumerator TempAmbienceStopper()
+    {
         StartCoroutine(FadeMixerGroup.StartFade(audioFader, "TempAmbienceVolume", audioFadeDuration, 0f));
         yield return new WaitForSeconds(audioFadeDuration);
 
@@ -89,5 +93,5 @@ public class AmbienceInScene : MonoBehaviour
             Destroy(tempPlayer);
 
         StartCoroutine(FadeMixerGroup.StartFade(audioFader, "TempAmbienceVolume", audioFadeDuration, 1f));
-    }
+    }*/
 }

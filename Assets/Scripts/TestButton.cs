@@ -11,7 +11,7 @@ public class TestButton : MonoBehaviour
     
     public void Click() {
 
-        MapController.Instance.LoadNextScene("Map");
+        GameManager.Instance.ChangeScene("Map");
         Debug.Log("done");
     }
 }

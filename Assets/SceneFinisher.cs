@@ -6,6 +6,7 @@ public class SceneFinisher : MonoBehaviour
 {
     public void finish()
     {
-        MapController.Instance.LoadNextScene("Map");
+        GameManager.Instance.ChangeScene("Map");
+
     }
 }

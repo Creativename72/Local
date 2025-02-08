@@ -44,8 +44,8 @@ public class House : MonoBehaviour, IHouse
         }
 
         //Debug.Log(string.Join(",", MapController.Instance.HouseStates));
-        isActive = MapController.Instance.HouseStates[(int) thisHouse];
-        nextScene = MapController.Instance.currentStage;
+        //isActive = MapController.Instance.HouseStates[(int) thisHouse];
+        //nextScene = MapController.Instance.currentStage;
         spriteRenderer = GetComponent<SpriteRenderer>();
         audioPlayer = GetComponent<AudioSource>();
         updateSprite();
@@ -53,9 +53,9 @@ public class House : MonoBehaviour, IHouse
 
     public void Click() {
         audioPlayer.Play(0);
-        MapController.Instance.HouseStates[(int) thisHouse] = false;
+        //MapController.Instance.HouseStates[(int) thisHouse] = false;
         GameManager.Instance.ChangeScene(sceneNames[nextScene]);
-        MapController.Instance.UpdateDay();
+        //MapController.Instance.UpdateDay();
     }
 
     public void setActiveStatus(bool s) {
@@ -64,7 +64,8 @@ public class House : MonoBehaviour, IHouse
     }
 
     private void updateSprite() {
-        if (isActive) {
+        Debug.LogWarning("Deprecated Method");
+        /*if (isActive) {
             if (MapController.Instance.currentStage < 2) {
                 spriteRenderer.sprite = blankIcon;
             }
@@ -72,7 +73,7 @@ public class House : MonoBehaviour, IHouse
                 spriteRenderer.sprite = fullIcon;
         }
         else
-            spriteRenderer.sprite = null;
+            spriteRenderer.sprite = null;*/
     }
 
     void OnMouseDown()

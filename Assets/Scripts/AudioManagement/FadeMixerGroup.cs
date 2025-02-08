@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Audio;
 using UnityEngine;
+using System;
 
 // Utility class I shamelessly stole off google to fade audio all at once in groups
 public static class FadeMixerGroup {
 
+    [Obsolete("Do not use this method!!!")]
     // Call with StartCoroutine(FadeMixerGroup.StartFade(AudioMixer audioMixer, String exposedParameter, float duration, float targetVolume))
     // Scripts calling this need using UnityEngine.Audio
     public static IEnumerator StartFade(AudioMixer audioMixer, string exposedParam, float duration, float targetVolume)

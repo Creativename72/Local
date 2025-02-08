@@ -50,10 +50,11 @@ public class BaseSceneManager : MonoBehaviour
             fadeToScene.FadeToNextScene();
             return;
         }
-        MapController.Instance.LoadNextScene("Map");
+        GameManager.Instance.ChangeScene("Map");
+
     }
 
-    //Finds MusicPlayer singleton and plays music associated with this scene
+    //Finds AudioManager singleton and plays music associated with this scene
     private void PlaySceneMusic()
     {
         if(sceneMusic != null)
@@ -61,13 +62,12 @@ public class BaseSceneManager : MonoBehaviour
             GameObject musicObj = GameObject.Find("MusicPlayer");
             if(musicObj != null)
             {
-                //Debug.Log("Attempting to get MusicPlayer script");
-                MusicPlayer musicPlayer = musicObj.GetComponent<MusicPlayer>();
+                //Debug.Log("Attempting to get AudioManager script");
+                AudioManager musicPlayer = musicObj.GetComponent<AudioManager>();
                 
                 if(musicPlayer != null)
                 {
-                    Debug.Log("BaseSceneManager: Fading in Music");
-                    StartCoroutine(FadeMixerGroup.StartFade(musicFadeMixer, "MusicVolume", 1.5f, 1f));
+                    // Debug.Log("BaseSceneManager: Fading in Music");
                     musicPlayer.PlayMusic(sceneMusic);
                     //Debug.Log("Attempting to play music");
                 }

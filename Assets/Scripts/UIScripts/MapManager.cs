@@ -37,7 +37,7 @@ public class MapManager : MonoBehaviour
         // just go to the scene for default map icons
         walterIcon.OnClick(() =>
         {
-            audioPlayer.PlaySFX(clickSFX);
+            audioPlayer.PlayButtonSFX();
             switch (day)
             {
                 case 1: GameManager.Instance.ChangeScene(walterIcon.day1Scene); break;
@@ -50,7 +50,7 @@ public class MapManager : MonoBehaviour
 
         annieIcon.OnClick(() =>
         {
-            audioPlayer.PlaySFX(clickSFX);
+            audioPlayer.PlayButtonSFX();
             switch (day)
             {
                 case 1: GameManager.Instance.ChangeScene(annieIcon.day1Scene); break;
@@ -63,7 +63,7 @@ public class MapManager : MonoBehaviour
 
         tylerIcon.OnClick(() =>
         {
-            audioPlayer.PlaySFX(clickSFX);
+            audioPlayer.PlayButtonSFX();
             switch (day)
             {
                 case 1: GameManager.Instance.ChangeScene(tylerIcon.day1Scene); break;
@@ -77,7 +77,7 @@ public class MapManager : MonoBehaviour
         // change the day counter and unvisit everyone for visiting scout
         scoutIcon.OnClick(() =>
         {
-            audioPlayer.PlaySFX(clickSFX);
+            audioPlayer.PlayButtonSFX();
             switch (day)
             {
                 case 1: GameManager.Instance.ChangeScene(scoutIcon.day1Scene); break;

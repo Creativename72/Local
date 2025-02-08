@@ -100,7 +100,7 @@ public class BerniceDialogueController : DialogueController, IPointerClickHandle
             bsm.endScene();
         } else if (end)
         {
-            MapController.Instance.LoadNextScene("Map");
+            GameManager.Instance.ChangeScene("Map");
         }
     }
 

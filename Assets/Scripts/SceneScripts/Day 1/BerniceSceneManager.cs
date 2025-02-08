@@ -30,10 +30,10 @@ public class BerniceSceneManager : MonoBehaviour
 
     public void endScene()
     {
-        MapController.Instance.LoadNextScene("Map");
+        GameManager.Instance.MapAndSave();
     }
 
-    //Finds MusicPlayer singleton and plays music associated with this scene
+    //Finds AudioManager singleton and plays music associated with this scene
     private void PlaySceneMusic()
     {
         if(sceneMusic != null)
@@ -41,7 +41,7 @@ public class BerniceSceneManager : MonoBehaviour
             GameObject musicObj = GameObject.Find("MusicPlayer");
             if(musicObj != null)
             {
-                MusicPlayer musicPlayer = musicObj.GetComponent<MusicPlayer>();
+                AudioManager musicPlayer = musicObj.GetComponent<AudioManager>();
                 if(musicPlayer != null)
                 {
                     musicPlayer.PlayMusic(sceneMusic);

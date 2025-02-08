@@ -92,6 +92,7 @@ public class PlaytestMenuController : MonoBehaviour
     }
 
     public void GoToScene(TextMeshProUGUI buttonText) {
-        MapController.Instance.LoadNextScene(buttonText.text);
+        GameManager.Instance.ChangeScene(buttonText.text);
+        // MapController.Instance.LoadNextScene(buttonText.text);
     }
 }

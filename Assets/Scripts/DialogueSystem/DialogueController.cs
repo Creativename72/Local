@@ -352,7 +352,7 @@ public class DialogueController : MonoBehaviour
             s.endScene();
         } else if (end)
         {
-            MapController.Instance.LoadNextScene("Map");
+            GameManager.Instance.ChangeScene("Map");
         }
     }
 

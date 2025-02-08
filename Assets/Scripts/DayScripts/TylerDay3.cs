@@ -17,6 +17,7 @@ public class TylerDay3 : MonoBehaviour
 
     [Header("Harvest Game Stuff")]
     [SerializeField] private GameObject harvestGameObject;
+    [SerializeField] private AudioClip harvestSFX;
 
     private DialogueCharacter scout;
     private DialogueCharacter narrator;
@@ -134,7 +135,7 @@ public class TylerDay3 : MonoBehaviour
                     highlight.EnableClick(false);
                     highlight.EnableHighlight(false);
                     highlight.SetVisible(false);
-                    playDialogueSFX.PlaySFX("s_harvest");
+                    AudioManager.Instance.PlaySFX(harvestSFX);
                 });
             }
             else

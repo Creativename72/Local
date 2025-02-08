@@ -61,12 +61,10 @@ public class BackgroundHandler : MonoBehaviour
     {
         bgFader.SetVisible();
         onBlack = true;
-        StartCoroutine(FadeMixerGroup.StartFade(audioFader, "SFXVolume", audioFadeDuration, 0f));
-        StartCoroutine(FadeMixerGroup.StartFade(audioFader, "AmbienceVolume", audioFadeDuration, 0f));
+        AudioManager.Instance.FadeTo(0, 0.75f, null, "SFXAutomate");
         bgFader.FadeBlack(true);
         yield return new WaitForSeconds(0.75f);
-        StartCoroutine(FadeMixerGroup.StartFade(audioFader, "SFXVolume", audioFadeDuration, 1f));
-        StartCoroutine(FadeMixerGroup.StartFade(audioFader, "AmbienceVolume", audioFadeDuration, 1f));
+        AudioManager.Instance.FadeTo(1, 0.75f, null, "SFXAutomate");
         bgFader.FadeBlack(false);
         yield return new WaitForSeconds(0.75f);
         onBlack = false;
@@ -92,8 +90,7 @@ public class BackgroundHandler : MonoBehaviour
         {
             onBlack = true;
             // Debug.Log("BackgroundHandler: Fading out SFX and Ambience");
-            StartCoroutine(FadeMixerGroup.StartFade(audioFader, "SFXVolume", audioFadeDuration, 0f));
-            StartCoroutine(FadeMixerGroup.StartFade(audioFader, "AmbienceVolume", audioFadeDuration, 0f));
+            AudioManager.Instance.FadeTo(0, 0.75f, null, "SFXAutomate");
             bgFader.FadeBlack(true);
 
             yield return new WaitForSeconds(0.75f);
@@ -113,8 +110,7 @@ public class BackgroundHandler : MonoBehaviour
         {
             // Debug.Log("BackgroundHandler: Fading in SFX and Ambience");
             bgFader.FadeBlack(false);
-            StartCoroutine(FadeMixerGroup.StartFade(audioFader, "SFXVolume", audioFadeDuration, 1f));
-            StartCoroutine(FadeMixerGroup.StartFade(audioFader, "AmbienceVolume", audioFadeDuration, 1f));
+            AudioManager.Instance.FadeTo(1, 0.75f, null, "SFXAutomate");
             yield return new WaitForSeconds(0.75f);
             onBlack = false;
         }

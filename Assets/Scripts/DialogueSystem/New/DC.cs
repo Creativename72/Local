@@ -166,7 +166,7 @@ public class DC : MonoBehaviour
                 return;
             }
 
-            audioPlayer.PlaySFX(args[0]);
+            AudioManager.Instance.PlaySFX(args[0]);
         });
         this.AddFunction("FadeScreen", () =>
         {
@@ -294,34 +294,35 @@ public class DC : MonoBehaviour
                 SetDialogue();
             }
         });
+
+        dialogueBox.AddClickListener(() =>
+        {
+            // called on a mouse click
+            // only be able to advance if dialogue is canVisit, and game is not paused
+            if (this.dialogueEnabled && !GameManager.Instance.Paused() && !startedDialogueThisFrame)
+            {
+                if (tree.GetLine() is DialogueTree.DialogueLine dLine)
+                {
+                    if (dialogueBox.IsScrolling())
+                    {
+                        dialogueBox.FinishScrolling();
+                    }
+                    else
+                    {
+                        tree.AdvanceLine(0);
+                        SetDialogue();
+                    }
+                }
+            }
+        });
     }
 
     // Update is called once per frame
     void Update()
     {
-        // skip frame when just started dialogue
         if (startedDialogueThisFrame)
         {
-            startedDialogueThisFrame = false;
-            return;
-        }
-
-        // called on a mouse click
-        // only be able to advance if dialogue is canVisit, and game is not paused
-        if (Input.GetMouseButtonDown(0) && this.dialogueEnabled && !GameManager.Instance.Paused())
-        {
-            if (tree.GetLine() is DialogueTree.DialogueLine dLine)
-            {
-                if (dialogueBox.IsScrolling())
-                {
-                    dialogueBox.FinishScrolling();
-                }
-                else
-                {
-                    tree.AdvanceLine(0);
-                    SetDialogue();
-                }
-            }
+            GameManager.NextFrame(() => startedDialogueThisFrame = false);
         }
     }
 
