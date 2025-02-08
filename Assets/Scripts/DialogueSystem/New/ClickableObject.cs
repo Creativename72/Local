@@ -31,7 +31,7 @@ public class ClickableObject : HighlightableObject
         this.enableClick = done && !clicked;
         this.enableHighlight = done && !clicked;
 
-        if (done)
+        if (clicked)
             spriteRenderer.color = defaultColor;
     }
 }
