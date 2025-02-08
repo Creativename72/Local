@@ -75,7 +75,7 @@ public class TylerDay2 : MonoBehaviour
         clickables.ForEach(clickable => clickable.OnClick(() =>
         {
             itemsInspected++;
-            clickable.SetVisible(false);
+            dialogueController.AddEndFunction(() => clickable.SetVisible(false));
         }));
 
         dialogueController.AddGameFlags();
