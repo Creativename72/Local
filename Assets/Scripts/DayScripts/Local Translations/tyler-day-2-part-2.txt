@@ -11,7 +11,7 @@ Tyler: This right here. My garden.
 
 [[Impressive! | Impressive
 [[You did all this? |YouDidAllThis
-[[Do you send some of these veggies to Bernice? | SendToBernice $TylerVeggiesToBernice$ ((//IF FLAG TylerVeggiesToBernice, MESSAGE: Walter mentioned Bernice getting fresh veggies from somewhere.
+$TylerVeggiesToBernice$[[Do you send some of these veggies to Bernice? | SendToBernice $TylerVeggiesToBernice$ ((//IF FLAG TylerVeggiesToBernice, MESSAGE: Walter mentioned Bernice getting fresh veggies from somewhere.
 
 -Impressive
 Tyler: *Tyler’s face lights up.* Thanks man. Gotta try sometimes, I suppose.

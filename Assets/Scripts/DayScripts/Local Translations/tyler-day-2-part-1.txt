@@ -61,7 +61,7 @@ Narrator:*Tyler disappears inside the trailer.*
 Narrator:*Moments later, the sounds of rummaging and clatter drift out the door.*
 >Show{Tyler, true}
 Narrator:*Tyler emerges with an electric guitar slung over his shoulders. He yanks the power cord and a set of speakers come tumbling down the trailer steps into the mud.*
-Tyler: *Grinning.* Look what I just picked up! Cool stuff, huh?
+Tyler: *He grins.* Look what I just picked up! Cool stuff, huh?
 [[Yes. Very cool. || StrikePowerChord $TylerCool$(( You think Tyler is cool.//FLAG: NONE, BUT IF FLAG TylerCool, MESSAGE: You think Tyler is cool.
 $TylerTryhard$[[You’re trying a bit too hard, don’t you think? || DoNotHarsh (( You think Tyler tries too hard to be cool. //FLAG TylerTryhard, MESSAGE: You think Tyler tries too hard to be cool.
 [[Is it safe to be playing that in the rain? || PlayInRain
