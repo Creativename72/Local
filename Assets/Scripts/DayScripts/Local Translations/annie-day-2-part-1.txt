@@ -50,7 +50,7 @@ Narrator:*The interior is small but thoughtfully arranged. Photos of Annie with 
 
 -Cozy
 Annie: Hey, thanks!
-Annie: *She glances around the room.* Glad things are still presentable. Ever since I lost part of my vision, though, I didn’t really bother sprucing things up.
+Annie: *She glances around the room.* Glad things are still presentable. Ever since I lost part of my vision, though, I don't really bother sprucing things up.
 Annie: Like, the only person who’d notice it anyway is my sister when she visits.
 |LostVisionLoop
 

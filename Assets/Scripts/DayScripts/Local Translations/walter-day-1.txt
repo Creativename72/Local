@@ -20,7 +20,7 @@ Walter: How was the walk up?
 -beautiful
 Walter: *He nods curtly.* It's nice this time of year.
 Walter: The quiet’s good... most of the time. Just me, the trees, and the occasional wayward hiker. Keeps things simple.
-Narrator:*THe remains silent for a moment, his gaze distant. After a while, he clears his throat, looking back at Scout.*
+Narrator:*The remains silent for a moment, his gaze distant. After a while, he clears his throat, looking back at Scout.*
 |bearLook
 
 -exhausting

@@ -1,15 +1,15 @@
 -Start
 Narrator: *The sun rises over Bellespring Valley, casting a warm glow across the trees and the shimmering surface of the lake below. The gentle hum of Scout’s car engine breaks the morning stillness as they navigate the winding road into the valley. The air feels crisp, carrying a faint earthy scent of pine and water.*
-Narrator: *Scout’s car bumps along the gravel driveway of a lakeside cottage, where a moving van is parked. Movers shuffle back and forth, carefully loading the last of the boxes. A figure sits in a rocking chair on the porch, waiting patiently.*
+Narrator: *Scout’s car bumps along the gravel driveway of a lakeside cottage, where a moving van is parked. Movers shuffle back and forth, carefully loading the last of their boxes. Just behind the movers, a figure sits in a rocking chair on the porch, waiting patiently.*
 >changeBackground
 >showCharactersFade
 Narrator: *A sturdy tortoise with weathered features and a kind smile waves warmly as Scout steps out of their car, stretching after the long drive. The faint creak of her rocking chair joins the sound of rustling leaves and the occasional chirp of birds.*
 
 // Bernice named Tortoise here
 Bernice: Ah, there you are! You must be Scout. I’ve been looking forward to meeting you.
-[That’s me! Are you Bernice?
+[Yup, that’s me! Are you Bernice?
 >setBerniceName
-Bernice: That’s right, dear. Bernice—formerly of this cottage, soon to be city-bound once more. I hope she treats you as kindly as she did me over the years.
+Bernice: That’s right, dear. Bernice—formerly of this cottage, soon to be city-bound once more. I hope this old gal treats you as kindly as she did me over the years.
 [You’ve been waiting for me? | waitingForMe
 [How long have you lived here? | howLong > SetFlag{KnowBerniceLiveTime, true} //SET KNOW BERNICE LIVE TIME
 
@@ -22,9 +22,9 @@ Bernice: Oh, longer than I care to admit. Decades, really. Moved here when I was
 |startedInTheCity
 
 -startedInTheCity
-Bernice: I started in the city too, like you. Back then, I thought the noise and excitement would keep me forever. But one day, I packed a bag, hopped on a bus, and wound up here. The quiet called to me.
-Bernice: Why don’t you bring your things up here and let me show you around. It’s not every day this place gets a fresh start.
-Narrator: *Bernice pushes herself up from her rocking chair, her movements deliberate but steady. She holds the door open as Scout carries their suitcase inside, the faint scent of herbs and old wood welcoming them into the cottage.*
+Bernice: I started in the city too, just like you. Back then, I thought the noise and excitement would keep me forever. But one day, I packed a bag, hopped on a bus, and wound up here. The quiet called to me.
+Bernice: Why don’t you bring your things up here and let me show you around. It’s not every day this place sees a fresh face.
+Narrator: *Bernice pushes herself up from her rocking chair, her movements deliberate and steady. She holds the door open as Scout carries their suitcase inside, the faint scent of herbs and old wood welcoming them into the cottage.*
 Narrator: *Bernice glances at the single suitcase and raises an eyebrow as Scout sets it down in the corner.*
 Bernice: Well, aren’t you a light packer! That everything you brought?
 [Yep, only the essentials. Everything I’ll need. | onlyEssentials
@@ -42,14 +42,14 @@ Bernice: *She grins, her voice light.* Ah, don’t worry about it. If you’re m
 Narrator: *Bernice’s eyes shift to the shimmering lake below.*
 Bernice: Either way, you’ve brought enough. The rest? You’ll find it as you settle in. Now, how much do you know about the valley? Shall I give you a quick rundown?
 [I’d love to hear about it. | hearAboutIt
-[No, I’d rather explore it myself. | exploreMyself
+[No thanks, I’d rather explore it myself. | exploreMyself
 
 -hearAboutIt
 Bernice: Well, you’ve picked a gorgeous place to move to, let me tell you.
 Bernice: The lakes here are beautiful. So are the woods, the creeks, the trails. Really, everything here is picturesque. 
 Bernice: It’s been a while since I’ve been able to take a long walk around the area, but, if you’re up to it, a hike around all the trails does wonders for the soul.
 Bernice: *She laughs a bit to herself.* I was personally more of a swimmer. Back in my youth, I’d swim from the cottage to the other side of the lake, the sun shining on my back…
-Bernice: I hope this place can bring as much youthful wonder to you as it did to me.
+Bernice: I hope this place can bring as much joy and wonder to you as it did to me.
 |notJustMe
 
 -exploreMyself
@@ -67,21 +67,21 @@ Bernice: Here we are. Bellespring Valley. An old map for an old place, but it st
 Bernice: First, here’s home. This cottage is the first thing ever built in this valley, and let me tell you, she’s got stories tucked into every corner.
 Bernice: It’s considered historic. Take care of her, and she’ll take care of you.
 >changeBackground //MOVE TO WALTER TOWER SECTION
-Bernice: On the west side, we’ve got Walter’s tower. He’s the fire lookout, though I’d say he looks after more than just fires.
+Bernice: On the west side, we’ve got Walter’s tower. He’s the fire lookout, but I’d say he looks after more than just fires.
 Bernice: It’s a long, quiet hike to reach him, and his tower... well, it’s got its own kind of charm. Walter seems to enjoy the solitude up there. Keeps a watchful eye on things from afar. He’s good at that.
-Bernice: I’m not as spry as I once was, so the trek’s a bit much for me these days. But Walter’s kind enough to stop by now and then. The fish he catches? Makes for the best stew you’ll ever taste.
+Bernice: I’m not as spry as I once was, so the trek’s a bit much for me these days. But Walter’s kind enough to stop by now and then. And as for the fish he catches? Well, they make for the best dang stew you’ll ever taste.
 >changeBackground //MOVE TO ANNIE SECTION
-Bernice: Over on the north hill, you’ll find Annie. Sharp as a tack but always glued to that job of hers.
+Bernice: Over on the north hill, you’ll find Annie. Sharp as a tack but always glued to that phone of hers because of her job.
 Bernice: Annie’s cabin up on the hill is like a little piece of the city she brought along with her—cozy, practical, and filled with everything she needs.
 Bernice: The trail leading up is gentle. When Annie moved in, Walter helped set up railings and lights to make the walk easier for her. He’s good like that, always thinking of others.
 >changeBackground //MOVE TO TYLER SECTION
-Bernice: And then there’s Tyler. He lives in his trailer down by one of the old campsite. It’s... well, it’s very much his own space. Unique and full of his personality.
+Bernice: And then there’s Tyler. He lives in his trailer down by one of the old campsites. It’s... well, it’s very much his own space. Unique and full of his personality.
 Bernice: He’s got his own, let’s call it, unique way of living. Very modern, very... unconventional. Perhaps I’m just too old to keep up.
 Bernice: He might come off a bit rough around the edges, but deep down, he’s got a good heart. I think he’s just looking for someone who gets him.
 >changeBackground //BACK TO FULL MAP
 Bernice: And that’s everyone!
 Bernice: You know, the valley wasn’t always this quiet. We used to have tourists, hikers, and campers passing through, mixing with the community.
-Bernice: But now... well, it’s just us. It’s been years since we’ve all come together for anything. I can’t even remember the last time.
+Bernice: But now... well, it’s just us. It’s been years since we’ve all come together for anything. I can’t even remember the last time we had everyone in the same room.
 >changeBackground //BACK TO CHAR SPRITES AND BACKGROUND
 >showCharactersFade
 Bernice: Scout! I have a favor to ask of you.
@@ -89,7 +89,7 @@ Narrator: *Her smile falters for just a moment, and a flicker of worry crosses h
 Bernice: Could you check in on my three friends? They know I’m leaving, and I’ve already said my goodbyes, but... I worry about them.
 Bernice: They’ve each got their own lives now, but I think they could use a friendly face—someone to remind them they’re not alone out here.
 Bernice: Just don’t tell them I sent you! Go out, introduce yourself, and let things happen naturally. You’ve got a warmth about you. I think they’ll appreciate that.
-Narrator: *The movers begin loading the final few boxes into the truck, their footsteps crunching against the gravel drive.*
+Narrator: *The movers begin loading their dollies and last bit of equipment into the truck, their footsteps crunching against the gravel drive.*
 Bernice: Looks like they’re just about done.
 Bernice: *Her gaze drifts to one of the last boxes left on the porch. A small smile spreads across her face as she picks it up.* Oh, I almost forgot!
 Bernice: Scout, I have something for you.
@@ -103,12 +103,12 @@ Bernice: Oh, hush.
 
 -inExchange
 Bernice: In exchange, I’m counting on you to keep an eye on Walter, Annie, and Tyler for me. Just… make sure they’re doing alright. They’re good people, but they’ve got their own struggles.
-Bernice: I’ll check in on you in a few days, so keep that pot handy. Who knows? It might come in handy sooner than you think.
+Bernice: I’ll call to check in on you in a few days, so keep that pot handy. Who knows? It might come in handy sooner than you think.
 Narrator: *Bernice steps off the porch as one of the movers opens the truck door for her. She climbs into the passenger seat, pausing to give Scout a final wave.*
 Bernice: It’s bittersweet leaving after all these years, but I’m excited for you to make this place your own. Take care of the valley, of my friends—and of yourself, Scout.
 Narrator:*The truck rumbles to life and pulls away, disappearing down the winding road toward the city.*
 Narrator:*Scout stands on the porch for a moment, watching the valley settle into quiet again. They carry the pot inside, setting it on the table with care.*
-Narrator:*Scout unfolds the map Bernice gave them, looking over the valley to decide where to go first.*
+Narrator:*Scout unfolds the map Bernice just gave them, and looks over the valley to decide where to go first.*
 
 
 

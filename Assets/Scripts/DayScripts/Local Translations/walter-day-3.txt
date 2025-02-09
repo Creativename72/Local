@@ -143,7 +143,7 @@ Walter: I’ll come to the dinner. I owe it to all of use to see if we can make 
 
 -WhenWeFishedYouSaid
 Walter: *He chuckles faintly.* Guess I should take my own advice, huh?
-Walter: *Walter nods slowly.* I’ll come to the dinner. I owe it to all of use to see if we can make things better. //SET FLAG WalterGoodEnding
+Walter: *Walter nods slowly.* I’ll come to the dinner. I owe it to all of us to see if we can make things better. //SET FLAG WalterGoodEnding
 >SetFlag{WalterGoodEnding, true} //SET FLAG WalterGoodEnding
 |DecidedEnding
 

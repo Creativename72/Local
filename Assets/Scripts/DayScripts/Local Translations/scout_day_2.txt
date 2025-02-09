@@ -37,7 +37,7 @@ Journal: He’s clearly still carrying a lot from what happened, even if he trie
 Journal: Tyler seems to feel...
 [...frustrated with Walter’s authority. > SetFlag{TylerFrustratedWithWalter, true}
 [...like he needs to distance himself from the situation. > SetFlag{TylerWantsDistance, true}
-[...determined to prove his independence. SetFlag{TylerWantsIndependence, true}
+[...determined to prove his independence. > SetFlag{TylerWantsIndependence, true}
 >WriteEntry
 Narrator:*As Scout is about to write another line into the journal, their phone buzzes against the desk. They glance at the screen. It’s from Bernice.*
 

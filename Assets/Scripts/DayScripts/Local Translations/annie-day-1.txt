@@ -1,9 +1,8 @@
 +start
 -start
-Narrator:*A quaint little cabin sits on the right side of the valley’s peaks, overlooking the city in the far distance.*
 Narrator:*A long walking trail leads up to it from the bus stop along the side of the road.*
 Narrator:*The path is lined with sturdy rope guardrails and small lights, provding support and guidance along the way. It’s well maintained and very smooth.*
-Narrator:*Atop the hill, a quaint, cozy cabin nestled amongst the pine trees. From here, Scout has a view of the whole valley, along with the city in the distance.*
+Narrator:*Atop the hill, a quaint, cozy cabin is nestled amongst the pine trees. From here, Scout has a view of the whole valley, along with the city in the distance.*
 Narrator:*As Scout steps onto the porch, they can hear someone speaking inside.*
 [[Ring the doorbell. | rangDoorBell > AnnieRangDoorbell //SET FLAG AnnieRangDoorbell
 [[Wait for the speaking to finish. | waitForSpeaking
@@ -55,7 +54,7 @@ Annie: *She smirks, adjusting her headset.* Ha! Unless you can rock a turtleneck
 Annie: Anyways, it’s nice to hear a fresh voice in the valley. The valley’s been... well, a little too quiet lately.
 Narrator:*She tilts her head slightly, listening to the faint breeze rustling through the trees.*
 Annie: But quiet has its perks. The air here always smells so fresh, y’know? Like pine and that weird earthy smell that makes you feel like you’re in a nature documentary.
-Annie: *Pauses, grinning slightly.* Though sometimes it just smells like Tyler’s burning tires in his front yard again.
+Annie: *She pauses, grinning slightly.* Though sometimes it just smells like Tyler’s burning tires in his front yard again.
 Annie: So have you met the others yet? Tyler and Walter?
 
 $MetWalter$[[I met Walter near his tower. (( You’ve met Walter. | metWalter
