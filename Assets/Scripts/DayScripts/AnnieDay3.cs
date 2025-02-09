@@ -24,13 +24,12 @@ public class AnnieDay3 : MonoBehaviour
     [SerializeField] AmbienceInScene ambienceInScene;
     [SerializeField] BackgroundHandler backgroundHandler;
 
-
     private DialogueCharacter scout;
     private DialogueCharacter narrator;
     private DialogueCharacter annie;
 
     private int itemsInspected;
-    private bool inMinigame;
+    //private bool inMinigame;
     private bool inPart2;
 
     void Start()
@@ -49,7 +48,7 @@ public class AnnieDay3 : MonoBehaviour
         clickables.ForEach(clickable => clickable.OnClick(() =>
         {
             itemsInspected++;
-            clickable.SetVisible(false);
+            dialogueController.AddEndFunction(() => clickable.SetVisible(false));
         }));
         mysteryJars.OnClick(() => itemsInspected++);
 
@@ -82,7 +81,7 @@ public class AnnieDay3 : MonoBehaviour
                 annie.SetVisible(false);
                 scout.SetVisible(false);
                 minigame.SetActive(true);
-                inMinigame = true;
+                //inMinigame = true;
             });
             dialogueController.ClearEndFunctions();
         });
@@ -100,7 +99,7 @@ public class AnnieDay3 : MonoBehaviour
             backgroundHandler.changeBackground(true);
             GameManager.WaitRoutine(0.75f, () =>
             {
-                inMinigame = false;
+                //inMinigame = false;
                 annie.SetVisible(true);
                 scout.SetVisible(true);
                 minigame.SetActive(false);
@@ -109,9 +108,10 @@ public class AnnieDay3 : MonoBehaviour
             dialogueController.AddEndFunction(() => { GameManager.Instance.ChangeScene("Map"); GameManager.Instance.SaveGame(); });
         }
 
-        if (inMinigame)
+        // don't set annie visible in minigame
+        /*if (inMinigame)
         {
             annie.SetVisible(!dialogueController.IsDone());
-        }
+        }*/
     }
 }

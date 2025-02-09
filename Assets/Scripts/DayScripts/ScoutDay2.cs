@@ -31,7 +31,7 @@ public class ScoutDay2 : MonoBehaviour
         dialogueController.AddGameFlags();
         dialogueController.AddFunction("WriteEntry", () =>
         {
-            dialogueController.Pause(3);
+            dialogueController.Pause(1.5f);
             audioPlayer.PlaySFX(writeSFX);
         });
 

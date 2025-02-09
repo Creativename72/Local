@@ -219,7 +219,9 @@ Narrator:*Walter examines the trout, nodding appreciatively.*
 Walter: That’s a good-sized trout. This’ll make a fine addition to Bernice’s chowder.
 Narrator:*Walter’s expression softens as he turns to Scout.*
 Walter: Hmm... Listen, Scout, you’ve got other ingredients to gather, don’t you? You should head back down. I think I’ll stay here for a bit. It’s a perfect day for fishing, and I could use the quiet.
-[[Alright. Thanks for spending the afternoon with me, Walter.
+[[Alright. Thanks for spending the afternoon with me, Walter. | Thanks2
+
+-Thanks2
 [[And for helping me get the fish.
 Walter: *He gives a small nod.* I’ll see you tonight, then.
 Narrator:*Walter watches Scout pack up their gear before turning back to the lake. He casts his line once more, the fishing rod a steady silhouette against the calm waters.*

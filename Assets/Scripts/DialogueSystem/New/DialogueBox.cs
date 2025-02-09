@@ -12,6 +12,7 @@ public class DialogueBox : MonoBehaviour
     [Header("Attatched GameObjects")]
     [SerializeField] private GameObject container;
     [SerializeField] private GameObject speakerContainer;
+    [SerializeField] private GameObject backgroundObject;
     [SerializeField] private TextMeshProUGUI dialogueTextWithSpeaker;
     [SerializeField] private TextMeshProUGUI dialougeTextNoSpeaker;
 
@@ -110,6 +111,10 @@ public class DialogueBox : MonoBehaviour
     public void SetChoice(int choiceId, string text, string tooltip)
     {
         choices[choiceId].Set(DialogueTree.FormatAsterisks(text), DialogueTree.FormatAsterisks(tooltip));
+
+        bool showBackground = !string.IsNullOrEmpty(dialogueString);
+        
+        backgroundObject.SetActive(showBackground);
     }
 
     /// <summary>

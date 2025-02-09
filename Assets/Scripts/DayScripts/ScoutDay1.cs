@@ -22,7 +22,7 @@ public class ScoutDay1 : MonoBehaviour
         dialogueController.AddDefaultFunctions(backgroundHandler, ambienceInScene);
         dialogueController.AddFunction("WriteEntry", () =>
         {
-            dialogueController.Pause(3);
+            dialogueController.Pause(1.5f);
             playDialogueSFX.PlaySFX(writeSFX);
         });
 
