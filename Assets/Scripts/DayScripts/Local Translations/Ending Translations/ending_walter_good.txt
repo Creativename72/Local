@@ -23,6 +23,7 @@ Narrator:*Scout tastes the chowder, nodding in relief. The veggies are soft, the
 > Show{Scout, true, 0.75}
 > Move{Scout, LEFT, 0.75}
 Narrator:*Scout wipes their hands on a dish towel and takes a deep breath. The chowder isn’t perfect, but it’s ready.*
+> PlaySound{s_doorknock}
 Narrator:*A knock at the door interrupts them.*
 
 //2.
@@ -59,6 +60,7 @@ Narrator:*Scout nods quietly, sharing a look with Walter before moving to the st
 [It’s ready.
 Narrator:*Walter nods, stepping forward and picking up one of the bowls. He studies the steaming chowder for a moment before taking a seat at the dining table.*
 Walter: Smells good. I’m sure you did a fine job with this, Scout.
+> PlaySound{s_tastingwithspoon}
 Narrator:*Scout sits across from him, their own bowl in hand. For a moment, the two eat in silence, the quiet only broken by the clink of spoons against the bowls.*
 Narrator:*Walter sets his spoon down, leaning back slightly in his chair. He glances at the empty seats around the table, his brow furrowing.*
 Walter: So... where is everybody?
@@ -78,7 +80,7 @@ Walter: *He speaks softly.* I’ll get these.
 Narrator:*He stands and starts clearing the table, collecting both their bowls and utensils. He heads into the kitchen, the sound of running water filling the room.*
 
 //6.
-
+> PlaySound{s_doorknock}
 Narrator:*As he does, a knock at the door startles Scout. They glance toward the entrance before heading over to open it.*
 Narrator:*Annie stands on the porch, looking tired but managing a small smile.*
 Annie: Hey, Scout. Just got off my shift.

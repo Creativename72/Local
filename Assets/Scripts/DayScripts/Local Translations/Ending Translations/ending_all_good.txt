@@ -23,6 +23,7 @@ Narrator:*Scout tastes the chowder, nodding in relief. The veggies are soft, the
 > Show{Scout, true, 0.75}
 > Move{Scout, LEFT, 0.75}
 Narrator:*Scout wipes their hands on a dish towel and takes a deep breath. The chowder isn’t perfect, but it’s ready.*
+> PlaySound{s_doorknock}
 Narrator:*A knock at the door interrupts them.*
 
 //2.
@@ -48,7 +49,7 @@ Narrator:*Walter leans back against the counter, crossing his arms with a faint 
 Walter: Thanks for doing this, Scout. Really. This kind of thing... it matters.
 
 //3.
-
+> PlaySound{s_doorbell}
 Narrator:*Scout hears the ringing of the doorbell. They open the door to find Annie standing there, holding a wicker basket full of jars. Her face lights up with a warm smile.*
 Annie: Hey, Scout. Took me a while—haven’t needed to come to this side of the valley in ages. Had to stop a couple times just to get my bearings.
 Annie: Figured I’d bring something fun. These are all the mystery jars I had in my pantry. Can’t read the labels, so I never took the gamble. Thought there might be some tasty treats among the collection.
@@ -157,6 +158,7 @@ Tyler: Heck yeah. Time to feast.
 Narrator:*Walter glances toward Scout and gives a small nod. Without a word, they both rise from their seats and head into the kitchen.*
 Narrator:*He reaches for the ladle and starts serving up bowls of chowder. He dishes them out in front of everyone at the dining table, along with servings of flatbread. Tyler slides bags of chips to each bowl as well.*
 Tyler: *He holds his bowl up to his nose.* Alright. Moment of truth.
+> PlaySound{s_tastingwithspoon}
 Narrator:*They all take bites of the chowder. Clearly, it’s a hit.*
 Walter: It’s delicious. Nice work, Scout.
 Annie: It’s amazing! Good blend of spices!

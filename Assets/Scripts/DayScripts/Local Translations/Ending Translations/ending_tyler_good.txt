@@ -23,6 +23,7 @@ Narrator:*Scout tastes the chowder, nodding in relief. The veggies are soft, the
 > Show{Scout, true, 0.75}
 > Move{Scout, LEFT, 0.75}
 Narrator:*Scout wipes their hands on a dish towel and takes a deep breath. The chowder isn’t perfect, but it’s ready.*
+> PlaySound{s_doorknock}
 Narrator:*A knock at the door interrupts them.*
 
 //2.
@@ -91,6 +92,7 @@ Tyler: Scout, can we start eating the chowder now, please?
 Narrator:*Scout nods and moves to serve up the bowls while Tyler steps over to the dining table, slumping into a chair. The three of them settle into their seats, the warm scent of the chowder filling the air.*
 Tyler: *Tyler takes a sniff of the bowl.* Hey, at least this stuff smells pretty good. Right Walter?
 Narrator:*Walter barely acknowledges him, just giving Scout a small nod.*
+> PlaySound{s_tastingwithspoon}
 Narrator:*Scout gives a small smile before digging in. For a while, the only sound in the room is the quiet clinking of spoons against bowls. The warm, rich taste of the chowder cuts through the tension, at least for a little while.*
 Narrator:*Tyler opens a pack of nacho-cheese chips and dips them into his chowder, much to Walter’s disgust. Tyler smirks when he sees the face Walter makes.*
 Walter: What are you doing?
@@ -102,7 +104,7 @@ Narrator:*Tyler’s smirk fades instantly, his shoulders stiffening slightly as 
 Narrator:*The three sit in strained silence once again.*
 
 //6.
-
+> PlaySound{s_doorknock}
 Narrator:*After a while, a knock at the door startles Scout. They glance toward the entrance before heading over to open it.*
 Narrator:*Annie stands on the porch, looking tired but managing a small smile.*
 Annie: Hey, Scout. Just got off my shift.

@@ -23,6 +23,7 @@ Narrator:*Scout tastes the chowder, nodding in relief. The veggies are soft, the
 > Show{Scout, true, 0.75}
 > Move{Scout, LEFT, 0.75}
 Narrator:*Scout wipes their hands on a dish towel and takes a deep breath. The chowder isn’t perfect, but it’s ready.*
+> PlaySound{s_doorknock}
 Narrator:*A knock at the door interrupts them.*
 
 //2.
@@ -98,6 +99,7 @@ Tyler: Dang. I miss her.
 Tyler: Well, guess it’s just us, huh? A good ol’ boys’ night.
 Narrator:*Walter does not respond. He reaches for the ladle and starts serving up bowls of chowder. He dishes them out in front of everyone at the dining table, along with servings of flatbread. Tyler slides bags of chips to each bowl as well.*
 Tyler: *He holds his bowl up to his nose.* Alright. Moment of truth.
+> PlaySound{s_tastingwithspoon}
 Narrator:*They all take bites of the chowder. Clearly, it’s a hit.*
 Walter: It’s delicious. Nice work, Scout.
 Tyler: Heck, this is good. Certainly better than the chowder they got at the gas station.
@@ -156,7 +158,7 @@ Walter: *Walter raises an eyebrow.* This is just the start, Tyler. It’s not ab
 Tyler: *Tyler leans back, stretching his arms behind his head.* Yeah, yeah, I will, I will. You can count on that.
 
 //6.
-
+> PlaySound{s_doorknock}
 Narrator:*Before the moment can settle too much— a knock at the door breaks the silence.*
 Narrator:*Scout glances toward the entrance before heading over to open it.*
 Narrator:*Annie stands on the porch, looking tired but managing a small smile.*
